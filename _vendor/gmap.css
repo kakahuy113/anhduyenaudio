@@ -1,0 +1,30 @@
+/* css google map */
+.pac-container {
+	font-family: 'Roboto', sans-serif;
+}
+
+.gm-style .gm-style-iw-c {
+	padding: 15px !important;
+}
+
+.gm-style .gm-style-iw-d {
+	overflow: visible !important;
+}
+
+#searchmap {
+	height: 40px;
+	padding: 7px 15px;
+	width: 100%;
+	font-family: 'Roboto', sans-serif;
+	font-size: 16px;
+	box-shadow: rgba(0, 0, 0, 0.3) 0px 1px 4px -1px;
+	border: 0;
+	width: 100%;
+}
+
+@media (min-width: 576px) {
+	#searchmap {
+		top: 10px !important;
+		left: 205px !important;
+	}
+}
