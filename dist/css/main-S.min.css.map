@@ -1,1 +1,1 @@
-{"version":3,"sources":["_core/core.scss"],"names":[],"mappings":"AAAA,KAEC,aAAoB,CADpB,8BAAkC,CAElC,cAAiB,CACjB,eAAgB","file":"main-S.min.css","sourcesContent":["body {\r\n\tfont-family: \"UTM Avo\", sans-serif;\r\n\tcolor      : #1C1C1C;\r\n\tfont-size  : 16px;\r\n\tfont-weight: 400;\r\n}"]}
+{"version":3,"sources":[],"names":[],"mappings":"","file":"main-S.min.css","sourcesContent":[]}

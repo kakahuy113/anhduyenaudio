@@ -11,14 +11,7 @@ export const pugTask = () => {
 			"!src/pages/\_*.pug"
 		])
 		.pipe(plumber(function (err) {
-			console.log("========= ERROR! =========");
-			console.log("")
-			console.log("Name: " + err.name)
-			console.log(err.msg);
-			console.log("Filepath: " + err.filename);
-			console.log("Line: " + err.line);
-			console.log("")
-			console.log("=========================");
+			console.log(err);
 			this.emit('end');
 		}))
 		.pipe(pug({

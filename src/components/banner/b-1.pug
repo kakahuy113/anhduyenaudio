@@ -1,0 +1,22 @@
+section.home-banner
+	.container
+		.row.no-gutters
+			.col-lg-8
+				.swiper-container.slider-HomeBanner
+					.swiper-wrapper
+						-for(i=0;i<4;i++)
+							.swiper-slide
+								figure
+									img(src="./img/home-banner/item_slide_01.png", alt="", srcset="")
+									figcaption
+										span Sản phẩm mới
+										h5 LOA KLIPSCH
+											br
+											| RP-8060FA
+										a.see-more(href="#") Xem
+					.swiper-pagination
+			.col-lg-4.left-banner
+				.box-img
+					img(src="./img/home-banner/banner-home-01.png", alt="")
+				.box-img
+					img(src="./img/home-banner/banner-home-02.png", alt="")

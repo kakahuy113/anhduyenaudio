@@ -2,7 +2,6 @@
 	function id(v) {
 		return document.getElementById(v)
 	}
-	console.log(1)
 	function loadbar() {
 		var ovrl = id("loading"),
 			prog = id("progress"),
