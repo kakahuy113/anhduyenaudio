@@ -1,5 +1,5 @@
 .home-banner {
-	margin-top: 15px;
+	margin-top : 15px;
 
 	.slider-HomeBanner {
 		figure {
@@ -35,6 +35,47 @@
 					padding      : 0 40px;
 					border-radius: 25px;
 					margin-top   : 30px;
+				}
+			}
+		}
+
+		.swiper-slide {
+			figure {
+				figcaption {
+
+					span,
+					h5,
+					.see-more {
+						transition: .5s all ease-in-out;
+						transform : translateX(-200%);
+					}
+
+					span {
+						transition-delay: .5s;
+						display         : block;
+					}
+
+					h5 {
+						transition-delay: .8s;
+					}
+
+					.see-more {
+						transition-delay: 1s;
+					}
+				}
+			}
+
+			&.swiper-slide-active {
+
+				figure {
+					figcaption {
+
+						span,
+						h5,
+						.see-more {
+							transform: translateX(0);
+						}
+					}
 				}
 			}
 		}

@@ -1,0 +1,40 @@
+.banner-new-product {
+	margin-top: 45px;
+
+	figure {
+		position: relative;
+
+		img {
+			width: 100%;
+		}
+
+		figcaption {
+			position: absolute;
+			top     : 35px;
+			left    : 100px;
+			color   : #9B9B9B;
+
+			span {
+				font-size: 21px;
+			}
+
+			h5 {
+				font-size  : 33px;
+				font-weight: 700;
+			}
+
+			.see-more {
+				display      : inline-block;
+				font-size    : 12px;
+				line-height  : 36px;
+				font-weight  : 700;
+				color        : #D82F25;
+				background   : #FFFFFF;
+				border       : 1px solid #D82F25;
+				padding      : 0 40px;
+				border-radius: 25px;
+				margin-top   : 30px;
+			}
+		}
+	}
+}

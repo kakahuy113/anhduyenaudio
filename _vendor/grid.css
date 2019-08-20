@@ -1,3 +1,11 @@
+a {
+	color: unset;
+}
+
+a:hover {
+	color: unset;
+}
+
 .container {
 	width        : 100%;
 	padding-right: 15px;
