@@ -1,0 +1,76 @@
+.list-same-news {
+	background: #ffffff;
+	padding   : 60px 0 35px;
+	margin-top: 28px;
+
+	.catalog-news {
+		margin-bottom: 35px;
+
+		h3 {
+			font-size: 24px;
+			color    : #1C1C1C;
+		}
+	}
+
+	.block-news {
+		border       : #AAAAAA solid 1px;
+		padding      : 20px 35px;
+		display      : flex;
+		flex-wrap    : wrap;
+		margin-bottom: 25px;
+
+		.content {
+			display       : flex;
+			flex-direction: column;
+			flex          : 0 0 60%;
+			max-width     : 60%;
+
+			h5 {
+				font-size    : 18px;
+				font-weight  : 700;
+				color        : #1C1C1C;
+				margin-bottom: 15px;
+			}
+
+			p {
+				font-size: 14px;
+				color    : #888888;
+			}
+
+			.time {
+				position    : relative;
+				margin-top  : auto;
+				padding-left: 25px;
+
+				span {
+					color      : #888888;
+					font-size  : 12px;
+					line-height: 1;
+				}
+
+				&::before {
+					position        : absolute;
+					content         : '';
+					background-image: url(../img/icons/thoigiantintuc.svg);
+					background-size : cover;
+					left            : 0;
+					top             : 8px;
+					width           : 13px;
+					height          : 13px;
+				}
+			}
+		}
+
+		.img-news {
+			flex       : 0 0 40%;
+			max-width  : 40%;
+			max-width  : 210px;
+			margin-left: auto;
+
+			img {
+				width     : 100%;
+				object-fit: cover;
+			}
+		}
+	}
+}
