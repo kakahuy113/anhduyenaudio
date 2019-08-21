@@ -2,7 +2,12 @@
 	section.list-product
 		.container
 			.block-title
-				h2.main-title SẢN PHẨM PORTABLE
+				-if(j==0)
+					h2.main-title SẢN PHẨM PORTABLE
+				-if(j==1)
+					h2.main-title SẢN PHẨM HI-FI
+				-if(j==2)
+					h2.main-title SẢN PHẨM HI-END
 			//- SLIDER THƯƠNG HIỆU
 			.brand-slider
 				.swiper-container
