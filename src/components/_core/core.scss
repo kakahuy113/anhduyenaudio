@@ -9,3 +9,39 @@ body {
 .home-page {
 	background: #F6F6F6;
 }
+
+.main-title {
+	margin     : 0 auto;
+	display    : inline-block;
+	color      : #000000;
+	font-weight: 700;
+	font-size  : 21px;
+
+	&.active {
+		border-bottom: #D82F25 .5px solid;
+	}
+}
+
+.block-title {
+	position     : relative;
+	text-align   : center;
+	background   : #ffffff;
+	padding      : 20px 0 25px;
+	border-radius: 5px 5px 0 0;
+	border-bottom: 1px #70707050 solid;
+
+	&.sale-hot {
+		&::after {
+			content   : '';
+			display   : block;
+			position  : absolute;
+			height    : 100%;
+			width     : 1px;
+			background: #70707050;
+			top       : 0;
+			left      : 50%;
+			transform : translateX(-50%);
+		}
+
+	}
+}
