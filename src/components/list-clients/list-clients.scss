@@ -1,0 +1,30 @@
+.list-clients {
+	background: #ffffff;
+	padding   : 50px 0 15px;
+
+	.clients-slider {
+		padding : 0 45px;
+		position: relative;
+
+	}
+
+	.swiper-button-next {
+		background-image : url(../img/icons/next-brand.svg);
+		background-size  : 8px;
+		background-repeat: no-repeat;
+		height           : 30px;
+		width            : 30px;
+		transform        : translateY(-50%);
+		margin-top       : unset;
+	}
+
+	.swiper-button-prev {
+		background-image : url(../img/icons/prev-brand.svg);
+		background-size  : 8px;
+		background-repeat: no-repeat;
+		height           : 30px;
+		width            : 30px;
+		transform        : translateY(-50%);
+		margin-top       : unset;
+	}
+}

@@ -61,7 +61,23 @@ function brandSlider() {
 		},
 	})
 }
-
+// SLIDER LIST CLIENTS
+function clientSlider() {
+	var swiper = new Swiper(".clients-slider .swiper-container", {
+		slidesPerView: 5,
+		loop: true,
+		speed: 1200,
+		autoplay: true,
+		pagination: {
+			el: '.clients-slider .swiper-pagination',
+			clickable: true,
+		},
+		navigation: {
+			nextEl: '.clients-slider .swiper-button-next',
+			prevEl: '.clients-slider .swiper-button-prev',
+		},
+	})
+}
 
 
 
@@ -76,6 +92,7 @@ $(document).ready(function () {
 	homeSliderBanner();
 	productSlider();
 	brandSlider();
+	clientSlider();
 })
 
 $(document).ajaxComplete(function () {
