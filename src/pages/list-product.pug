@@ -1,0 +1,13 @@
+extends _layout/_layout.pug
+
+block var
+	- var title = 'Anh Duyên | Trang Chủ'
+	- var bodyClass = 'home-page'
+
+block main
+	section.list-product
+		.container
+			include ../components/breadcrumb/breadcrumb.pug
+			.row
+				.col-lg-3
+					include ../components/filter/filter.pug

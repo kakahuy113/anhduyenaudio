@@ -34,6 +34,8 @@ function productSlider() {
 		loop: true,
 		speed: 1200,
 		autoplay: true,
+		observer: true,
+		observeParents: true,
 		pagination: {
 			el: '.product-slider .swiper-pagination',
 			clickable: true,
@@ -78,6 +80,19 @@ function clientSlider() {
 		},
 	})
 }
+// TAB SALE AND HOT PRODUCT
+function tabsSaleHot() {
+	$(".product-sale-hot #tabs h2").click(function (e) {
+		e.preventDefault();
+		var tabName = $(this).attr('data-tab');
+		// ACTIVE TITLE
+		$('.product-sale-hot #tabs h2').removeClass('active');
+		$(this).addClass('active');
+		// ACTIVE TABS
+		$('.product-sale-hot .tab-content').removeClass('active');
+		$("#" + tabName).addClass('active');
+	});
+}
 
 
 
@@ -93,6 +108,7 @@ $(document).ready(function () {
 	productSlider();
 	brandSlider();
 	clientSlider();
+	tabsSaleHot();
 })
 
 $(document).ajaxComplete(function () {

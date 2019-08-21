@@ -16,6 +16,7 @@ body {
 	color      : #000000;
 	font-weight: 700;
 	font-size  : 21px;
+	cursor     : pointer;
 
 	&.active {
 		border-bottom: #D82F25 .5px solid;

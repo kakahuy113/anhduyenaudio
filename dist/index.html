@@ -38,7 +38,7 @@
 						<div class="bottom-header">
 							<div class="mega-menu"><svg id="Group_380" data-name="Group 380" xmlns="http://www.w3.org/2000/svg" width="15.927" height="11.664" viewBox="0 0 15.927 11.664"><path id="Path_790" data-name="Path 790" d="M283.944,380.662h-.029a.487.487,0,0,0-.485.5.512.512,0,0,0,.514.5.5.5,0,0,0,0-1Z" transform="translate(-283.43 -380.662)" fill="#fff"/><path id="Path_791" data-name="Path 791" d="M287.776,381.662h11.08a.5.5,0,0,0,0-1h-11.08a.5.5,0,0,0,0,1Z" transform="translate(-283.43 -380.662)" fill="#fff"/><path id="Path_792" data-name="Path 792" d="M283.944,385.994h-.029a.487.487,0,0,0-.485.5.512.512,0,0,0,.514.5.5.5,0,0,0,0-1Z" transform="translate(-283.43 -380.662)" fill="#fff"/><path id="Path_793" data-name="Path 793" d="M298.856,385.994h-11.08a.5.5,0,0,0,0,1h11.08a.5.5,0,0,0,0-1Z" transform="translate(-283.43 -380.662)" fill="#fff"/><path id="Path_794" data-name="Path 794" d="M283.944,391.326h-.029a.488.488,0,0,0-.485.5.512.512,0,0,0,.514.5.5.5,0,0,0,0-1Z" transform="translate(-283.43 -380.662)" fill="#fff"/><path id="Path_795" data-name="Path 795" d="M298.856,391.326h-11.08a.5.5,0,0,0,0,1h11.08a.5.5,0,0,0,0-1Z" transform="translate(-283.43 -380.662)" fill="#fff"/></svg><span>DANH MỤC SẢN PHẨM</span></div>
 							<div class="menu-item">
-								<nav><a href="#">TRỌN BỘ PHỐI GHÉP</a><a href="#">LOA</a><a href="#">AMPLY</a><a href="#">LOA, TAI NGHE BLUETOOTH</a><a href="#">LIÊN HỆ</a></nav>
+								<nav><a href="list-product.html">TRỌN BỘ PHỐI GHÉP</a><a href="list-product.html">LOA</a><a href="list-product.html">AMPLY</a><a href="list-product.html">LOA, TAI NGHE BLUETOOTH</a><a href="list-product.html">LIÊN HỆ</a></nav>
 							</div>
 						</div>
 					</div>
@@ -94,14 +94,16 @@
 			<section class="product-sale-hot">
 				<div class="container">
 					<div class="block-title sale-hot">
-						<div class="row">
-							<div class="col-lg-6"><a href="#">
-									<h2 class="main-title active">SẢN PHẨM KHUYẾN MÃI</h2></a></div>
-							<div class="col-lg-6"><a href="#">
-									<h2 class="main-title">SẢN PHẨM KHUYẾN MÃI</h2></a></div>
+						<div class="row" id="tabs">
+							<div class="col-lg-6">
+								<h2 class="main-title active" data-tab="sale">SẢN PHẨM KHUYẾN MÃI</h2>
+							</div>
+							<div class="col-lg-6">
+								<h2 class="main-title" data-tab="hot">SẢN PHẨM NỔI BẬT</h2>
+							</div>
 						</div>
 					</div>
-					<div class="product-slider">
+					<div class="product-slider tab-content active" id="sale">
 						<div class="swiper-container">
 							<div class="swiper-wrapper">
 								<div class="swiper-slide item">
@@ -189,9 +191,97 @@
 						<div class="swiper-button-next"></div>
 						<div class="swiper-button-prev"></div>
 					</div>
+					<div class="product-slider tab-content" id="hot">
+						<div class="swiper-container">
+							<div class="swiper-wrapper">
+								<div class="swiper-slide item">
+									<figure>
+										<div class="box-img"><img src="./img/home-product/1.png" alt=""></div>
+										<figcaption>
+											<h5>Loa Jamo 426 HCS</h5>
+											<div class="price"><span>4.490.000 đ</span>
+												<del>9.490.000 đ</del>
+											</div>
+											<div class="list-button">
+												<button class="add-cart"><svg xmlns="http://www.w3.org/2000/svg" width="27.587" height="24.139" viewBox="0 0 27.587 24.139"><g id="noun_Shopping_Cart_2751643" data-name="noun_Shopping Cart_2751643" transform="translate(-2 24.25)">\<path id="Path_1530" data-name="Path 1530" d="M2.808-25.25a.806.806,0,0,0-.808.8.806.806,0,0,0,.808.8h4.2L9.927-10.568A2.417,2.417,0,0,0,8.466-8.353,2.422,2.422,0,0,0,10.89-5.939H25.546a.806.806,0,0,0,.808-.8.806.806,0,0,0-.808-.8H10.89a.807.807,0,0,1-.808-.8.807.807,0,0,1,.806-.8H25.546a.808.808,0,0,0,.777-.584l3.233-11.265a.8.8,0,0,0-.132-.705.81.81,0,0,0-.645-.32H9.024L8.447-24.62a.808.808,0,0,0-.789-.63ZM23.929-5.939A2.422,2.422,0,0,0,21.5-3.525a2.422,2.422,0,0,0,2.425,2.414,2.422,2.422,0,0,0,2.425-2.414A2.422,2.422,0,0,0,23.929-5.939Zm-11.423,0a2.422,2.422,0,0,0-2.425,2.414,2.422,2.422,0,0,0,2.425,2.414,2.422,2.422,0,0,0,2.425-2.414A2.422,2.422,0,0,0,12.507-5.939ZM9.383-20.422H27.707l-2.771,9.655h-13.4ZM12.507-4.33a.807.807,0,0,1,.808.8.807.807,0,0,1-.808.8.807.807,0,0,1-.808-.8A.807.807,0,0,1,12.507-4.33Zm11.423,0a.807.807,0,0,1,.808.8.807.807,0,0,1-.808.8.807.807,0,0,1-.808-.8A.807.807,0,0,1,23.93-4.33Z" transform="translate(0 1)" fill="#d82f25"/></g></svg><span>Thêm vào giỏ</span></button>
+												<div class="so-sanh"><a href="#">So Sánh</a></div>
+											</div>
+										</figcaption>
+										<div class="khuyenmai"><span data-hot>HOT</span></div>
+									</figure>
+								</div>
+								<div class="swiper-slide item">
+									<figure>
+										<div class="box-img"><img src="./img/home-product/2.png" alt=""></div>
+										<figcaption>
+											<h5>Loa Jamo 426 HCS</h5>
+											<div class="price"><span>4.490.000 đ</span>
+												<del>9.490.000 đ</del>
+											</div>
+											<div class="list-button">
+												<button class="add-cart"><svg xmlns="http://www.w3.org/2000/svg" width="27.587" height="24.139" viewBox="0 0 27.587 24.139"><g id="noun_Shopping_Cart_2751643" data-name="noun_Shopping Cart_2751643" transform="translate(-2 24.25)">\<path id="Path_1530" data-name="Path 1530" d="M2.808-25.25a.806.806,0,0,0-.808.8.806.806,0,0,0,.808.8h4.2L9.927-10.568A2.417,2.417,0,0,0,8.466-8.353,2.422,2.422,0,0,0,10.89-5.939H25.546a.806.806,0,0,0,.808-.8.806.806,0,0,0-.808-.8H10.89a.807.807,0,0,1-.808-.8.807.807,0,0,1,.806-.8H25.546a.808.808,0,0,0,.777-.584l3.233-11.265a.8.8,0,0,0-.132-.705.81.81,0,0,0-.645-.32H9.024L8.447-24.62a.808.808,0,0,0-.789-.63ZM23.929-5.939A2.422,2.422,0,0,0,21.5-3.525a2.422,2.422,0,0,0,2.425,2.414,2.422,2.422,0,0,0,2.425-2.414A2.422,2.422,0,0,0,23.929-5.939Zm-11.423,0a2.422,2.422,0,0,0-2.425,2.414,2.422,2.422,0,0,0,2.425,2.414,2.422,2.422,0,0,0,2.425-2.414A2.422,2.422,0,0,0,12.507-5.939ZM9.383-20.422H27.707l-2.771,9.655h-13.4ZM12.507-4.33a.807.807,0,0,1,.808.8.807.807,0,0,1-.808.8.807.807,0,0,1-.808-.8A.807.807,0,0,1,12.507-4.33Zm11.423,0a.807.807,0,0,1,.808.8.807.807,0,0,1-.808.8.807.807,0,0,1-.808-.8A.807.807,0,0,1,23.93-4.33Z" transform="translate(0 1)" fill="#d82f25"/></g></svg><span>Thêm vào giỏ</span></button>
+												<div class="so-sanh"><a href="#">So Sánh</a></div>
+											</div>
+										</figcaption>
+										<div class="khuyenmai"><span data-hot>HOT</span></div>
+									</figure>
+								</div>
+								<div class="swiper-slide item">
+									<figure>
+										<div class="box-img"><img src="./img/home-product/3.png" alt=""></div>
+										<figcaption>
+											<h5>Loa Jamo 426 HCS</h5>
+											<div class="price"><span>4.490.000 đ</span>
+												<del>9.490.000 đ</del>
+											</div>
+											<div class="list-button">
+												<button class="add-cart"><svg xmlns="http://www.w3.org/2000/svg" width="27.587" height="24.139" viewBox="0 0 27.587 24.139"><g id="noun_Shopping_Cart_2751643" data-name="noun_Shopping Cart_2751643" transform="translate(-2 24.25)">\<path id="Path_1530" data-name="Path 1530" d="M2.808-25.25a.806.806,0,0,0-.808.8.806.806,0,0,0,.808.8h4.2L9.927-10.568A2.417,2.417,0,0,0,8.466-8.353,2.422,2.422,0,0,0,10.89-5.939H25.546a.806.806,0,0,0,.808-.8.806.806,0,0,0-.808-.8H10.89a.807.807,0,0,1-.808-.8.807.807,0,0,1,.806-.8H25.546a.808.808,0,0,0,.777-.584l3.233-11.265a.8.8,0,0,0-.132-.705.81.81,0,0,0-.645-.32H9.024L8.447-24.62a.808.808,0,0,0-.789-.63ZM23.929-5.939A2.422,2.422,0,0,0,21.5-3.525a2.422,2.422,0,0,0,2.425,2.414,2.422,2.422,0,0,0,2.425-2.414A2.422,2.422,0,0,0,23.929-5.939Zm-11.423,0a2.422,2.422,0,0,0-2.425,2.414,2.422,2.422,0,0,0,2.425,2.414,2.422,2.422,0,0,0,2.425-2.414A2.422,2.422,0,0,0,12.507-5.939ZM9.383-20.422H27.707l-2.771,9.655h-13.4ZM12.507-4.33a.807.807,0,0,1,.808.8.807.807,0,0,1-.808.8.807.807,0,0,1-.808-.8A.807.807,0,0,1,12.507-4.33Zm11.423,0a.807.807,0,0,1,.808.8.807.807,0,0,1-.808.8.807.807,0,0,1-.808-.8A.807.807,0,0,1,23.93-4.33Z" transform="translate(0 1)" fill="#d82f25"/></g></svg><span>Thêm vào giỏ</span></button>
+												<div class="so-sanh"><a href="#">So Sánh</a></div>
+											</div>
+										</figcaption>
+										<div class="khuyenmai"><span data-hot>HOT</span></div>
+									</figure>
+								</div>
+								<div class="swiper-slide item">
+									<figure>
+										<div class="box-img"><img src="./img/home-product/4.png" alt=""></div>
+										<figcaption>
+											<h5>Loa Jamo 426 HCS</h5>
+											<div class="price"><span>4.490.000 đ</span>
+												<del>9.490.000 đ</del>
+											</div>
+											<div class="list-button">
+												<button class="add-cart"><svg xmlns="http://www.w3.org/2000/svg" width="27.587" height="24.139" viewBox="0 0 27.587 24.139"><g id="noun_Shopping_Cart_2751643" data-name="noun_Shopping Cart_2751643" transform="translate(-2 24.25)">\<path id="Path_1530" data-name="Path 1530" d="M2.808-25.25a.806.806,0,0,0-.808.8.806.806,0,0,0,.808.8h4.2L9.927-10.568A2.417,2.417,0,0,0,8.466-8.353,2.422,2.422,0,0,0,10.89-5.939H25.546a.806.806,0,0,0,.808-.8.806.806,0,0,0-.808-.8H10.89a.807.807,0,0,1-.808-.8.807.807,0,0,1,.806-.8H25.546a.808.808,0,0,0,.777-.584l3.233-11.265a.8.8,0,0,0-.132-.705.81.81,0,0,0-.645-.32H9.024L8.447-24.62a.808.808,0,0,0-.789-.63ZM23.929-5.939A2.422,2.422,0,0,0,21.5-3.525a2.422,2.422,0,0,0,2.425,2.414,2.422,2.422,0,0,0,2.425-2.414A2.422,2.422,0,0,0,23.929-5.939Zm-11.423,0a2.422,2.422,0,0,0-2.425,2.414,2.422,2.422,0,0,0,2.425,2.414,2.422,2.422,0,0,0,2.425-2.414A2.422,2.422,0,0,0,12.507-5.939ZM9.383-20.422H27.707l-2.771,9.655h-13.4ZM12.507-4.33a.807.807,0,0,1,.808.8.807.807,0,0,1-.808.8.807.807,0,0,1-.808-.8A.807.807,0,0,1,12.507-4.33Zm11.423,0a.807.807,0,0,1,.808.8.807.807,0,0,1-.808.8.807.807,0,0,1-.808-.8A.807.807,0,0,1,23.93-4.33Z" transform="translate(0 1)" fill="#d82f25"/></g></svg><span>Thêm vào giỏ</span></button>
+												<div class="so-sanh"><a href="#">So Sánh</a></div>
+											</div>
+										</figcaption>
+										<div class="khuyenmai"><span data-hot>HOT</span></div>
+									</figure>
+								</div>
+								<div class="swiper-slide item">
+									<figure>
+										<div class="box-img"><img src="./img/home-product/5.png" alt=""></div>
+										<figcaption>
+											<h5>Loa Jamo 426 HCS</h5>
+											<div class="price"><span>4.490.000 đ</span>
+												<del>9.490.000 đ</del>
+											</div>
+											<div class="list-button">
+												<button class="add-cart"><svg xmlns="http://www.w3.org/2000/svg" width="27.587" height="24.139" viewBox="0 0 27.587 24.139"><g id="noun_Shopping_Cart_2751643" data-name="noun_Shopping Cart_2751643" transform="translate(-2 24.25)">\<path id="Path_1530" data-name="Path 1530" d="M2.808-25.25a.806.806,0,0,0-.808.8.806.806,0,0,0,.808.8h4.2L9.927-10.568A2.417,2.417,0,0,0,8.466-8.353,2.422,2.422,0,0,0,10.89-5.939H25.546a.806.806,0,0,0,.808-.8.806.806,0,0,0-.808-.8H10.89a.807.807,0,0,1-.808-.8.807.807,0,0,1,.806-.8H25.546a.808.808,0,0,0,.777-.584l3.233-11.265a.8.8,0,0,0-.132-.705.81.81,0,0,0-.645-.32H9.024L8.447-24.62a.808.808,0,0,0-.789-.63ZM23.929-5.939A2.422,2.422,0,0,0,21.5-3.525a2.422,2.422,0,0,0,2.425,2.414,2.422,2.422,0,0,0,2.425-2.414A2.422,2.422,0,0,0,23.929-5.939Zm-11.423,0a2.422,2.422,0,0,0-2.425,2.414,2.422,2.422,0,0,0,2.425,2.414,2.422,2.422,0,0,0,2.425-2.414A2.422,2.422,0,0,0,12.507-5.939ZM9.383-20.422H27.707l-2.771,9.655h-13.4ZM12.507-4.33a.807.807,0,0,1,.808.8.807.807,0,0,1-.808.8.807.807,0,0,1-.808-.8A.807.807,0,0,1,12.507-4.33Zm11.423,0a.807.807,0,0,1,.808.8.807.807,0,0,1-.808.8.807.807,0,0,1-.808-.8A.807.807,0,0,1,23.93-4.33Z" transform="translate(0 1)" fill="#d82f25"/></g></svg><span>Thêm vào giỏ</span></button>
+												<div class="so-sanh"><a href="#">So Sánh</a></div>
+											</div>
+										</figcaption>
+										<div class="khuyenmai"><span data-hot>HOT</span></div>
+									</figure>
+								</div>
+							</div>
+						</div>
+						<div class="swiper-button-next"></div>
+						<div class="swiper-button-prev"></div>
+					</div>
 				</div>
 			</section>
-			<section class="list-product">
+			<section class="home-product">
 				<div class="container">
 					<div class="block-title">
 						<h2 class="main-title">SẢN PHẨM PORTABLE</h2>
@@ -313,7 +403,7 @@
 					</div>
 				</div>
 			</section>
-			<section class="list-product">
+			<section class="home-product">
 				<div class="container">
 					<div class="block-title">
 						<h2 class="main-title">SẢN PHẨM HI-FI</h2>
@@ -435,7 +525,7 @@
 					</div>
 				</div>
 			</section>
-			<section class="list-product">
+			<section class="home-product">
 				<div class="container">
 					<div class="block-title">
 						<h2 class="main-title">SẢN PHẨM HI-END</h2>
@@ -636,19 +726,19 @@
 						<div class="swiper-container">
 							<div class="swiper-wrapper">
 								<div class="swiper-slide">
-									<div class="box-img"></div><img src="./img/list-clients/1.png" alt="">
+									<div class="box-img"><a href="#"><img src="./img/list-clients/1.png" alt=""></a></div>
 								</div>
 								<div class="swiper-slide">
-									<div class="box-img"></div><img src="./img/list-clients/2.png" alt="">
+									<div class="box-img"><a href="#"><img src="./img/list-clients/2.png" alt=""></a></div>
 								</div>
 								<div class="swiper-slide">
-									<div class="box-img"></div><img src="./img/list-clients/3.png" alt="">
+									<div class="box-img"><a href="#"><img src="./img/list-clients/3.png" alt=""></a></div>
 								</div>
 								<div class="swiper-slide">
-									<div class="box-img"></div><img src="./img/list-clients/4.png" alt="">
+									<div class="box-img"><a href="#"><img src="./img/list-clients/4.png" alt=""></a></div>
 								</div>
 								<div class="swiper-slide">
-									<div class="box-img"></div><img src="./img/list-clients/5.png" alt="">
+									<div class="box-img"><a href="#"><img src="./img/list-clients/5.png" alt=""></a></div>
 								</div>
 							</div>
 						</div>
@@ -705,9 +795,7 @@
 							<li><a href="#">TRẢ GÓP</a></li>
 						</ul>
 					</div>
-					<div class="col-lg-4"><img src="./img/icons/dangkyfooter.svg" alt="">
-						<p class="coppy-right">© 2019 Copyright by Web4G Solutions. All rights reserved.</p>
-					</div>
+					<div class="col-lg-4 coppy-right"><img src="./img/icons/dangkyfooter.svg" alt=""><a href="http://web4gsolutions.com/">© 2019 Copyright by Web4G Solutions. All rights reserved.</a></div>
 					<div class="col-lg-4">
 						<div class="hot-line">
 							<h3>HOTLINE: 0935.605.333</h3>
@@ -715,11 +803,11 @@
 					</div>
 					<div class="col-lg-4">
 						<ul class="social-media">
-							<li class="item"><img src="./img/icons/facebook.svg" alt=""></li>
-							<li class="item"><img src="./img/icons/instagram.svg" alt=""></li>
-							<li class="item"><img src="./img/icons/twitter.svg" alt=""></li>
-							<li class="item"><img src="./img/icons/printest.svg" alt=""></li>
-							<li class="item"><img src="./img/icons/linkedin.svg" alt=""></li>
+							<li class="item"><a href="#"><img src="./img/icons/facebook.svg" alt=""></a></li>
+							<li class="item"><a href="#"><img src="./img/icons/instagram.svg" alt=""></a></li>
+							<li class="item"><a href="#"><img src="./img/icons/twitter.svg" alt=""></a></li>
+							<li class="item"><a href="#"><img src="./img/icons/printest.svg" alt=""></a></li>
+							<li class="item"><a href="#"><img src="./img/icons/linkedin.svg" alt=""></a></li>
 						</ul>
 					</div>
 				</div>
