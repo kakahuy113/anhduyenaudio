@@ -1,0 +1,35 @@
+.account-title
+	h3.sub-title Quản lý đơn hàng
+	
+.account-manage-bill
+	.table-responsive
+		table.bill-list-table
+			thead
+				tr
+					th Sản phẩm
+					th Mã đơn hàng
+					th Ngày mua
+					th Tổng tiền
+					th Trạng thái
+			tbody
+				- for(i=0;i<10;i++)
+					tr
+						td Lorem ipsum dolor, sit amet consectetur adipisicing elit
+						td 
+							a(href="chitietdonhang.html") 218547011
+						td 09/11/2019
+						td 432,490,000 đ
+						td 
+							p.failed
+								img.lazyload(data-src="./img/icons/icon-failed.svg")
+					tr
+						td Lorem ipsum dolor, sit amet consectetur adipisicing elit dolorum
+						td 
+							a(href="#") 218547012
+						td 09/11/2019
+						td 432,490,000 đ
+						td
+							p.successed
+								img.lazyload(data-src="./img/icons/icon-success.svg")
+	.pagination-wrapper
+		include ../../_global/pagination.pug

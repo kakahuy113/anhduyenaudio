@@ -1,6 +1,7 @@
 .user-sidemenu-wrapper {
 	padding: 0 10px;
-	background: white;
+	background: map-get($mau, trang);
+	;
 	border-radius: 5px;
 	min-width: 260px;
 
@@ -32,14 +33,14 @@
 
 		p {
 			font-size: 12px;
-			color: #888888;
+			color: map-get($mau, xam-3);
 		}
 	}
 }
 
 .user-nav {
 	padding: 15px 10px;
-	border-top: 1px dotted #DFDFDF;
+	border-top: 1px dotted map-get($mau, xam-1);
 
 	li {
 		margin-bottom: 5px;
@@ -49,9 +50,9 @@
 			align-items: center;
 			height: 40px;
 			padding: 0 10px;
-			color: #1c1c1c;
-			border-radius: 5px;
+			color: map-get($mau, den);
 			font-size: 14px;
+			transition: all .3s cubic-bezier(.2, .5, .5, .8);
 
 			.icon {
 				display: flex;
@@ -63,12 +64,12 @@
 
 			svg {
 				.fill {
-					fill: #1c1c1c;
+					fill: map-get($mau, den);
 				}
 
 				.stroke {
 					fill: none;
-					stroke: #1c1c1c;
+					stroke: map-get($mau, den);
 				}
 			}
 
@@ -80,37 +81,48 @@
 			}
 		}
 
-		&.active {
+		&:hover {
 			a {
-				background: #1C1C1C;
+				background: rgba(map-get($mau, den), .85);
 				border-radius: 15px;
 
 				span {
-					color: white
+					color: map-get($mau, trang);
 				}
 
 				svg {
 					.fill {
-						fill: #ffffff;
+						fill: map-get($mau, trang);
 					}
 
 					.stroke {
 						fill: none;
-						stroke: #ffffff;
+						stroke: map-get($mau, trang);
 					}
 				}
 			}
 		}
-	}
-}
 
-.btn-logout {
-	border: 1px solid #1c1c1c;
-	color: #1c1c1c;
+		&.active {
+			a {
+				background: map-get($mau, den);
+				border-radius: 15px;
 
-	&:hover {
-		background: #f58220;
-		border: 1px solid #f58220;
-		color: white;
+				span {
+					color: map-get($mau, trang);
+				}
+
+				svg {
+					.fill {
+						fill: map-get($mau, trang);
+					}
+
+					.stroke {
+						fill: none;
+						stroke: map-get($mau, trang);
+					}
+				}
+			}
+		}
 	}
 }

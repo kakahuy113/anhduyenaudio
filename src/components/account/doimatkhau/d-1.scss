@@ -1,7 +1,7 @@
 .account-change-password-form {
-	background: #ffffff;
+	background: map-get($mau, trang);
 	padding: 40px 0;
-	border: 1px solid #dfdfdf;
+	border: 1px solid map-get($mau, xam-1);
 	border-top: 0;
 
 	form {

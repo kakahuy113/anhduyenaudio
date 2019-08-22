@@ -1,7 +1,7 @@
 .account-title {
 	padding: 11px 20px;
-	background: #F5F5F5;
-	border: 1px solid #DFDFDF;
+	background: map-get($mau, xam-2);
+	border: 1px solid map-get($mau, xam-1);
 }
 
 .account {
@@ -14,7 +14,7 @@
 		flex-wrap: wrap;
 
 		.error {
-			color: #D82F25;
+			color: map-get($mau, main);
 			font-size: 10px;
 			display: flex;
 			align-items: center;
@@ -40,7 +40,7 @@
 		input[type="date"] {
 			height: 40px;
 			border-radius: 5px;
-			border: 1px solid #DFDFDF;
+			border: 1px solid map-get($mau, xam-1);
 			width: 100%;
 			display: block;
 			font-size: 14px;
@@ -66,7 +66,7 @@
 					left: 0;
 					top: 13px;
 					border-radius: 50%;
-					border: 1px solid #DFDFDF;
+					border: 1px solid map-get($mau, xam-1);
 				}
 			}
 
@@ -75,8 +75,17 @@
 
 				&:checked~label:before {
 					box-shadow: inset 0px 0px 0px 2px white;
-					background: #D82F25;
+					background: map-get($mau, main);
 				}
+			}
+		}
+
+		&.form-error {
+
+			input[type="text"],
+			input[type="password"],
+			input[type="date"] {
+				border: 1px solid map-get($mau, main);
 			}
 		}
 	}
