@@ -1,9 +1,14 @@
 .sub-title {
 	font-size: 18px;
-	color: #D82F25;
+	color: map-get($mau, main);
 	font-weight: 400;
 }
 
+.table-responsive {
+	width: 100%;
+	display: block;
+	overflow: auto;
+}
 
 
 // Css cho button
@@ -21,7 +26,7 @@
 
 
 .btn-main {
-	background: #D82F25;
+	background: map-get($mau, main);
 	color: white;
 	font-weight: 700;
 	height: 40px;
@@ -29,6 +34,6 @@
 	font-size: 13px;
 
 	&:hover {
-		background: darken(#D82F25, 8%)
+		background: darken(map-get($mau, main), 8%)
 	}
 }

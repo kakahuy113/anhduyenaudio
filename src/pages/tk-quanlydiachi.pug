@@ -1,0 +1,18 @@
+extends _layout/_layout
+
+block var
+	- var title = 'Anh Duyên | Quản lý địa chỉ'
+	- var bodyClass = 'account-manage-address-page'
+
+
+block main
+	include ../components/breadcrumb/breadcrumb.pug
+	.account.account-info
+		.container
+			.row
+				.col-lg-auto
+					include ../components/account/sidemenu/s-1.pug
+					+sidemenu(4)
+				.col-lg
+					//- include ../components/account/doimatkhau/d-1.pug
+					

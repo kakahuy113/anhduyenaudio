@@ -1,6 +1,8 @@
 .account-info-form {
-	background: #ffffff;
+	background: map-get($mau, trang);
 	padding: 40px 0;
+	border: 1px solid map-get($mau, xam-1);
+	border-top: 0;
 
 	form {
 		margin: 0 auto;
@@ -12,7 +14,7 @@
 		max-width: 400px;
 		width: 100%;
 		padding-top: 30px;
-		border-top: 1px solid #DFDFDF;
+		border-top: 1px solid map-get($mau, xam-1);
 
 		p {
 			font-size: 14px;
@@ -34,11 +36,11 @@
 			font-size: 12px;
 
 			a {
-				color: #D82F25;
+				color: map-get($mau, main);
 			}
 
 			.added {
-				color: #888888;
+				color: map-get($mau, xam-3);
 			}
 
 			@media (max-width: 767.98px) {
