@@ -1,0 +1,23 @@
+.account-change-password-form {
+	background: #ffffff;
+	padding: 40px 0;
+	border: 1px solid #dfdfdf;
+	border-top: 0;
+
+	form {
+		max-width: 530px;
+		margin: 0 auto;
+	}
+
+	.form-group {
+		label {
+			flex: 0 0 200px;
+			max-width: 200px;
+
+			@media (max-width: 767.98px) {
+				flex: 0 0 100%;
+				max-width: 100%;
+			}
+		}
+	}
+}
