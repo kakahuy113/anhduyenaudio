@@ -2,6 +2,36 @@ footer {
 	background: #070707;
 	padding   : 55px 0 15px;
 
+	.col-lg-4 {
+		border-right : 1px rgba(223, 223, 223, 0.1) solid;
+		border-bottom: 1px rgba(223, 223, 223, 0.1) solid;
+
+		&:nth-child(4),
+		&:nth-child(5),
+		&:nth-child(6) {
+			border-bottom: 0;
+			position     : relative;
+		}
+
+		&:nth-child(3),
+		&:nth-child(6) {
+			border-right: 0;
+		}
+
+		&:nth-child(4),
+		&:nth-child(5) {
+			&:after {
+				content   : '';
+				position  : absolute;
+				width     : 80px;
+				height    : 50px;
+				background: #070707;
+				top       : -25px;
+				right     : -40px;
+			}
+		}
+	}
+
 	.info-company {
 		ul {
 			list-style: none;
@@ -25,6 +55,10 @@ footer {
 				span {
 					font-weight: 400;
 				}
+
+				&:last-child {
+					margin-bottom: 30px;
+				}
 			}
 		}
 	}
@@ -35,16 +69,29 @@ footer {
 		text-align: center;
 
 		li {
-			color        : #888888;
-			font-size    : 14px;
 			margin-bottom: 20px;
+
+			a {
+				color     : #888888;
+				font-size : 14px;
+				transition: .2s all ease-in-out;
+
+				&:hover {
+					color: #D82F25;
+				}
+			}
 		}
 	}
 
 	.coppy-right {
-		margin-top: 5px;
-		font-size : 10px;
-		color     : #707070;
+		padding-top: 15px;
+
+		a {
+			display   : block;
+			margin-top: 5px;
+			font-size : 10px;
+			color     : #707070;
+		}
 	}
 
 	.hot-line {
@@ -57,6 +104,19 @@ footer {
 		h3 {
 			color    : #A3A3A3;
 			font-size: 18px;
+		}
+	}
+
+	.social-media {
+		list-style     : none;
+		display        : flex;
+		padding        : 0;
+		justify-content: center;
+		align-items    : center;
+		height         : 100%;
+
+		.item {
+			margin-right: 35px;
 		}
 	}
 }
