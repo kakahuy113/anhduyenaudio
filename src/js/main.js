@@ -93,6 +93,21 @@ function tabsSaleHot() {
 		$("#" + tabName).addClass('active');
 	});
 }
+// Range Slider
+function rangeSlider() {
+	$(function () {
+		$("#slider-range-min").slider({
+			range: "min",
+			value: 37,
+			min: 1,
+			max: 700,
+			slide: function (event, ui) {
+				$("#amount").val("$" + ui.value);
+			}
+		});
+		$("#amount").val("$" + $("#slider-range-min").slider("value"));
+	});
+}
 
 
 
@@ -109,6 +124,7 @@ $(document).ready(function () {
 	brandSlider();
 	clientSlider();
 	tabsSaleHot();
+	rangeSlider();
 })
 
 $(document).ajaxComplete(function () {

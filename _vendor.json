@@ -1,7 +1,8 @@
 {
 	"vendor": {
 		"font": [
-			"src/fonts/**"
+			"src/fonts/**",
+			"bower_components/linearicons/dist/web-font/fonts/**"
 		],
 		"js": [
 			"bower_components/jquery/dist/jquery.min.js",
@@ -10,7 +11,9 @@
 			"_vendor/ls.unveilhooks.min.js",
 			"_vendor/loading.js",
 			"bower_components/fancybox/dist/jquery.fancybox.js",
-			"bower_components/swiper/dist/js/swiper.js"
+			"bower_components/swiper/dist/js/swiper.js",
+			"bower_components/jquery-ui/ui/widgets/accordion.js",
+			"bower_components/jquery-ui/jquery-ui.js"
 		],
 		"css": [
 			"_vendor/font.css",
@@ -19,7 +22,8 @@
 			"_vendor/loading.css",
 			"_vendor/gmap.css",
 			"bower_components/fancybox/dist/jquery.fancybox.css",
-			"bower_components/swiper/dist/css/swiper.css"
+			"bower_components/swiper/dist/css/swiper.css",
+			"bower_components/jquery-ui/themes/smoothness/jquery-ui.css"
 		]
 	}
 }
