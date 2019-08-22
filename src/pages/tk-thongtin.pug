@@ -1,0 +1,17 @@
+extends _layout/_layout
+
+block var
+	- var title = 'Anh Duyên | Thông tin tài khoản'
+	- var bodyClass = 'account-info-page'
+
+
+block main
+	//- include ../components/breadcrumb/b-1.pug
+	.account.account-info
+		.container
+			.row
+				.col-lg-auto
+					include ../components/account/sidemenu/s-1.pug
+				.col-lg
+					include ../components/account/thongtin/t-1.pug
+					

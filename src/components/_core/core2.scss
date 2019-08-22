@@ -1,0 +1,34 @@
+.sub-title {
+	font-size: 18px;
+	color: #D82F25;
+	font-weight: 400;
+}
+
+
+
+// Css cho button
+.btn {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	transition: all .3s cubic-bezier(.2, .5, .5, .8);
+	border: 0;
+
+	&:focus {
+		outline: none;
+	}
+}
+
+
+.btn-main {
+	background: #D82F25;
+	color: white;
+	font-weight: 700;
+	height: 40px;
+	border-radius: 15px;
+	font-size: 13px;
+
+	&:hover {
+		background: darken(#D82F25, 8%)
+	}
+}

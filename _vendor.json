@@ -1,7 +1,8 @@
 {
 	"vendor": {
 		"font": [
-			"src/fonts/**"
+			"src/fonts/**",
+			"bower_components/mdi/fonts/**"
 		],
 		"js": [
 			"bower_components/jquery/dist/jquery.min.js",

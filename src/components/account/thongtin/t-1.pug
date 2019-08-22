@@ -1,0 +1,53 @@
+.account-title
+	h3.sub-title Thông tin tài khoản
+	
+.account-info-form
+	form.row
+		.col-12
+			.form-group
+				label Họ tên
+				.form-input
+					input(type="text", name="")
+					//- span.error.mdi.mdi-alert-circle-outline Họ tên không hợp lệ
+			.form-group
+				label Điện thoại
+				.form-input
+					input(type="text", name="")
+					//- span.error.mdi.mdi-alert-circle-outline Số điện thoại không hợp lệ
+			.form-group
+				label Email
+				.form-input
+					input(type="text", name="")
+					span.error.mdi.mdi-alert-circle-outline Email không hợp lệ
+			.form-group
+				label Ngày sinh
+				.form-input
+					input(type="date", name="")
+					//- span.error.mdi.mdi-alert-circle-outline Ngày tháng không hợp lệ
+			.form-group
+				label Giới tính
+				.form-radio
+					.option
+						input#male(type="radio" name="gender" checked)
+						label(for="male") Nam
+					.option
+						input#female(type="radio" name="gender")
+						label(for="female") Nữ
+					span.error.mdi.mdi-alert-circle-outline Chưa chọn giới tính
+		.col-12
+			.social-connector
+				p Liên kết tài khoản mạng xã hội
+				.social-list
+					.social-item
+						.img
+							span + Facebook
+						.status
+							span.added Đã liên kết
+					.social-item
+						.img
+							span + Facebook
+						.status
+							a(href="#") Liên kết
+		.col-12
+			.form-button
+				button.btn.btn-main Cập nhật
