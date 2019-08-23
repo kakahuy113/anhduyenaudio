@@ -16,9 +16,9 @@ block main
 						p Có 
 							span(data-sum-product) 2340 
 							| sản phẩm
-					.row.no-gutters.list-item
+					.row.no-gutters.list-item-product
 						-for(i=1;i<17;i++)
 							.col-lg-3.col-6.item
 								include ../components/product/item-product.pug
 								+imgProduct(i)
-			.pagination
+					include ../components/_global/pagination.pug

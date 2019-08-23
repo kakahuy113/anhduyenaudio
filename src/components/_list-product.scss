@@ -1,5 +1,4 @@
 .list-product {
-
 	.quantity {
 		display: flex;
 		height : 75px;
@@ -11,11 +10,11 @@
 		}
 	}
 
-	.list-item {
-		margin: 0 -13px;
+	.list-item-product {
+		margin: 0 -13px -12px;
 
 		.item {
-			margin-bottom: 47px !important;
+			margin-bottom: 47px;
 			padding      : 0 13px !important;
 		}
 	}
