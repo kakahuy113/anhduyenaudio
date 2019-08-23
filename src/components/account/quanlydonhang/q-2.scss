@@ -1,0 +1,178 @@
+.account-manage-bill-detail {
+	.account-title {
+		.sub-title {
+			svg {
+				path {
+					fill: map-get($mau, main)
+				}
+			}
+
+			a {
+				margin-left: 15px;
+			}
+		}
+	}
+
+	.bill-detail-info {
+		padding: 40px 60px;
+		background: map-get($mau, trang);
+		border: 1px solid map-get($mau, xam-1);
+		border-top: 0;
+
+		@media (max-width: 767.98px) {
+			padding: 20px 15px;
+		}
+
+		.block-info {
+			&:not(:last-child) {
+				margin-bottom: 25px;
+			}
+
+			.col-md-auto {
+				min-width: 210px;
+			}
+
+			p {
+				font-size: 15px;
+			}
+
+			h3 {
+				font-size: 15px;
+				font-weight: 700;
+				margin-bottom: 15px;
+			}
+
+			.status {
+				display: flex;
+				flex-wrap: wrap;
+
+				p {
+					margin-right: auto;
+				}
+
+				.status-result {
+					display: flex;
+					align-items: center;
+
+					span {
+						margin-left: 10px;
+						color: map-get($mau, main);
+						font-style: italic;
+					}
+				}
+			}
+		}
+	}
+
+	.bill-detail-products {
+		padding: 25px 60px;
+		background: map-get($mau, trang);
+		border: 1px solid map-get($mau, xam-1);
+		border-top: 0;
+
+		@media (max-width: 767.98px) {
+			padding: 20px 10px;
+		}
+	}
+
+	.bill-detail {
+		display: flex;
+		flex-wrap: wrap;
+		align-items: center;
+		font-size: 15px;
+		padding-bottom: 20px;
+		border-bottom: 1px solid map-get($mau, xam-2);
+
+		&:not(:first-child) {
+			margin-top: 20px;
+		}
+
+		.img {
+			flex: 0 0 85px;
+			max-width: 85px;
+			height: 85px;
+			border: 1px solid map-get($mau, xam-1);
+		}
+
+		.info {
+			padding-left: 30px;
+			flex-basis: 0;
+			flex-grow: 1;
+			max-width: 100%;
+
+			h4 {
+				font-size: 15px;
+				font-weight: 400;
+			}
+		}
+
+		.price-wrapper {
+			flex: 0 0 100px;
+			max-width: 100px;
+
+			.price {
+				color: map-get($mau, main)
+			}
+
+			.old {
+				color: map-get($mau, xam-4)
+			}
+
+			.price,
+			.old {
+				display: block;
+			}
+		}
+
+		.quantity,
+		.color {
+			flex: 0 0 185px;
+			max-width: 185px;
+		}
+
+		.quantity {
+			margin-left: auto;
+		}
+	}
+
+	.bill-detail-bottom {
+		margin-top: 20px;
+
+		@media (min-width: 768px) {
+			flex: 0 0 310px;
+			max-width: 310px;
+			margin-left: auto;
+		}
+
+		p {
+			display: flex;
+			justify-content: space-between;
+
+			b {
+				font-weight: 400;
+			}
+
+			&:not(:last-child) {
+				margin-top: 10px;
+			}
+		}
+
+		.total-wrapper {
+			.total {
+				font-size: 16px;
+				color: map-get($mau, main)
+			}
+		}
+
+		>span {
+			font-size: 12px;
+			color: map-get($mau, den);
+			display: block;
+			text-align: right;
+		}
+	}
+
+	.button-wrapper {
+		align-self: flex-end;
+	}
+}
