@@ -1,9 +1,10 @@
 .block-title-filter {
+	position     : relative;
 	display      : flex;
-	width        : 100%;
+	width        : 275px;
 	background   : #1C1C1C;
 	border-radius: 5px;
-	padding      : 20px;
+	padding      : 18px;
 	box-shadow   : 0px 3px 6px rgba(#000000, .16);
 
 	h2 {
@@ -15,19 +16,18 @@
 }
 
 .block-filter {
+	width     : 275px;
 	background: #F5F5F5;
-	padding   : 0 20px 15px;
 
 	.title {
 		font-weight: 400;
-		margin-top : 15px;
 		font-size  : 16px;
 		color      : #D82F25;
 	}
 
 	.price {
-		border-bottom : 1px solid #DFDFDF;
-		padding-bottom: 20px;
+		border-bottom: 1px solid #DFDFDF;
+		padding      : 15px 20px;
 
 		.rangeSlider {
 			-webkit-appearance: none;
@@ -77,6 +77,8 @@
 	}
 
 	.brand {
+		padding: 15px 20px;
+
 		.search {
 			position  : relative;
 			max-width : 100%;
@@ -153,6 +155,99 @@
 
 					&:checked~label::before {
 						border: 1px solid #D82F25;
+					}
+				}
+			}
+		}
+	}
+
+	.category-list {
+		.item-category {
+			border-bottom: 1px solid #DFDFDF;
+
+			h3 {
+				cursor     : pointer;
+				padding    : 18px;
+				font-size  : 16px;
+				color      : #1C1C1C;
+				font-weight: 400;
+			}
+
+			.list-item {
+				padding   : 17px 18px 0;
+				box-shadow: 0px 3px 6px rgba(#000000, .11);
+				background: #FFFFFF;
+				display   : none;
+
+				&.active {
+					display: block;
+				}
+
+				h4 {
+					font-size     : 16px;
+					font-weight   : 400;
+					color         : #D82F25;
+					padding-bottom: 15px;
+					border-bottom : 1px solid #D82F25;
+				}
+
+				.item {
+					margin-top : 15px;
+					display    : flex;
+					flex-wrap  : wrap;
+					align-items: center;
+
+					a,
+					h5 {
+						position   : relative;
+						flex-basis : 0;
+						flex-grow  : 1;
+						max-width  : 100%;
+						color      : #1C1C1C;
+						font-size  : 14px;
+						line-height: 33px;
+						cursor     : pointer;
+						font-weight: 400;
+					}
+
+					span.mdi-plus {
+						display        : flex;
+						align-items    : center;
+						justify-content: center;
+
+						cursor   : pointer;
+						font-size: 14px;
+						max-width: 30px;
+
+						&::before {
+							content: '\f415';
+						}
+
+						&.active {
+							&::before {
+								content: '\f374';
+							}
+						}
+					}
+
+					.child {
+						display     : none;
+						width       : 100%;
+						padding-left: 23px;
+
+						&.active {
+							display: block;
+						}
+
+						.item-child {
+							a {
+								color: #949494;
+
+								span {
+									padding-left: 5px;
+								}
+							}
+						}
 					}
 				}
 			}

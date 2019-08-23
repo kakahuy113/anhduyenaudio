@@ -5,9 +5,10 @@ block var
 	- var bodyClass = 'home-page'
 
 block main
+	include ../components/breadcrumb/breadcrumb.pug
 	section.list-product
 		.container
-			include ../components/breadcrumb/breadcrumb.pug
 			.row
-				.col-side-left
+				.col-lg-auto
 					include ../components/filter/filter.pug
+				.col-lg
