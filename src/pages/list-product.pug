@@ -1,8 +1,8 @@
 extends _layout/_layout.pug
 
 block var
-	- var title = 'Anh Duyên | Trang Chủ'
-	- var bodyClass = 'home-page'
+	- var title = 'Anh Duyên | Danh Sách SP'
+	- var bodyClass = 'list-product-page'
 
 block main
 	include ../components/breadcrumb/breadcrumb.pug
@@ -12,3 +12,13 @@ block main
 				.col-lg-auto
 					include ../components/filter/filter.pug
 				.col-lg
+					.quantity
+						p Có 
+							span(data-sum-product) 2340 
+							| sản phẩm
+					.row.no-gutters.list-item
+						-for(i=1;i<17;i++)
+							.col-lg-3.col-6.item
+								include ../components/product/item-product.pug
+								+imgProduct(i)
+			.pagination
