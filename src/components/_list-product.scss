@@ -1,0 +1,22 @@
+.list-product {
+
+	.quantity {
+		display: flex;
+		height : 75px;
+
+		p {
+			margin-left: auto;
+			color      : #888888;
+			font-size  : 14px;
+		}
+	}
+
+	.list-item {
+		margin: 0 -13px;
+
+		.item {
+			margin-bottom: 47px !important;
+			padding      : 0 13px !important;
+		}
+	}
+}
