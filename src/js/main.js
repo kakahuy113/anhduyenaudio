@@ -1,7 +1,7 @@
 // Function thêm class lazyload vào các thẻ <img> có thuộc tính [data-src]
 const addClassLazyload = () => {
 	let imgList = document.querySelectorAll("img[data-src]")
-	Array.prototype.forEach.call(imgList, function (el) {
+	Array.prototype.forEach.call(imgList, function(el) {
 		if (el.className.length > 0) {
 			el.className = el.className + " lazyload"
 		} else {
@@ -82,7 +82,7 @@ function clientSlider() {
 }
 // TAB SALE AND HOT PRODUCT
 function tabsSaleHot() {
-	$(".product-sale-hot #tabs h2").click(function (e) {
+	$(".product-sale-hot #tabs h2").click(function(e) {
 		e.preventDefault();
 		var tabName = $(this).attr('data-tab');
 		// ACTIVE TITLE
@@ -95,7 +95,7 @@ function tabsSaleHot() {
 }
 // SUBMENU CATEGORY DETAIL
 function submenuCategory() {
-	$(".category-list .item-category h3").on('click', function () {
+	$(".category-list .item-category h3").on('click', function() {
 		$(".category-list .item-category h3").not(this).siblings('.list-item').slideUp('active');
 
 		$(this).siblings(".list-item").slideToggle('active');
@@ -103,7 +103,7 @@ function submenuCategory() {
 }
 // SUBMENU CATEGORY
 function submenuCategoryDetail() {
-	$(".category-list .item-category .list-item .item").on('click', function () {
+	$(".category-list .item-category .list-item .item").on('click', function() {
 
 		$(".category-list .item-category .list-item .item").not(this).find('.mdi-plus').removeClass('active');
 		$(".category-list .item-category .list-item .item").not(this).find('.child').slideUp('active');
@@ -113,14 +113,30 @@ function submenuCategoryDetail() {
 	});
 }
 
+const toggleAddNewsAddressItem = () => {
+	$(".add-news-address").on("click", function() {
+		$(".add-new-address-form").slideToggle();
+	})
+}
+
+
+const getInformationToEdit = () => {
+	$(".address-edit").on("click", function() {
+		var name = $(this).parents(".address-item").find("[data-name]").attr("data-name")
+		var address = $(this).parents(".address-item").find("[data-address]").attr("data-address")
+		var phone = $(this).parents(".address-item").find("[data-phone]").attr("data-phone")
+
+		$(".add-new-address-form").find("#fullname").val(name)
+		$(".add-new-address-form").find("#phone").val(phone)
+		$(".add-new-address-form").find("#address").val(address)
+		$(".add-new-address-form").slideDown()
+	})
+}
 
 
 
 
-
-
-
-$(document).ready(function () {
+$(document).ready(function() {
 	objectFitImages("img.ofc"); // Luôn luôn chậy polyfill cho thuôc tính object-fit: cover trên các phiên bản IE >= 9
 	addClassLazyload(); // Luôn luôn addClass lazyload cho các hình ảnh có thuộc tính [data-src]
 	homeSliderBanner();
@@ -130,8 +146,10 @@ $(document).ready(function () {
 	tabsSaleHot();
 	submenuCategory();
 	submenuCategoryDetail();
+	toggleAddNewsAddressItem();
+	getInformationToEdit()
 })
 
-$(document).ajaxComplete(function () {
+$(document).ajaxComplete(function() {
 	addClassLazyload();
 })

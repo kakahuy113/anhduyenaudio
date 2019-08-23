@@ -1,0 +1,103 @@
+.account-manage-address-wrapper {
+	background: map-get($mau, trang);
+	border: 1px solid map-get($mau, xam-1);
+	border-top: 0;
+	padding: 20px;
+
+	.address-item {
+		border: 1px solid map-get($mau, xam-1);
+		border-radius: 5px;
+		padding: 40px 20px;
+		display: flex;
+		flex-wrap: wrap;
+
+		[class*="col"] {
+			padding-right: 0;
+			padding-left: 0;
+		}
+
+		.col-md-auto {
+			align-self: flex-end;
+			flex: 0 0 195px;
+			max-width: 195px;
+			font-size: 12px;
+			display: flex;
+			margin-left: auto;
+
+			.address-edit,
+			.address-remove {
+				text-decoration: underline;
+			}
+
+			.address-edit {
+				flex: 0 0 50px;
+				max-width: 50px;
+			}
+
+			.default-address {
+				font-style: italic;
+				color: map-get($mau, main)
+			}
+		}
+
+		h3 {
+			font-size: 15px;
+			font-weight: 400;
+			text-transform: uppercase;
+			margin-bottom: 15px;
+		}
+
+		p {
+			font-size: 15px;
+
+			&:not(:first-child) {
+				margin-top: 5px;
+			}
+		}
+
+		&:not(:first-child) {
+			margin-top: 20px;
+		}
+	}
+
+	.add-news-address {
+		margin-top: 20px;
+
+		p {
+			cursor: pointer;
+			display: flex;
+			align-items: center;
+
+			span {
+				margin-left: 15px;
+			}
+		}
+	}
+
+	.add-new-address-form {
+		display: none;
+		max-width: 440px;
+		margin: 30px auto 0 auto;
+
+		h3 {
+			font-size: 18px;
+			font-weight: 300;
+			margin-bottom: 20px;
+		}
+
+		.form-group {
+			.form-check {
+				label {
+					font-size: 12px;
+					color: #949494;
+				}
+			}
+		}
+
+		.form-button {
+			.btn-main {
+				max-width: 100%;
+			}
+		}
+	}
+}

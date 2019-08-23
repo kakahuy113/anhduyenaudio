@@ -1,0 +1,69 @@
+.account-title
+	h2.sub-title Quản lý địa chỉ
+
+.account-manage-address-wrapper
+	.address-item
+		.col-md
+			h3(data-name="Phan Gia Nhật Linh") Phan Gia Nhật Linh
+			p(data-address="Địa chỉ: 161/1, hẻm 161, Quang Trung, Quận Gò Vấp, TP.Hồ Chí Minh") Địa chỉ: 161/1, hẻm 161, Quang Trung, Quận Gò Vấp, TP.Hồ Chí Minh
+			p(data-phone="0938 889 684") Điện thoại: 0938 889 684
+		.col-md-auto
+			a.address-edit(href="javascript:void(0)") Sửa
+			span.default-address Địa chỉ giao hàng mặc định
+	.address-item
+		.col-md
+			h3 Phan Gia Nhật Linh
+			p Địa chỉ: 161/1, hẻm 161, Quang Trung, Quận Gò Vấp, TP.Hồ Chí Minh
+			p Điện thoại: 0938 889 684
+		.col-md-auto
+			a.address-edit(href="javascript:void(0)") Sửa
+			a.address-remove(href="javascript:void(0)") Xóa
+	.add-news-address
+		p
+			<svg xmlns="http://www.w3.org/2000/svg" width="15.438" height="15.439" viewBox="0 0 15.438 15.439"><g transform="translate(-186.864 -254.69)"><line x2="15.439" transform="translate(186.864 262.409)" fill="none" stroke="#d82f25" stroke-linejoin="round" stroke-width="1"/><line y2="15.439" transform="translate(194.583 254.69)" fill="none" stroke="#d82f25" stroke-linejoin="round" stroke-width="1"/></g></svg>
+			span Thêm địa chỉ giao hàng mới
+	.add-new-address-form
+		form
+			h3 Thông tin liên hệ
+			.form-group
+				.form-input
+					input#fullname(type="text", name="" placeholder="Họ tên")
+			.form-group
+				.form-input
+					input#phone(type="text", name="" placeholder="Số điện thoại")
+			h3 Thông tin địa chỉ
+			.form-group
+				.form-input
+					select
+						option Chọn Tỉnh/Thành phố
+						option option 1
+						option option 1
+						option option 1
+						option option 1
+			.form-group.form-error
+				.form-input
+					select
+						option Chọn Quận/Huyện
+						option option 1
+						option option 1
+						option option 1
+						option option 1
+					span.error.mdi.mdi-alert-circle-outline Bắt lỗi
+			.form-group
+				.form-input
+					select
+						option Chọn Phường/Xã
+						option option 1
+						option option 1
+						option option 1
+						option option 1
+					span.error.mdi.mdi-alert-circle-outline Bắt lỗi
+			.form-group
+				.form-input
+					textarea#address(name="" placeholder="192 Nguyễn Oanh, Q. Gò Vấp, TP. Hồ Chí Minh")
+			.form-group
+				.form-check
+					input#default-address(type="checkbox")
+					label(for="default-address") Địa chỉ mặc định
+			.form-button
+				button.btn.btn-main Xác nhận địa chỉ giao hàng
