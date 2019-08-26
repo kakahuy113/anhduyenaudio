@@ -144,7 +144,6 @@ const toggleAddNewsAddressItem = () => {
 	})
 }
 
-
 const getInformationToEdit = () => {
 	$(".address-edit").on("click", function() {
 		var name = $(this).parents(".address-item").find("[data-name]").attr("data-name")
@@ -188,6 +187,7 @@ const toggleFormAddNewAddress = () => {
 		$('.add-new-address-form').slideToggle();
 	})
 }
+
 
 $(document).ready(function() {
 	objectFitImages("img.ofc"); // Luôn luôn chậy polyfill cho thuôc tính object-fit: cover trên các phiên bản IE >= 9
