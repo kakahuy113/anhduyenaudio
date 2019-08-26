@@ -137,6 +137,7 @@ function imgProductSlider() {
 			swiper: galleryThumbs,
 		},
 	});
+}
 const toggleAddNewsAddressItem = () => {
 	$(".add-news-address").on("click", function() {
 		$(".add-new-address-form").slideToggle();
@@ -174,6 +175,7 @@ $(document).ready(function() {
 	toggleAddNewsAddressItem();
 	getInformationToEdit()
 })
+
 
 $(document).ajaxComplete(function() {
 	addClassLazyload();
