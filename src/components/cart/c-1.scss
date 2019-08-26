@@ -1,0 +1,162 @@
+.cart {
+	.cart-wrapper {
+		background: white;
+		padding: 20px 40px 40px 40px;
+	}
+
+	.cart-title {
+		font-size: 23px;
+		text-decoration: underline;
+		margin-bottom: 15px;
+	}
+
+	.cart-summary {
+		margin-top: 50px;
+	}
+
+	.cart-button {
+		display: flex;
+		justify-content: space-between;
+		margin-top: 15px;
+
+		.btn-main {
+			flex: 0 0 450px;
+			max-width: 450px;
+			color: white;
+			height: 35px;
+		}
+
+		.btn-back {
+			font-size: 14px;
+			border-bottom: 1px solid #1C1C1C;
+			height: 30px;
+			align-self: flex-end;
+			padding-right: 20px;
+		}
+	}
+
+	.cart-summary,
+	.voucher {
+		max-width: 450px;
+		margin-left: auto;
+
+		p {
+			display: inline-flex;
+			justify-content: space-between;
+			max-width: 280px;
+			width: 100%;
+			font-size: 15px;
+
+			.total {
+				color: #D82F25;
+			}
+
+			&.vat {
+				max-width: 160px;
+				text-align: right;
+				font-size: 12px;
+				justify-content: flex-end;
+				color: #949494;
+			}
+		}
+
+		hr {
+			border: 0;
+			border-top: 1px solid #F5F5F5;
+			display: block;
+			margin: 12px 0;
+		}
+
+		input[type="text"] {
+			width: 100%;
+			height: 35px;
+			border-radius: 23px;
+			border: 0;
+			background: #F5F5F5;
+			padding: 7px 180px 7px 70px;
+			color: #888888;
+		}
+
+		button {
+			width: 110px;
+			position: absolute;
+			height: 35px;
+			right: 0;
+			top: 0;
+			background: #444444;
+			border-radius: 23px;
+			border: 0;
+			color: white;
+		}
+	}
+
+	.voucher {
+		margin-top: 25px;
+		position: relative;
+	}
+
+	.table {
+		font-size: 14px;
+
+		thead {
+			tr {
+				border-bottom: 1px solid #F5F5F5;
+			}
+
+			th {
+				height: 30px;
+				font-weight: 400;
+
+				&:nth-child(1) {
+					color: #949494;
+				}
+
+				&:last-child {
+					width: 260px;
+					text-align: right;
+				}
+			}
+		}
+
+		tbody {
+			color: #888888;
+
+			tr {
+				border-bottom: 1px solid #F5F5F5;
+			}
+
+			td {
+				width: 20%;
+
+				img {
+					max-width: 150px;
+				}
+
+				.quantity-input {
+					display: flex;
+					width: 90px;
+
+					.minus,
+					.quantity,
+					.plus {
+						color: #888888;
+						cursor: pointer;
+						flex: 0 0 30px;
+						max-width: 30px;
+						height: 30px;
+						display: flex;
+						justify-content: center;
+						align-items: center;
+						text-align: center;
+						border: 0;
+					}
+				}
+
+				&:last-child {
+					width: 260px;
+					text-align: right;
+				}
+			}
+		}
+	}
+}

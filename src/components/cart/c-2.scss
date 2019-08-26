@@ -1,0 +1,257 @@
+.shipping-address {
+	padding: 60px 0;
+
+	.row {
+		justify-content: space-between;
+		overflow: hidden;
+
+		.step {
+			height: 36px;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			border-radius: 18px;
+			padding: 0 20px;
+			border: 1px solid #dfdfdf;
+			background: white;
+			position: relative;
+
+			&:before {
+				content: '';
+				position: absolute;
+				top: 50%;
+				transform: translateY(-50%);
+				height: 1px;
+				width: 1000px;
+				right: 0;
+				z-index: -1;
+				border-top: 2px dotted #707070;
+			}
+
+			&.active {
+				background: #1C1C1C;
+				border: 1px solid #1C1C1C;
+				color: white;
+
+				&:before {
+					border-top: 2px solid #707070;
+				}
+			}
+
+			@media (max-width: 1024.98px) {
+				padding: 0 15px;
+
+				p {
+					font-size: 12px;
+				}
+			}
+
+			@media (max-width: 767.98px) {
+				padding: 0 10px;
+
+				p {
+					font-size: 10px;
+				}
+			}
+		}
+	}
+}
+
+
+.cart-address {
+	padding-top: 30px;
+
+	.section-title {
+		margin-bottom: 12px;
+	}
+
+	.col-lg-6 {
+		display: flex;
+	}
+
+	h3 {
+		font-size: 15px;
+		font-weight: 400;
+		margin-bottom: 7px;
+		display: flex;
+		align-items: center;
+	}
+
+	.address-item {
+		width: 100%;
+		padding: 30px 20px;
+		// border: 1px solid #f5f5f5;
+		margin-bottom: 20px;
+		position: relative;
+		background: #ffffff;
+		box-shadow: 2px 3px 8px rgba(black, .06);
+
+		p,
+		h4 {
+			margin-bottom: 7px;
+		}
+
+		.default-sign {
+			position: absolute;
+			bottom: 40px;
+			right: 15px;
+			font-size: 12px;
+			color: #f58220;
+			font-style: italic;
+
+			@media (max-width: 1024.98px) {
+				top: 15px;
+				bottom: auto;
+			}
+		}
+
+		.button-wrapper {
+			display: flex;
+			margin-top: 20px;
+
+			.btn {
+				padding: 0 40px;
+				margin-right: 0;
+				margin-left: 0;
+
+				+.btn {
+					margin-left: 10px;
+				}
+
+				@media (max-width: 1024.98px) {
+					font-size: 12px;
+				}
+			}
+
+			.btn-edit {
+				background: #F5F5F5;
+				height: 35px;
+				border-radius: 18px;
+				color: #D82F25;
+			}
+
+			.btn-remove {
+				padding: 0 20px;
+			}
+		}
+	}
+
+	.add-new-address {
+		cursor: pointer;
+		width: 100%;
+		display: flex;
+		font-size: 18px;
+		margin-bottom: 20px;
+		border-radius: 5px;
+
+		p {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			line-height: 1;
+			font-size: 15px;
+
+			span {
+				margin-left: 20px;
+				border-bottom: 1px solid #1C1C1C;
+			}
+		}
+	}
+
+	.add-new-address-form {
+		background: white;
+		border-radius: 5px;
+		display: none;
+		padding: 30px 0;
+		border: 1px solid #f5f5f5;
+
+		form {
+			width: 380px;
+			max-width: 100%;
+			margin: 0 auto;
+			padding: 0 15px;
+		}
+
+		h3 {
+			margin-bottom: 8px;
+		}
+
+		input[type="text"],
+		select {
+			width: 100%;
+			border: 1px solid #888888;
+			border-radius: 5px;
+			height: 40px;
+			padding: 7px 12px;
+			color: #1c1c1c;
+
+			&::placeholder {
+				color: #1c1c1c;
+			}
+		}
+
+		textarea {
+			width: 100%;
+			border: 1px solid #888888;
+			border-radius: 5px;
+			padding: 7px 12px;
+			height: 80px;
+			color: #1c1c1c;
+
+			&::placeholder {
+				color: #1c1c1c;
+			}
+		}
+
+		.form-group {
+			margin-bottom: 10px;
+		}
+
+		.form-check {
+			label {
+				font-size: 12px;
+				padding-left: 20px;
+				position: relative;
+				cursor: pointer;
+				color: #1C1C1C;
+
+				a {
+					color: #F58220;
+					text-decoration: none;
+				}
+
+				&:before {
+					content: '';
+					width: 14px;
+					height: 14px;
+					border-radius: 3px;
+					border: 1px solid #888888;
+					position: absolute;
+					top: 0;
+					left: 0;
+					display: flex;
+					justify-content: center;
+					align-items: center;
+					font-size: 16px;
+				}
+			}
+
+			input {
+				display: none;
+
+				&:checked~label:before {
+					content: '\f12c';
+					font-family: "Material Design Icons";
+				}
+			}
+		}
+
+		.form-button {
+			margin-top: 10px;
+
+			.btn {
+				width: 100%;
+			}
+		}
+	}
+}

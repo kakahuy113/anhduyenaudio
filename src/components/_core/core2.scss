@@ -63,3 +63,12 @@
 		border: 1px solid map-get($mau, main);
 	}
 }
+
+.table-responsive {
+	display: block;
+	overflow: auto;
+
+	table {
+		width: 100%;
+	}
+}

@@ -1,0 +1,133 @@
+.shipping-address
+	.cart-step
+		.container
+			.row.no-gutters
+				.step.active
+					p 1. Giỏ hàng
+				.step.active
+					p 2. Địa chỉ giao hàng
+				.step
+					p 3. Thanh toán
+	.cart-checkout
+		.container
+			h2.section-title.orange 3. Thanh toán
+			.row
+				form.col-lg
+					.shipping-method
+						.block-title
+							p Đơn vị vận chuyển
+								img.lazyload(data-src="./img/icons/icon-express.svg", alt="")
+							h3 Chọn hình thức giao hàng
+						.form-wrapper
+							.form-check
+								input#shipping_1(type="radio", name="shipping_method" checked)
+								label(for="shipping_1") Giao hàng tiêu chuẩn (Dự kiến giao hàng vào Thứ bảy, 11/05/2019): 
+									b 15.000 ₫
+							.form-check
+								input#shipping_2(type="radio", name="shipping_method")
+								label(for="shipping_2") Giao hàng tiêu chuẩn (Dự kiến giao hàng vào Thứ bảy, 11/05/2019): 
+									b 15.000 ₫
+					.payment-method
+						.block-title
+							h3 Chọn hình thức thanh toán
+						.form-wrapper
+							.form-check
+								input#payment_1(type="radio", name="payment_method" checked)
+								label(for="payment_1" checked) Thanh toán tiền mặt khi nhận hàng
+							.form-check
+								input#payment_2(type="radio", name="payment_method")
+								label(for="payment_2") Thẻ ATM nội địa/Internet Banking (Miễn phí thanh toán)
+								.option-list.bank-list
+									- for(i = 1;i<12;i++)
+										.form-check
+											input(type="radio", name="bank" id="bank" + i)
+											label(for="bank" + i) 
+												img.lazyload(data-src="./img/bank/" + i + ".png", alt="")
+							.form-check
+								input#payment_3(type="radio", name="payment_method")
+								label(for="payment_3") Thanh toán online bằng thẻ quốc tế (Visa, Master, JCB)
+								.option-list.form-card
+									.col-md-6
+										p Nhập thông tin thẻ 
+											img.lazyload(data-src="./img/card.png", alt="")
+										.form-card-wrapper
+											.form-group
+												label Số thẻ
+												input(type="text", name="", placeholder="4123 4567 8901 2345")
+											.form-group
+												label Tên in trong thẻ
+												input(type="text", name="" placeholder="NGUYEN VAN A")
+											.form-group
+												label Ngày hết hạn
+												input(type="text", name="" placeholder="MM/YY")
+											.form-group
+												label Mã bảo mật
+												input(type="text", name="" placeholder="123")
+											//- .form-check
+											//- 	input#savecardcode(type="checkbox")
+											//- 	label(for="savecardcode") Lưu và bảo mật thẻ cho lần thanh toán sau
+											//- 	i Tiki không trực tiếp lưu thẻ của bạn. Để đảm bảo an toàn, thông tin thẻ của bạn chỉ được lưu bởi CyberSource, công ty quản lý thanh toán lớn nhất thế giới (thuộc tổ chức VISA)
+									//- .col-md-6
+									//- 	img.lazyload(data-src="./img/card-img.png", alt="")
+					.form-check
+						input#requireinfo(type="checkbox")
+						label(for="requireinfo") Sử dụng Họ tên & Số điện thoại của địa chỉ giao hàng
+					.form-button
+						a.btn.btn-main(href="hoantat.html") Mua hàng
+				.col-lg-auto
+					.side-shipping-address
+						.block-title
+							h3
+								span.mdi.mdi-map-marker
+								span Địa chỉ giao hàng
+						.address-item
+							h4 Lê Khoa
+							p Địa chỉ: 161/1, hẻm 161, Quang Trung, Quận Gò Vấp, Hồ Chí Minh
+							p Điện thoại: 0938889684
+						.cart-button
+							a.btn.btn-edit-cart(href="#") Sửa
+					.cart-summary
+						.block-title
+							h3
+								<svg xmlns="http://www.w3.org/2000/svg" width="21.748" height="18.078" viewBox="0 0 21.748 18.078"><g id="Group_382" data-name="Group 382" transform="translate(0 0)"><path id="Path_796" data-name="Path 796" d="M43.05,27.791H26.678l-.256-1.114a.467.467,0,0,0-.455-.363H22.657a.468.468,0,1,0,0,.935h2.937l2.488,10.818v2.092l-.321.35a.468.468,0,0,0,.344.784H41.381a.468.468,0,1,0,0-.935H29.016V38.014a.46.46,0,0,0-.008-.071L42.58,36.2a1.556,1.556,0,0,0,1.358-1.543v-5.98A.887.887,0,0,0,43.05,27.791Z" transform="translate(-22.189 -26.314)" fill="#D82F25"/><path id="Path_797" data-name="Path 797" d="M29.054,42.919a1.273,1.273,0,1,0,1.274,1.274A1.274,1.274,0,0,0,29.054,42.919Z" transform="translate(-22.551 -27.388)" fill="#D82F25"/><circle id="Ellipse_10" data-name="Ellipse 10" cx="1.274" cy="1.274" r="1.274" transform="translate(16.942 15.531)" fill="#D82F25"/></g></svg>
+								span Địa chỉ giao hàng
+						.cart-item-list
+							.cart-item
+								.info
+									h4.name
+										a(href="#") Lorem ipsum dolor, sit amet consectetur adipisicing elit
+									p.brand Thương hiệu: 
+										b Tannoy
+									p.quantity Số lượng: 
+										b 1
+									p.color Màu: 
+										span đen
+
+								.price
+									span 99.490.000 đ
+							.cart-item
+								.info
+									h4.name
+										a(href="#") Lorem ipsum dolor, sit amet consectetur adipisicing elit
+									p.brand Thương hiệu: 
+										b Tannoy
+									p.quantity Số lượng: 
+										b 1
+									p.color Màu: 
+										span đen
+								.price
+									span 99.490.000 đ
+						.cart-bottom
+							p
+								span Tạm tính
+								span 515,000,000 đ
+							p
+								span Phí vận chuyển
+								span 15,000 đ
+						.cart-bottom
+							p
+								span Thành tiền
+								span.total 515,000,000 đ
+							span (Đã bao gồm VAT)
+						.cart-button
+							a.btn.btn-edit-cart(href="#") Sửa

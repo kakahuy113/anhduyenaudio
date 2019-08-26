@@ -158,8 +158,36 @@ const getInformationToEdit = () => {
 	})
 }
 
+const cartQuantity = () => {
+	$('.quantity-input .minus').each(function() {
+		$(this).on("click", function() {
+			let curVal = Number($(this).siblings("input").val())
+			if (curVal <= 0) {
+				curVal = 0;
+			} else {
+				curVal -= 1;
+			}
+			$(this).siblings("input").val(curVal)
+		})
+	})
+	$('.quantity-input .plus').each(function() {
+		$(this).on("click", function() {
+			let curVal = Number($(this).siblings("input").val())
+			if (curVal >= 99) {
+				curVal = 99;
+			} else {
+				curVal += 1;
+			}
+			$(this).siblings("input").val(curVal)
+		})
+	})
+}
 
-
+const toggleFormAddNewAddress = () => {
+	$('.add-new-address').on('click', function() {
+		$('.add-new-address-form').slideToggle();
+	})
+}
 
 $(document).ready(function() {
 	objectFitImages("img.ofc"); // Luôn luôn chậy polyfill cho thuôc tính object-fit: cover trên các phiên bản IE >= 9
@@ -173,10 +201,13 @@ $(document).ready(function() {
 	submenuCategoryDetail();
 	imgProductSlider();
 	toggleAddNewsAddressItem();
-	getInformationToEdit()
+	getInformationToEdit();
+	cartQuantity();
+	toggleFormAddNewAddress();
 })
 
 
 $(document).ajaxComplete(function() {
 	addClassLazyload();
+	cartQuantity();
 })

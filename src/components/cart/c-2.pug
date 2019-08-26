@@ -1,0 +1,84 @@
+.shipping-address
+	.cart-step
+		.container
+			.row.no-gutters
+				.step.active
+					p 1. Giỏ hàng
+				.step.active
+					p 2. Địa chỉ giao hàng
+				.step
+					p 3. Thanh toán
+	.cart-address
+		.container
+			h3 Địa chỉ giao hàng sẵn có
+			.row
+				.col-lg-6
+					.address-item.default
+						h4(data-name="Lê Khoa") Lê Khoa
+						p(data-address="161/1, hẻm 161, Quang Trung, Quận Gò Vấp, Hồ Chí Minh") Địa chỉ: 161/1, hẻm 161, Quang Trung, Quận Gò Vấp, Hồ Chí Minh
+						p(data-phone="0938889684") Điện thoại: 0938889684
+						.button-wrapper
+							a.btn.btn-edit(href="thanhtoan.html") Xác nhận địa chỉ giao hàng
+							a.btn.btn-remove.js-btn-edit-address(href="javascript:void(0)") Sửa
+							a.btn.btn-remove(href="#") Xóa
+						span.default-sign Mặc định 
+				.col-lg-6
+					.address-item
+						h4(data-name="Lê Khoa") Lê Khoa
+						p(data-address="161/1, hẻm 161, Quang Trung, Quận Gò Vấp, Hồ Chí Minh") Địa chỉ: 161/1, hẻm 161, Quang Trung, Quận Gò Vấp, Hồ Chí Minh
+						p(data-phone="0938889684") Điện thoại: 0938889684
+						.button-wrapper
+							a.btn.btn-edit(href="thanhtoan.html") Xác nhận địa chỉ giao hàng
+							a.btn.btn-remove.js-btn-edit-address(href="javascript:void(0)") Sửa
+							a.btn.btn-remove(href="#") Xóa
+				.col-lg-6
+					.address-item
+						h4(data-name="Nguyển Văn A") Nguyển Văn A
+						p(data-address="467, hẻm 192, Lê Văn Sỹ, Quận Tân Bình, Hồ Chí Minh") Địa chỉ: 467, hẻm 192, Lê Văn Sỹ, Quận Tân Bình, Hồ Chí Minh
+						p(data-phone="0938889684") Điện thoại: 0938889684
+						.button-wrapper
+							a.btn.btn-edit(href="thanhtoan.html") Xác nhận địa chỉ giao hàng
+							a.btn.btn-remove.js-btn-edit-address(href="javascript:void(0)") Sửa
+							a.btn.btn-remove(href="#") Xóa
+				.col-lg-12
+					.add-new-address
+						p
+							img(src="./img/icons/icon-plus.svg", alt="")
+							span Thêm đỉa chỉ giao hàng mới
+			.row.no-gutters
+				.col-12.add-new-address-form
+					form
+						h3 Thông tin liên hệ
+						.form-group
+							input#fullname(type="text", name="" placeholder="Họ tên")
+						.form-group
+							input#phone(type="text", name="" placeholder="Số diện thoại")
+						h3 Thông tin địa chỉ
+						.form-group
+							select
+								option Chọn Tỉnh/Thành phố
+								option option 1
+								option option 1
+								option option 1
+								option option 1
+						.form-group
+							select
+								option Chọn Quận/Huyện
+								option option 1
+								option option 1
+								option option 1
+								option option 1
+						.form-group
+							select
+								option Chọn Phường/Xã
+								option option 1
+								option option 1
+								option option 1
+								option option 1
+						.form-group
+							textarea#address(name="" placeholder="151, Quang Trung, Gò Vấp")
+						.form-check
+							input#default-address(type="checkbox")
+							label(for="default-address") Địa chỉ mặc định
+						.form-button
+							button.btn.btn-main Xác nhận địa chỉ giao hàng
