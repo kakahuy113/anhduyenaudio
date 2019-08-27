@@ -1,9 +1,10 @@
 body {
-	font-family: "UTM Avo", sans-serif;
-	color      : #1C1C1C;
-	font-size  : 14px;
+	font-family: "UTM Avo";
+	color: #1C1C1C;
+	font-size: 14px;
 	font-weight: 400;
-	background : map-get($mau, xam-2);
+	line-height: 1.5;
+	background: map-get($mau, xam-2);
 
 	&.bg-white {
 		background: #FFFFFF;
