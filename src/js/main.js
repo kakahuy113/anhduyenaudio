@@ -84,7 +84,7 @@ function clientSlider() {
 function tabsSaleHot() {
 	$(".product-sale-hot #tabs h2").click(function (e) {
 		e.preventDefault();
-		var tabName = $(this).attr('data-tab');
+		let tabName = $(this).attr('data-tab');
 		// ACTIVE TITLE
 		$('.product-sale-hot #tabs h2').removeClass('active');
 		$(this).addClass('active');
@@ -112,9 +112,9 @@ function submenuCategoryDetail() {
 		$(this).find(".child").slideToggle('active');
 	});
 }
-
+// SILDER PRODUCT DETAIL
 function imgProductSlider() {
-	var galleryThumbs = new Swiper('.gallery-thumbs', {
+	var galleryThumbs = new Swiper('.slider-imgProduct .gallery-thumbs', {
 		direction: 'vertical',
 		spaceBetween: 10,
 		slidesPerView: 4,
@@ -124,20 +124,26 @@ function imgProductSlider() {
 		watchSlidesVisibility: true,
 		watchSlidesProgress: true,
 	});
-	var galleryTop = new Swiper('.gallery-top', {
+	var galleryTop = new Swiper('.slider-imgProduct .gallery-top', {
 		spaceBetween: 10,
 		loop: true,
 		simulateTouch: false,
 		loopedSlides: 5, //looped slides should be the same
 		navigation: {
-			nextEl: '.swiper-button-next',
-			prevEl: '.swiper-button-prev',
+			nextEl: '.gallery-top .swiper-button-next',
+			prevEl: '.gallery-top .swiper-button-prev',
 		},
 		thumbs: {
 			swiper: galleryThumbs,
 		},
 	});
 }
+// START RANKING
+function dataStartRanking() {
+	let dataStart = $('.product-cart .ranking .number-start').attr('data-start');
+	let numberStart = $('.product-cart .ranking .number-start');
+}
+
 const toggleAddNewsAddressItem = () => {
 	$(".add-news-address").on("click", function () {
 		$(".add-new-address-form").slideToggle();
@@ -157,6 +163,59 @@ const getInformationToEdit = () => {
 	})
 }
 
+function productQuantity() {
+	$("[data-quantity]").each(function () {
+		let thisInput = $(this);
+		$(this).siblings(".minus").on("click", function () {
+			if (thisInput.val() <= 0) {
+				thisInput.val(0);
+			} else {
+				thisInput.val(thisInput.val() - 1)
+			}
+		})
+		$(this).siblings(".plus").on("click", function () {
+			thisInput.val(parseInt(thisInput.val()) + 1)
+		})
+	})
+}
+// CHỌN MÀU SẢN PHẨM
+function chooesColor() {
+	$('.chooes-quantity-color .color').click(function (e) {
+		e.preventDefault();
+
+		$(".chooes-quantity-color .color").removeClass('active')
+		$(this).addClass('active');
+	});
+}
+// TABS THÔNG TIN SẢN PHẨM
+function tabsProductDetail() {
+	$('.tabs-info-product .list-tabs .item').click(function (e) {
+		e.preventDefault();
+		$('.tabs-info-product .list-tabs .item').removeClass('active');
+		$(this).addClass('active');
+
+		$('.tabs-info-product .content').removeClass('active');
+		let tabName = $(this).find('a').attr('data-tab');
+		$("#" + tabName).addClass('active');
+
+	});
+}
+function sliderTheSameProduct() {
+	var swiper = new Swiper(".the-same-product-slider .swiper-container", {
+		slidesPerView: 4,
+		spaceBetween: 20,
+		loop: true,
+		speed: 1200,
+		// autoplay: true,
+		observer: true,
+		observeParents: true,
+		navigation: {
+			nextEl: '.the-same-product-slider .swiper-button-next',
+			prevEl: '.the-same-product-slider .swiper-button-prev',
+		},
+	})
+}
+
 
 
 $(document).ready(function () {
@@ -171,10 +230,15 @@ $(document).ready(function () {
 	submenuCategoryDetail();
 	imgProductSlider();
 	toggleAddNewsAddressItem();
-	getInformationToEdit()
+	getInformationToEdit();
+	dataStartRanking();
+	productQuantity();
+	chooesColor();
+	tabsProductDetail();
+	sliderTheSameProduct();
 })
 
 
-$(document).ajaxComplete(function() {
+$(document).ajaxComplete(function () {
 	addClassLazyload();
 })

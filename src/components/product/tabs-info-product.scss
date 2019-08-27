@@ -1,0 +1,149 @@
+.tabs-info-product {
+	margin-top: 30px;
+
+	#tabs {
+		background   : #FFFFFF;
+		border-radius: 5px;
+		box-shadow   : 0 3px 6px rgba($color: #000000, $alpha: 0.16);
+		padding-top  : 60px;
+
+		.list-tabs {
+			margin-left: 35px;
+
+			.item {
+				font-size    : 18px;
+				color        : #1C1C1C;
+				margin-bottom: 10px;
+				cursor       : pointer;
+
+				&.active {
+					color          : #D82F25;
+					text-decoration: underline;
+				}
+			}
+		}
+
+		.content {
+			margin-right: 30px;
+			display     : none;
+
+			&.active {
+				display: block;
+			}
+
+			&#description {
+				padding-bottom: 30px;
+			}
+
+			&#thongsokythuat {
+				padding-bottom: 60px;
+			}
+
+			&#comment {
+				.block-ranting {
+					display  : flex;
+					flex-wrap: wrap;
+
+					.ranting-number {
+						flex-wrap: 0 0 30%;
+						max-width: 30%;
+
+						h4 {
+							font-size    : 24px;
+							color        : #1C1C1C;
+							font-weight  : 700;
+							margin-bottom: 13px;
+						}
+
+						.ranting {
+							margin-bottom: 5px;
+						}
+
+						.commmet-number {
+							color    : #1C1C1C;
+							font-size: 12px;
+						}
+					}
+
+					.statistical-ranting {
+						display: flex;
+
+						.statistical-detail {
+							h5 {
+								position   : relative;
+								font-size  : 12px;
+								font-weight: 400;
+								color      : #1C1C1C;
+
+								&:after {
+									content         : '';
+									position        : absolute;
+									top             : 50%;
+									transform       : translateY(-50%);
+									left            : 15px;
+									background-size : 13px;
+									width           : 13px;
+									height          : 13px;
+									background-image: url(../img/icons/star-nofull.svg)
+								}
+							}
+
+							.ranting-bar {
+								position  : relative;
+								width     : 100%;
+								background: red;
+
+								&:after {
+									content : '';
+									position: absolute;
+									width   : 100%;
+									height  : 10px;
+									top     : 0;
+									left    : 0;
+									border  : 1px solid #DFDFDF;
+								}
+							}
+						}
+					}
+				}
+			}
+
+			p {
+				color        : #888888;
+				font-size    : 16px;
+				margin-bottom: 20px;
+			}
+
+			img {
+				width        : 100%;
+				height       : auto;
+				object-fit   : cover;
+				margin-bottom: 50px;
+			}
+
+			table {
+				font-size: 16px;
+				color    : #949494;
+
+				tr {
+					border-top: 1px solid #F5F5F5;
+					height    : 60px;
+
+					&:last-child {
+						border-bottom: 1px solid #F5F5F5;
+					}
+				}
+
+				th {
+					font-weight: 400;
+					margin-left: 245px;
+					width      : 390px;
+				}
+
+				td {
+					margin-left: auto;
+				}
+			}
+		}
+	}
+}

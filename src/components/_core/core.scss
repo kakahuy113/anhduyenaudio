@@ -68,3 +68,25 @@ html {
 
 	}
 }
+
+.ranting {
+	display      : flex;
+	margin-bottom: 15px;
+
+	.star {
+		position        : relative;
+		margin-right    : 5px;
+		background-image: url(../img/icons/star-nofull.svg);
+		width           : 18px;
+		height          : 17px;
+		cursor          : pointer;
+		background-size : cover;
+
+		.number-star {
+			position        : absolute;
+			background-image: url(../img/icons/star-full.svg);
+			width           : 100%;
+			height          : 100%;
+		}
+	}
+}
