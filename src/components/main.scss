@@ -5,16 +5,27 @@
 @import "_global/header.scss";
 @import "_global/footer.scss";
 
-@import "banner/b-1.scss";
-@import "home/home-product/home-product.scss";
-@import "banner/b-2.scss";
-@import "news/list-news-same.scss";
-@import "list-clients/list-clients.scss";
 @import "breadcrumb/breadcrumb.scss";
+
+@import "banner/b-1.scss";
+@import "banner/b-2.scss";
+@import 'banner/b-3.scss';
+
+@import "home/home-product/h-1.scss";
+
+@import "product/item.scss";
+@import "product/summary.scss";
+@import "product/tabs-info.scss";
+
+@import "news/list-news-same.scss";
+@import "product/the-same.scss";
+
 @import "filter/filter.scss";
-@import "_list-product.scss";
-@import "product/item-product.scss";
-@import "product/product-summary.scss";
-@import "product/tabs-info-product.scss";
-@import "product/the-same-product.scss";
+@import "list-clients/list-clients.scss";
+
+
+
+
+
+// CSS CỦA CẬU VÀNG
 @import "_main-S.scss";

@@ -1,7 +1,7 @@
 // Function thêm class lazyload vào các thẻ <img> có thuộc tính [data-src]
 const addClassLazyload = () => {
 	let imgList = document.querySelectorAll("img[data-src]")
-	Array.prototype.forEach.call(imgList, function(el) {
+	Array.prototype.forEach.call(imgList, function (el) {
 		if (el.className.length > 0) {
 			el.className = el.className + " lazyload"
 		} else {
@@ -82,7 +82,7 @@ function clientSlider() {
 }
 // TAB SALE AND HOT PRODUCT
 function tabsSaleHot() {
-	$(".product-sale-hot #tabs h2").click(function(e) {
+	$(".product-sale-hot #tabs h2").click(function (e) {
 		e.preventDefault();
 		let tabName = $(this).attr('data-tab');
 		// ACTIVE TITLE
@@ -95,7 +95,7 @@ function tabsSaleHot() {
 }
 // SUBMENU CATEGORY
 function submenuCategory() {
-	$(".category-list .item-category h3").on('click', function() {
+	$(".category-list .item-category h3").on('click', function () {
 		$(".category-list .item-category h3").not(this).siblings('.list-item').slideUp('active');
 
 		$(this).siblings(".list-item").slideToggle('active');
@@ -103,7 +103,7 @@ function submenuCategory() {
 }
 // SUBMENU CATEGORY DETAIL
 function submenuCategoryDetail() {
-	$(".category-list .item-category .list-item .item").on('click', function() {
+	$(".category-list .item-category .list-item .item").on('click', function () {
 
 		$(".category-list .item-category .list-item .item").not(this).find('.mdi-plus').removeClass('active');
 		$(".category-list .item-category .list-item .item").not(this).find('.child').slideUp('active');
@@ -118,20 +118,25 @@ function imgProductSlider() {
 		direction: 'vertical',
 		spaceBetween: 10,
 		slidesPerView: 4,
-		loop: true,
+		// loop: true,
 		freeMode: true,
 		loopedSlides: 5,
 		watchSlidesVisibility: true,
 		watchSlidesProgress: true,
+		slideToClickedSlide: true,
+		navigation: {
+			nextEl: '.gallery-thumbs-wrapper .swiper-button-next',
+			prevEl: '.gallery-thumbs-wrapper .swiper-button-prev',
+		},
 	});
 	var galleryTop = new Swiper('.slider-imgProduct .gallery-top', {
 		spaceBetween: 10,
-		loop: true,
+		// loop: true,
 		simulateTouch: false,
 		loopedSlides: 5, //looped slides should be the same
 		navigation: {
-			nextEl: '.gallery-top .swiper-button-next',
-			prevEl: '.gallery-top .swiper-button-prev',
+			nextEl: '.gallery-thumbs-wrapper .swiper-button-next',
+			prevEl: '.gallery-thumbs-wrapper .swiper-button-prev',
 		},
 		thumbs: {
 			swiper: galleryThumbs,
@@ -145,13 +150,13 @@ function dataStartRanking() {
 }
 
 const toggleAddNewsAddressItem = () => {
-	$(".add-news-address").on("click", function() {
+	$(".add-news-address").on("click", function () {
 		$(".add-new-address-form").slideToggle();
 	})
 }
 
 const getInformationToEdit = () => {
-	$(".address-edit").on("click", function() {
+	$(".address-edit").on("click", function () {
 		var name = $(this).parents(".address-item").find("[data-name]").attr("data-name")
 		var address = $(this).parents(".address-item").find("[data-address]").attr("data-address")
 		var phone = $(this).parents(".address-item").find("[data-phone]").attr("data-phone")
@@ -194,12 +199,13 @@ function tabsProductDetail() {
 		$('.tabs-info-product .list-tabs .item').removeClass('active');
 		$(this).addClass('active');
 
-		$('.tabs-info-product .content').removeClass('active');
+		$('.tabs-info-product .content-tabs').removeClass('active');
 		let tabName = $(this).find('a').attr('data-tab');
 		$("#" + tabName).addClass('active');
 
 	});
 }
+// SLIDER SẢN PHẨM TƯƠNG TỰ
 function sliderTheSameProduct() {
 	var swiper = new Swiper(".the-same-product-slider .swiper-container", {
 		slidesPerView: 4,
@@ -215,10 +221,20 @@ function sliderTheSameProduct() {
 		},
 	})
 }
+// LẤY % SAO
+function getDataBar() {
 
+	let dataBarNodeList = document.querySelectorAll('.statistical-rating .middle .bar');
+
+
+	Array.prototype.forEach.call(dataBarNodeList, function (e, index) {
+		const data = e.getAttribute('data-bar');
+		e.style.width = data + "%";
+	})
+}
 const cartQuantity = () => {
-	$('.quantity-input .minus').each(function() {
-		$(this).on("click", function() {
+	$('.quantity-input .minus').each(function () {
+		$(this).on("click", function () {
 			let curVal = Number($(this).siblings("input").val())
 			if (curVal <= 0) {
 				curVal = 0;
@@ -228,8 +244,8 @@ const cartQuantity = () => {
 			$(this).siblings("input").val(curVal)
 		})
 	})
-	$('.quantity-input .plus').each(function() {
-		$(this).on("click", function() {
+	$('.quantity-input .plus').each(function () {
+		$(this).on("click", function () {
 			let curVal = Number($(this).siblings("input").val())
 			if (curVal >= 99) {
 				curVal = 99;
@@ -240,15 +256,26 @@ const cartQuantity = () => {
 		})
 	})
 }
-
 const toggleFormAddNewAddress = () => {
-	$('.add-new-address').on('click', function() {
+	$('.add-new-address').on('click', function () {
 		$('.add-new-address-form').slideToggle();
 	})
 }
+function likeComment() {
+	$('.button-like-comment').click(function (e) {
+		e.preventDefault();
+		// console.log($(this).find('.like-comment').toggleClass('active'));
+		$(this).find('.like-comment').toggleClass('active');
+		if ($('.button-like-comment').find('.like-comment').hasClass('active')) {
+			$('.button-like-comment').attr('data-like', true)
+		} else {
+			$('.button-like-comment').attr('data-like', false)
+		}
+	});
+}
 
 
-$(document).ready(function() {
+$(document).ready(function () {
 	objectFitImages("img.ofc"); // Luôn luôn chậy polyfill cho thuôc tính object-fit: cover trên các phiên bản IE >= 9
 	addClassLazyload(); // Luôn luôn addClass lazyload cho các hình ảnh có thuộc tính [data-src]
 	homeSliderBanner();
@@ -268,6 +295,8 @@ $(document).ready(function() {
 	sliderTheSameProduct();
 	cartQuantity();
 	toggleFormAddNewAddress();
+	getDataBar();
+	likeComment();
 })
 
 

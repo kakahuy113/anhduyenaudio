@@ -30,6 +30,10 @@
 					top            : unset;
 				}
 
+				.swiper-button-next {
+					background-image: url(../img/icons/down-slider-item-detail.svg);
+				}
+
 				.swiper-button-prev {
 					background-image: url(../img/icons/up-slider-item-detail.svg);
 
@@ -42,10 +46,6 @@
 						content   : "";
 						left      : 130%;
 					}
-				}
-
-				.swiper-button-next {
-					background-image: url(../img/icons/down-slider-item-detail.svg);
 				}
 
 				.gallery-thumbs {
