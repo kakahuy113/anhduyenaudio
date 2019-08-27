@@ -1,0 +1,53 @@
+section.cart
+	.container
+		.cart-wrapper
+			h2.cart-title Giỏ hàng
+			.table-responsive
+				table.table
+					thead
+						tr
+							th 
+								span#type-product 3 
+								span Sản phẩm / 
+								span#quantity-product 6 
+								span Số lượng
+							th Tên sản phẩm
+							th Số lượng
+							th Màu sắc
+							th Giá
+							th Hủy
+					tbody
+						-for(i=1;i<4;i++)
+							tr
+								td
+									img(src="./img/home-product/"+i+".png", alt="")
+								td Loa ABC hiện đại
+								td
+									.quantity-input
+										span.minus -
+										input.quantity(value="7")
+										span.plus +
+								td Trắng
+								td
+									p.price 9.490.000 đ
+									p.old-price 12.390.000 đ
+								td
+									img(src="./img/icons/icon-close.svg", alt="")
+			.cart-summary
+				p
+					span Tạm tính:
+					span 515.000.000 đ
+				p
+					span Giảm giá
+					span 15.000.000 đ
+				hr
+				p
+					span Thành tiền
+					span.total 500.000.000 đ
+				p.vat (Đã bao gồm VAT)
+			form.voucher
+				input#vouchcer(type="text", name="voucher", placeholder="Nhập mã giảm giá/quà tặng")
+				button Xác nhận
+			.cart-button
+				a.btn.btn-back(href="#") Tiếp tục mua hàng
+				a.btn.btn-main(href="#") Mua hàng
