@@ -254,11 +254,6 @@ function tabsProductDetail() {
 
 	});
 }
-<<<<<<< HEAD
-// SLIDER SẢN PHẨM TƯƠNG TỰ
-=======
-
->>>>>>> 4550a2eaf453cea8f8ba7b62cd3b78faa03bb5ea
 function sliderTheSameProduct() {
 	var swiper = new Swiper(".the-same-product-slider .swiper-container", {
 		slidesPerView: 4,
