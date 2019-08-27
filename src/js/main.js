@@ -9,6 +9,56 @@ const addClassLazyload = () => {
 		}
 	});
 }
+// Script cho tab
+class Tab {
+	selector;
+	titleList;
+	contentList;
+
+	constructor(selector) {
+		this.selector = document.querySelector(selector);
+		if (this.selector) {
+			this.titleList = this.selector.querySelectorAll("[toggle-for]")
+			this.contentList = this.selector.querySelectorAll("[tab-id]")
+			this.init();
+		}
+	}
+
+	runTabWhenClicked() {
+		Array.prototype.forEach.call(this.titleList, (element, index) => {
+			element.addEventListener("click", () => {
+				const tabTarget = element.attributes["toggle-for"].value;
+				const targetDOM = this.selector.querySelector(`[tab-id='${tabTarget}']`);
+				element.classList.add("active");
+				Array.prototype.forEach.call(this.titleList, (eleClicked, eleClickedIndex) => {
+					if (eleClickedIndex != index) {
+						eleClicked.classList.remove("active")
+					}
+				});
+				Array.prototype.forEach.call(this.contentList, (tabContentElement) => {
+					if (tabContentElement.attributes["tab-id"].value != tabTarget) {
+						tabContentElement.style.display = "none"
+						tabContentElement.classList.remove("show")
+					}
+				});
+				targetDOM.style.display = "block"
+				setTimeout(() => {
+					targetDOM.classList.add("show")
+				}, 50);
+			})
+		})
+	}
+
+	activeFirstTab() {
+		this.titleList[0].click();
+	}
+
+	init() {
+		this.runTabWhenClicked();
+		this.activeFirstTab();
+	}
+}
+
 // SLIDER BANNER
 function homeSliderBanner() {
 	var swpier = new Swiper('.slider-HomeBanner', {
@@ -164,23 +214,23 @@ const getInformationToEdit = () => {
 }
 
 function productQuantity() {
-	$("[data-quantity]").each(function () {
+	$("[data-quantity]").each(function() {
 		let thisInput = $(this);
-		$(this).siblings(".minus").on("click", function () {
+		$(this).siblings(".minus").on("click", function() {
 			if (thisInput.val() <= 0) {
 				thisInput.val(0);
 			} else {
 				thisInput.val(thisInput.val() - 1)
 			}
 		})
-		$(this).siblings(".plus").on("click", function () {
+		$(this).siblings(".plus").on("click", function() {
 			thisInput.val(parseInt(thisInput.val()) + 1)
 		})
 	})
 }
 // CHỌN MÀU SẢN PHẨM
 function chooesColor() {
-	$('.chooes-quantity-color .color').click(function (e) {
+	$('.chooes-quantity-color .color').click(function(e) {
 		e.preventDefault();
 
 		$(".chooes-quantity-color .color").removeClass('active')
@@ -189,7 +239,7 @@ function chooesColor() {
 }
 // TABS THÔNG TIN SẢN PHẨM
 function tabsProductDetail() {
-	$('.tabs-info-product .list-tabs .item').click(function (e) {
+	$('.tabs-info-product .list-tabs .item').click(function(e) {
 		e.preventDefault();
 		$('.tabs-info-product .list-tabs .item').removeClass('active');
 		$(this).addClass('active');
@@ -200,6 +250,7 @@ function tabsProductDetail() {
 
 	});
 }
+
 function sliderTheSameProduct() {
 	var swiper = new Swiper(".the-same-product-slider .swiper-container", {
 		slidesPerView: 4,
@@ -268,10 +319,11 @@ $(document).ready(function() {
 	sliderTheSameProduct();
 	cartQuantity();
 	toggleFormAddNewAddress();
+	const recruitmentTab = new Tab(".job-position .tab-container")
 })
 
 
-$(document).ajaxComplete(function () {
+$(document).ajaxComplete(function() {
 	addClassLazyload();
 	cartQuantity();
 })

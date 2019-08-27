@@ -19,6 +19,7 @@
 	text-transform: uppercase;
 	font-weight: 400;
 	font-size: 23px;
+	margin-bottom: 15px;
 }
 
 .table-responsive {
@@ -28,5 +29,25 @@
 
 	table {
 		width: 100%;
+	}
+}
+
+.tab-container {
+	.tab-title {
+		.item {
+			cursor: pointer;
+		}
+	}
+
+	.tab-content {
+		.content {
+			display: none;
+			opacity: 0;
+			transition: all .3s cubic-bezier(.2, .5, .5, .8);
+
+			&.show {
+				opacity: 1;
+			}
+		}
 	}
 }

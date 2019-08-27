@@ -1,0 +1,116 @@
+.recruitment {
+	.row {
+		justify-content: center;
+	}
+
+	.imgbox {
+		min-width: 320px;
+
+		img {
+			width: 100%;
+		}
+	}
+
+	.content {
+		font-size: 16px;
+
+		p,
+		ul {
+			margin-bottom: 15px;
+		}
+	}
+}
+
+.job-position {
+	margin-top: 40px;
+
+	.block-title-2 {
+		margin-bottom: 20px;
+	}
+
+	.download {
+		font-size: 23px;
+		display: flex;
+		justify-content: flex-end;
+		align-items: center;
+		color: #888888;
+		margin-top: 20px;
+
+		span {
+			margin: 0 5px;
+		}
+
+		a {
+			color: map-get($mau, main);
+			text-decoration: underline;
+		}
+	}
+
+	.tab-container {
+		.tab-title {
+			display: flex;
+
+			.item {
+				flex: 0 0 240px;
+				max-width: 240px;
+				height: 45px;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				font-size: 18px;
+				border-radius: 5px;
+				border: 1px solid #F5F5F5;
+				background: white;
+				box-shadow: 0px 3px 6px rgba(black, .07);
+				margin-right: 12px;
+				transition: all .3s cubic-bezier(.2, .5, .5, .8);
+
+				@media (max-width: 1199.98px) {
+					max-width: 200px;
+					flex: 0 0 200px;
+				}
+
+				&.active {
+					border: 1px solid transparent;
+					border-radius: 0;
+					border-bottom: 1px solid map-get($mau, main);
+					font-weight: 700;
+					box-shadow: none;
+					color: map-get($mau, main)
+				}
+			}
+		}
+
+		.tab-content {
+			background: #F5F5F5;
+			padding: 60px 80px;
+			border: 1px solid #F5F5F5;
+			box-shadow: 0px 3px 6px rgba(black, .07);
+
+			.content {
+				font-size: 16px;
+
+				p,
+				ul {
+					margin-bottom: 10px;
+				}
+			}
+		}
+	}
+}
+
+.recruitment-contact {
+	padding-bottom: 40px;
+
+	.block-title-2 {
+		margin-bottom: 15px;
+	}
+
+	.row {
+		justify-content: space-between;
+
+		.item {
+			font-size: 14px;
+		}
+	}
+}
