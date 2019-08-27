@@ -1,26 +1,124 @@
+// @font-face {
+// 	font-family: "Helvetica Neue";
+// 	font-style: normal;
+// 	font-weight: 700;
+// 	font-display: auto;
+// 	src: url("../fonts/HELVETICANEUEBOLD.TTF");
+// 	src: url("../fonts/HELVETICANEUEBOLD.TTF") format("truetype");
+// }
+
+// @font-face {
+// 	font-family: "UTM Avo";
+// 	font-style: normal;
+// 	font-weight: 400;
+// 	font-display: auto;
+// 	src: url("../fonts/UTMAVO.TTF");
+// 	src: url("../fonts/UTMAVO.TTF") format("truetype");
+// }
+
+// @font-face {
+// 	font-family: "UTM Avo";
+// 	font-style: normal;
+// 	font-weight: 700;
+// 	font-display: auto;
+// 	src: url("../fonts/UTMAVOBOLD.TTF");
+// 	src: url("../fonts/UTMAVOBOLD.TTF") format("truetype");
+// }
+
 @font-face {
-	font-family : "Helvetica Neue", sans-serif;
-	font-style  : normal;
-	font-weight : 700;
-	font-display: auto;
-	src         : url("../fonts/HELVETICANEUEBOLD.TTF");
-	src         : url("../fonts/HELVETICANEUEBOLD.TTF") format("truetype");
+	font-family: 'Helvetica-Neue';
+	src: url('../fonts/HelveticaNeueBold.eot');
+	/* IE9 Compat Modes */
+	src: url('../fonts/HelveticaNeueBold.eot?#iefix') format('embedded-opentype'),
+		/* IE6-IE8 */
+		url('../fonts/HelveticaNeueBold.woff2') format('woff2'),
+		/* Modern Browsers */
+		url('../fonts/HelveticaNeueBold.woff') format('woff'),
+		/* Modern Browsers */
+		url('../fonts/HelveticaNeueBold.ttf') format('truetype'),
+		/* Safari, Android, iOS */
+		url('../fonts/HelveticaNeueBold.svg') format('svg');
+	/* Legacy iOS */
+	font-display: swap;
+	font-weight: 700;
+	font-style: normal;
 }
 
 @font-face {
-	font-family : "UTM Avo", sans-serif;
-	font-style  : normal;
-	font-weight : 400;
-	font-display: auto;
-	src         : url("../fonts/UTMAVO.TTF");
-	src         : url("../fonts/UTMAVO.TTF") format("truetype");
+	font-family: 'UTM Avo';
+	src: url('../fonts/UTMAvo.eot');
+	/* IE9 Compat Modes */
+	src: url('../fonts/UTMAvo.eot?#iefix') format('embedded-opentype'),
+		/* IE6-IE8 */
+		url('../fonts/UTMAvo.woff2') format('woff2'),
+		/* Modern Browsers */
+		url('../fonts/UTMAvo.woff') format('woff'),
+		/* Modern Browsers */
+		url('../fonts/UTMAvo.ttf') format('truetype'),
+		/* Safari, Android, iOS */
+		url('../fonts/UTMAvo.svg') format('svg');
+	/* Legacy iOS */
+	font-display: swap;
+	font-weight: 400;
+	font-style: normal;
 }
 
 @font-face {
-	font-family : "UTM Avo", sans-serif;
-	font-style  : normal;
-	font-weight : 700;
-	font-display: auto;
-	src         : url("../fonts/UTMAVOBOLD.TTF");
-	src         : url("../fonts/UTMAVOBOLD.TTF") format("truetype");
+	font-family: 'UTM Avo';
+	src: url('../fonts/UTMAvoBold.eot');
+	/* IE9 Compat Modes */
+	src:
+		local('UTM Avo Bold'),
+		local('UTM-Avo-Bold'),
+		url('../fonts/UTMAvoBold.eot?#iefix') format('embedded-opentype'),
+		/* IE6-IE8 */
+		url('../fonts/UTMAvoBold.woff2') format('woff2'),
+		/* Modern Browsers */
+		url('../fonts/UTMAvoBold.woff') format('woff'),
+		/* Modern Browsers */
+		url('../fonts/UTMAvoBold.ttf') format('truetype'),
+		/* Safari, Android, iOS */
+		url('../fonts/UTMAvoBold.svg') format('svg');
+	/* Legacy iOS */
+	font-display: swap;
+	font-weight: 700;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'UTM Avo';
+	src: url('../fonts/UTMAvoBoldItalic.eot');
+	/* IE9 Compat Modes */
+	src: url('../fonts/UTMAvoBoldItalic.eot?#iefix') format('embedded-opentype'),
+		/* IE6-IE8 */
+		url('../fonts/UTMAvoBoldItalic.woff2') format('woff2'),
+		/* Modern Browsers */
+		url('../fonts/UTMAvoBoldItalic.woff') format('woff'),
+		/* Modern Browsers */
+		url('../fonts/UTMAvoBoldItalic.ttf') format('truetype'),
+		/* Safari, Android, iOS */
+		url('../fonts/UTMAvoBoldItalic.svg') format('svg');
+	/* Legacy iOS */
+	font-display: swap;
+	font-weight: 700;
+	font-style: italic;
+}
+
+@font-face {
+	font-family: 'UTM Avo';
+	src: url('../fonts/UTMAvoItalic.eot');
+	/* IE9 Compat Modes */
+	src: url('../fonts/UTMAvoItalic.eot?#iefix') format('embedded-opentype'),
+		/* IE6-IE8 */
+		url('../fonts/UTMAvoItalic.woff2') format('woff2'),
+		/* Modern Browsers */
+		url('../fonts/UTMAvoItalic.woff') format('woff'),
+		/* Modern Browsers */
+		url('../fonts/UTMAvoItalic.ttf') format('truetype'),
+		/* Safari, Android, iOS */
+		url('../fonts/UTMAvoItalic.svg') format('svg');
+	/* Legacy iOS */
+	font-display: swap;
+	font-weight: 400;
+	font-style: italic;
 }
