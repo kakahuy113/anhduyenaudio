@@ -58,7 +58,6 @@ class Tab {
 		this.activeFirstTab();
 	}
 }
-
 // SLIDER BANNER
 function homeSliderBanner() {
 	var swpier = new Swiper('.slider-HomeBanner', {
@@ -349,12 +348,9 @@ $(document).ready(function () {
 	sliderTheSameProduct();
 	cartQuantity();
 	toggleFormAddNewAddress();
-<<<<<<< HEAD
 	getDataBar();
 	likeComment();
-=======
 	const recruitmentTab = new Tab(".job-position .tab-container")
->>>>>>> 4550a2eaf453cea8f8ba7b62cd3b78faa03bb5ea
 })
 
 
