@@ -1,71 +1,66 @@
-.list-product {
-	margin-top: 5px;
+.list-item-product {
+	margin: 0 -13px -12px;
 
-	.list-item-product {
-		margin: 0 -13px -12px;
+	.item-list-pro {
+		margin-bottom: 47px;
+		padding      : 0 13px !important;
 
-		.item-list-pro {
-			margin-bottom: 47px;
-			padding      : 0 13px !important;
+		figure {
+			.box-img {
+				display        : flex;
+				align-items    : center;
+				justify-content: center;
+				overflow       : hidden;
+				max-width      : 235px;
+				height         : 235px;
 
-			figure {
-				.box-img {
-					display        : flex;
-					align-items    : center;
-					justify-content: center;
-					overflow       : hidden;
-					max-width      : 235px;
-					height         : 235px;
+				img {
+					max-width : 100%;
+					height    : auto;
+					object-fit: cover;
+				}
+			}
 
-					img {
-						max-width : 100%;
-						height    : auto;
-						object-fit: cover;
-					}
+			figcaption {
+				h3 {
+					font-size    : 15px;
+					color        : #D82F25;
+					font-weight  : 400;
+					margin-bottom: 15px;
 				}
 
-				figcaption {
-					h3 {
-						font-size    : 15px;
-						color        : #D82F25;
-						font-weight  : 400;
-						margin-bottom: 15px;
-					}
+				p {
+					font-size    : 12px;
+					color        : #949494;
+					margin-bottom: 10px;
 
-					p {
-						font-size    : 12px;
-						color        : #949494;
-						margin-bottom: 10px;
+					overflow          : hidden;
+					display           : -webkit-box;
+					-webkit-line-clamp: 3;
+					-webkit-box-orient: vertical;
+				}
 
-						overflow          : hidden;
-						display           : -webkit-box;
-						-webkit-line-clamp: 3;
-						-webkit-box-orient: vertical;
-					}
-
-					span {
-						display      : block;
-						font-size    : 15px;
-						color        : #1C1C1C;
-						text-align   : center;
-						padding      : 3px 0;
-						border       : 1px solid #DFDFDF;
-						border-radius: 30px;
-					}
+				span {
+					display      : block;
+					font-size    : 15px;
+					color        : #1C1C1C;
+					text-align   : center;
+					padding      : 3px 0;
+					border       : 1px solid #DFDFDF;
+					border-radius: 30px;
 				}
 			}
 		}
 	}
+}
 
-	.quantity {
-		display: flex;
-		height : 75px;
+.quantity {
+	display: flex;
+	height : 75px;
 
-		p {
-			margin-left: auto;
-			color      : #888888;
-			font-size  : 14px;
-		}
+	p {
+		margin-left: auto;
+		color      : #888888;
+		font-size  : 14px;
 	}
-
 }
