@@ -136,7 +136,7 @@ sup {
 }
 
 a {
-	color: #007bff;
+	color: #1c1c1c;
 	text-decoration: none;
 	background-color: transparent;
 }
@@ -344,6 +344,12 @@ template {
 .d-none,
 .hidden {
 	display: none !important;
+}
+
+.clear-fix:before {
+	content: '';
+	clear: both;
+	display: block;
 }
 
 .ofc {

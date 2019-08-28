@@ -1,0 +1,23 @@
+.about-section {
+	.about-title {
+		margin-bottom: 20px;
+	}
+
+	.content {
+		font-size: 16px;
+
+		p,
+		ul {
+			margin-bottom: 10px;
+		}
+	}
+}
+
+.about-2 {
+	padding-top: 90px;
+
+	.row {
+		justify-content: center;
+		align-items: center;
+	}
+}

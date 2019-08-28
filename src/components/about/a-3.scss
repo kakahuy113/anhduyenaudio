@@ -1,0 +1,26 @@
+.about-3 {
+	background: #F6F6F6;
+	padding: 60px 0;
+
+	.row {
+		justify-content: center;
+	}
+
+	.img-grid {
+		margin: 0 -5px;
+		display: flex;
+		flex-wrap: wrap;
+
+		.img {
+			padding: 0 5px;
+			flex: 0 0 50%;
+			max-width: 100%;
+
+			&:nth-child(3) {
+				margin-top: 10px;
+				flex: 0 0 100%;
+				max-width: 100%;
+			}
+		}
+	}
+}
