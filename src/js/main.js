@@ -354,7 +354,6 @@ function countDownSale() {
 	}, 1000);
 
 }
-
 const clickThenScrollToSection = () => {
 	let aboutNavItemNodeList = document.querySelectorAll(".about-nav .item")
 	if (aboutNavItemNodeList) {

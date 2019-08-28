@@ -5,8 +5,8 @@ block var
 	- var bodyClass = 'list-product-page'
 
 block main
+	include ../components/breadcrumb/breadcrumb.pug
 	section.product-detail
-		include ../components/breadcrumb/breadcrumb.pug
 		include ../components/product/summary.pug
 		include ../components/product/tabs-info.pug
 		include ../components/product/the-same.pug
