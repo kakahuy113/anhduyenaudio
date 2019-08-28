@@ -1,0 +1,16 @@
+extends _layout/_layout.pug
+
+block var
+	- var title = 'Anh Duyên | Sản Phẩm Khuyến Mãi'
+	- var bodyClass = 'product-sale-page'
+
+block main
+	section.saleOff-product
+		.container
+			include ../components/banner/b-3.pug
+				.row.no-gutters.list-item-product
+					-for(i=1;i<16;i++)
+						.col-lg-20.col-6.item-list-pro.bg-white
+							include ../components/product/item.pug
+							+imgProduct(i)
+			include ../components/_global/pagination.pug

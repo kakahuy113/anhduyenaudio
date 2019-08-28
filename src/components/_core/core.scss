@@ -16,29 +16,29 @@ html {
 }
 
 ::-webkit-scrollbar-track {
-	box-shadow: inset 0 0 6px rgba(255, 255, 255, 0);
+	box-shadow      : inset 0 0 6px rgba(255, 255, 255, 0);
 	background-color: #fff;
 }
 
 ::-webkit-scrollbar {
-	width: 5px;
-	height: 5px;
+	width           : 5px;
+	height          : 5px;
 	background-color: #fff;
 }
 
 ::-webkit-scrollbar-thumb {
-	border-radius: 2.5px;
-	box-shadow: inset 0 0 6px rgba(255, 255, 255, 0);
+	border-radius   : 2.5px;
+	box-shadow      : inset 0 0 6px rgba(255, 255, 255, 0);
 	background-color: #D82F25;
 }
 
 .main-title {
-	margin: 0 auto;
-	display: inline-block;
-	color: #000000;
+	margin     : 0 auto;
+	display    : inline-block;
+	color      : #000000;
 	font-weight: 700;
-	font-size: 21px;
-	cursor: pointer;
+	font-size  : 21px;
+	cursor     : pointer;
 
 	&.active {
 		border-bottom: #D82F25 .5px solid;
@@ -46,24 +46,24 @@ html {
 }
 
 .block-title {
-	position: relative;
-	text-align: center;
-	background: #ffffff;
-	padding: 20px 0 25px;
+	position     : relative;
+	text-align   : center;
+	background   : #ffffff;
+	padding      : 20px 0 25px;
 	border-radius: 5px 5px 0 0;
 	border-bottom: 1px #70707050 solid;
 
 	&.sale-hot {
 		&::after {
-			content: '';
-			display: block;
-			position: absolute;
-			height: 100%;
-			width: 1px;
+			content   : '';
+			display   : block;
+			position  : absolute;
+			height    : 100%;
+			width     : 1px;
 			background: #70707050;
-			top: 0;
-			left: 50%;
-			transform: translateX(-50%);
+			top       : 0;
+			left      : 50%;
+			transform : translateX(-50%);
 		}
 
 	}
@@ -74,19 +74,19 @@ html {
 	margin-bottom: 15px;
 
 	.star {
-		position: relative;
-		margin-right: 5px;
+		position        : relative;
+		margin-right    : 5px;
 		background-image: url(../img/icons/star-nofull.svg);
-		width: 18px;
-		height: 17px;
-		cursor: pointer;
-		background-size: cover;
+		width           : 18px;
+		height          : 17px;
+		cursor          : pointer;
+		background-size : cover;
 
 		.number-star {
-			position: absolute;
+			position        : absolute;
 			background-image: url(../img/icons/star-full.svg);
-			width: 100%;
-			height: 100%;
+			width           : 100%;
+			height          : 100%;
 		}
 	}
 }
