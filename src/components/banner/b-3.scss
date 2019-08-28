@@ -2,9 +2,45 @@
 	margin-top: 17px;
 
 	figure {
+		position: relative;
+
 		.box-img {
 			img {
 				width: 100%;
+			}
+		}
+
+		.box-countdown {
+			position : absolute;
+			display  : flex;
+			bottom   : 70px;
+			left     : 50%;
+			transform: translateX(-50%);
+
+			.block {
+				display        : flex;
+				justify-content: center;
+				align-items    : center;
+				width          : 210px;
+				height         : 85px;
+				background     : rgba($color: #888888, $alpha: .3);
+				border-radius  : 5px;
+				margin         : 0 10px;
+
+				#hours,
+				#minutes,
+				#seconds {
+					color      : #FFFFFF;
+					font-size  : 30px;
+					font-weight: 700;
+				}
+
+				span {
+					font-size  : 30px;
+					margin-left: 30px;
+					font-weight: 400;
+					color      : #888888;
+				}
 			}
 		}
 	}

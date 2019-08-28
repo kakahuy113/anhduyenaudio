@@ -197,13 +197,11 @@ function dataStartRanking() {
 	let dataStart = $('.product-cart .ranking .number-start').attr('data-start');
 	let numberStart = $('.product-cart .ranking .number-start');
 }
-
 const toggleAddNewsAddressItem = () => {
 	$(".add-news-address").on("click", function () {
 		$(".add-new-address-form").slideToggle();
 	})
 }
-
 const getInformationToEdit = () => {
 	$(".address-edit").on("click", function () {
 		var name = $(this).parents(".address-item").find("[data-name]").attr("data-name")
@@ -216,25 +214,24 @@ const getInformationToEdit = () => {
 		$(".add-new-address-form").slideDown()
 	})
 }
-
 function productQuantity() {
-	$("[data-quantity]").each(function() {
+	$("[data-quantity]").each(function () {
 		let thisInput = $(this);
-		$(this).siblings(".minus").on("click", function() {
+		$(this).siblings(".minus").on("click", function () {
 			if (thisInput.val() <= 0) {
 				thisInput.val(0);
 			} else {
 				thisInput.val(thisInput.val() - 1)
 			}
 		})
-		$(this).siblings(".plus").on("click", function() {
+		$(this).siblings(".plus").on("click", function () {
 			thisInput.val(parseInt(thisInput.val()) + 1)
 		})
 	})
 }
 // CHỌN MÀU SẢN PHẨM
 function chooesColor() {
-	$('.chooes-quantity-color .color').click(function(e) {
+	$('.chooes-quantity-color .color').click(function (e) {
 		e.preventDefault();
 
 		$(".chooes-quantity-color .color").removeClass('active')
@@ -243,7 +240,7 @@ function chooesColor() {
 }
 // TABS THÔNG TIN SẢN PHẨM
 function tabsProductDetail() {
-	$('.tabs-info-product .list-tabs .item').click(function(e) {
+	$('.tabs-info-product .list-tabs .item').click(function (e) {
 		e.preventDefault();
 		$('.tabs-info-product .list-tabs .item').removeClass('active');
 		$(this).addClass('active');
@@ -321,6 +318,42 @@ function likeComment() {
 		}
 	});
 }
+function countDownSale() {
+	// Set the date we're counting down to
+	var countDownDate = new Date("Sep 30, 2019 23:59:59").getTime();
+
+	// Update the count down every 1 second
+	var x = setInterval(function () {
+		// Get today's date and time
+		var now = new Date().getTime();
+
+		// Find the distance between now and the count down date
+		var distance = countDownDate - now;
+
+		// Time calculations for days, hours, minutes and seconds
+
+		// var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+		var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+		var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+		var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+		// Display the result in the element with id="demo"
+		try {
+			// document.getElementById("days").innerHTML = days;
+			document.getElementById("hours").innerHTML = hours;
+			document.getElementById("minutes").innerHTML = minutes;
+			document.getElementById("seconds").innerHTML = seconds;
+			// If the count down is finished, write some text 
+			if (distance < 0) {
+				clearInterval(x);
+				document.getElementById("demo").innerHTML = "EXPIRED";
+			}
+		} catch (error) {
+
+		}
+	}, 1000);
+
+}
 
 
 $(document).ready(function () {
@@ -345,11 +378,12 @@ $(document).ready(function () {
 	toggleFormAddNewAddress();
 	getDataBar();
 	likeComment();
-	const recruitmentTab = new Tab(".job-position .tab-container")
+	const recruitmentTab = new Tab(".job-position .tab-container");
+	countDownSale();
 })
 
 
-$(document).ajaxComplete(function() {
+$(document).ajaxComplete(function () {
 	addClassLazyload();
 	cartQuantity();
 })
