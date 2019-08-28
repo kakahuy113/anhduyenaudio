@@ -355,6 +355,24 @@ function countDownSale() {
 
 }
 
+const clickThenScrollToSection = () => {
+	let aboutNavItemNodeList = document.querySelectorAll(".about-nav .item")
+	if (aboutNavItemNodeList) {
+		Array.prototype.forEach.call(aboutNavItemNodeList, element => {
+			element.addEventListener("click", e => {
+				e.preventDefault();
+				let targetBlock = document.getElementById(element.attributes["data-href"].value);
+				// let scrollPosition = targetBlock.offsetTop - document.querySelector("header").offsetHeight
+				let scrollPosition = targetBlock.offsetTop
+				window.scrollTo({
+					top: scrollPosition,
+					behavior: "smooth",
+				})
+			})
+		})
+	}
+}
+
 
 $(document).ready(function () {
 	objectFitImages("img.ofc"); // Luôn luôn chậy polyfill cho thuôc tính object-fit: cover trên các phiên bản IE >= 9
@@ -376,6 +394,7 @@ $(document).ready(function () {
 	sliderTheSameProduct();
 	cartQuantity();
 	toggleFormAddNewAddress();
+	clickThenScrollToSection();
 	getDataBar();
 	likeComment();
 	const recruitmentTab = new Tab(".job-position .tab-container");
