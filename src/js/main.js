@@ -129,19 +129,6 @@ function clientSlider() {
 		},
 	})
 }
-// TAB SALE AND HOT PRODUCT
-function tabsSaleHot() {
-	$(".product-sale-hot #tabs h2").click(function (e) {
-		e.preventDefault();
-		let tabName = $(this).attr('data-tab');
-		// ACTIVE TITLE
-		$('.product-sale-hot #tabs h2').removeClass('active');
-		$(this).addClass('active');
-		// ACTIVE TABS
-		$('.product-sale-hot .tab-content').removeClass('active');
-		$("#" + tabName).addClass('active');
-	});
-}
 // SUBMENU CATEGORY
 function submenuCategory() {
 	$(".category-list .item-category h3").on('click', function () {
@@ -249,19 +236,7 @@ function chooesColor() {
 		$(this).addClass('active');
 	});
 }
-// TABS THÔNG TIN SẢN PHẨM
-function tabsProductDetail() {
-	$('.tabs-info-product .list-tabs .item').click(function (e) {
-		e.preventDefault();
-		$('.tabs-info-product .list-tabs .item').removeClass('active');
-		$(this).addClass('active');
 
-		$('.tabs-info-product .content-tabs').removeClass('active');
-		let tabName = $(this).find('a').attr('data-tab');
-		$("#" + tabName).addClass('active');
-
-	});
-}
 function sliderTheSameProduct() {
 	var swiper = new Swiper(".the-same-product-slider .swiper-container", {
 		slidesPerView: 4,
@@ -401,6 +376,7 @@ function introduceSliderBanner() {
 	});
 }
 
+
 $(document).ready(function () {
 	objectFitImages("img.ofc"); // Luôn luôn chậy polyfill cho thuôc tính object-fit: cover trên các phiên bản IE >= 9
 	addClassLazyload(); // Luôn luôn addClass lazyload cho các hình ảnh có thuộc tính [data-src]
@@ -408,7 +384,6 @@ $(document).ready(function () {
 	productSlider();
 	brandSlider();
 	clientSlider();
-	tabsSaleHot();
 	submenuCategory();
 	submenuCategoryDetail();
 	imgProductSlider();
@@ -416,7 +391,6 @@ $(document).ready(function () {
 	getInformationToEdit();
 	dataStartRanking();
 	chooesColor();
-	tabsProductDetail();
 	sliderTheSameProduct();
 	cartQuantity();
 	toggleFormAddNewAddress();
@@ -424,6 +398,9 @@ $(document).ready(function () {
 	getDataBar();
 	likeComment();
 	const recruitmentTab = new Tab(".job-position .tab-container");
+	const FaQTab = new Tab(".FaQ .tab-container");
+	const ProductDetailTab = new Tab(".tabs-info-product .tab-container");
+	const SaleHotTab = new Tab(".product-sale-hot .tab-container");
 	countDownSale();
 	introduceSliderBanner();
 })

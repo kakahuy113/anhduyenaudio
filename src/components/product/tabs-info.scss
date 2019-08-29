@@ -31,7 +31,7 @@
 				display: block;
 			}
 
-			&#description {
+			&[tab-id="description"] {
 				padding-bottom: 30px;
 
 				p {
@@ -48,7 +48,7 @@
 				}
 			}
 
-			&#thongsokythuat {
+			&[tab-id="thongsokythuat"] {
 				padding-bottom: 60px;
 
 				table {
@@ -76,7 +76,7 @@
 				}
 			}
 
-			&#comment {
+			&[tab-id="comment"] {
 				.block-rating {
 					display       : flex;
 					flex-wrap     : wrap;
