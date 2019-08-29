@@ -1,0 +1,92 @@
+.dealer-locator {
+	padding-bottom: 30px;
+
+	.map-search {
+		.form-group {
+			margin-bottom: 5px;
+		}
+
+		input[type="text"],
+		select {
+			height: 45px;
+			width: 100%;
+			background: #ffffff;
+			border-radius: 5px;
+			border: 0;
+			padding: 7px 14px;
+			color: #949494;
+		}
+	}
+
+	.map-list {
+		margin-top: 20px;
+
+		h2 {
+			text-transform: uppercase;
+			height: 40px;
+			background: #1c1c1c;
+			color: white;
+			font-size: 15px;
+			border-radius: 5px;
+			padding: 10px;
+		}
+	}
+
+	.map-item {
+		cursor: pointer;
+
+		&:not(:first-child) {
+			border-top: 1px solid #DFDFDF;
+			margin-top: 10px;
+			padding-top: 10px;
+		}
+
+		h4 {
+			font-size: 15px;
+			font-weight: 400;
+			color: map-get($mau, main);
+			margin-bottom: 7px;
+		}
+
+		p {
+			color: #949494;
+			margin-bottom: 5px;
+		}
+	}
+
+	#map {
+		height: 560px;
+	}
+
+	#map-list {
+		max-height: 305px;
+		overflow: auto;
+		background: white;
+		padding: 15px;
+	}
+
+	@media (max-width: 1024.98px) {
+		padding-top: 20px;
+		padding-bottom: 0px;
+
+		.block-title-3 {
+			text-align: center;
+		}
+
+		#map-list {
+			max-height: 340px;
+			box-shadow: 0 3px 6px rgba(black, .16);
+		}
+
+		#map {
+			height: 350px;
+			margin-top: 20px;
+		}
+	}
+
+	@media (max-width: 767.98px) {
+		#map {
+			margin: 20px -10px 0 -10px;
+		}
+	}
+}

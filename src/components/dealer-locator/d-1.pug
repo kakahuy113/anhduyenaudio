@@ -1,0 +1,32 @@
+.dealer-locator
+	.container
+		.row
+			.col-lg-5
+				h2.block-title-3 Tìm cửa hàng
+				.map-search
+					.form-group
+						input#searchmap(placeholder="Cửa hàng của bạn" type="text")
+					.form-group
+						select#province
+							option option 1
+							option option 2
+							option option 3
+					.form-group
+						select#district
+							option option 1
+							option option 2
+							option option 3
+				.map-list
+					h2 Hệ thống cửa hàng
+					#map-list
+						.map-item(onclick="myClick(0)")
+							h4 Công ty TNHH VIDIA
+							p Địa chỉ: 207 Tân Phước, P.6, Q.10, Tp. HCM
+						.map-item(onclick="myClick(1)")
+							h4 Efficitur porttitor 
+							p Địa chỉ: 207 Tân Phước, P.6, Q.10, Tp. HCM
+						.map-item(onclick="myClick(2)")
+							h4 Diam quisque 
+							p Địa chỉ: 207 Tân Phước, P.6, Q.10, Tp. HCM
+			.col-lg
+				#map
