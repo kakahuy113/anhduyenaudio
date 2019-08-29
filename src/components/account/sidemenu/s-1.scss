@@ -1,12 +1,20 @@
 .user-sidemenu-wrapper {
 	padding: 0 10px;
 	background: map-get($mau, trang);
-	;
 	border-radius: 5px;
 	min-width: 260px;
 
 	@media (max-width: 1024.98px) {
-		margin-bottom: 15px;
+		position: fixed;
+		z-index: 1;
+		bottom: 0;
+		left: 0;
+		width: 100%;
+		box-shadow: 0 0 5px rgba(0, 0, 0, .1);
+		display: flex;
+		justify-content: space-between;
+		border-radius: 0;
+		padding: 0;
 	}
 }
 
@@ -14,6 +22,14 @@
 	display: flex;
 	align-items: center;
 	padding: 15px 0;
+
+	@media (max-width: 1024.98px) {
+		padding: 0;
+	}
+
+	@media (max-width: 1024.98px) {
+		display: none;
+	}
 
 	.info {
 		flex-basis: 0;
@@ -36,6 +52,21 @@
 .user-nav {
 	padding: 15px 10px;
 	border-top: 1px dotted map-get($mau, xam-1);
+
+	@media (max-width: 1024.98px) {
+		width: 100%;
+		border-top: 0;
+		padding: 0;
+	}
+
+	ul {
+		@media (max-width: 1024.98px) {
+			margin: 0 auto;
+			display: flex;
+			border-top: 1px solid #ffffff;
+			justify-content: center;
+		}
+	}
 
 	li {
 		margin-bottom: 5px;
@@ -73,17 +104,18 @@
 				flex-grow: 1;
 				max-width: 100%;
 				margin-left: 10px;
-			}
-		}
 
-		&:hover {
-			a {
-				background: rgba(map-get($mau, den), .85);
-				border-radius: 15px;
-
-				span {
-					color: map-get($mau, trang);
+				@media (max-width: 1024.98px) {
+					display: none;
 				}
+			}
+
+			@media (max-width: 1024.98px) {
+				justify-content: center;
+				width: 45px;
+				max-width: 45px;
+				height: 45px;
+				margin: 0 auto;
 
 				svg {
 					.fill {
@@ -98,26 +130,78 @@
 			}
 		}
 
-		&.active {
-			a {
-				background: map-get($mau, den);
-				border-radius: 15px;
+		@media (max-width: 1024.98px) {
+			margin-bottom: 0;
+			flex-basis: 0;
+			flex-grow: 1;
+			max-width: 100%;
+			background: #1c1c1c;
+			border-left: .5px solid rgba(#1c1c1c, .2);
+			border-right: .5px solid rgba(#1c1c1c, .2);
 
-				span {
-					color: map-get($mau, trang);
-				}
+			&.active {
+				background: #ffffff;
 
-				svg {
-					.fill {
-						fill: map-get($mau, trang);
-					}
+				a {
+					svg {
+						.fill {
+							fill: map-get($mau, den);
+						}
 
-					.stroke {
-						fill: none;
-						stroke: map-get($mau, trang);
+						.stroke {
+							fill: none;
+							stroke: map-get($mau, den);
+						}
 					}
 				}
 			}
+		}
+
+		@media (min-width: 1025px) {
+			&:hover {
+				a {
+					background: rgba(map-get($mau, den), .85);
+					border-radius: 15px;
+
+					span {
+						color: map-get($mau, trang);
+					}
+
+					svg {
+						.fill {
+							fill: map-get($mau, trang);
+						}
+
+						.stroke {
+							fill: none;
+							stroke: map-get($mau, trang);
+						}
+					}
+				}
+			}
+
+			&.active {
+				a {
+					background: map-get($mau, den);
+					border-radius: 15px;
+
+					span {
+						color: map-get($mau, trang);
+					}
+
+					svg {
+						.fill {
+							fill: map-get($mau, trang);
+						}
+
+						.stroke {
+							fill: none;
+							stroke: map-get($mau, trang);
+						}
+					}
+				}
+			}
+
 		}
 	}
 }

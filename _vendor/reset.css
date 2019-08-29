@@ -221,6 +221,7 @@ select,
 optgroup,
 textarea {
 	margin: 0;
+	font-family: inherit;
 }
 
 button,

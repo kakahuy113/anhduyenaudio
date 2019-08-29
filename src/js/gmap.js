@@ -153,7 +153,7 @@ var mapOptions = {
 		}]
 	}]
 }
-var locations = inputLocations;
+var locations;
 var listMarkerInViewPortHtml = "";
 
 function getLocationInViewPort(map, markers, locations) {
@@ -171,7 +171,7 @@ function getLocationInViewPort(map, markers, locations) {
 
 function initialize() {
 	if (document.getElementById("map")) {
-
+		locations = inputLocations;
 		var map = new google.maps.Map(document.getElementById("map"), mapOptions);
 		var infowindow = new google.maps.InfoWindow();
 		var bounds = new google.maps.LatLngBounds();
@@ -219,9 +219,11 @@ function initialize() {
 					<p><b>Điện thoại:</b>  ${locationElement.phone}</p>
 				</div>
 			`;
-			document.getElementById("map-list").innerHTML = listMarkerInViewPortHtml
 
-			markers.push(marker);
+			if (document.getElementById("map-list")) {
+				document.getElementById("map-list").innerHTML = listMarkerInViewPortHtml
+				markers.push(marker);
+			}
 		})
 
 		if (document.getElementById("map-list")) {

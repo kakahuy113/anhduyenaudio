@@ -7,6 +7,10 @@
 .account {
 	padding-bottom: 45px;
 
+	@media (max-width: 1024.98px) {
+		padding-top: 30px;
+	}
+
 	.form-group {
 		display: flex;
 		align-items: flex-start;
@@ -61,6 +65,10 @@
 		label {
 			line-height: 40px;
 			font-size: 14px;
+
+			@media (max-width: 1024.98px) {
+				line-height: 1.5;
+			}
 		}
 
 		.form-radio {
@@ -76,7 +84,7 @@
 					height: 14px;
 					width: 14px;
 					left: 0;
-					top: 13px;
+					top: 1px;
 					border-radius: 50%;
 					border: 1px solid map-get($mau, xam-1);
 				}

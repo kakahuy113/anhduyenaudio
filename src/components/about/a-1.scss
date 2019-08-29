@@ -1,6 +1,10 @@
 .about-nav {
 	padding: 25px 0;
 
+	@media (max-width: 1024.98px) {
+		display: none;
+	}
+
 	nav {
 		display: flex;
 		justify-content: center;

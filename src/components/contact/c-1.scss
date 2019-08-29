@@ -73,7 +73,7 @@
 				width: 100%;
 				resize: none;
 				height: 135px;
-				padding: 7px 0;
+				padding: 10px 0;
 			}
 		}
 
@@ -86,6 +86,19 @@
 				height: 35px;
 				border-radius: 15px;
 			}
+		}
+	}
+
+	@media (max-width: 1024.98px) {
+		padding-bottom: 30px;
+
+		.imgbox,
+		.content {
+			display: none;
+		}
+
+		.contact-form {
+			padding-top: 20px;
 		}
 	}
 }
@@ -110,5 +123,15 @@
 		height: 800px;
 	}
 
+	@media (max-width: 1024.98px) {
+		#map {
+			height: 450px
+		}
+	}
 
+	@media (max-width: 767.98px) {
+		#map {
+			height: 275px
+		}
+	}
 }

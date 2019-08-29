@@ -23,4 +23,21 @@
 			}
 		}
 	}
+
+	@media (max-width: 1024.98px) {
+		padding-top: 20px;
+		padding-bottom: 10px;
+
+		.col-lg:first-child {
+			order: 3
+		}
+
+		.col-lg:last-child {
+			order: 1
+		}
+
+		.col-lg-1 {
+			display: none;
+		}
+	}
 }

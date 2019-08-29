@@ -6,6 +6,7 @@
 	.bill-list-table {
 		width: 100%;
 		border-bottom: 1px solid map-get($mau, xam-2);
+
 		tr {
 			td {
 				border-top: 1px solid map-get($mau, xam-2);
@@ -31,6 +32,14 @@
 			&:nth-child(4) {
 				width: 130px;
 				text-align: center;
+
+				span:first-child {
+					color: #888888;
+
+					@media (min-width: 1025px) {
+						display: none;
+					}
+				}
 			}
 
 			&:last-child {
@@ -45,6 +54,7 @@
 			&:nth-child(2),
 			&:nth-child(4) {
 				color: map-get($mau, main);
+
 
 				a {
 					color: inherit;
@@ -63,45 +73,56 @@
 		}
 
 		@media (max-width: 1024.98px) {
-			min-width: 1000px;
-			// display: block;
+			// min-width: 1000px;
+			display: block;
 
-			// thead {
-			// 	display: none;
-			// }
+			thead {
+				display: none;
+			}
 
-			// tbody {
-			// 	display: block;
-			// }
+			tbody {
+				display: block;
+			}
 
-			// tr {
-			// 	display: block;
-			// 	position: relative;
-			// 	padding: 20px 40px 20px 20px;
+			tr {
+				display: block;
+				position: relative;
+				padding: 15px;
 
-			// 	td {
-			// 		display: block;
-			// 		height: auto;
-			// 		width: auto !important;
-			// 		border: 0 !important;
-			// 		padding: 0 0 !important;
+				td {
+					display: block;
+					height: auto;
+					width: auto !important;
+					border: 0 !important;
+					padding: 0 0 !important;
+					min-height: unset;
 
-			// 		&:last-child {
-			// 			position: absolute;
-			// 			top: 50%;
-			// 			right: 10px;
-			// 			transform: translateY(-50%);
+					&:last-child {
+						position: absolute;
+						bottom: 0%;
+						right: 15px;
+						transform: translateY(-50%);
 
-			// 			span:last-child {
-			// 				display: none;
-			// 			}
-			// 		}
-			// 	}
+						span:last-child {
+							display: none;
+						}
+					}
 
-			// 	&:nth-child(even) {
-			// 		background: map-get($mau, xam-2);
-			// 	}
-			// }
+					&:first-child {
+						margin-bottom: 10px;
+					}
+
+					&:nth-child(2),
+					&:nth-child(3),
+					&:nth-child(4) {
+						text-align: left;
+					}
+				}
+
+				&:nth-child(even) {
+					background: map-get($mau, xam-2);
+				}
+			}
 		}
 	}
 }

@@ -14,11 +14,11 @@ a:hover {
 	margin-left: auto;
 }
 
-@media (min-width: 768px) {
+/* @media (min-width: 768px) {
 	.container {
 		max-width: 740px;
 	}
-}
+} */
 
 @media (min-width: 1025px) {
 	.container {

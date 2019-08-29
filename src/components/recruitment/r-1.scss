@@ -9,20 +9,41 @@
 		img {
 			width: 100%;
 		}
+
+		@media (max-width: 1024.98px) {
+			display: none;
+		}
 	}
 
 	.content {
 		font-size: 16px;
+
+		@media (max-width: 1024.98px) {
+			font-size: 14px;
+			text-align: justify;
+		}
+
+		@media (max-width: 767.98px) {
+			font-size: 12px;
+		}
 
 		p,
 		ul {
 			margin-bottom: 15px;
 		}
 	}
+
+	@media (max-width: 1024.98px) {
+		padding-top: 20px;
+	}
 }
 
 .job-position {
 	margin-top: 40px;
+
+	@media (max-width: 1024.98px) {
+		padding-bottom: 30px;
+	}
 
 	.block-title-2 {
 		margin-bottom: 20px;
@@ -44,6 +65,19 @@
 			color: map-get($mau, main);
 			text-decoration: underline;
 		}
+
+		@media (max-width: 1024.98px) {
+			font-size: 19px;
+		}
+
+		@media (max-width: 767.98px) {
+			font-size: 14px;
+			justify-content: flex-start;
+
+			img {
+				max-width: 24px;
+			}
+		}
 	}
 
 	.tab-container {
@@ -53,21 +87,31 @@
 			.item {
 				flex: 0 0 240px;
 				max-width: 240px;
-				height: 45px;
 				display: flex;
 				justify-content: center;
 				align-items: center;
 				font-size: 18px;
 				border-radius: 5px;
-				border: 1px solid #F5F5F5;
 				background: white;
-				box-shadow: 0px 3px 6px rgba(black, .07);
 				margin-right: 12px;
-				transition: all .3s cubic-bezier(.2, .5, .5, .8);
+
+				@media (min-width: 1025px) {
+					height: 45px;
+					border: 1px solid #F5F5F5;
+					transition: all .3s cubic-bezier(.2, .5, .5, .8);
+					box-shadow: 0px 3px 6px rgba(black, .07);
+				}
 
 				@media (max-width: 1199.98px) {
 					max-width: 200px;
 					flex: 0 0 200px;
+				}
+
+				@media (max-width: 1024.98px) {
+					flex-basis: 0;
+					flex-grow: 1;
+					max-width: 100%;
+					font-size: 15px;
 				}
 
 				&.active {
@@ -90,10 +134,27 @@
 			.content {
 				font-size: 16px;
 
+				@media (max-width: 1024.98px) {
+					font-size: 14px;
+				}
+
+				@media (max-width: 767.98px) {
+					font-size: 12px;
+				}
+
 				p,
 				ul {
 					margin-bottom: 10px;
 				}
+			}
+
+			@media (max-width: 1024.98px) {
+				padding: 30px;
+				margin: 10px -10px 0 -10px;
+			}
+
+			@media (max-width: 767.98px) {
+				padding: 15px;
 			}
 		}
 	}
@@ -101,6 +162,10 @@
 
 .recruitment-contact {
 	padding-bottom: 40px;
+
+	@media (max-width: 1024.98px) {
+		display: none;
+	}
 
 	.block-title-2 {
 		margin-bottom: 15px;

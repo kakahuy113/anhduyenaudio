@@ -5,4 +5,9 @@
 	.row {
 		justify-content: center;
 	}
+
+	@media (max-width: 1024.98px) {
+		padding-top: 20px;
+		padding-bottom: 10px;
+	}
 }
