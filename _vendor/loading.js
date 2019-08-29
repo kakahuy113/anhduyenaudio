@@ -2,6 +2,7 @@
 	function id(v) {
 		return document.getElementById(v)
 	}
+
 	function loadbar() {
 		var ovrl = id("loading"),
 			prog = id("progress"),
@@ -19,6 +20,7 @@
 		function doneLoading() {
 			ovrl.style.opacity = 0, setTimeout(function() {
 				ovrl.style.display = "none"
+				ovrl.parentNode.removeChild(ovrl)
 			}, 15e2)
 		}
 		for (var i = 0; i < tot; i++) {

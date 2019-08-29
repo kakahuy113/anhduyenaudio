@@ -1,13 +1,14 @@
 extends _layout/_layout.pug
 
 block var
-	- var title = 'Anh Duyên | Liển hệ'
-	- var bodyClass = 'contact-page bg-white'
+	- var title = 'Anh Duyên | Hệ thống cửa hàng'
+	- var bodyClass = 'dealer-locator-page'
 
 block main
 	include ../components/breadcrumb/breadcrumb.pug
-	include ../components/contact/c-1.pug
+	include ../components/dealer-locator/d-1.pug
 
+	
 
 block scripts
 	script.
@@ -24,7 +25,7 @@ block scripts
 			{
 				lat: 16.161979,
 				lng: 108.255886,
-				name: 'Showroom',
+				name: 'Showroom 1',
 				icon: "/img/circle.png",
 				address: '115 Lê Đình Dương, Tp.Đà Nẵng',
 				phone: '0236 3584 606',
@@ -33,7 +34,7 @@ block scripts
 			{
 				lat: 10.822517,
 				lng: 106.861143,
-				name: 'Showroom',
+				name: 'Showroom 2',
 				icon: "/img/circle.png",
 				address: '115 Lê Đình Dương, Tp.Đà Nẵng',
 				phone: '0236 3584 606',

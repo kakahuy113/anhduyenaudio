@@ -1,4 +1,6 @@
 .contact {
+	padding-bottom: 60px;
+
 	.row {
 		justify-content: center;
 	}
@@ -48,6 +50,15 @@
 				width: 100%;
 				padding-left: 110px;
 				border-bottom: 1px solid #DFDFDF;
+				position: relative;
+			}
+
+			.error {
+				position: absolute;
+				top: 6px;
+				right: 0;
+				width: auto;
+				color: red;
 			}
 
 			input[type="text"] {
@@ -65,9 +76,39 @@
 				padding: 7px 0;
 			}
 		}
-		.form-button{
+
+		.form-button {
 			display: flex;
 			justify-content: center;
+
+			.btn-main {
+				width: 120px;
+				height: 35px;
+				border-radius: 15px;
+			}
 		}
 	}
+}
+
+@keyframes markerBounce {
+	0% {
+		box-shadow: 0 0 0 0px rgba(map-get($mau, main), 1);
+	}
+
+	75% {
+		box-shadow: 0 0 0 22px rgba(map-get($mau, main), 0);
+	}
+
+	100% {
+		box-shadow: 0 0 0 22px rgba(map-get($mau, main), 0);
+
+	}
+}
+
+.contact-map {
+	#map {
+		height: 800px;
+	}
+
+
 }
