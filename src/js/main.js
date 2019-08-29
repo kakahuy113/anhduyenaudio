@@ -1,7 +1,7 @@
 // Function thêm class lazyload vào các thẻ <img> có thuộc tính [data-src]
 const addClassLazyload = () => {
 	let imgList = document.querySelectorAll("img[data-src]")
-	Array.prototype.forEach.call(imgList, function(el) {
+	Array.prototype.forEach.call(imgList, function (el) {
 		if (el.className.length > 0) {
 			el.className = el.className + " lazyload"
 		} else {
@@ -85,6 +85,14 @@ function productSlider() {
 		autoplay: true,
 		observer: true,
 		observeParents: true,
+		breakpoints: {
+			1024: {
+				slidesPerView: 3,
+			},
+			480: {
+				slidesPerView: 2,
+			}
+		},
 		pagination: {
 			el: '.product-slider .swiper-pagination',
 			clickable: true,
@@ -131,7 +139,7 @@ function clientSlider() {
 }
 // SUBMENU CATEGORY
 function submenuCategory() {
-	$(".category-list .item-category h3").on('click', function() {
+	$(".category-list .item-category h3").on('click', function () {
 		$(".category-list .item-category h3").not(this).siblings('.list-item').slideUp('active');
 
 		$(this).siblings(".list-item").slideToggle('active');
@@ -139,7 +147,7 @@ function submenuCategory() {
 }
 // SUBMENU CATEGORY DETAIL
 function submenuCategoryDetail() {
-	$(".category-list .item-category .list-item .item").on('click', function() {
+	$(".category-list .item-category .list-item .item").on('click', function () {
 
 		$(".category-list .item-category .list-item .item").not(this).find('.mdi-plus').removeClass('active');
 		$(".category-list .item-category .list-item .item").not(this).find('.child').slideUp('active');
@@ -211,12 +219,12 @@ function dataStartRanking() {
 	})
 }
 const toggleAddNewsAddressItem = () => {
-	$(".add-news-address").on("click", function() {
+	$(".add-news-address").on("click", function () {
 		$(".add-new-address-form").slideToggle();
 	})
 }
 const getInformationToEdit = () => {
-	$(".address-edit").on("click", function() {
+	$(".address-edit").on("click", function () {
 		var name = $(this).parents(".address-item").find("[data-name]").attr("data-name")
 		var address = $(this).parents(".address-item").find("[data-address]").attr("data-address")
 		var phone = $(this).parents(".address-item").find("[data-phone]").attr("data-phone")
@@ -258,14 +266,14 @@ function getDataBar() {
 	let dataBarNodeList = document.querySelectorAll('.statistical-rating .middle .bar');
 
 
-	Array.prototype.forEach.call(dataBarNodeList, function(e, index) {
+	Array.prototype.forEach.call(dataBarNodeList, function (e, index) {
 		const data = e.getAttribute('data-bar');
 		e.style.width = data + "%";
 	})
 }
 const cartQuantity = () => {
-	$('.quantity-input .minus').each(function() {
-		$(this).on("click", function() {
+	$('.quantity-input .minus').each(function () {
+		$(this).on("click", function () {
 			let curVal = Number($(this).siblings("input").val())
 			if (curVal <= 0) {
 				curVal = 0;
@@ -275,8 +283,8 @@ const cartQuantity = () => {
 			$(this).siblings("input").val(curVal)
 		})
 	})
-	$('.quantity-input .plus').each(function() {
-		$(this).on("click", function() {
+	$('.quantity-input .plus').each(function () {
+		$(this).on("click", function () {
 			let curVal = Number($(this).siblings("input").val())
 			if (curVal >= 99) {
 				curVal = 99;
@@ -288,13 +296,13 @@ const cartQuantity = () => {
 	})
 }
 const toggleFormAddNewAddress = () => {
-	$('.add-new-address').on('click', function() {
+	$('.add-new-address').on('click', function () {
 		$('.add-new-address-form').slideToggle();
 	})
 }
 
 function likeComment() {
-	$('.button-like-comment').click(function(e) {
+	$('.button-like-comment').click(function (e) {
 		e.preventDefault();
 		// console.log($(this).find('.like-comment').toggleClass('active'));
 		$(this).find('.like-comment').toggleClass('active');
@@ -401,7 +409,9 @@ $(document).ready(function () {
 	const recruitmentTab = new Tab(".job-position .tab-container");
 	const FaQTab = new Tab(".FaQ .tab-container");
 	const ProductDetailTab = new Tab(".tabs-info-product .tab-container");
-	const SaleHotTab = new Tab(".product-sale-hot .tab-container");
+	if ($(window).width() > 1024) {
+		const SaleHotTab = new Tab(".product-sale-hot .tab-container");
+	}
 	countDownSale();
 	introduceSliderBanner();
 })

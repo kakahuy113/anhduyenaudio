@@ -1,5 +1,5 @@
 .home-banner {
-	margin-top : 15px;
+	margin-top: 15px;
 
 	.slider-HomeBanner {
 		figure {
@@ -109,6 +109,40 @@
 				height    : 100%;
 				object-fit: cover;
 			}
+		}
+	}
+
+	@media(max-width: 1024px) {
+		margin-top: 0;
+
+		.container {
+			padding  : 0;
+		}
+
+		.left-banner {
+			display: none;
+		}
+
+		.slider-HomeBanner {
+			figure {
+				figcaption {
+					position: absolute;
+					color   : #9B9B9B !important;
+					top     : 30px;
+					left    : 25px;
+
+					.see-more {
+						display: none;
+					}
+				}
+			}
+		}
+
+	}
+
+	@media(max-width: 480px) {
+		.left-banner {
+			display: none;
 		}
 	}
 }

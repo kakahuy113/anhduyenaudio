@@ -119,4 +119,13 @@ footer {
 			margin-right: 35px;
 		}
 	}
+
+
+	@media(max-width: 1024px) {
+		.col-lg-4 {
+			&:after {
+				display: none;
+			}
+		}
+	}
 }
