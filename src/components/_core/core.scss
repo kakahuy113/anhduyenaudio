@@ -69,27 +69,72 @@ html {
 	}
 }
 
-.rating {
+// .rating {
+// 	display      : flex;
+// 	margin-bottom: 15px;
+
+// 	.star {
+// 		position        : relative;
+// 		margin-right    : 5px;
+// 		background-image: url(../img/icons/star-nofull.svg);
+// 		width           : 18px;
+// 		height          : 17px;
+// 		cursor          : pointer;
+// 		background-size : cover;
+
+// 		.number-star {
+// 			position        : absolute;
+// 			background-image: url(../img/icons/star-full.svg);
+// 			width           : 100%;
+// 			height          : 100%;
+// 		}
+// 	}
+// }
+
+.rate {
 	display      : flex;
-	margin-bottom: 15px;
+	align-items  : center;
+	flex-wrap    : wrap;
+	margin-bottom: 14px;
+
+	@media (max-width: 767.98px) {
+		display: none;
+	}
+
+	.img-star {
+		cursor      : pointer;
+		flex        : 0 0 115px;
+		position    : relative;
+		width       : 115px;
+		height      : 23px;
+		margin-left : -4px;
+		margin-right: 20px;
+	}
 
 	.star {
-		position        : relative;
-		margin-right    : 5px;
-		background-image: url(../img/icons/star-nofull.svg);
-		width           : 18px;
-		height          : 17px;
-		cursor          : pointer;
-		background-size : cover;
+		background-image : url(../img/icons/star-nofull.svg);
+		background-repeat: repeat-x;
+		background-size  : 23px;
+		height           : 100%;
+	}
 
-		.number-star {
-			position        : absolute;
-			background-image: url(../img/icons/star-full.svg);
-			width           : 100%;
-			height          : 100%;
-		}
+	.star-rated {
+		position         : absolute;
+		top              : 0;
+		height           : 100%;
+		background-image : url(../img/icons/star-full.svg);
+		background-repeat: repeat-x;
+		background-size  : 23px;
+		z-index          : 3;
+		pointer-events   : none;
 	}
 }
+
+
+
+
+
+
 
 .khuyenmai {
 	background     : #D82F25;

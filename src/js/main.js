@@ -194,8 +194,34 @@ function imgProductSlider() {
 }
 // START RANKING
 function dataStartRanking() {
-	let dataStart = $('.product-cart .ranking .number-start').attr('data-start');
-	let numberStart = $('.product-cart .ranking .number-start');
+	$('.rate').each(function () {
+		var _this = $(this);
+		if (_this.find(".img-star").length > 0) {
+			_this.find(".img-star .star").on("click", function (e) {
+				let offsetLeft = _this.find(".img-star .star").offset().left
+				let width = _this.find(".img-star .star").width()
+				let positionClicked = e.screenX - Math.round(offsetLeft, 0)
+				let starRatedWidth = Math.floor(positionClicked / width * 100)
+
+				if (starRatedWidth >= 80) {
+					_this.find(".img-star .star-rated").width("100%");
+					$('.rate').attr('data-rate', 5)
+				} else if (starRatedWidth >= 60) {
+					_this.find(".img-star .star-rated").width("80%");
+					$('.rate').attr('data-rate', 4)
+				} else if (starRatedWidth >= 40) {
+					_this.find(".img-star .star-rated").width("60%");
+					$('.rate').attr('data-rate', 3)
+				} else if (starRatedWidth >= 20) {
+					_this.find(".img-star .star-rated").width("40%");
+					$('.rate').attr('data-rate', 2)
+				} else {
+					_this.find(".img-star .star-rated").width("20%");
+					$('.rate').attr('data-rate', 1)
+				}
+			})
+		}
+	})
 }
 const toggleAddNewsAddressItem = () => {
 	$(".add-news-address").on("click", function () {
@@ -212,21 +238,6 @@ const getInformationToEdit = () => {
 		$(".add-new-address-form").find("#phone").val(phone)
 		$(".add-new-address-form").find("#address").val(address)
 		$(".add-new-address-form").slideDown()
-	})
-}
-function productQuantity() {
-	$("[data-quantity]").each(function () {
-		let thisInput = $(this);
-		$(this).siblings(".minus").on("click", function () {
-			if (thisInput.val() <= 0) {
-				thisInput.val(0);
-			} else {
-				thisInput.val(thisInput.val() - 1)
-			}
-		})
-		$(this).siblings(".plus").on("click", function () {
-			thisInput.val(parseInt(thisInput.val()) + 1)
-		})
 	})
 }
 // CHỌN MÀU SẢN PHẨM
@@ -371,7 +382,24 @@ const clickThenScrollToSection = () => {
 		})
 	}
 }
-
+// SLIDER BANNER
+function introduceSliderBanner() {
+	var swpier = new Swiper('.introduce-slider', {
+		effect: 'fade',
+		fadeEffect: {
+			crossFade: true,
+		},
+		centeredSlides: true,
+		speed: 1000,
+		spaceBetween: 30,
+		loop: true,
+		autoplay: true,
+		pagination: {
+			el: '.introduce-slider .swiper-pagination',
+			clickable: true,
+		},
+	});
+}
 
 $(document).ready(function () {
 	objectFitImages("img.ofc"); // Luôn luôn chậy polyfill cho thuôc tính object-fit: cover trên các phiên bản IE >= 9
@@ -387,7 +415,6 @@ $(document).ready(function () {
 	toggleAddNewsAddressItem();
 	getInformationToEdit();
 	dataStartRanking();
-	productQuantity();
 	chooesColor();
 	tabsProductDetail();
 	sliderTheSameProduct();
@@ -398,6 +425,7 @@ $(document).ready(function () {
 	likeComment();
 	const recruitmentTab = new Tab(".job-position .tab-container");
 	countDownSale();
+	introduceSliderBanner();
 })
 
 

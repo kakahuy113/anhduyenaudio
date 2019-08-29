@@ -1,0 +1,102 @@
+.introduceBanner {
+	margin-top: 15px;
+
+	.introduce-slider {
+		figure {
+			position: relative;
+
+			img {
+				width: 100%;
+			}
+
+			figcaption {
+				position: absolute;
+				bottom  : 110px;
+				right   : 265px;
+
+				span {
+					font-size      : 18px;
+					color          : #1C1C1C;
+					text-decoration: underline;
+				}
+
+				h5 {
+					margin-top : 10px;
+					font-size  : 33px;
+					font-weight: 700;
+					color      : #F5F5F5;
+				}
+
+				.see-more {
+					display      : inline-block;
+					font-size    : 12px;
+					line-height  : 36px;
+					font-weight  : 700;
+					color        : #D82F25;
+					background   : #FFFFFF;
+					border       : 1px solid #D82F25;
+					padding      : 0 40px;
+					border-radius: 25px;
+					margin-top   : 30px;
+				}
+			}
+		}
+
+		.swiper-slide {
+			figure {
+				figcaption {
+
+					span,
+					h5,
+					.see-more {
+						transition: .5s all ease-in-out;
+						transform : translateX(200%);
+					}
+
+					span {
+						transition-delay: .5s;
+						display         : block;
+					}
+
+					h5 {
+						transition-delay: .8s;
+					}
+
+					.see-more {
+						transition-delay: 1s;
+					}
+				}
+			}
+
+			&.swiper-slide-active {
+
+				figure {
+					figcaption {
+
+						span,
+						h5,
+						.see-more {
+							transform: translateX(0);
+						}
+					}
+				}
+			}
+		}
+
+		.swiper-pagination {
+			text-align: center;
+		}
+
+		.swiper-pagination-bullets {
+			bottom: 20px;
+		}
+
+		.swiper-pagination-bullet {
+			margin-right: 25px;
+			background  : #FFFFFF;
+			width       : 12px;
+			height      : 12px;
+			border      : 1px solid #707070;
+		}
+	}
+}
