@@ -1,11 +1,23 @@
 .list-item-product {
-	margin: 0 -13px -12px;
+	margin    : 0 -13px -12px;
+	background: #FFFFFF;
+
+	&.sale {
+		margin: 67px 0 0 0;
+
+		.item-list-pro {
+			padding   : 0 18px;
+			margin-top: 10px;
+		}
+	}
 
 	.item-list-pro {
 		margin-bottom: 47px;
-		padding      : 0 13px !important;
+		padding      : 0 13px;
 
 		figure {
+			position: relative;
+
 			.box-img {
 				display        : flex;
 				align-items    : center;
@@ -54,13 +66,15 @@
 	}
 }
 
-.quantity {
-	display: flex;
-	height : 75px;
+.list-product {
+	.quantity {
+		display: flex;
+		height : 75px;
 
-	p {
-		margin-left: auto;
-		color      : #888888;
-		font-size  : 14px;
+		p {
+			margin-left: auto;
+			color      : #888888;
+			font-size  : 14px;
+		}
 	}
 }

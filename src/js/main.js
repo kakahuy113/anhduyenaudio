@@ -194,16 +194,40 @@ function imgProductSlider() {
 }
 // START RANKING
 function dataStartRanking() {
-	let dataStart = $('.product-cart .ranking .number-start').attr('data-start');
-	let numberStart = $('.product-cart .ranking .number-start');
-}
+	$('.rate').each(function () {
+		var _this = $(this);
+		if (_this.find(".img-star").length > 0) {
+			_this.find(".img-star .star").on("click", function (e) {
+				let offsetLeft = _this.find(".img-star .star").offset().left
+				let width = _this.find(".img-star .star").width()
+				let positionClicked = e.screenX - Math.round(offsetLeft, 0)
+				let starRatedWidth = Math.floor(positionClicked / width * 100)
 
+				if (starRatedWidth >= 80) {
+					_this.find(".img-star .star-rated").width("100%");
+					$('.rate').attr('data-rate', 5)
+				} else if (starRatedWidth >= 60) {
+					_this.find(".img-star .star-rated").width("80%");
+					$('.rate').attr('data-rate', 4)
+				} else if (starRatedWidth >= 40) {
+					_this.find(".img-star .star-rated").width("60%");
+					$('.rate').attr('data-rate', 3)
+				} else if (starRatedWidth >= 20) {
+					_this.find(".img-star .star-rated").width("40%");
+					$('.rate').attr('data-rate', 2)
+				} else {
+					_this.find(".img-star .star-rated").width("20%");
+					$('.rate').attr('data-rate', 1)
+				}
+			})
+		}
+	})
+}
 const toggleAddNewsAddressItem = () => {
 	$(".add-news-address").on("click", function() {
 		$(".add-new-address-form").slideToggle();
 	})
 }
-
 const getInformationToEdit = () => {
 	$(".address-edit").on("click", function() {
 		var name = $(this).parents(".address-item").find("[data-name]").attr("data-name")
@@ -216,25 +240,9 @@ const getInformationToEdit = () => {
 		$(".add-new-address-form").slideDown()
 	})
 }
-
-function productQuantity() {
-	$("[data-quantity]").each(function() {
-		let thisInput = $(this);
-		$(this).siblings(".minus").on("click", function() {
-			if (thisInput.val() <= 0) {
-				thisInput.val(0);
-			} else {
-				thisInput.val(thisInput.val() - 1)
-			}
-		})
-		$(this).siblings(".plus").on("click", function() {
-			thisInput.val(parseInt(thisInput.val()) + 1)
-		})
-	})
-}
 // CHỌN MÀU SẢN PHẨM
 function chooesColor() {
-	$('.chooes-quantity-color .color').click(function(e) {
+	$('.chooes-quantity-color .color').click(function (e) {
 		e.preventDefault();
 
 		$(".chooes-quantity-color .color").removeClass('active')
@@ -243,7 +251,7 @@ function chooesColor() {
 }
 // TABS THÔNG TIN SẢN PHẨM
 function tabsProductDetail() {
-	$('.tabs-info-product .list-tabs .item').click(function(e) {
+	$('.tabs-info-product .list-tabs .item').click(function (e) {
 		e.preventDefault();
 		$('.tabs-info-product .list-tabs .item').removeClass('active');
 		$(this).addClass('active');
@@ -323,7 +331,42 @@ function likeComment() {
 		}
 	});
 }
+function countDownSale() {
+	// Set the date we're counting down to
+	var countDownDate = new Date("Sep 30, 2019 23:59:59").getTime();
 
+	// Update the count down every 1 second
+	var x = setInterval(function () {
+		// Get today's date and time
+		var now = new Date().getTime();
+
+		// Find the distance between now and the count down date
+		var distance = countDownDate - now;
+
+		// Time calculations for days, hours, minutes and seconds
+
+		// var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+		var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+		var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+		var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+		// Display the result in the element with id="demo"
+		try {
+			// document.getElementById("days").innerHTML = days;
+			document.getElementById("hours").innerHTML = hours;
+			document.getElementById("minutes").innerHTML = minutes;
+			document.getElementById("seconds").innerHTML = seconds;
+			// If the count down is finished, write some text 
+			if (distance < 0) {
+				clearInterval(x);
+				document.getElementById("demo").innerHTML = "EXPIRED";
+			}
+		} catch (error) {
+
+		}
+	}, 1000);
+
+}
 const clickThenScrollToSection = () => {
 	let aboutNavItemNodeList = document.querySelectorAll(".about-nav .item")
 	if (aboutNavItemNodeList) {
@@ -341,7 +384,24 @@ const clickThenScrollToSection = () => {
 		})
 	}
 }
-
+// SLIDER BANNER
+function introduceSliderBanner() {
+	var swpier = new Swiper('.introduce-slider', {
+		effect: 'fade',
+		fadeEffect: {
+			crossFade: true,
+		},
+		centeredSlides: true,
+		speed: 1000,
+		spaceBetween: 30,
+		loop: true,
+		autoplay: true,
+		pagination: {
+			el: '.introduce-slider .swiper-pagination',
+			clickable: true,
+		},
+	});
+}
 
 $(document).ready(function() {
 	objectFitImages("img.ofc"); // Luôn luôn chậy polyfill cho thuôc tính object-fit: cover trên các phiên bản IE >= 9
@@ -357,7 +417,6 @@ $(document).ready(function() {
 	toggleAddNewsAddressItem();
 	getInformationToEdit();
 	dataStartRanking();
-	productQuantity();
 	chooesColor();
 	tabsProductDetail();
 	sliderTheSameProduct();
@@ -366,11 +425,13 @@ $(document).ready(function() {
 	clickThenScrollToSection();
 	getDataBar();
 	likeComment();
-	const recruitmentTab = new Tab(".job-position .tab-container")
+	const recruitmentTab = new Tab(".job-position .tab-container");
+	countDownSale();
+	introduceSliderBanner();
 })
 
 
-$(document).ajaxComplete(function() {
+$(document).ajaxComplete(function () {
 	addClassLazyload();
 	cartQuantity();
 })

@@ -1,0 +1,35 @@
+section.news-pc
+	.container
+		.list-news.clearfix
+			.thong-tin-chung
+				a(href="tintuc-chung.html")
+					figure
+						.box-img
+							img.ofc(src="img/news/thongtinnoibat.png", alt="")
+						figcaption
+							.box-content
+								h3 THÔNG TIN CHUNG
+								h5 Âm nhạc thứ “gia vị” không thể thiếu với tất cả quán cafe
+								span.time 2 tháng 10 - 2019
+								p Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, .Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes.
+							.btn.btn-outline-white Xem thêm
+			.giai-phap-am-thanh
+				a(href="giaiphapamthanh.html")
+					figure
+						.box-img
+							img.ofc(src="img/news/giaiphapamthanh.png", alt="")
+						figcaption
+							.box-content
+								h3 GIẢI PHÁP ÂM THANH
+								h5 Âm nhạc thứ “gia vị” không thể thiếu với tất cả quán cafe
+								span.time 2 tháng 10 - 2019
+			-for(i=1;i<15;i++)
+				.news-item
+					a(href="tintuc-chung.html")
+						figure
+							.box-img
+								img.ofc(src="./img/news/item-"+i+".png", alt="")
+							figcaption
+								.box-content
+									h5 Lorem ipsum dolor sit amet, conse adipiscing. Lorem ipsum dolor sit amet, conse adipiscing
+								.btn.btn-outline-white Xem thêm

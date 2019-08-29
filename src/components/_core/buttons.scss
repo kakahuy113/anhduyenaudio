@@ -1,10 +1,10 @@
 // Css cho button
 .btn {
-	display: flex;
-	align-items: center;
+	display        : flex;
+	align-items    : center;
 	justify-content: center;
-	transition: all .3s cubic-bezier(.2, .5, .5, .8);
-	border: 0;
+	transition     : all .3s cubic-bezier(.2, .5, .5, .8);
+	border         : 0;
 
 	&:focus {
 		outline: none;
@@ -13,12 +13,12 @@
 
 
 .btn-main {
-	background: map-get($mau, main);
-	color: white;
-	font-weight: 700;
-	font-size: 13px;
+	background   : map-get($mau, main);
+	color        : white;
+	font-weight  : 700;
+	font-size    : 13px;
 	border-radius: 15px;
-	height: 40px;
+	height       : 40px;
 
 	&:hover {
 		background: darken(map-get($mau, main), 8%)
@@ -26,17 +26,34 @@
 }
 
 .btn-outline-black {
-	font-weight: 700;
-	font-size: 13px;
+	font-weight  : 700;
+	font-size    : 13px;
 	border-radius: 15px;
-	height: 40px;
-	background: white;
-	border: 1px solid map-get($mau, den);
-	max-width: 290px;
+	height       : 40px;
+	background   : white;
+	border       : 1px solid map-get($mau, den);
+	max-width    : 290px;
 
 	&:hover {
 		background: map-get($mau, main);
-		color: white;
-		border: 1px solid map-get($mau, main);
+		color     : white;
+		border    : 1px solid map-get($mau, main);
+	}
+}
+
+.btn-outline-white {
+	font-weight  : 700;
+	font-size    : 13px;
+	border-radius: 15px;
+	height       : 40px;
+	background   : transparent;
+	border       : 1px solid map-get($mau, trang);
+	max-width    : 290px;
+	color        : map-get($mau, trang);
+
+	&:hover {
+		background: map-get($mau, main);
+		color     : white;
+		border    : 1px solid map-get($mau, main);
 	}
 }
