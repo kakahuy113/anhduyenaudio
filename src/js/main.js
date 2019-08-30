@@ -420,6 +420,13 @@ function introduceSliderBanner() {
 		},
 	});
 }
+function showFilter() {
+	$('.list-product .block-title-filter').click(function (e) {
+		e.preventDefault();
+		$(this).toggleClass('active');
+		$('.list-product .block-filter').slideToggle('active');
+	});
+}
 
 
 const megaMenuHover = () => {
@@ -531,6 +538,7 @@ $(document).ready(function() {
 	clickThenScrollToSection();
 	getDataBar();
 	likeComment();
+	showFilter();
 	productSliderHotSale();
 	const recruitmentTab = new Tab(".job-position .tab-container");
 	const FaQTab = new Tab(".FaQ .tab-container");
