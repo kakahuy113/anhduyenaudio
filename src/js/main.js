@@ -82,7 +82,7 @@ function productSlider() {
 		slidesPerView: 5,
 		loop: true,
 		speed: 1200,
-		// autoplay: true,
+		autoplay: true,
 		observer: true,
 		observeParents: true,
 		breakpoints: {
@@ -92,6 +92,7 @@ function productSlider() {
 			480: {
 				slidesPerView: 2,
 				slidesPerColumn: 2,
+				speed: 200,
 			}
 		},
 		pagination: {
@@ -110,7 +111,7 @@ function productSliderHotSale() {
 		slidesPerView: 5,
 		loop: true,
 		speed: 1200,
-		// autoplay: true,
+		autoplay: true,
 		observer: true,
 		observeParents: true,
 		breakpoints: {
@@ -119,6 +120,7 @@ function productSliderHotSale() {
 			},
 			480: {
 				slidesPerView: 2,
+				speed: 200,
 			}
 		},
 		pagination: {
