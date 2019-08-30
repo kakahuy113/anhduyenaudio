@@ -1,10 +1,10 @@
 // Css cho button
 .btn {
-	display        : flex;
-	align-items    : center;
+	display: flex;
+	align-items: center;
 	justify-content: center;
-	transition     : all .3s cubic-bezier(.2, .5, .5, .8);
-	border         : 0;
+	transition: all .3s cubic-bezier(.2, .5, .5, .8);
+	border: 0;
 
 	&:focus {
 		outline: none;
@@ -13,58 +13,112 @@
 
 
 .btn-main {
-	background   : map-get($mau, main);
-	color        : white;
-	font-weight  : 700;
-	font-size    : 13px;
+	background: map-get($mau, main);
+	color: white;
+	font-weight: 700;
+	font-size: 13px;
 	border-radius: 15px;
-	height       : 40px;
+	height: 40px;
 
 	&:hover {
 		background: darken(map-get($mau, main), 8%)
 	}
 }
 
-.btn-outline-black {
-	font-weight  : 700;
-	font-size    : 13px;
+.btn-register {
+	background: map-get($mau, den);
+	color: white;
+	font-weight: 700;
+	font-size: 13px;
 	border-radius: 15px;
-	height       : 40px;
-	background   : white;
-	border       : 1px solid map-get($mau, den);
-	max-width    : 290px;
+	height: 40px;
+
+	&:hover {
+		background: lighten(map-get($mau, den), 8%)
+	}
+}
+
+.btn-google {
+	background: #DB4437;
+	color: white;
+	height: 40px;
+
+	span {
+		border-left: 1px solid white
+	}
+}
+
+.btn-facebook {
+	background: #3C5A99;
+	color: white;
+	height: 40px;
+	margin-bottom: 10px;
+
+	span {
+		border-left: 1px solid white
+	}
+}
+
+.btn-google,
+.btn-facebook {
+	justify-content: flex-start;
+	border-radius: 5px;
+
+	img {
+		flex: 0 0 42px;
+		max-width: 42px;
+		height: 18px;
+	}
+
+	span {
+		padding-left: 15px;
+	}
+
+	&:hover {
+		color: white;
+	}
+}
+
+.btn-outline-black {
+	font-weight: 700;
+	font-size: 13px;
+	border-radius: 15px;
+	height: 40px;
+	background: white;
+	border: 1px solid map-get($mau, den);
+	max-width: 290px;
 
 	&:hover {
 		background: map-get($mau, main);
-		color     : white;
-		border    : 1px solid map-get($mau, main);
+		color: white;
+		border: 1px solid map-get($mau, main);
 	}
 }
 
 .btn-outline-white {
-	font-weight  : 700;
-	font-size    : 13px;
+	font-weight: 700;
+	font-size: 13px;
 	border-radius: 15px;
-	height       : 40px;
-	background   : transparent;
-	border       : 1px solid map-get($mau, trang);
-	max-width    : 290px;
-	color        : map-get($mau, trang);
+	height: 40px;
+	background: transparent;
+	border: 1px solid map-get($mau, trang);
+	max-width: 290px;
+	color: map-get($mau, trang);
 
 	&:hover {
 		background: map-get($mau, main);
-		color     : white;
-		border    : 1px solid map-get($mau, main);
+		color: white;
+		border: 1px solid map-get($mau, main);
 	}
 }
 
 .btn-outline-red {
-	font-weight  : 700;
-	font-size    : 12px;
+	font-weight: 700;
+	font-size: 12px;
 	border-radius: 15px;
-	height       : 30px;
-	background   : transparent;
-	border       : 1px solid map-get($mau, main);
-	max-width    : 122px;
-	color        : map-get($mau, main);
+	height: 30px;
+	background: transparent;
+	border: 1px solid map-get($mau, main);
+	max-width: 122px;
+	color: map-get($mau, main);
 }
