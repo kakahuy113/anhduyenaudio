@@ -1,7 +1,7 @@
 // Function thêm class lazyload vào các thẻ <img> có thuộc tính [data-src]
 const addClassLazyload = () => {
 	let imgList = document.querySelectorAll("img[data-src]")
-	Array.prototype.forEach.call(imgList, function(el) {
+	Array.prototype.forEach.call(imgList, function (el) {
 		if (el.className.length > 0) {
 			el.className = el.className + " lazyload"
 		} else {
@@ -174,7 +174,7 @@ function clientSlider() {
 }
 // SUBMENU CATEGORY
 function submenuCategory() {
-	$(".category-list .item-category h3").on('click', function() {
+	$(".category-list .item-category h3").on('click', function () {
 		$(".category-list .item-category h3").not(this).siblings('.list-item').slideUp('active');
 
 		$(this).siblings(".list-item").slideToggle('active');
@@ -182,7 +182,7 @@ function submenuCategory() {
 }
 // SUBMENU CATEGORY DETAIL
 function submenuCategoryDetail() {
-	$(".category-list .item-category .list-item .item").on('click', function() {
+	$(".category-list .item-category .list-item .item").on('click', function () {
 
 		$(".category-list .item-category .list-item .item").not(this).find('.mdi-plus').removeClass('active');
 		$(".category-list .item-category .list-item .item").not(this).find('.child').slideUp('active');
@@ -197,12 +197,17 @@ function imgProductSlider() {
 		direction: 'vertical',
 		spaceBetween: 10,
 		slidesPerView: 4,
-		// loop: true,
 		freeMode: true,
 		loopedSlides: 5,
 		watchSlidesVisibility: true,
 		watchSlidesProgress: true,
 		slideToClickedSlide: true,
+		breakpoints: {
+			1024: {
+				direction: 'horizontal',
+				spaceBetween: 30,
+			},
+		},
 		navigation: {
 			nextEl: '.gallery-thumbs-wrapper .swiper-button-next',
 			prevEl: '.gallery-thumbs-wrapper .swiper-button-prev',
@@ -212,7 +217,7 @@ function imgProductSlider() {
 		spaceBetween: 10,
 		// loop: true,
 		simulateTouch: false,
-		loopedSlides: 5, //looped slides should be the same
+		loopedSlides: 5,
 		navigation: {
 			nextEl: '.gallery-thumbs-wrapper .swiper-button-next',
 			prevEl: '.gallery-thumbs-wrapper .swiper-button-prev',
@@ -224,15 +229,17 @@ function imgProductSlider() {
 }
 // START RANKING
 function dataStartRanking() {
-	$('.rate').each(function() {
+	$('.rate').each(function () {
 		var _this = $(this);
 		if (_this.find(".img-star").length > 0) {
-			_this.find(".img-star .star").on("click", function(e) {
+			_this.find(".img-star .star").on("click", function (e) {
 				let offsetLeft = _this.find(".img-star .star").offset().left
 				let width = _this.find(".img-star .star").width()
-				let positionClicked = e.screenX - Math.round(offsetLeft, 0)
+				let positionClicked = e.pageX - Math.round(offsetLeft, 0)
 				let starRatedWidth = Math.floor(positionClicked / width * 100)
 
+				console.log(e);
+				
 				if (starRatedWidth >= 80) {
 					_this.find(".img-star .star-rated").width("100%");
 					$('.rate').attr('data-rate', 5)
@@ -254,12 +261,12 @@ function dataStartRanking() {
 	})
 }
 const toggleAddNewsAddressItem = () => {
-	$(".add-news-address").on("click", function() {
+	$(".add-news-address").on("click", function () {
 		$(".add-new-address-form").slideToggle();
 	})
 }
 const getInformationToEdit = () => {
-	$(".address-edit").on("click", function() {
+	$(".address-edit").on("click", function () {
 		var name = $(this).parents(".address-item").find("[data-name]").attr("data-name")
 		var address = $(this).parents(".address-item").find("[data-address]").attr("data-address")
 		var phone = $(this).parents(".address-item").find("[data-phone]").attr("data-phone")
@@ -272,7 +279,7 @@ const getInformationToEdit = () => {
 }
 // CHỌN MÀU SẢN PHẨM
 function chooesColor() {
-	$('.chooes-quantity-color .color').click(function(e) {
+	$('.chooes-quantity-color .color').click(function (e) {
 		e.preventDefault();
 
 		$(".chooes-quantity-color .color").removeClass('active')
@@ -301,14 +308,14 @@ function getDataBar() {
 	let dataBarNodeList = document.querySelectorAll('.statistical-rating .middle .bar');
 
 
-	Array.prototype.forEach.call(dataBarNodeList, function(e, index) {
+	Array.prototype.forEach.call(dataBarNodeList, function (e, index) {
 		const data = e.getAttribute('data-bar');
 		e.style.width = data + "%";
 	})
 }
 const cartQuantity = () => {
-	$('.quantity-input .minus').each(function() {
-		$(this).on("click", function() {
+	$('.quantity-input .minus').each(function () {
+		$(this).on("click", function () {
 			let curVal = Number($(this).siblings("input").val())
 			if (curVal <= 0) {
 				curVal = 0;
@@ -318,8 +325,8 @@ const cartQuantity = () => {
 			$(this).siblings("input").val(curVal)
 		})
 	})
-	$('.quantity-input .plus').each(function() {
-		$(this).on("click", function() {
+	$('.quantity-input .plus').each(function () {
+		$(this).on("click", function () {
 			let curVal = Number($(this).siblings("input").val())
 			if (curVal >= 99) {
 				curVal = 99;
@@ -331,13 +338,13 @@ const cartQuantity = () => {
 	})
 }
 const toggleFormAddNewAddress = () => {
-	$('.add-new-address').on('click', function() {
+	$('.add-new-address').on('click', function () {
 		$('.add-new-address-form').slideToggle();
 	})
 }
 
 function likeComment() {
-	$('.button-like-comment').click(function(e) {
+	$('.button-like-comment').click(function (e) {
 		e.preventDefault();
 		// console.log($(this).find('.like-comment').toggleClass('active'));
 		$(this).find('.like-comment').toggleClass('active');
@@ -354,7 +361,7 @@ function countDownSale() {
 	var countDownDate = new Date("Sep 30, 2019 23:59:59").getTime();
 
 	// Update the count down every 1 second
-	var x = setInterval(function() {
+	var x = setInterval(function () {
 		// Get today's date and time
 		var now = new Date().getTime();
 
@@ -464,7 +471,7 @@ const megaMenuHover = () => {
 	}
 }
 
-$(document).ready(function() {
+$(document).ready(function () {
 	objectFitImages("img.ofc"); // Luôn luôn chậy polyfill cho thuôc tính object-fit: cover trên các phiên bản IE >= 9
 	addClassLazyload(); // Luôn luôn addClass lazyload cho các hình ảnh có thuộc tính [data-src]
 	homeSliderBanner();
@@ -498,7 +505,7 @@ $(document).ready(function() {
 })
 
 
-$(document).ajaxComplete(function() {
+$(document).ajaxComplete(function () {
 	addClassLazyload();
 	cartQuantity();
 })

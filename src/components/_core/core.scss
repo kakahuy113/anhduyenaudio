@@ -126,10 +126,6 @@ html {
 	flex-wrap    : wrap;
 	margin-bottom: 14px;
 
-	@media (max-width: 767.98px) {
-		display: none;
-	}
-
 	.img-star {
 		cursor      : pointer;
 		flex        : 0 0 115px;
@@ -156,6 +152,27 @@ html {
 		background-size  : 23px;
 		z-index          : 3;
 		pointer-events   : none;
+	}
+
+	@media(max-width: 1024px) {
+		margin-bottom: 0;
+
+		.img-star {
+			cursor      : pointer;
+			flex        : 0 0 75px;
+			position    : relative;
+			width       : 75px;
+			height      : 15px;
+			margin-right: 20px;
+		}
+
+		.star {
+			background-size: 15px;
+		}
+
+		.star-rated {
+			background-size: 15px;
+		}
 	}
 }
 

@@ -49,9 +49,8 @@
 				}
 
 				.gallery-thumbs {
-					height       : 450px;
-					width        : 100%;
-					border-bottom: 2px solid #D82F25;
+					height: 450px;
+					width : 100%;
 
 					.swiper-slide {
 						figure {
@@ -61,11 +60,13 @@
 							opacity      : .5;
 							cursor       : pointer;
 							transition   : .2s all ease-in-out;
+							border-bottom: 2px solid transparent;
 						}
 
 						&.swiper-slide-thumb-active {
 							figure {
-								opacity: 1;
+								opacity      : 1;
+								border-bottom: 2px solid #D82F25;
 							}
 						}
 					}
@@ -123,6 +124,12 @@
 				min-height   : 240px;
 				color        : #1C1C1C;
 				margin-bottom: 10px;
+
+				-webkit-line-clamp: 11;
+				-webkit-box-orient: vertical;
+				display           : -webkit-box;
+				overflow          : hidden;
+				text-overflow     : ellipsis;
 			}
 
 			.chooes-quantity-color {
@@ -224,6 +231,189 @@
 					padding      : 0 30px;
 					border-radius: 15px;
 					line-height  : 58px;
+				}
+			}
+		}
+	}
+
+
+	@media (max-width: 1024.98px) {
+		padding-bottom: 18px;
+
+		.product-image {
+			padding: 20px;
+
+			.slider-imgProduct {
+				display: block;
+
+				.gallery-top {
+					flex     : 0 0 100%;
+					max-width: 100%;
+				}
+
+				.gallery-thumbs-wrapper {
+					flex       : 100%;
+					max-width  : 100%;
+					max-height : unset;
+					margin-left: 0;
+					margin-top : 10px;
+					padding    : 0 30px;
+
+					.gallery-thumbs {
+						height: 100%;
+						width : 100%;
+
+						.swiper-slide {
+							figure {
+								position     : relative;
+								border-radius: 5px;
+								overflow     : hidden;
+								opacity      : .5;
+								cursor       : pointer;
+								transition   : .2s all ease-in-out;
+							}
+						}
+					}
+
+					.swiper-button-prev,
+					.swiper-button-next {
+						background-size: 20px;
+						top            : 50%;
+						transform      : translateY(-50%)rotate(-90deg);
+						margin-top     : 0;
+					}
+
+					.swiper-button-next {
+						right: 0;
+					}
+
+					.swiper-button-prev {
+						left: 0;
+
+						&::after {
+							display: none;
+						}
+					}
+				}
+			}
+
+			.social-media {
+				display: none;
+			}
+		}
+
+		.product-cart {
+			padding: 0 20px;
+
+			.info-summary {
+				h2 {
+					font-size : 18px;
+					color     : #484848;
+					margin-top: 0;
+
+					&:after {
+						display: none;
+					}
+				}
+
+				h4 {
+					font-size    : 12px;
+					color        : #949494;
+					font-weight  : 400;
+					background   : #FFFFFF;
+					margin-bottom: 10px;
+
+					span {
+						padding-right: 0;
+					}
+				}
+				
+				p {
+					margin-top        : 15px;
+					font-size         : 12px;
+					min-height        : 55px;
+					-webkit-line-clamp: 3;
+				}
+
+				.chooes-quantity-color {
+					padding-bottom: 0;
+					border-bottom : 0;
+
+					.quantity,
+					.color-item {
+						h5 {
+							font-weight  : 400;
+							font-size    : 12px;
+							margin-bottom: 15px;
+						}
+					}
+
+					.quantity-input {
+						margin-right: 115px;
+
+						span,
+						input {
+							flex     : 0 0 20px;
+							max-width: 20px;
+						}
+
+						input {
+							font-size: 16px;
+						}
+					}
+
+					.list-color {
+						display    : flex;
+						min-height : 30px;
+						align-items: center;
+
+						.color {
+							width        : 20px;
+							height       : 20px;
+							border-radius: 50%;
+							background   : rgba(223, 223, 223, 0.85);
+							margin-right : 22px;
+							cursor       : pointer;
+
+							&.c-1 {
+								background: #888888;
+							}
+
+							&.c-2 {
+								background: #1C1C1C;
+							}
+
+							&.c-3 {
+								background: #D82F25;
+							}
+
+							&.active {
+								box-shadow: 0 0 0 5px rgba(223, 223, 223, 0.85);
+							}
+						}
+					}
+				}
+
+				.block-price {
+					margin-top: 35px;
+
+					.price {
+						.amount {
+							font-size: 18px;
+						}
+
+						.sale-price {
+							font-size: 14px;
+						}
+					}
+
+					.add-cart {
+						font-size    : 16px;
+						border       : none;
+						padding      : 0 20px;
+						border-radius: 15px;
+						line-height  : 45px;
+					}
 				}
 			}
 		}
