@@ -70,6 +70,11 @@ function homeSliderBanner() {
 		spaceBetween: 30,
 		loop: true,
 		autoplay: true,
+		breakpoints: {
+			1024: {
+				pagination: false
+			}
+		},
 		pagination: {
 			el: '.slider-HomeBanner .swiper-pagination',
 			clickable: true,
@@ -239,7 +244,7 @@ function dataStartRanking() {
 				let starRatedWidth = Math.floor(positionClicked / width * 100)
 
 				console.log(e);
-				
+
 				if (starRatedWidth >= 80) {
 					_this.find(".img-star .star-rated").width("100%");
 					$('.rate').attr('data-rate', 5)
@@ -468,7 +473,7 @@ const megaMenuHover = () => {
 }
 
 const turnOffPopupWhenClicked = () => {
-	$("[data-fancybox]").on("click", function() {
+	$("[data-fancybox]").on("click", function () {
 		$(".bottom-header").removeClass("active")
 		$("header .opacity").removeClass("active");
 		$(".login-popup").removeClass("open");
@@ -478,7 +483,7 @@ const turnOffPopupWhenClicked = () => {
 	})
 
 	$("[data-fancybox]").fancybox({
-		afterClose: function() {
+		afterClose: function () {
 			$.fancybox.close(true)
 		}
 	})
@@ -519,7 +524,7 @@ const addClassHeaderWhenScroll = () => {
 	}
 }
 
-$(document).ready(function() {
+$(document).ready(function () {
 	objectFitImages("img.ofc"); // Luôn luôn chậy polyfill cho thuôc tính object-fit: cover trên các phiên bản IE >= 9
 	addClassLazyload(); // Luôn luôn addClass lazyload cho các hình ảnh có thuộc tính [data-src]
 	addClassHeaderWhenScroll();
