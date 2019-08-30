@@ -18,6 +18,10 @@
 						margin-bottom: 15px;
 					}
 				}
+
+				.product-slider {
+					padding-bottom: 0;
+				}
 			}
 
 			.block-title {
@@ -40,9 +44,10 @@
 }
 
 .product-slider {
-	background   : #ffffff;
-	border-radius: 0 0 5px 5px;
-	position     : relative;
+	position      : relative;
+	background    : #ffffff;
+	border-radius : 0 0 5px 5px;
+	padding-bottom: 25px;
 
 	.swiper-wrapper {
 		padding: 20px 0 55px;
@@ -133,11 +138,230 @@
 		left            : -35px;
 	}
 
+	.see-more {
+		cursor: pointer;
+		width : 140px;
+		height: 33px;
+		margin: 0 auto;
+	}
+
 	@media(max-width:1024px) {
 
 		.swiper-button-prev,
 		.swiper-button-next {
 			display: none;
+		}
+	}
+
+	@media(max-width: 480px) {
+		.swiper-wrapper {
+
+			.swiper-slide {
+				padding: 0 10px;
+
+				figure {
+					.box-img {
+						height: unset;
+						width : unset;
+					}
+
+					figcaption {
+
+						h5 {
+							font-size    : 14px;
+							margin-bottom: 12px;
+							font-weight  : 400;
+							color        : #000000;
+						}
+
+						.price {
+							font-size    : 16px;
+							display      : block;
+							margin-bottom: 5px;
+							color        : #D82F25;
+
+							span {
+								display: block;
+							}
+
+							del {
+								display: none;
+							}
+						}
+
+						.list-button {
+							display: none;
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+.product-slider-hot-sale {
+	position      : relative;
+	background    : #ffffff;
+	border-radius : 0 0 5px 5px;
+	padding-bottom: 25px;
+
+	.swiper-wrapper {
+		padding: 20px 0 55px;
+
+		.swiper-slide {
+			user-select: none;
+			padding    : 0 30px;
+
+			figure {
+				position: relative;
+
+				.box-img {
+					height     : 235px;
+					width      : 235px;
+					display    : flex;
+					align-items: center;
+
+					img {
+						object-fit: cover;
+						display   : block;
+						margin    : 0 auto;
+					}
+				}
+
+				figcaption {
+					color: #1C1C1C;
+
+					h5 {
+						font-size    : 15px;
+						margin-bottom: 12px;
+					}
+
+					.price {
+						font-size    : 16px;
+						font-weight  : 700;
+						display      : flex;
+						margin-bottom: 15px;
+
+						del {
+							margin-left: 10px;
+							font-size  : 14px;
+							color      : #888888;
+							font-weight: 400;
+						}
+					}
+
+					.list-button {
+						display        : flex;
+						justify-content: space-between;
+
+						.add-cart {
+							display   : flex;
+							background: transparent;
+							border    : none;
+
+							span {
+								color     : #000000;
+								font-size : 10px;
+								align-self: flex-end;
+							}
+						}
+
+						.so-sanh {
+							text-decoration: underline;
+							font-size      : 18px;
+							font-weight    : 700;
+							color          : #1C1C1C;
+						}
+					}
+
+					.button-add-cart-mb {
+						display: none;
+					}
+				}
+			}
+		}
+	}
+
+	.swiper-button-next {
+		background-image: url(../img/icons/next-sale-hot.svg) !important;
+		background-size : cover;
+		width           : 62px;
+		height          : 62px;
+		right           : -35px;
+	}
+
+	.swiper-button-prev {
+		background-image: url(../img/icons/prev-sale-hot.svg) !important;
+		background-size : cover;
+		width           : 62px;
+		height          : 62px;
+		left            : -35px;
+	}
+
+	.see-more {
+		cursor: pointer;
+		width : 140px;
+		height: 33px;
+		margin: 0 auto;
+	}
+
+	@media(max-width:1024px) {
+		.swiper-wrapper {
+			.swiper-slide {
+				padding: 0 10px;
+			}
+		}
+
+		.swiper-button-prev,
+		.swiper-button-next {
+			display: none;
+		}
+	}
+
+	@media(max-width: 480px) {
+		.swiper-wrapper {
+
+			.swiper-slide {
+				figure {
+					.box-img {
+						height: unset;
+						width : unset;
+					}
+
+					figcaption {
+
+						h5 {
+							font-size    : 14px;
+							margin-bottom: 12px;
+							font-weight  : 400;
+							color        : #000000;
+						}
+
+						.price {
+							font-size    : 14px;
+							display      : block;
+							margin-bottom: 5px;
+
+							span {
+								display: block;
+							}
+
+							del {
+								margin-left: 0;
+								font-size  : 12px;
+							}
+						}
+
+						.list-button {
+							display: none;
+						}
+
+						.button-add-cart-mb {
+							display: flex;
+						}
+					}
+				}
+			}
 		}
 	}
 }

@@ -82,7 +82,35 @@ function productSlider() {
 		slidesPerView: 5,
 		loop: true,
 		speed: 1200,
-		autoplay: true,
+		// autoplay: true,
+		observer: true,
+		observeParents: true,
+		breakpoints: {
+			1024: {
+				slidesPerView: 3,
+			},
+			480: {
+				slidesPerView: 2,
+				slidesPerColumn: 2,
+			}
+		},
+		pagination: {
+			el: '.product-slider .swiper-pagination',
+			clickable: true,
+		},
+		navigation: {
+			nextEl: '.product-slider .swiper-button-next',
+			prevEl: '.product-slider .swiper-button-prev',
+		},
+	})
+}
+// SLIDER PRODUCT
+function productSliderHotSale() {
+	var swiper = new Swiper(".product-slider-hot-sale .swiper-container", {
+		slidesPerView: 5,
+		loop: true,
+		speed: 1200,
+		// autoplay: true,
 		observer: true,
 		observeParents: true,
 		breakpoints: {
@@ -94,12 +122,12 @@ function productSlider() {
 			}
 		},
 		pagination: {
-			el: '.product-slider .swiper-pagination',
+			el: '.product-slider-hot-sale .swiper-pagination',
 			clickable: true,
 		},
 		navigation: {
-			nextEl: '.product-slider .swiper-button-next',
-			prevEl: '.product-slider .swiper-button-prev',
+			nextEl: '.product-slider-hot-sale .swiper-button-next',
+			prevEl: '.product-slider-hot-sale .swiper-button-prev',
 		},
 	})
 }
@@ -127,6 +155,11 @@ function clientSlider() {
 		loop: true,
 		speed: 1200,
 		autoplay: true,
+		breakpoints: {
+			1024: {
+				slidesPerView: 3,
+			},
+		},
 		pagination: {
 			el: '.clients-slider .swiper-pagination',
 			clickable: true,
@@ -406,6 +439,7 @@ $(document).ready(function () {
 	clickThenScrollToSection();
 	getDataBar();
 	likeComment();
+	productSliderHotSale();
 	const recruitmentTab = new Tab(".job-position .tab-container");
 	const FaQTab = new Tab(".FaQ .tab-container");
 	const ProductDetailTab = new Tab(".tabs-info-product .tab-container");

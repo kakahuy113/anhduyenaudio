@@ -57,3 +57,14 @@
 		border    : 1px solid map-get($mau, main);
 	}
 }
+
+.btn-outline-red {
+	font-weight  : 700;
+	font-size    : 12px;
+	border-radius: 15px;
+	height       : 30px;
+	background   : transparent;
+	border       : 1px solid map-get($mau, main);
+	max-width    : 122px;
+	color        : map-get($mau, main);
+}

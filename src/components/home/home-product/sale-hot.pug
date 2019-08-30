@@ -7,7 +7,7 @@ section.product-sale-hot
 				.col-lg-6
 					h2(toggle-for="hot").main-title.item SẢN PHẨM NỔI BẬT
 		.tab-content
-			.product-slider.content(tab-id="sale")
+			.product-slider-hot-sale.content(tab-id="sale")
 				.block-title-mb
 					.main-title-mb SẢN PHẨM KHUYẾN MÃI
 				.swiper-container
@@ -17,7 +17,7 @@ section.product-sale-hot
 								a(href="sanpham-ct.html")
 									figure
 										.box-img
-											img(src="./img/home-product/"+i+".png", alt="")
+											img.ofc(src="./img/home-product/"+i+".png", alt="")
 										figcaption
 											h5 Loa Jamo 426 HCS
 											.price
@@ -29,11 +29,12 @@ section.product-sale-hot
 													span Thêm vào giỏ
 												.so-sanh
 													a(href="#") So Sánh
-										.khuyenmai
+											.button-add-cart-mb.btn.btn-outline-red Thêm vào giỏ
+										.badge-sale-hot
 											span(data-sale=60) 60%
 				.swiper-button-next
 				.swiper-button-prev
-			.product-slider.content(tab-id="hot")
+			.product-slider-hot-sale.content(tab-id="hot")
 				.block-title-mb
 					.main-title-mb SẢN PHẨM NỔI BẬT
 				.swiper-container
@@ -42,7 +43,7 @@ section.product-sale-hot
 							.swiper-slide.item
 								figure
 									.box-img
-										img(src="./img/home-product/"+i+".png", alt="")
+										img.ofc(src="./img/home-product/"+i+".png", alt="")
 									figcaption
 										h5 Loa Jamo 426 HCS
 										.price
@@ -54,7 +55,8 @@ section.product-sale-hot
 												span Thêm vào giỏ
 											.so-sanh
 												a(href="#") So Sánh
-									.khuyenmai
+										.button-add-cart-mb.btn.btn-outline-red Thêm vào giỏ
+									.badge-sale-hot
 										span(data-hot=true) HOT
 				.swiper-button-next
 				.swiper-button-prev

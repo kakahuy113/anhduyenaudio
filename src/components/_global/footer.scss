@@ -94,6 +94,18 @@ footer {
 		}
 	}
 
+	.hot-line-mb {
+		display        : none;
+		justify-content: center;
+		align-items    : center;
+		height         : 40px;
+		font-size      : 18px;
+		font-weight    : 700;
+		color          : #A3A3A3;
+		background     : #444444;
+		border-radius  : 5px;
+	}
+
 	.hot-line {
 		text-align     : center;
 		display        : flex;
@@ -118,13 +130,70 @@ footer {
 		.item {
 			margin-right: 35px;
 		}
+
+		&.mb {
+			display: none;
+		}
 	}
 
 
 	@media(max-width: 1024px) {
+		padding: 25px 0px;
+
+		.hot-line {
+			display: none;
+		}
+
+		.hot-line-mb {
+			display: flex;
+		}
+
 		.col-lg-4 {
+			border: 0;
+
 			&:after {
 				display: none;
+			}
+		}
+
+		.logo {
+			img {
+				display: block;
+				margin : 0 auto;
+			}
+		}
+
+		.info-company {
+			ul {
+				li {
+					justify-content: center;
+
+					&:last-child {
+						margin-bottom: 20px;
+						;
+					}
+				}
+			}
+		}
+
+		.list-footer {
+			margin-top   : 20px;
+			border-bottom: 1px rgba(223, 223, 223, 0.1) solid;
+		}
+
+		.social-media {
+			display: none;
+
+			&.mb {
+				display    : -webkit-box;
+				margin-left: 30px;
+			}
+		}
+
+		.coppy-right {
+			.box-img {
+				display    : flex;
+				align-items: center;
 			}
 		}
 	}
