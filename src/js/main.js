@@ -429,10 +429,8 @@ const megaMenuHover = () => {
 		Array.prototype.forEach.call(dataMegas, (dataMega, dataMegaIndex) => {
 			dataMega.addEventListener("mouseover", () => {
 				let target = dataMega.attributes["data-mega"].value
-				Array.prototype.forEach.call(dataMegaContents, dataMegaContent => {
+				Array.prototype.forEach.call(dataMegaContents, (dataMegaContent, index) => {
 					dataMegaContent.style.display = "none";
-				})
-				Array.prototype.forEach.call(dataMegas, (e, index) => {
 					dataMegas[index].classList.remove("active")
 				})
 				dataMega.classList.add("active")
@@ -444,10 +442,8 @@ const megaMenuHover = () => {
 			dataMega.addEventListener("click", (e) => {
 				e.preventDefault();
 				let target = dataMega.attributes["data-mega"].value
-				Array.prototype.forEach.call(dataMegaContents, dataMegaContent => {
+				Array.prototype.forEach.call(dataMegaContents, (dataMegaContent, index) => {
 					dataMegaContent.style.display = "none";
-				})
-				Array.prototype.forEach.call(dataMegas, (e, index) => {
 					dataMegas[index].classList.remove("active")
 				})
 				dataMega.classList.add("active")
@@ -457,9 +453,67 @@ const megaMenuHover = () => {
 	}
 }
 
+const turnOffPopupWhenClicked = () => {
+	$("[data-fancybox]").on("click", function() {
+		$(".bottom-header").removeClass("active")
+		$("header .opacity").removeClass("active");
+		$(".login-popup").removeClass("open");
+		$(".cart-panel").removeClass("open");
+		let _this = $(this).attr("data-src")
+		$(".fancybox-content").not(_this).parents(".fancybox-container").hide()
+	})
+
+	$("[data-fancybox]").fancybox({
+		afterClose: function() {
+			$.fancybox.close(true)
+		}
+	})
+}
+
+const moveAccount = () => {
+	const move = new MappingListener({
+		selector: ".top-header-item.account-item",
+		desktopWrapper: ".top-header-item.cart",
+		desktopMethod: "insertBefore",
+		mobileWrapper: ".mega-menu-wrapper .list",
+		mobileMethod: "insertBefore",
+		breakpoints: 1025,
+	}).watch()
+}
+
+const mobileMenu = () => {
+	document.querySelector(".mobile-toggle").addEventListener("click", () => {
+		document.querySelector(".mega-menu-wrapper").classList.toggle("active")
+	})
+
+	document.querySelector(".mega-menu-wrapper .btn-close").addEventListener("click", () => {
+		document.querySelector(".mega-menu-wrapper").classList.remove("active")
+	})
+
+	if (window.innerWidth < 1025) {
+		document.querySelector(".mega-menu-wrapper .account-item").addEventListener("click", () => {
+			document.querySelector(".mega-menu-wrapper .account-item .account-box").classList.toggle("active")
+		})
+	}
+}
+
+const addClassHeaderWhenScroll = () => {
+	if ($(window).scrollTop() > 0) {
+		$("header").addClass("active")
+	} else {
+		$("header").removeClass("active")
+	}
+}
+
 $(document).ready(function() {
 	objectFitImages("img.ofc"); // Luôn luôn chậy polyfill cho thuôc tính object-fit: cover trên các phiên bản IE >= 9
 	addClassLazyload(); // Luôn luôn addClass lazyload cho các hình ảnh có thuộc tính [data-src]
+	addClassHeaderWhenScroll();
+	moveAccount();
+	mobileMenu();
+
+
+
 	homeSliderBanner();
 	productSlider();
 	brandSlider();
@@ -487,10 +541,15 @@ $(document).ready(function() {
 	countDownSale();
 	introduceSliderBanner();
 	megaMenuHover();
+	turnOffPopupWhenClicked();
 })
 
 
 $(document).ajaxComplete(function() {
 	addClassLazyload();
 	cartQuantity();
+})
+
+window.addEventListener("scroll", () => {
+	addClassHeaderWhenScroll();
 })

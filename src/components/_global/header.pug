@@ -19,16 +19,22 @@ header
 						a(href="tintuc-pc.html")
 							img(src="./img/icons/tintuc.svg", alt="", srcset="")
 							span Tin tức
-					.top-header-item
-						a(href="#")
-							img(src="./img/icons/taikhoan.svg", alt="", srcset="")
+					.top-header-item.account-item
+						a
+							img.desktop(src="./img/icons/taikhoan.svg", alt="")
+							img.mobile(src="./img/icon-user.png", alt="")
 							span Tài khoản
+						.account-box
+							a(href="#" data-fancybox="login" data-src="#login").btn.btn-main Đăng nhập 
+							a(href="#" data-fancybox="register" data-src="#register").btn.btn-register Đăng ký 
 					.top-header-item.cart
 						a(href="#")
 							img(src="./img/icons/giohang.svg", alt="")
 							.text
 								span Giỏ hàng
 								p.nummber(data-count="0") 0
+					.top-header-item.mobile-toggle
+						<svg xmlns="http://www.w3.org/2000/svg" width="20.745" height="18.396" viewBox="0 0 20.745 18.396"><g transform="translate(-382.809 -667.521)"><g transform="translate(382.809 667.522)"><path d="M402.664,669.3H383.7a.889.889,0,0,1,0-1.778h18.967a.889.889,0,0,1,0,1.778Z" transform="translate(-382.809 -667.522)" fill="#fff"/></g><g transform="translate(388.127 675.83)"><path d="M403.33,678.648H389.681a.889.889,0,0,1,0-1.778H403.33a.889.889,0,0,1,0,1.778Z" transform="translate(-388.792 -676.87)" fill="#fff"/></g><g transform="translate(382.809 684.14)"><path d="M402.664,688H383.7a.889.889,0,0,1,0-1.778h18.967a.889.889,0,0,1,0,1.778Z" transform="translate(-382.809 -686.219)" fill="#fff"/></g></g></svg>
 				.bottom-header
 					.nav-list
 						.nav-item.mega-menu
@@ -56,6 +62,12 @@ header
 										a(href="sanpham.html") Tổng hợp
 									.mega-item(data-mega="mega-10")
 										a(href="sanpham.html") Các thương hiệu âm thanh
+									.mega-item
+										a(href="sanpham.html") Khuyến mãi
+									.mega-item
+										a(href="sanpham.html") Tin tức
+									.mega-item
+										a(href="sanpham.html") Quản lý tài khoản
 								.content
 									.mega-child(data-mega-content="mega-1")
 										.mega-img
@@ -283,7 +295,8 @@ header
 													a(href="sanpham.html") Triangle
 													a(href="sanpham.html") Mcintosh
 													a(href="sanpham.html") Castle
-
+								.btn-close
+									<svg xmlns="http://www.w3.org/2000/svg" width="14.274" height="14.616" viewBox="0 0 14.274 14.616"><g transform="translate(0 13.49) rotate(-45)"><path d="M17.8,1.593H.8A.8.8,0,0,1,.8,0h17a.8.8,0,0,1,0,1.593Z" fill="#fff"/></g><g transform="translate(1.127 0) rotate(45)"><path d="M17.8,1.593H.8A.8.8,0,0,1,.8,0h17a.8.8,0,0,1,0,1.593Z" fill="#fff"/></g></svg>
 						.nav-item
 							a(href="sanpham.html") TRỌN BỘ PHỐI GHÉP
 						.nav-item
@@ -294,3 +307,105 @@ header
 							a(href="sanpham.html") LOA, TAI NGHE BLUETOOTH
 						.nav-item
 							a(href="lienhe.html") LIÊN HỆ
+	.d-none
+		#login.account-popup
+			.popup-wrapper
+				.left
+					.imgbox
+						img(src="./img/popup.png", alt="")
+					h2.section-title Đăng nhập
+					p Đăng nhập trở thành thành viên của AnhDuyen Audio, để có thể lưu trữ giỏ hàng và theo dõi đơn hàng của bạn.
+				.right
+					.right-wrapper
+						.social
+							a.btn.btn-google(href="#")
+								img(src="./img/icons/icon-google-plus.svg", alt="")
+								span Đăng nhập với Google
+							a.btn.btn-facebook(href="#")
+								img(src="./img/icons/icon-facebook-2.svg", alt="")
+								span Đăng nhập với Facebook
+						p.seperate hoặc
+						form
+							.form-group
+								input(type="text" placeholder="Điện thoại/Email")
+							.form-group
+								input(type="password" placeholder="Mật khẩu")
+							.form-option
+								.form-check
+									input#remember(type="checkbox")
+									label(for="remember") Nhớ tài khoản
+								a(href="#" data-fancybox="forgot-password" data-src="#forgot-password") Quên mật khẩu
+							.form-button
+								button Đăng nhập
+						.bottom-ask
+							p Chưa có tài khoản? 
+								a(href="#" data-fancybox="register2" data-src="#register") Đăng ký
+		#register.account-popup
+			.popup-wrapper
+				.left
+					.imgbox
+						img(src="./img/popup.png", alt="")
+					h2.section-title Đăng ký
+					p Đăng ký trở thành thành viên của AnhDuyen Audio, để có thể lưu trữ giỏ hàng và theo dõi đơn hàng của bạn. 
+				.right
+					.right-wrapper
+						form
+							.form-group
+								input(type="text" placeholder="Điện thoại/Email")
+							.form-group
+								input(type="password" placeholder="Mật khẩu")
+							.form-group
+								input(type="password" placeholder="Nhập lại mật khẩu")
+							.form-option
+								.form-check
+									input#agree-policy(type="checkbox")
+									label(for="agree-policy") Tôi đã đọc và đồng ý với 
+										a(href="#") điều khoản sử dụng
+							.form-button
+								button Đăng ký
+						p.seperate hoặc
+						.social
+							a.btn.btn-google(href="#")
+								img(src="./img/icons/icon-google-plus.svg", alt="")
+								span Đăng ký với Google
+							a.btn.btn-facebook(href="#")
+								img(src="./img/icons/icon-facebook-2.svg", alt="")
+								span Đăng ký với Facebook
+						.bottom-ask
+							p Đã có tài khoản? 
+								a(href="#") Đăng nhập
+		#forgot-password.account-popup.forgot-password
+			.popup-wrapper
+				h2.section-title Quên mật khẩu
+				p Vui lòng nhập email hoặc số điện thoại để lấy mã xác thực và đặt lại mật khẩu.
+				form
+					.form-group
+						input(type="text" placeholder="Điện thoại/Email")
+					.form-button
+						button(data-fancybox="verify" data-src="#verify") Tiếp theo
+				.bottom-ask
+					p Đã có tài khoản? 
+						a(href="#") Đăng nhập
+		#verify.account-popup.forgot-password
+			.popup-wrapper
+				h2.section-title Nhập mã xác thực
+				p Mã xác thực sẽ gởi tới số điện thoại <a href="tel:0932132542">0932 132 542</a>. Vui lòng nhập mã xác thực để đặt lại mật khẩu
+				form
+					.form-group
+						input(type="text" placeholder="Mã xác thực")
+					.form-option
+						p Chưa nhãn được mã xác thực? 
+							a(href="#") Gửi lại mã
+					.form-button
+						button(data-fancybox="reset-password" data-src="#reset-password") Xác thực
+		#reset-password.account-popup.forgot-password
+			.popup-wrapper
+				h2.section-title Đặt lại mật khẩu
+				p Đặt lại mật khẩu mới mà bạn mong muốn
+				form
+					.form-group
+						input(type="password" placeholder="Mật khẩu mới")
+					.form-group
+						input(type="password" placeholder="Nhập lại mật khẩu")
+					.form-button
+						button Đổi mật khẩu
