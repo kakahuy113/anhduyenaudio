@@ -116,7 +116,7 @@
 		margin-top: 0;
 
 		.container {
-			padding  : 0;
+			padding: 0;
 		}
 
 		.left-banner {
@@ -136,13 +136,27 @@
 					}
 				}
 			}
+
+			.swiper-pagination {
+				text-align: center;
+			}
 		}
 
 	}
 
 	@media(max-width: 480px) {
-		.left-banner {
-			display: none;
+		.slider-HomeBanner {
+			figure {
+				figcaption {
+					span {
+						font-size: 12px;
+					}
+
+					h5 {
+						font-size: 14px;
+					}
+				}
+			}
 		}
 	}
 }

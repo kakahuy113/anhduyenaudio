@@ -27,4 +27,23 @@
 		transform        : translateY(-50%);
 		margin-top       : unset;
 	}
+
+	@media(max-width: 1024px) {
+		padding: 0;
+
+		.swiper-button-next,
+		.swiper-button-prev {
+			display: none;
+		}
+
+		.clients-slider {
+			padding: 0;
+
+			.box-img {
+				img {
+					width: 100%;
+				}
+			}
+		}
+	}
 }

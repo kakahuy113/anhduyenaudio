@@ -159,7 +159,7 @@ html {
 	}
 }
 
-.khuyenmai {
+.badge-sale-hot {
 	background     : #D82F25;
 	position       : absolute;
 	display        : flex;
@@ -175,6 +175,12 @@ html {
 		font-family: "Helvetica-Neue", sans-serif;
 		color      : #ffffff;
 		font-weight: 700;
+	}
+
+	@media(max-width: 1024px) {
+		width    : 40px;
+		height   : 40px;
+		font-size: 12px;
 	}
 }
 
