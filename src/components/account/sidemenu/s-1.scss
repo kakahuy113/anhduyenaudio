@@ -143,6 +143,9 @@
 				background: #ffffff;
 
 				a {
+					width: 100%;
+					max-width: 100%;
+
 					svg {
 						.fill {
 							fill: map-get($mau, den);

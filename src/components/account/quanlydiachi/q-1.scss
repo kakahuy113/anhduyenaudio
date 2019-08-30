@@ -7,7 +7,7 @@
 	.address-item {
 		border: 1px solid map-get($mau, xam-1);
 		border-radius: 5px;
-		padding: 40px 20px;
+		padding: 20px;
 		display: flex;
 		flex-wrap: wrap;
 
@@ -18,8 +18,8 @@
 
 		.col-md-auto {
 			align-self: flex-end;
-			flex: 0 0 195px;
-			max-width: 195px;
+			flex: 0 0 205px;
+			max-width: 205px;
 			font-size: 12px;
 			display: flex;
 			margin-left: auto;
@@ -36,6 +36,7 @@
 
 			.default-address {
 				font-style: italic;
+				white-space: nowrap;
 				color: map-get($mau, main)
 			}
 		}

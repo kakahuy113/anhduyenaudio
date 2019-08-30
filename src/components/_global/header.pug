@@ -1,42 +1,296 @@
-//- header
-//- 	.container
-//- 		.row
-//- 			.col-lg-auto
-//- 				//- LOGO
-//- 				.logo
-//- 					a(href="index.html")
-//- 						img(src="./img/logo.png", alt="", srcset="")
-//- 			.col-lg
-//- 				.top-header
-//- 					.search
-//- 						input(type="text" placeholder="Tìm sản phẩm, thương hiệu ...")
-//- 						button
-//- 							img(src="./img/icons/timkiem.svg", alt="", srcset="")
-//- 					.top-header-list
-//- 						nav
-//- 							a(href="#")
-//- 								img(src="./img/icons/duan.svg", alt="", srcset="")
-//- 								span Dự án
-//- 							a(href="tintuc-pc.html")
-//- 								img(src="./img/icons/tintuc.svg", alt="", srcset="")
-//- 								span Tin tức
-//- 							a(href="#")
-//- 								img(src="./img/icons/taikhoan.svg", alt="", srcset="")
-//- 								span Tài khoản
-//- 					.cart
-//- 						a(href="#")
-//- 							img(src="./img/icons/giohang.svg", alt="")
-//- 							.text
-//- 								span Giỏ hàng
-//- 								p(data-count=0).nummber 0
-//- 				.bottom-header
-//- 					.mega-menu
-//- 						<svg id="Group_380" data-name="Group 380" xmlns="http://www.w3.org/2000/svg" width="15.927" height="11.664" viewBox="0 0 15.927 11.664"><path id="Path_790" data-name="Path 790" d="M283.944,380.662h-.029a.487.487,0,0,0-.485.5.512.512,0,0,0,.514.5.5.5,0,0,0,0-1Z" transform="translate(-283.43 -380.662)" fill="#fff"/><path id="Path_791" data-name="Path 791" d="M287.776,381.662h11.08a.5.5,0,0,0,0-1h-11.08a.5.5,0,0,0,0,1Z" transform="translate(-283.43 -380.662)" fill="#fff"/><path id="Path_792" data-name="Path 792" d="M283.944,385.994h-.029a.487.487,0,0,0-.485.5.512.512,0,0,0,.514.5.5.5,0,0,0,0-1Z" transform="translate(-283.43 -380.662)" fill="#fff"/><path id="Path_793" data-name="Path 793" d="M298.856,385.994h-11.08a.5.5,0,0,0,0,1h11.08a.5.5,0,0,0,0-1Z" transform="translate(-283.43 -380.662)" fill="#fff"/><path id="Path_794" data-name="Path 794" d="M283.944,391.326h-.029a.488.488,0,0,0-.485.5.512.512,0,0,0,.514.5.5.5,0,0,0,0-1Z" transform="translate(-283.43 -380.662)" fill="#fff"/><path id="Path_795" data-name="Path 795" d="M298.856,391.326h-11.08a.5.5,0,0,0,0,1h11.08a.5.5,0,0,0,0-1Z" transform="translate(-283.43 -380.662)" fill="#fff"/></svg>
-//- 						span DANH MỤC SẢN PHẨM
-//- 					.menu-item
-//- 						nav
-//- 							a(href="sanpham.html") TRỌN BỘ PHỐI GHÉP
-//- 							a(href="sanpham.html") LOA
-//- 							a(href="sanpham.html") AMPLY
-//- 							a(href="sanpham.html") LOA, TAI NGHE BLUETOOTH
-//- 							a(href="lienhe.html") LIÊN HỆ
+header
+	.container
+		.row.no-gutters
+			.col-lg-auto
+				.logo
+					a(href="index.html")
+						img(src="./img/logo.png", alt="", srcset="")
+			.col-no-rel
+				.top-header
+					.search
+						input(type="text" placeholder="Tìm sản phẩm, thương hiệu ...")
+						button
+							img(src="./img/icons/timkiem.svg", alt="", srcset="")
+					.top-header-item
+						a(href="#")
+							img(src="./img/icons/duan.svg", alt="", srcset="")
+							span Dự án
+					.top-header-item
+						a(href="tintuc-pc.html")
+							img(src="./img/icons/tintuc.svg", alt="", srcset="")
+							span Tin tức
+					.top-header-item
+						a(href="#")
+							img(src="./img/icons/taikhoan.svg", alt="", srcset="")
+							span Tài khoản
+					.top-header-item.cart
+						a(href="#")
+							img(src="./img/icons/giohang.svg", alt="")
+							.text
+								span Giỏ hàng
+								p.nummber(data-count="0") 0
+				.bottom-header
+					.nav-list
+						.nav-item.mega-menu
+							<svg id="Group_380" data-name="Group 380" xmlns="http://www.w3.org/2000/svg" width="15.927" height="21" viewBox="0 0 16.927 15.664"><path id="Path_790" data-name="Path 790" d="M283.944,380.662h-.029a.487.487,0,0,0-.485.5.512.512,0,0,0,.514.5.5.5,0,0,0,0-1Z" transform="translate(-283.43 -380.662)" fill="#fff"/><path id="Path_791" data-name="Path 791" d="M287.776,381.662h11.08a.5.5,0,0,0,0-1h-11.08a.5.5,0,0,0,0,1Z" transform="translate(-283.43 -380.662)" fill="#fff"/><path id="Path_792" data-name="Path 792" d="M283.944,385.994h-.029a.487.487,0,0,0-.485.5.512.512,0,0,0,.514.5.5.5,0,0,0,0-1Z" transform="translate(-283.43 -380.662)" fill="#fff"/><path id="Path_793" data-name="Path 793" d="M298.856,385.994h-11.08a.5.5,0,0,0,0,1h11.08a.5.5,0,0,0,0-1Z" transform="translate(-283.43 -380.662)" fill="#fff"/><path id="Path_794" data-name="Path 794" d="M283.944,391.326h-.029a.488.488,0,0,0-.485.5.512.512,0,0,0,.514.5.5.5,0,0,0,0-1Z" transform="translate(-283.43 -380.662)" fill="#fff"/><path id="Path_795" data-name="Path 795" d="M298.856,391.326h-11.08a.5.5,0,0,0,0,1h11.08a.5.5,0,0,0,0-1Z" transform="translate(-283.43 -380.662)" fill="#fff"/></svg>
+							span DANH MỤC SẢN PHẨM
+							.mega-menu-wrapper
+								.list
+									.mega-item(data-mega="mega-1")
+										a(href="sanpham.html") Bộ dàn
+									.mega-item(data-mega="mega-2")
+										a(href="sanpham.html") Loa
+									.mega-item(data-mega="mega-3")
+										a(href="sanpham.html") Amply
+									.mega-item(data-mega="mega-4")
+										a(href="sanpham.html") Cục đẩy
+									.mega-item(data-mega="mega-5")
+										a(href="sanpham.html") Mixer
+									.mega-item(data-mega="mega-6")
+										a(href="sanpham.html") Đầu phát
+									.mega-item(data-mega="mega-7")
+										a(href="sanpham.html") Loa công nghệ & tai nghe
+									.mega-item(data-mega="mega-8")
+										a(href="sanpham.html") Phụ kiện
+									.mega-item(data-mega="mega-9")
+										a(href="sanpham.html") Tổng hợp
+									.mega-item(data-mega="mega-10")
+										a(href="sanpham.html") Các thương hiệu âm thanh
+								.content
+									.mega-child(data-mega-content="mega-1")
+										.mega-img
+											a(href="#")
+												img(src="./img/mega-menu.jpg", alt="")
+											p Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus maxime eius distinctio molestias ex ad laboriosam laborum numquam sunt quam. 1
+										.mega-content
+											.mega-child-item-list
+												nav
+													a(href="sanpham.html") Loa cây nghe nhạc
+													a(href="sanpham.html") Loa treo nghe nhạc
+													a(href="sanpham.html") Loa bookshelf
+													a(href="sanpham.html") Loa center - surround
+													a(href="sanpham.html") Loa bộ 2.1 - 5.1
+													a(href="sanpham.html") Loa sân vườn
+													a(href="sanpham.html") Loa biểu diễn di động
+													a(href="sanpham.html") Loa sân khấu
+													a(href="sanpham.html") Loa soundbar
+												a.mega-child-item-list-viewmore(href="#") Xem thêm
+											.mega-child-manufacture
+												h3 Thương hiệu
+												nav
+													a(href="sanpham.html") B&W
+													a(href="sanpham.html") Tanoy
+													a(href="sanpham.html") Jamo
+													a(href="sanpham.html") JBL
+													a(href="sanpham.html") Paradigm
+													a(href="sanpham.html") Polkaudio
+													a(href="sanpham.html") Sonus faber
+													a(href="sanpham.html") Triangle
+													a(href="sanpham.html") Mcintosh
+													a(href="sanpham.html") Castle
+									.mega-child(data-mega-content="mega-2")
+										.mega-img
+											a(href="#")
+												img(src="./img/mega-menu.jpg", alt="")
+											p Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus maxime eius distinctio molestias ex ad laboriosam laborum numquam sunt quam. 2
+										.mega-content
+											.mega-child-item-list
+												nav
+													a(href="sanpham.html") Loa cây nghe nhạc
+													a(href="sanpham.html") Loa treo nghe nhạc
+													a(href="sanpham.html") Loa bookshelf
+													a(href="sanpham.html") Loa center - surround
+													a(href="sanpham.html") Loa bộ 2.1 - 5.1
+													a(href="sanpham.html") Loa sân vườn
+													a(href="sanpham.html") Loa biểu diễn di động
+													a(href="sanpham.html") Loa sân khấu
+													a(href="sanpham.html") Loa soundbar
+												a.mega-child-item-list-viewmore(href="#") Xem thêm
+											.mega-child-manufacture
+									.mega-child(data-mega-content="mega-3")
+										.mega-img
+											a(href="#")
+												img(src="./img/mega-menu.jpg", alt="")
+											p Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus maxime eius distinctio molestias ex ad laboriosam laborum numquam sunt quam. 3
+										.mega-content
+											.mega-child-item-list
+												nav
+													a(href="sanpham.html") Loa cây nghe nhạc
+													a(href="sanpham.html") Loa treo nghe nhạc
+													a(href="sanpham.html") Loa bookshelf
+													a(href="sanpham.html") Loa center - surround
+													a(href="sanpham.html") Loa bộ 2.1 - 5.1
+													a(href="sanpham.html") Loa sân vườn
+													a(href="sanpham.html") Loa biểu diễn di động
+													a(href="sanpham.html") Loa sân khấu
+													a(href="sanpham.html") Loa soundbar
+												a.mega-child-item-list-viewmore(href="#") Xem thêm
+											.mega-child-manufacture
+									.mega-child(data-mega-content="mega-4")
+										.mega-img
+											a(href="#")
+												img(src="./img/mega-menu.jpg", alt="")
+											p Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus maxime eius distinctio molestias ex ad laboriosam laborum numquam sunt quam. 4
+										.mega-content
+											.mega-child-item-list
+												nav
+													a(href="sanpham.html") Loa cây nghe nhạc
+													a(href="sanpham.html") Loa treo nghe nhạc
+													a(href="sanpham.html") Loa bookshelf
+													a(href="sanpham.html") Loa center - surround
+													a(href="sanpham.html") Loa bộ 2.1 - 5.1
+													a(href="sanpham.html") Loa sân vườn
+													a(href="sanpham.html") Loa biểu diễn di động
+													a(href="sanpham.html") Loa sân khấu
+													a(href="sanpham.html") Loa soundbar
+												a.mega-child-item-list-viewmore(href="#") Xem thêm
+											.mega-child-manufacture
+									.mega-child(data-mega-content="mega-5")
+										.mega-img
+											a(href="#")
+												img(src="./img/mega-menu.jpg", alt="")
+											p Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus maxime eius distinctio molestias ex ad laboriosam laborum numquam sunt quam. 5
+										.mega-content
+											.mega-child-item-list
+												nav
+													a(href="sanpham.html") Loa cây nghe nhạc
+													a(href="sanpham.html") Loa treo nghe nhạc
+													a(href="sanpham.html") Loa bookshelf
+													a(href="sanpham.html") Loa center - surround
+													a(href="sanpham.html") Loa bộ 2.1 - 5.1
+													a(href="sanpham.html") Loa sân vườn
+													a(href="sanpham.html") Loa biểu diễn di động
+													a(href="sanpham.html") Loa sân khấu
+													a(href="sanpham.html") Loa soundbar
+												a.mega-child-item-list-viewmore(href="#") Xem thêm
+											.mega-child-manufacture
+									.mega-child(data-mega-content="mega-6")
+										.mega-img
+											a(href="#")
+												img(src="./img/mega-menu.jpg", alt="")
+											p Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus maxime eius distinctio molestias ex ad laboriosam laborum numquam sunt quam. 6
+										.mega-content
+											.mega-child-item-list
+												nav
+													a(href="sanpham.html") Loa cây nghe nhạc
+													a(href="sanpham.html") Loa treo nghe nhạc
+													a(href="sanpham.html") Loa bookshelf
+													a(href="sanpham.html") Loa center - surround
+													a(href="sanpham.html") Loa bộ 2.1 - 5.1
+													a(href="sanpham.html") Loa sân vườn
+													a(href="sanpham.html") Loa biểu diễn di động
+													a(href="sanpham.html") Loa sân khấu
+													a(href="sanpham.html") Loa soundbar
+												a.mega-child-item-list-viewmore(href="#") Xem thêm
+											.mega-child-manufacture
+									.mega-child(data-mega-content="mega-7")
+										.mega-img
+											a(href="#")
+												img(src="./img/mega-menu.jpg", alt="")
+											p Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus maxime eius distinctio molestias ex ad laboriosam laborum numquam sunt quam. 7
+										.mega-content
+											.mega-child-item-list
+												nav
+													a(href="sanpham.html") Loa cây nghe nhạc
+													a(href="sanpham.html") Loa treo nghe nhạc
+													a(href="sanpham.html") Loa bookshelf
+													a(href="sanpham.html") Loa center - surround
+													a(href="sanpham.html") Loa bộ 2.1 - 5.1
+													a(href="sanpham.html") Loa sân vườn
+													a(href="sanpham.html") Loa biểu diễn di động
+													a(href="sanpham.html") Loa sân khấu
+													a(href="sanpham.html") Loa soundbar
+												a.mega-child-item-list-viewmore(href="#") Xem thêm
+											.mega-child-manufacture
+									.mega-child(data-mega-content="mega-8")
+										.mega-img
+											a(href="#")
+												img(src="./img/mega-menu.jpg", alt="")
+											p Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus maxime eius distinctio molestias ex ad laboriosam laborum numquam sunt quam. 8
+										.mega-content
+											.mega-child-item-list
+												nav
+													a(href="sanpham.html") Loa cây nghe nhạc
+													a(href="sanpham.html") Loa treo nghe nhạc
+													a(href="sanpham.html") Loa bookshelf
+													a(href="sanpham.html") Loa center - surround
+													a(href="sanpham.html") Loa bộ 2.1 - 5.1
+													a(href="sanpham.html") Loa sân vườn
+													a(href="sanpham.html") Loa biểu diễn di động
+													a(href="sanpham.html") Loa sân khấu
+													a(href="sanpham.html") Loa soundbar
+												a.mega-child-item-list-viewmore(href="#") Xem thêm
+											.mega-child-manufacture
+									.mega-child(data-mega-content="mega-9")
+										.mega-img
+											a(href="#")
+												img(src="./img/mega-menu.jpg", alt="")
+											p Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus maxime eius distinctio molestias ex ad laboriosam laborum numquam sunt quam. 9
+										.mega-content
+											.mega-child-item-list
+												nav
+													a(href="sanpham.html") Loa cây nghe nhạc
+													a(href="sanpham.html") Loa treo nghe nhạc
+													a(href="sanpham.html") Loa bookshelf
+													a(href="sanpham.html") Loa center - surround
+													a(href="sanpham.html") Loa bộ 2.1 - 5.1
+													a(href="sanpham.html") Loa sân vườn
+													a(href="sanpham.html") Loa biểu diễn di động
+													a(href="sanpham.html") Loa sân khấu
+													a(href="sanpham.html") Loa soundbar
+												a.mega-child-item-list-viewmore(href="#") Xem thêm
+											.mega-child-manufacture
+												h3 Thương hiệu
+												nav
+													a(href="sanpham.html") B&W
+													a(href="sanpham.html") Tanoy
+													a(href="sanpham.html") Jamo
+													a(href="sanpham.html") JBL
+													a(href="sanpham.html") Paradigm
+													a(href="sanpham.html") Polkaudio
+													a(href="sanpham.html") Sonus faber
+													a(href="sanpham.html") Triangle
+													a(href="sanpham.html") Mcintosh
+													a(href="sanpham.html") Castle
+									.mega-child(data-mega-content="mega-10")
+										.mega-img
+											a(href="#")
+												img(src="./img/mega-menu.jpg", alt="")
+											p Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus maxime eius distinctio molestias ex ad laboriosam laborum numquam sunt quam. 10
+										.mega-content
+											.mega-child-item-list
+												nav
+													a(href="sanpham.html") Loa cây nghe nhạc
+													a(href="sanpham.html") Loa treo nghe nhạc
+													a(href="sanpham.html") Loa bookshelf
+													a(href="sanpham.html") Loa center - surround
+													a(href="sanpham.html") Loa bộ 2.1 - 5.1
+													a(href="sanpham.html") Loa sân vườn
+													a(href="sanpham.html") Loa biểu diễn di động
+													a(href="sanpham.html") Loa sân khấu
+													a(href="sanpham.html") Loa soundbar
+												a.mega-child-item-list-viewmore(href="#") Xem thêm
+											.mega-child-manufacture
+												h3 Thương hiệu
+												nav
+													a(href="sanpham.html") B&W
+													a(href="sanpham.html") Tanoy
+													a(href="sanpham.html") Jamo
+													a(href="sanpham.html") JBL
+													a(href="sanpham.html") Paradigm
+													a(href="sanpham.html") Polkaudio
+													a(href="sanpham.html") Sonus faber
+													a(href="sanpham.html") Triangle
+													a(href="sanpham.html") Mcintosh
+													a(href="sanpham.html") Castle
+
+						.nav-item
+							a(href="sanpham.html") TRỌN BỘ PHỐI GHÉP
+						.nav-item
+							a(href="sanpham.html") LOA
+						.nav-item
+							a(href="sanpham.html") AMPLY
+						.nav-item
+							a(href="sanpham.html") LOA, TAI NGHE BLUETOOTH
+						.nav-item
+							a(href="lienhe.html") LIÊN HỆ
