@@ -6,12 +6,33 @@
 	border-radius: 5px;
 	padding      : 18px;
 	box-shadow   : 0px 3px 6px rgba(#000000, .16);
+	align-items  : center;
 
 	h2 {
+		margin-top  : 2px;
 		color       : #FFFFFF;
 		font-size   : 14px;
 		font-weight : 400;
 		padding-left: 10px;
+	}
+
+	@media(max-width: 1024px) {
+		width          : 100%;
+		border-radius  : 0;
+		justify-content: flex-end;
+
+		&.active {
+			h2 {
+				color: #D82F25;
+			}
+
+			svg {
+				path {
+					fill: #D82F25;
+
+				}
+			}
+		}
 	}
 }
 
@@ -258,6 +279,30 @@
 					}
 				}
 			}
+		}
+	}
+
+
+	@media(max-width: 1024px) {
+		width  : 100%;
+		display: none;
+
+		.title {
+			font-size: 14PX;
+		}
+
+		.brand {
+			.check-box {
+				max-height: 230px;
+
+				.form-group {
+					margin-bottom: 15px;
+				}
+			}
+		}
+
+		&.active {
+			display: block;
 		}
 	}
 }

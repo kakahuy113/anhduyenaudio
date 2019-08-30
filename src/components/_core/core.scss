@@ -210,3 +210,31 @@ html {
 	clear  : both;
 	display: table;
 }
+
+.hide-in-mobile {
+	@media(max-width:1024px) {
+		display: none !important;
+	}
+}
+
+.hide-in-pc {
+	display: none;
+
+	@media(max-width: 1024px) {
+		display: block;
+	}
+}
+
+section.list-product {
+	.container {
+		.row {
+			.col-lg-auto {
+				padding: 0;
+			}
+
+			.col-lg {
+				padding: 0;
+			}
+		}
+	}
+}

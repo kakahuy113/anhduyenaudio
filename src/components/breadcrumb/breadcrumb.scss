@@ -6,10 +6,6 @@
 		display   : flex;
 		padding   : 0;
 
-		@media (max-width: 767.98px) {
-			display: none;
-		}
-
 		li {
 			a {
 				color    : #888888;
@@ -35,5 +31,9 @@
 				}
 			}
 		}
+	}
+
+	@media(max-width: 1024px) {
+		display: none;
 	}
 }
