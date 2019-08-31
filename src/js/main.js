@@ -302,7 +302,10 @@ function sliderTheSameProduct() {
 		observer: true,
 		observeParents: true,
 		breakpoints: {
-			1024: {
+			768: {
+				slidesPerView: 2,
+			},
+			575: {
 				slidesPerView: 1,
 			}
 		},

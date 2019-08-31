@@ -309,7 +309,7 @@
 		}
 	}
 
-	@media(max-width: 1024px) {
+	@media (max-width: 1024.98px) {
 		margin-top: 5px;
 
 		.container {
@@ -536,9 +536,9 @@
 						}
 
 						.btn-outline-black {
-							margin-left: 45px;
-							margin-top : 25px;
-							width      : 235px;
+							margin    : 0 auto;
+							margin-top: 25px;
+							width     : 235px;
 						}
 					}
 				}

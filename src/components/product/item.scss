@@ -67,16 +67,16 @@
 		}
 	}
 
-	@media(max-width: 1024px) {
+	@media (max-width: 1024.98px) {
 		margin: 0;
 
 		&.sale {
 			margin-top : 0px;
 			padding-top: 30px;
-		}	
+		}
 
 		.item-list-pro {
-			margin-bottom: 35px;
+			margin-bottom: 30px;
 			padding      : 0 10px;
 
 			figure {
@@ -119,7 +119,7 @@
 		}
 	}
 
-	@media(max-width:1024px) {
+	@media(max-width:1024.98px) {
 		.quantity {
 			display: none;
 		}

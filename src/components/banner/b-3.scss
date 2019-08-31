@@ -3,6 +3,7 @@
 
 	figure {
 		position: relative;
+		overflow: hidden;
 
 		.box-img {
 			img {
@@ -45,20 +46,10 @@
 		}
 	}
 
-
-	@media(max-width: 1024px) {
+	@media(max-width: 1024.98px) {
 		margin-top: 0;
 
 		figure {
-			.box-img {
-				height: 195px;
-				width : 100%;
-
-				img {
-					height: 100%;
-				}
-			}
-
 			.box-countdown {
 				bottom: 15px;
 
@@ -75,6 +66,26 @@
 					span {
 						font-size  : 18px;
 						margin-left: 15px;
+					}
+				}
+			}
+		}
+	}
+
+	@media (max-width: 575.98px) {
+		figure {
+			.box-countdown {
+				.block {
+					height: 40px;
+
+					#hours,
+					#minutes,
+					#seconds {
+						font-size: 14px;
+					}
+
+					span {
+						font-size: 14px;
 					}
 				}
 			}
