@@ -301,6 +301,11 @@ function sliderTheSameProduct() {
 		// autoplay: true,
 		observer: true,
 		observeParents: true,
+		breakpoints: {
+			1024: {
+				slidesPerView: 1,
+			}
+		},
 		navigation: {
 			nextEl: '.the-same-product-slider .swiper-button-next',
 			prevEl: '.the-same-product-slider .swiper-button-prev',
