@@ -314,39 +314,38 @@ function sliderTheSameProduct() {
 }
 // LẤY % SAO
 function getDataBar() {
-
 	let dataBarNodeList = document.querySelectorAll('.statistical-rating .middle .bar');
-
-
 	Array.prototype.forEach.call(dataBarNodeList, function (e, index) {
 		const data = e.getAttribute('data-bar');
 		e.style.width = data + "%";
 	})
 }
-const cartQuantity = () => {
-	$('.quantity-input .minus').each(function () {
-		$(this).on("click", function () {
-			let curVal = Number($(this).siblings("input").val())
-			if (curVal <= 0) {
-				curVal = 0;
-			} else {
-				curVal -= 1;
-			}
-			$(this).siblings("input").val(curVal)
-		})
-	})
-	$('.quantity-input .plus').each(function () {
-		$(this).on("click", function () {
-			let curVal = Number($(this).siblings("input").val())
-			if (curVal >= 99) {
-				curVal = 99;
-			} else {
-				curVal += 1;
-			}
-			$(this).siblings("input").val(curVal)
-		})
-	})
-}
+
+// const cartQuantity = () => {
+// 	$('.quantity-input .minus').each(function () {
+// 		$(this).on("click", function () {
+// 			let curVal = Number($(this).siblings("input").val())
+// 			if (curVal <= 0) {
+// 				curVal = 0;
+// 			} else {
+// 				curVal -= 1;
+// 			}
+// 			$(this).siblings("input").val(curVal)
+// 		})
+// 	})
+// 	$('.quantity-input .plus').each(function () {
+// 		$(this).on("click", function () {
+// 			let curVal = Number($(this).siblings("input").val())
+// 			if (curVal >= 99) {
+// 				curVal = 99;
+// 			} else {
+// 				curVal += 1;
+// 			}
+// 			$(this).siblings("input").val(curVal)
+// 		})
+// 	})
+// }
+
 const toggleFormAddNewAddress = () => {
 	$('.add-new-address').on('click', function () {
 		$('.add-new-address-form').slideToggle();
@@ -425,6 +424,11 @@ function introduceSliderBanner() {
 		effect: 'fade',
 		fadeEffect: {
 			crossFade: true,
+		},
+		breakpoints: {
+			1024: {
+				pagination: false,
+			}
 		},
 		centeredSlides: true,
 		speed: 1000,
@@ -554,7 +558,6 @@ $(document).ready(function () {
 	dataStartRanking();
 	chooesColor();
 	sliderTheSameProduct();
-	cartQuantity();
 	toggleFormAddNewAddress();
 	clickThenScrollToSection();
 	getDataBar();

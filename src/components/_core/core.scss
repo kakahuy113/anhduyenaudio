@@ -249,3 +249,11 @@ html {
 		display: block;
 	}
 }
+
+.newsDetail-page {
+	@media(max-width: 1024px) {
+		.list-same-news {
+			display: none;
+		}
+	}
+}

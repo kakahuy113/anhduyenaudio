@@ -11,8 +11,8 @@
 
 			figcaption {
 				position: absolute;
-				bottom: 110px;
-				right: 265px;
+				bottom  : 110px;
+				right   : 265px;
 
 				@media (max-width: 1365.9px) {
 					right: 200px;
@@ -23,7 +23,7 @@
 				}
 
 				@media (max-width: 1024.98px) {
-					right: 10%;
+					right : 10%;
 					bottom: 60px;
 				}
 
@@ -33,11 +33,12 @@
 
 				@media (max-width: 575.98px) {
 					bottom: 25px;
+					right : 10%;
 				}
 
 				span {
-					font-size: 18px;
-					color: #1C1C1C;
+					font-size      : 18px;
+					color          : #1C1C1C;
 					text-decoration: underline;
 
 					@media (max-width: 1024.98px) {
@@ -50,10 +51,10 @@
 				}
 
 				h5 {
-					margin-top: 10px;
-					font-size: 33px;
+					margin-top : 10px;
+					font-size  : 33px;
 					font-weight: 700;
-					color: #F5F5F5;
+					color      : #F5F5F5;
 
 					@media (max-width: 1199.98px) {
 						font-size: 30px;
@@ -68,22 +69,22 @@
 					}
 
 					@media (max-width: 575.98px) {
-						font-size: 14px;
+						font-size : 14px;
 						margin-top: 5px;
 					}
 				}
 
 				.see-more {
-					display: inline-block;
-					font-size: 12px;
-					line-height: 36px;
-					font-weight: 700;
-					color: #D82F25;
-					background: #FFFFFF;
-					border: 1px solid #D82F25;
-					padding: 0 40px;
+					display      : inline-block;
+					font-size    : 12px;
+					line-height  : 36px;
+					font-weight  : 700;
+					color        : #D82F25;
+					background   : #FFFFFF;
+					border       : 1px solid #D82F25;
+					padding      : 0 40px;
 					border-radius: 25px;
-					margin-top: 30px;
+					margin-top   : 30px;
 				}
 			}
 		}
@@ -97,12 +98,12 @@
 						h5,
 						.see-more {
 							transition: .5s all ease-in-out;
-							transform: translateX(200%);
+							transform : translateX(200%);
 						}
 
 						span {
 							transition-delay: .5s;
-							display: block;
+							display         : block;
 						}
 
 						h5 {
@@ -140,10 +141,19 @@
 
 		.swiper-pagination-bullet {
 			margin-right: 25px;
-			background: #FFFFFF;
-			width: 12px;
-			height: 12px;
-			border: 1px solid #707070;
+			background  : #FFFFFF;
+			width       : 12px;
+			height      : 12px;
+			border      : 1px solid #707070;
 		}
+	}
+
+	@media(max-width: 1024px) {
+		margin-top: 0;
+
+		.container {
+			padding: 0;
+		}
+
 	}
 }
