@@ -570,6 +570,7 @@ $(document).ready(function () {
 	}
 	productSliderHotSale();
 	const recruitmentTab = new Tab(".job-position .tab-container");
+	const cauhoithuonggap = new Tab(".FaQ .tab-container");
 	const ProductDetailTab = new Tab(".tabs-info-product .tab-container");
 	if ($(window).width() > 1024) {
 		const SaleHotTab = new Tab(".product-sale-hot .tab-container");

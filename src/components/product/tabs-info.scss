@@ -25,11 +25,6 @@
 
 		.content-tabs {
 			margin-right: 30px;
-			display     : none;
-
-			&.active {
-				display: block;
-			}
 
 			&[tab-id="description"] {
 				padding-bottom: 30px;
