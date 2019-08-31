@@ -44,4 +44,40 @@
 			}
 		}
 	}
+
+
+	@media(max-width: 1024px) {
+		margin-top: 0;
+
+		figure {
+			.box-img {
+				height: 195px;
+				width : 100%;
+
+				img {
+					height: 100%;
+				}
+			}
+
+			.box-countdown {
+				bottom: 15px;
+
+				.block {
+					width : 100px;
+					height: 52px;
+
+					#hours,
+					#minutes,
+					#seconds {
+						font-size: 18px;
+					}
+
+					span {
+						font-size  : 18px;
+						margin-left: 15px;
+					}
+				}
+			}
+		}
+	}
 }

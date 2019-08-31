@@ -2,7 +2,7 @@
 	background: #FFFFFF;
 
 	&.sale {
-		margin: 67px 0 0 0;
+		margin-top: 67px;
 
 		.item-list-pro {
 			padding   : 0 18px;
@@ -34,6 +34,7 @@
 
 			figcaption {
 				h3 {
+					text-align   : center;
 					font-size    : 15px;
 					color        : #D82F25;
 					font-weight  : 400;
@@ -69,6 +70,11 @@
 	@media(max-width: 1024px) {
 		margin: 0;
 
+		&.sale {
+			margin-top : 0px;
+			padding-top: 30px;
+		}	
+
 		.item-list-pro {
 			margin-bottom: 35px;
 			padding      : 0 10px;
@@ -82,10 +88,7 @@
 
 				figcaption {
 					h3 {
-						font-size    : 14px;
-						color        : #D82F25;
-						font-weight  : 400;
-						margin-bottom: 15px;
+						font-size: 14px;
 					}
 
 					p {
@@ -96,6 +99,7 @@
 						width    : 122px;
 						height   : 30px;
 						font-size: 12px;
+						margin   : 0 auto;
 					}
 				}
 			}

@@ -5,22 +5,4 @@ block var
 	- var bodyClass = 'product-sale-page'
 
 block main
-	section.saleOff-product
-		.container
-			include ../components/banner/b-3.pug
-			.row.no-gutters.list-item-product.sale
-				-for(i=1;i<16;i++)
-					.col-lg-20.col-6.item-list-pro
-						mixin imgProduct(param)
-							a(href="sanpham-ct.html")
-								figure
-									.box-img
-										img(src="./img/home-product/"+param+".png", alt="")
-									figcaption
-										h3 Loa Jamo 426 HCS
-										p Loa jamo 5.0 CH S 426 HCS thuộc dòng Studio của Jamo. Loa main được thiết kế 2 đường tiếp. Lorem ipsum, dolor sit amet consectetur adipisicing elit. Obcaecati, facere amet esse, accusantium at hic perspiciatis incidunt illo minus ut, architecto corporis et. Consectetur vel, blanditiis nihil ipsam ullam et!
-										span 9.490.000 ₫
-									.khuyenmai
-										span(data-sale=60) 60%
-						+imgProduct(i)
-			include ../components/_global/pagination.pug
+	include ../components/product/saleOff.pug
