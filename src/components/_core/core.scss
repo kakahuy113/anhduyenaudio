@@ -243,7 +243,7 @@ main {
 	display   : none;
 
 	&.active {
-		display: block;	
+		display: block;
 	}
 }
 
@@ -278,5 +278,11 @@ main {
 .list-product {
 	@media (max-width: 1024.98px) {
 		margin-top: 30px;
+	}
+}
+
+.ui-widget-content {
+	.ui-state-default {
+		background: white;
 	}
 }
