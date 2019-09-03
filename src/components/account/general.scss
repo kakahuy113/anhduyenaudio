@@ -1,7 +1,11 @@
 .account-title {
-	padding: 11px 20px;
+	padding: 10px 20px;
 	background: map-get($mau, xam-2);
 	border: 1px solid map-get($mau, xam-1);
+
+	@media (max-width: 1024.98px) {
+		padding: 10px;
+	}
 }
 
 .account {

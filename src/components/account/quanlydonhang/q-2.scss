@@ -14,13 +14,13 @@
 
 .account-manage-bill-detail {
 	.bill-detail-info {
-		padding: 40px 60px;
+		padding: 40px 20px;
 		background: map-get($mau, trang);
 		border: 1px solid map-get($mau, xam-1);
 		border-top: 0;
 
 		@media (max-width: 1024.98px) {
-			padding: 20px 15px;
+			padding: 20px 10px;
 		}
 
 		.block-info {
@@ -83,7 +83,7 @@
 		}
 
 		@media (max-width: 1024.98px) {
-			border: 0;
+			border-top: 0;
 		}
 
 		@media (max-width: 767.98px) {
