@@ -59,12 +59,14 @@
 		border-bottom: 1px solid #DFDFDF;
 		padding      : 15px 20px;
 
-		#amount {
+		#amount,
+		#value-text {
 			background: transparent;
 			font-size : 13px;
 			color     : #D82F25;
 			border    : none;
 			width     : 100%;
+			margin    : 5px 0;
 		}
 
 		#slider-range {
@@ -212,7 +214,12 @@
 				transition : .2s all ease-in-out;
 
 				&:hover {
-					color: #D82F25;
+					background: #FFFFFF;
+					color     : #D82F25;
+				}
+
+				&.active {
+					color: map-get($mau, main)
 				}
 			}
 
@@ -229,11 +236,9 @@
 				}
 
 				h4 {
-					font-size     : 16px;
-					font-weight   : 400;
-					color         : #D82F25;
-					padding-bottom: 15px;
-					border-bottom : 1px solid #D82F25;
+					font-size  : 12px;
+					font-weight: 400;
+					font-weight: 700;
 				}
 
 				.item {
