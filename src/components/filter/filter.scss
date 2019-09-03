@@ -21,9 +21,14 @@
 		border-radius  : 0;
 		justify-content: flex-end;
 		position       : fixed;
+		left           : 0;
 		bottom         : 0;
 		z-index        : 30;
 		padding        : 10px;
+
+		h2 {
+			margin-right: 20px;
+		}
 
 		&.active {
 			h2 {
@@ -291,6 +296,7 @@
 		width   : 100%;
 		display : none;
 		position: fixed;
+		left    : 0;
 		bottom  : 43px;
 		z-index : 30;
 

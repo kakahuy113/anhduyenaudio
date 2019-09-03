@@ -291,7 +291,6 @@ function chooesColor() {
 		$(this).addClass('active');
 	});
 }
-
 function sliderTheSameProduct() {
 	var swiper = new Swiper(".the-same-product-slider .swiper-container", {
 		slidesPerView: 4,
@@ -323,7 +322,6 @@ function getDataBar() {
 		e.style.width = data + "%";
 	})
 }
-
 // const cartQuantity = () => {
 // 	$('.quantity-input .minus').each(function () {
 // 		$(this).on("click", function () {
@@ -348,13 +346,11 @@ function getDataBar() {
 // 		})
 // 	})
 // }
-
 const toggleFormAddNewAddress = () => {
 	$('.add-new-address').on('click', function () {
 		$('.add-new-address-form').slideToggle();
 	})
 }
-
 function likeComment() {
 	$('.button-like-comment').click(function (e) {
 		e.preventDefault();
@@ -367,7 +363,6 @@ function likeComment() {
 		}
 	});
 }
-
 function countDownSale() {
 	// Set the date we're counting down to
 	var countDownDate = new Date("Sep 30, 2019 23:59:59").getTime();
@@ -444,16 +439,33 @@ function introduceSliderBanner() {
 		},
 	});
 }
-
 function showFilter() {
 	$('.list-product .block-title-filter').click(function (e) {
 		e.preventDefault();
+		var heightThisPage = $(window).height();
+
 		$(this).toggleClass('active');
 		$('.list-product .block-filter').slideToggle('active');
+		$('#back-drop').toggleClass('active');
+
+		if ($(this).hasClass('active')) {
+			$('body').height(heightThisPage);
+			$('body').css(
+				'overflow', 'hidden'
+			);
+		} else {
+			$('body').removeAttr('style');
+		}
+
+		$('#back-drop').click(function (e) {
+			e.preventDefault();
+			$(this).removeClass('active');
+			$('body').removeAttr('style');
+			$('.list-product .block-title-filter').removeClass('active');
+			$('.list-product .block-filter').slideUp();
+		});
 	});
 }
-
-
 const megaMenuHover = () => {
 	let dataMegas = document.querySelectorAll("[data-mega]")
 	let dataMegaContents = document.querySelectorAll("[data-mega-content]")
@@ -487,7 +499,6 @@ const megaMenuHover = () => {
 		})
 	}
 }
-
 const turnOffPopupWhenClicked = () => {
 	$("[data-fancybox]").on("click", function () {
 		$(".bottom-header").removeClass("active")
@@ -504,7 +515,6 @@ const turnOffPopupWhenClicked = () => {
 		}
 	})
 }
-
 const moveAccount = () => {
 	const move = new MappingListener({
 		selector: ".top-header-item.account-item",
@@ -515,7 +525,6 @@ const moveAccount = () => {
 		breakpoints: 1025,
 	}).watch()
 }
-
 const mobileMenu = () => {
 	document.querySelector(".mobile-toggle").addEventListener("click", () => {
 		document.querySelector(".mega-menu-wrapper").classList.toggle("active")
@@ -531,7 +540,6 @@ const mobileMenu = () => {
 		})
 	}
 }
-
 const addClassHeaderWhenScroll = () => {
 	if ($(window).scrollTop() > 0) {
 		$("header").addClass("active")
@@ -539,6 +547,28 @@ const addClassHeaderWhenScroll = () => {
 		$("header").removeClass("active")
 	}
 }
+function backToTop() {
+	$(window).scroll(function () {
+		if ($(this).scrollTop() > 500) {
+			$('#back-to-top').addClass('show');
+		} else {
+			$('#back-to-top').removeClass('show');
+		}
+	});
+
+	$("#back-to-top").on("click", function (e) {
+		e.preventDefault();
+		console.log(1);
+
+		$("html,body").animate({
+			scrollTop: 0
+		}, 1200)
+	})
+}
+
+
+
+
 
 $(document).ready(function () {
 	objectFitImages("img.ofc"); // Luôn luôn chậy polyfill cho thuôc tính object-fit: cover trên các phiên bản IE >= 9
@@ -565,6 +595,7 @@ $(document).ready(function () {
 	clickThenScrollToSection();
 	getDataBar();
 	likeComment();
+	backToTop();
 	if ($(window).width() < 1024) {
 		showFilter();
 	}
