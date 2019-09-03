@@ -24,6 +24,6 @@
     "linearicons": "1.0.1",
     "lazysizes": "5.1.0",
     "object-fit-images": "*",
-    "jquery-ui": "^1.12.1"
+    "jquery-ui": "1.12.1"
   }
 }
