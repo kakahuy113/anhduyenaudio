@@ -442,8 +442,28 @@ function introduceSliderBanner() {
 function showFilter() {
 	$('.list-product .block-title-filter').click(function (e) {
 		e.preventDefault();
+		var heightThisPage = $(window).height();
+
 		$(this).toggleClass('active');
 		$('.list-product .block-filter').slideToggle('active');
+		$('#back-drop').toggleClass('active');
+
+		if ($(this).hasClass('active')) {
+			$('body').height(heightThisPage);
+			$('body').css(
+				'overflow', 'hidden'
+			);
+		} else {
+			$('body').removeAttr('style');
+		}
+
+		$('#back-drop').click(function (e) {
+			e.preventDefault();
+			$(this).removeClass('active');
+			$('body').removeAttr('style');
+			$('.list-product .block-title-filter').removeClass('active');
+			$('.list-product .block-filter').slideUp();
+		});
 	});
 }
 const megaMenuHover = () => {
