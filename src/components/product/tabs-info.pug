@@ -32,59 +32,61 @@ section.tabs-info-product
 						tr
 							th Amplifier Channels
 							td 2
+					//- CÓ COMMENT RỒI !!!!
 				.content-tabs.content(tab-id="comment")
-					.block-rating
-						.rating-number
-							h4 4
-								span /5
-							.rate
-								.img-star
-									.star
-									.star-rated
-							.commmet-number
-								span (12 bình luận)
-						.statistical-rating
-							.statistical-detail.mt-0
-								//- 5 SAO
-								.side
-									span 5
-								.middle
-									.bar-container
-										.bar(data-bar="80")
-								.side.right 80%
-							.statistical-detail
-								//- 4 SAO
-								.side
-									span 4
-								.middle
-									.bar-container
-										.bar(data-bar="30")
-								.side.right 30%
-							.statistical-detail
-								//- 3 SAO
-								.side
-									span 3
-								.middle
-									.bar-container
-										.bar(data-bar="75")
-								.side.right 75%
-							.statistical-detail
-								//- 2 SAO
-								.side
-									span 2
-								.middle
-									.bar-container
-										.bar(data-bar="0")
-								.side.right 0%
-							.statistical-detail
-								//- 1 SAO
-								.side
-									span 1
-								.middle
-									.bar-container
-										.bar(data-bar="0")
-								.side.right 0%
-					.block-comment
+					//- NẾU NHƯ CÓ COMMENT RỒI !!!
+					//- .block-rating
+					//- 	.rating-number
+					//- 		h4 4
+					//- 			span /5
+					//- 		.rate
+					//- 			.img-star
+					//- 				.star
+					//- 				.star-rated
+					//- 		.commmet-number
+					//- 			span (12 bình luận)
+					//- 	.statistical-rating
+					//- 		.statistical-detail.mt-0
+					//- 			//- 5 SAO
+					//- 			.side
+					//- 				span 5
+					//- 			.middle
+					//- 				.bar-container
+					//- 					.bar(data-bar="80")
+					//- 			.side.right 80%
+					//- 		.statistical-detail
+					//- 			//- 4 SAO
+					//- 			.side
+					//- 				span 4
+					//- 			.middle
+					//- 				.bar-container
+					//- 					.bar(data-bar="30")
+					//- 			.side.right 30%
+					//- 		.statistical-detail
+					//- 			//- 3 SAO
+					//- 			.side
+					//- 				span 3
+					//- 			.middle
+					//- 				.bar-container
+					//- 					.bar(data-bar="75")
+					//- 			.side.right 75%
+					//- 		.statistical-detail
+					//- 			//- 2 SAO
+					//- 			.side
+					//- 				span 2
+					//- 			.middle
+					//- 				.bar-container
+					//- 					.bar(data-bar="0")
+					//- 			.side.right 0%
+					//- 		.statistical-detail
+					//- 			//- 1 SAO
+					//- 			.side
+					//- 				span 1
+					//- 			.middle
+					//- 				.bar-container
+					//- 					.bar(data-bar="0")
+					//- 			.side.right 0%
+					//- .block-comment
 						.main-comment
 							figure
 								.avatar MT
@@ -167,3 +169,23 @@ section.tabs-info-product
 							.input-comment
 								input(type="text", name="", placeholder="Viết bình luận...")
 						.btn.btn-outline-black Xem thêm bình luận
+					//- CHƯA CÓ COMMENT
+					.list-step-comment
+						h5 Chưa có bình luận đánh giá nào
+						ul.list-step
+							li.step 1. Đánh gía của bạn về sản phẩm này
+								.block-rating
+									.rate
+										.img-star
+											.star
+											.star-rated
+							lis.step 2. Viết bình luận của bạn.
+					.block-comment
+						.main-comment.new-comment
+							figure
+								.avatar MT
+									//- NẾU CÓ HÌNH AVTATAR
+									//- img(src="", alt="")
+								.name Nhật Linh
+							.input-comment
+								input(type="text", name="", placeholder="Viết bình luận...")
