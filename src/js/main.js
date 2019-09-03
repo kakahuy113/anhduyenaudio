@@ -595,7 +595,13 @@ function rangeSliderPrice() {
 	$("#value-text").html($("#slider-range").slider("values", 0) + "đ - " + $("#slider-range").slider("values", 1) + "đ");
 }
 function chanceUrlNewsPage() {
-	console.log($('a').attr('data-href'));
+	$('.link-news').each(function (index) {
+		var newsUrlMobile = $(this).attr('data-newsMobile');
+		if ($(window).width() < 1024) {
+			$(this).attr('href', newsUrlMobile);
+		}
+		console.log($(this).attr('href'));
+	})
 }
 
 
