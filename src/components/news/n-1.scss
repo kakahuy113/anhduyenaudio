@@ -179,6 +179,11 @@
 				.btn {
 					opacity: 0;
 				}
+
+				.btn-outline-white {
+					padding: 0 25px;
+					margin : 0 auto;
+				}
 			}
 
 			&:hover {
@@ -193,11 +198,6 @@
 
 					.btn {
 						opacity: 1;
-					}
-
-					.btn-outline-white {
-						padding: 0 25px;
-						margin : 0 auto;
 					}
 				}
 			}

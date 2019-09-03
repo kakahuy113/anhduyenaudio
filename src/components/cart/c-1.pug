@@ -20,8 +20,10 @@ section.cart
 						-for(i=1;i<4;i++)
 							tr
 								td
-									img(src="./img/home-product/"+i+".png", alt="")
-								td Loa ABC hiện đại
+									a(href="sanpham-ct.html") 
+										img(src="./img/home-product/"+i+".png", alt="")
+								td
+									a(href="sanpham-ct.html") Loa ABC hiện đại
 								td
 									.quantity-input
 										span.minus -
@@ -49,5 +51,5 @@ section.cart
 				input#vouchcer(type="text", name="voucher", placeholder="Nhập mã giảm giá/quà tặng")
 				button Xác nhận
 			.cart-button
-				a.btn.btn-back(href="#") Tiếp tục mua hàng
-				a.btn.btn-main(href="#") Mua hàng
+				a.btn.btn-back(href="sanpham.html") Tiếp tục mua hàng
+				a.btn.btn-main(href="diachigiaohang.html") Mua hàng
