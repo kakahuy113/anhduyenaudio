@@ -565,6 +565,22 @@ function backToTop() {
 		}, 1200)
 	})
 }
+function rangeSliderPrice() {
+	let min_price = $("#slider-range").attr('data-min');
+	let max_price = $("#slider-range").attr('data-max');
+	console.log(min_price);
+	console.log(max_price);
+	$("#slider-range").slider({
+		range: true,
+		min: min_price,
+		max: max_price,
+		values: [5000000, 60000000],
+		slide: function (event, ui) {
+			$("#amount").val(ui.values[0] + " - " + ui.values[1]);
+		}
+	});
+	$("#amount").val($("#slider-range").slider("values", 0) + "-" + $("#slider-range").slider("values", 1));
+}
 
 
 
@@ -596,6 +612,7 @@ $(document).ready(function () {
 	getDataBar();
 	likeComment();
 	backToTop();
+	rangeSliderPrice();
 	if ($(window).width() < 1024) {
 		showFilter();
 	}

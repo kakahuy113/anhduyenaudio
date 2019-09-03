@@ -1,0 +1,55 @@
+.cart-finish {
+	margin    : 80px 0;
+	background: #FFFFFF;
+
+	.content {
+		img {
+			max-width: 315px;
+			margin   : 0 auto;
+			display  : block;
+		}
+
+		max-width: 530px;
+		width    : 100%;
+		margin   : 0 auto;
+		padding  : 35px 20px;
+
+		h3 {
+			font-size  : 23px;
+			color      : #000000;
+			font-weight: 700;
+			margin     : 45px 0 20px;
+
+			@media (max-width: 1024.98px) {
+				font-size: 12px;
+			}
+		}
+
+		p {
+			font-size    : 16px;
+			margin-bottom: 8px;
+
+			a {
+				color: map-get($mau, main)
+			}
+
+			@media (max-width: 1024.98px) {
+				font-size: 12px;
+			}
+		}
+
+		span {
+			display   : block;
+			margin-top: 15px;
+			font-size : 12px;
+
+			@media (max-width: 1024.98px) {
+				font-size: 10px;
+			}
+		}
+	}
+
+	@media (max-width: 1024.98px) {
+		margin: 10px 0;
+	}
+}

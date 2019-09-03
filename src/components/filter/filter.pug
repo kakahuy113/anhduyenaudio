@@ -3,8 +3,9 @@
 	h2 Lọc
 .block-filter
 	.price
-		h3.title Mức giá
-		input(type="range" min="1" max="100" value="50" class="rangeSlider" id="rangeSlider")
+		h3.title Mức giá:
+		input(type="text" id="amount" readonly)
+		#slider-range(data-min=5000000, data-max=100000000)
 		.about-price
 			span Dưới 5,000,000₫
 			span Trên 100,000,000₫
