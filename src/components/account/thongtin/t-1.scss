@@ -10,7 +10,7 @@
 
 	form {
 		margin: 0 auto;
-		max-width: 430px;
+		max-width: 400px;
 	}
 
 	.social-connector {
@@ -61,13 +61,18 @@
 
 	.form-group {
 		label {
-			flex: 0 0 100px;
-			max-width: 100px;
+			flex: 0 0 80px;
+			max-width: 80px;
 
 			@media (max-width: 767.98px) {
 				flex: 0 0 100%;
 				max-width: 100%;
 			}
+		}
+
+		.form-input {
+			flex: 0 0 300px;
+			max-width: 300px;
 		}
 
 		.form-radio {

@@ -7,7 +7,7 @@
 	.address-item {
 		border: 1px solid map-get($mau, xam-1);
 		border-radius: 5px;
-		padding: 20px;
+		padding: 25px;
 		display: flex;
 		flex-wrap: wrap;
 
@@ -18,11 +18,12 @@
 
 		.col-md-auto {
 			align-self: flex-end;
-			flex: 0 0 205px;
-			max-width: 205px;
+			flex: 0 0 215px;
+			max-width: 215px;
 			font-size: 12px;
 			display: flex;
 			margin-left: auto;
+			padding-top: 7px;
 
 			.address-edit,
 			.address-remove {
