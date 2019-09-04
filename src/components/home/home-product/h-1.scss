@@ -76,9 +76,8 @@
 					color: #1C1C1C;
 
 					h5 {
-						text-align   : center;
-						font-size    : 15px;
-						margin-bottom: 12px;
+						text-align: center;
+						font-size : 15px;
 					}
 
 					.price {
@@ -106,15 +105,18 @@
 							border    : none;
 
 							span {
-								color     : #000000;
-								font-size : 10px;
-								align-self: flex-end;
+								color      : #000000;
+								font-size  : 10px;
+								align-self : flex-end;
+								margin-left: 5px;
 							}
 						}
 
 						.so-sanh {
+							display        : flex;
+							align-items    : flex-end;
 							text-decoration: underline;
-							font-size      : 18px;
+							font-size      : 14px;
 							font-weight    : 700;
 							color          : #1C1C1C;
 						}
@@ -141,10 +143,11 @@
 	}
 
 	.see-more {
-		cursor: pointer;
-		width : 140px;
-		height: 33px;
-		margin: 0 auto;
+		font-size: 16px;
+		cursor   : pointer;
+		width    : 140px;
+		height   : 33px;
+		margin   : 0 auto;
 	}
 
 	@media (max-width: 1024px) {
@@ -247,9 +250,8 @@
 					color: #1C1C1C;
 
 					h5 {
-						text-align   : center;
-						font-size    : 15px;
-						margin-bottom: 12px;
+						text-align: center;
+						font-size : 15px;
 					}
 
 					.price {
@@ -277,15 +279,18 @@
 							border    : none;
 
 							span {
-								color     : #000000;
-								font-size : 10px;
-								align-self: flex-end;
+								color      : #000000;
+								font-size  : 10px;
+								align-self : flex-end;
+								margin-left: 5px;
 							}
 						}
 
 						.so-sanh {
+							display        : flex;
+							align-items    : flex-end;
 							text-decoration: underline;
-							font-size      : 18px;
+							font-size      : 14px;
 							font-weight    : 700;
 							color          : #1C1C1C;
 						}
@@ -316,10 +321,11 @@
 	}
 
 	.see-more {
-		cursor: pointer;
-		width : 140px;
-		height: 33px;
-		margin: 0 auto;
+		font-size: 16px;
+		cursor   : pointer;
+		width    : 140px;
+		height   : 33px;
+		margin   : 0 auto;
 	}
 
 	@media (max-width: 1024px) {
