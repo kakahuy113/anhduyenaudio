@@ -8,12 +8,48 @@
  *  jquery.ui.widget.js
  *  jquery.ui.mouse.js
  */
-!function (a) { function f(a, b) { if (!(a.originalEvent.touches.length > 1)) { a.preventDefault(); var c = a.originalEvent.changedTouches[0], d = document.createEvent("MouseEvents"); d.initMouseEvent(b, !0, !0, window, 1, c.screenX, c.screenY, c.clientX, c.clientY, !1, !1, !1, !1, 0, null), a.target.dispatchEvent(d) } } if (a.support.touch = "ontouchend" in document, a.support.touch) { var e, b = a.ui.mouse.prototype, c = b._mouseInit, d = b._mouseDestroy; b._touchStart = function (a) { var b = this; !e && b._mouseCapture(a.originalEvent.changedTouches[0]) && (e = !0, b._touchMoved = !1, f(a, "mouseover"), f(a, "mousemove"), f(a, "mousedown")) }, b._touchMove = function (a) { e && (this._touchMoved = !0, f(a, "mousemove")) }, b._touchEnd = function (a) { e && (f(a, "mouseup"), f(a, "mouseout"), this._touchMoved || f(a, "click"), e = !1) }, b._mouseInit = function () { var b = this; b.element.bind({ touchstart: a.proxy(b, "_touchStart"), touchmove: a.proxy(b, "_touchMove"), touchend: a.proxy(b, "_touchEnd") }), c.call(b) }, b._mouseDestroy = function () { var b = this; b.element.unbind({ touchstart: a.proxy(b, "_touchStart"), touchmove: a.proxy(b, "_touchMove"), touchend: a.proxy(b, "_touchEnd") }), d.call(b) } } }(jQuery);
+! function(a) {
+	function f(a, b) {
+		if (!(a.originalEvent.touches.length > 1)) {
+			a.preventDefault();
+			var c = a.originalEvent.changedTouches[0],
+				d = document.createEvent("MouseEvents");
+			d.initMouseEvent(b, !0, !0, window, 1, c.screenX, c.screenY, c.clientX, c.clientY, !1, !1, !1, !1, 0, null), a.target.dispatchEvent(d)
+		}
+	}
+	if (a.support.touch = "ontouchend" in document, a.support.touch) {
+		var e, b = a.ui.mouse.prototype,
+			c = b._mouseInit,
+			d = b._mouseDestroy;
+		b._touchStart = function(a) {
+			var b = this;
+			!e && b._mouseCapture(a.originalEvent.changedTouches[0]) && (e = !0, b._touchMoved = !1, f(a, "mouseover"), f(a, "mousemove"), f(a, "mousedown"))
+		}, b._touchMove = function(a) {
+			e && (this._touchMoved = !0, f(a, "mousemove"))
+		}, b._touchEnd = function(a) {
+			e && (f(a, "mouseup"), f(a, "mouseout"), this._touchMoved || f(a, "click"), e = !1)
+		}, b._mouseInit = function() {
+			var b = this;
+			b.element.bind({
+				touchstart: a.proxy(b, "_touchStart"),
+				touchmove: a.proxy(b, "_touchMove"),
+				touchend: a.proxy(b, "_touchEnd")
+			}), c.call(b)
+		}, b._mouseDestroy = function() {
+			var b = this;
+			b.element.unbind({
+				touchstart: a.proxy(b, "_touchStart"),
+				touchmove: a.proxy(b, "_touchMove"),
+				touchend: a.proxy(b, "_touchEnd")
+			}), d.call(b)
+		}
+	}
+}(jQuery);
 
 // Function thêm class lazyload vào các thẻ <img> có thuộc tính [data-src]
 const addClassLazyload = () => {
 	let imgList = document.querySelectorAll("img[data-src]")
-	Array.prototype.forEach.call(imgList, function (el) {
+	Array.prototype.forEach.call(imgList, function(el) {
 		if (el.className.length > 0) {
 			el.className = el.className + " lazyload"
 		} else {
@@ -191,7 +227,7 @@ function clientSlider() {
 }
 // SUBMENU CATEGORY
 function submenuCategory() {
-	$(".category-list .item-category h3").on('click', function () {
+	$(".category-list .item-category h3").on('click', function() {
 		$(this).toggleClass('active');
 		$(".category-list .item-category h3").not(this).siblings('.list-item').slideUp('active');
 
@@ -200,7 +236,7 @@ function submenuCategory() {
 }
 // SUBMENU CATEGORY DETAIL
 function submenuCategoryDetail() {
-	$(".category-list .item-category .list-item .item").on('click', function () {
+	$(".category-list .item-category .list-item .item").on('click', function() {
 
 		$(".category-list .item-category .list-item .item").not(this).find('.mdi-plus').removeClass('active');
 		$(".category-list .item-category .list-item .item").not(this).find('.child').slideUp('active');
@@ -247,10 +283,10 @@ function imgProductSlider() {
 }
 // START RANKING
 function dataStartRanking() {
-	$('.rate').each(function () {
+	$('.rate').each(function() {
 		var _this = $(this);
 		if (_this.find(".img-star").length > 0) {
-			_this.find(".img-star .star").on("click", function (e) {
+			_this.find(".img-star .star").on("click", function(e) {
 				let offsetLeft = _this.find(".img-star .star").offset().left
 				let width = _this.find(".img-star .star").width()
 				let positionClicked = e.pageX - Math.round(offsetLeft, 0)
@@ -279,12 +315,12 @@ function dataStartRanking() {
 	})
 }
 const toggleAddNewsAddressItem = () => {
-	$(".add-news-address").on("click", function () {
+	$(".add-news-address").on("click", function() {
 		$(".add-new-address-form").slideToggle();
 	})
 }
 const getInformationToEdit = () => {
-	$(".address-edit").on("click", function () {
+	$(".address-edit").on("click", function() {
 		var name = $(this).parents(".address-item").find("[data-name]").attr("data-name")
 		var address = $(this).parents(".address-item").find("[data-address]").attr("data-address")
 		var phone = $(this).parents(".address-item").find("[data-phone]").attr("data-phone")
@@ -297,13 +333,14 @@ const getInformationToEdit = () => {
 }
 // CHỌN MÀU SẢN PHẨM
 function chooesColor() {
-	$('.chooes-quantity-color .color').click(function (e) {
+	$('.chooes-quantity-color .color').click(function(e) {
 		e.preventDefault();
 
 		$(".chooes-quantity-color .color").removeClass('active')
 		$(this).addClass('active');
 	});
 }
+
 function sliderTheSameProduct() {
 	var swiper = new Swiper(".the-same-product-slider .swiper-container", {
 		slidesPerView: 4,
@@ -330,7 +367,7 @@ function sliderTheSameProduct() {
 // LẤY % SAO
 function getDataBar() {
 	let dataBarNodeList = document.querySelectorAll('.statistical-rating .middle .bar');
-	Array.prototype.forEach.call(dataBarNodeList, function (e, index) {
+	Array.prototype.forEach.call(dataBarNodeList, function(e, index) {
 		const data = e.getAttribute('data-bar');
 		e.style.width = data + "%";
 	})
@@ -360,12 +397,13 @@ function getDataBar() {
 // 	})
 // }
 const toggleFormAddNewAddress = () => {
-	$('.add-new-address').on('click', function () {
+	$('.add-new-address').on('click', function() {
 		$('.add-new-address-form').slideToggle();
 	})
 }
+
 function likeComment() {
-	$('.button-like-comment').click(function (e) {
+	$('.button-like-comment').click(function(e) {
 		e.preventDefault();
 		// console.log($(this).find('.like-comment').toggleClass('active'));
 		$(this).find('.like-comment').toggleClass('active');
@@ -376,12 +414,13 @@ function likeComment() {
 		}
 	});
 }
+
 function countDownSale() {
 	// Set the date we're counting down to
 	var countDownDate = new Date("Sep 30, 2019 23:59:59").getTime();
 
 	// Update the count down every 1 second
-	var x = setInterval(function () {
+	var x = setInterval(function() {
 		// Get today's date and time
 		var now = new Date().getTime();
 
@@ -452,14 +491,15 @@ function introduceSliderBanner() {
 		},
 	});
 }
+
 function showFilter() {
-	$('.list-product .block-title-filter').click(function (e) {
+	$('.list-product .block-title-filter').click(function(e) {
 		e.preventDefault();
 		var heightThisPage = $(window).height();
 
 		$(this).toggleClass('active');
 		$('.list-product .block-filter').slideToggle('active');
-		$('#back-drop').toggleClass('active');
+		$('#backdrop').toggleClass('active');
 
 		if ($(this).hasClass('active')) {
 			$('body').height(heightThisPage);
@@ -470,7 +510,7 @@ function showFilter() {
 			$('body').removeAttr('style');
 		}
 
-		$('#back-drop').click(function (e) {
+		$('#backdrop').click(function(e) {
 			e.preventDefault();
 			$(this).removeClass('active');
 			$('body').removeAttr('style');
@@ -513,7 +553,7 @@ const megaMenuHover = () => {
 	}
 }
 const turnOffPopupWhenClicked = () => {
-	$("[data-fancybox]").on("click", function () {
+	$("[data-fancybox]").on("click", function() {
 		$(".bottom-header").removeClass("active")
 		$("header .opacity").removeClass("active");
 		$(".login-popup").removeClass("open");
@@ -523,7 +563,7 @@ const turnOffPopupWhenClicked = () => {
 	})
 
 	$("[data-fancybox]").fancybox({
-		afterClose: function () {
+		afterClose: function() {
 			$.fancybox.close(true)
 		}
 	})
@@ -541,11 +581,18 @@ const moveAccount = () => {
 const mobileMenu = () => {
 	document.querySelector(".mobile-toggle").addEventListener("click", () => {
 		document.querySelector(".mega-menu-wrapper").classList.toggle("active")
+		let classListArray = Array.from(document.querySelector(".mega-menu-wrapper").classList)
+		if (classListArray.indexOf("active") !== -1) {
+			document.getElementById("backdrop").classList.add("active")
+		} else {
+			document.getElementById("backdrop").classList.remove("active")
+		}
 	})
 
 	document.querySelector(".mega-menu-wrapper .btn-close").addEventListener("click", () => {
 		document.querySelector(".mega-menu-wrapper").classList.remove("active")
 	})
+
 
 	if (window.innerWidth < 1025) {
 		document.querySelector(".mega-menu-wrapper .account-item").addEventListener("click", () => {
@@ -560,8 +607,9 @@ const addClassHeaderWhenScroll = () => {
 		$("header").removeClass("active")
 	}
 }
+
 function backToTop() {
-	$(window).scroll(function () {
+	$(window).scroll(function() {
 		if ($(this).scrollTop() > 500) {
 			$('#back-to-top').addClass('show');
 		} else {
@@ -569,7 +617,7 @@ function backToTop() {
 		}
 	});
 
-	$("#back-to-top").on("click", function (e) {
+	$("#back-to-top").on("click", function(e) {
 		e.preventDefault();
 		console.log(1);
 
@@ -578,6 +626,7 @@ function backToTop() {
 		}, 1200)
 	})
 }
+
 function rangeSliderPrice() {
 	let min_price = Number($("#slider-range").attr('data-min'));
 	let max_price = Number($("#slider-range").attr('data-max'));
@@ -586,7 +635,7 @@ function rangeSliderPrice() {
 		min: min_price,
 		max: max_price,
 		values: [min_price, max_price],
-		slide: function (event, ui) {
+		slide: function(event, ui) {
 			$("#amount").val(ui.values[0] + " - " + ui.values[1]);
 			$("#value-text").html(ui.values[0] + "đ - " + ui.values[1] + "đ");
 		}
@@ -594,8 +643,9 @@ function rangeSliderPrice() {
 	$("#amount").val($("#slider-range").slider("values", 0) + " - " + $("#slider-range").slider("values", 1));
 	$("#value-text").html($("#slider-range").slider("values", 0) + "đ - " + $("#slider-range").slider("values", 1) + "đ");
 }
+
 function chanceUrlNewsPage() {
-	$('.link-news').each(function (index) {
+	$('.link-news').each(function(index) {
 		var newsUrlMobile = $(this).attr('data-newsMobile');
 		if ($(window).width() < 1024) {
 			$(this).attr('href', newsUrlMobile);
@@ -608,7 +658,7 @@ function chanceUrlNewsPage() {
 
 
 
-$(document).ready(function () {
+$(document).ready(function() {
 	objectFitImages("img.ofc"); // Luôn luôn chậy polyfill cho thuôc tính object-fit: cover trên các phiên bản IE >= 9
 	addClassLazyload(); // Luôn luôn addClass lazyload cho các hình ảnh có thuộc tính [data-src]
 	addClassHeaderWhenScroll();
@@ -653,7 +703,7 @@ $(document).ready(function () {
 })
 
 
-$(document).ajaxComplete(function () {
+$(document).ajaxComplete(function() {
 	addClassLazyload();
 	cartQuantity();
 })
