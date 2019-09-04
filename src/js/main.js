@@ -619,8 +619,6 @@ function backToTop() {
 
 	$("#back-to-top").on("click", function(e) {
 		e.preventDefault();
-		console.log(1);
-
 		$("html,body").animate({
 			scrollTop: 0
 		}, 1200)
@@ -650,7 +648,6 @@ function chanceUrlNewsPage() {
 		if ($(window).width() < 1024) {
 			$(this).attr('href', newsUrlMobile);
 		}
-		console.log($(this).attr('href'));
 	})
 }
 
