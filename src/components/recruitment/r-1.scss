@@ -1,4 +1,6 @@
 .recruitment {
+	padding-top: 20px;
+
 	.row {
 		justify-content: center;
 	}
@@ -162,13 +164,13 @@
 
 .recruitment-contact {
 	padding-bottom: 40px;
-
+	margin-top: 20px;
 	@media (max-width: 1024.98px) {
 		display: none;
 	}
 
 	.block-title-2 {
-		margin-bottom: 15px;
+		margin-bottom: 20px;
 	}
 
 	.row {

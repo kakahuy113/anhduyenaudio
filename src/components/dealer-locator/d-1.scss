@@ -13,13 +13,22 @@
 			background: #ffffff;
 			border-radius: 5px;
 			border: 0;
-			padding: 7px 14px;
+			padding: 7px 15px;
 			color: #949494;
+			appearance: none;
+		}
+
+		select {
+			background-image: url("../img/icons/icon-select.png");
+			background-position-x: right;
+			background-repeat: no-repeat;
+			background-size: 46px;
 		}
 	}
 
 	.map-list {
 		margin-top: 20px;
+		box-shadow: 0 3px 6px rgba(black, .15);
 
 		h2 {
 			text-transform: uppercase;
@@ -28,7 +37,7 @@
 			color: white;
 			font-size: 15px;
 			border-radius: 5px;
-			padding: 10px;
+			padding: 10px 15px;
 		}
 	}
 

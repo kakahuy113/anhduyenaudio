@@ -61,6 +61,21 @@
 	}
 }
 
+
+@keyframes markerBounce {
+	0% {
+		box-shadow: 0 0 0 0px rgba(map-get($mau, main), 1);
+	}
+
+	75% {
+		box-shadow: 0 0 0 22px rgba(map-get($mau, main), 0);
+	}
+
+	100% {
+		box-shadow: 0 0 0 22px rgba(map-get($mau, main), 0);
+	}
+}
+
 #markerLayer {
 	>div {
 		&:not(:nth-child(1)) {
@@ -74,7 +89,8 @@
 				top: 2px;
 				left: 2px;
 				border-radius: 50%;
-				animation: markerBounce 1.5s infinite linear;
+				// animation: markerBounce 1.5s infinite linear;
+				box-shadow: 0 0 0 14px rgba(map-get($mau, main), .5);
 			}
 
 			&:after {

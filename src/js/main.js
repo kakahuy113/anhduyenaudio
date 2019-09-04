@@ -579,20 +579,24 @@ const moveAccount = () => {
 	}).watch()
 }
 const mobileMenu = () => {
-	document.querySelector(".mobile-toggle").addEventListener("click", () => {
-		document.querySelector(".mega-menu-wrapper").classList.toggle("active")
-		let classListArray = Array.from(document.querySelector(".mega-menu-wrapper").classList)
+	const mobileMenuHandler = () => {
+		document.querySelector(".mega-menu-wrapper").classList.toggle("active");
+		let classListArray = Array.from(document.querySelector(".mega-menu-wrapper").classList);
+		const windowHeight = window.innerHeight;
 		if (classListArray.indexOf("active") !== -1) {
-			document.getElementById("backdrop").classList.add("active")
+			document.getElementById("header-backdrop").classList.add("active");
+			document.querySelector("body").style.overflow = "hidden"
+			document.querySelector("body").style.height = windowHeight+'px'
 		} else {
-			document.getElementById("backdrop").classList.remove("active")
+			document.getElementById("header-backdrop").classList.remove("active");
+			document.querySelector(".account-box").classList.remove("active");
+			document.querySelector("body").removeAttribute('style')
 		}
-	})
+	}
 
-	document.querySelector(".mega-menu-wrapper .btn-close").addEventListener("click", () => {
-		document.querySelector(".mega-menu-wrapper").classList.remove("active")
-	})
-
+	document.querySelector(".mobile-toggle").addEventListener("click", mobileMenuHandler)
+	document.querySelector(".mega-menu-wrapper .btn-close").addEventListener("click", mobileMenuHandler)
+	document.getElementById("header-backdrop").addEventListener("click", mobileMenuHandler)
 
 	if (window.innerWidth < 1025) {
 		document.querySelector(".mega-menu-wrapper .account-item").addEventListener("click", () => {
