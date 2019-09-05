@@ -1,5 +1,6 @@
 .list-item-product {
 	background: #FFFFFF;
+	margin    : 0 -20px;
 
 	&.sale {
 		margin-top: 67px;
@@ -12,6 +13,7 @@
 
 	.item-list-pro {
 		margin-bottom: 47px;
+		padding      : 0 20px;
 
 		figure {
 			position: relative;
