@@ -1,0 +1,555 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+		<meta http-equiv="X-UA-Compatible" content="ie=edge">
+		<link rel="stylesheet" href="./css/core.min.css">
+		<link rel="stylesheet" href="./css/main.min.css">
+		<title>Anh Duyên | Quản lý đơn hàng chi tiết</title>
+	</head>
+	<body class="account-manage-address-page">
+		<div id="fb-root"></div>
+		<div id="loading">
+			<div class="logo-loader"><img src="./img/loading.svg" alt=""></div>
+			<div class="progstat-wrapper">Loading: <span id="progstat">0</span>%</div>
+			<div id="progress"></div>
+		</div>
+		<header>
+			<div class="container">
+				<div class="row no-gutters">
+					<div class="col-lg-auto">
+						<div class="logo"><a href="index.html"><img src="./img/logo.png" alt="" srcset=""></a></div>
+					</div>
+					<div class="col-no-rel">
+						<div class="top-header">
+							<div class="search">
+								<input type="text" placeholder="Tìm sản phẩm, thương hiệu ...">
+								<button><img src="./img/icons/timkiem.svg" alt="" srcset=""></button>
+							</div>
+							<div class="top-header-item"><a href="#"><img src="./img/icons/duan.svg" alt="" srcset=""><span>Dự án</span></a></div>
+							<div class="top-header-item"><a class="link-news" href="tintuc-pc.html" data-newsMobile="tintuc-chung.html"><img src="./img/icons/tintuc.svg" alt="" srcset=""><span>Tin tức</span></a></div>
+							<div class="top-header-item account-item"><a><img class="desktop" src="./img/icons/taikhoan.svg" alt=""><img class="mobile" src="./img/icon-user.png" alt=""><span>Tài khoản</span></a>
+								<div class="account-box"><a class="btn btn-main" href="#" data-fancybox="login" data-src="#login">Đăng nhập </a><a class="btn btn-register" href="#" data-fancybox="register" data-src="#register">Đăng ký </a></div>
+							</div>
+							<div class="top-header-item cart"><a href="giohang.html"><img src="./img/icons/giohang.svg" alt="">
+									<div class="text"><span>Giỏ hàng</span>
+										<p class="nummber" data-count="0">0</p>
+									</div></a></div>
+							<div class="top-header-item mobile-toggle"><svg xmlns="http://www.w3.org/2000/svg" width="20.745" height="18.396" viewBox="0 0 20.745 18.396"><g transform="translate(-382.809 -667.521)"><g transform="translate(382.809 667.522)"><path d="M402.664,669.3H383.7a.889.889,0,0,1,0-1.778h18.967a.889.889,0,0,1,0,1.778Z" transform="translate(-382.809 -667.522)" fill="#fff"/></g><g transform="translate(388.127 675.83)"><path d="M403.33,678.648H389.681a.889.889,0,0,1,0-1.778H403.33a.889.889,0,0,1,0,1.778Z" transform="translate(-388.792 -676.87)" fill="#fff"/></g><g transform="translate(382.809 684.14)"><path d="M402.664,688H383.7a.889.889,0,0,1,0-1.778h18.967a.889.889,0,0,1,0,1.778Z" transform="translate(-382.809 -686.219)" fill="#fff"/></g></g></svg></div>
+						</div>
+						<div class="bottom-header">
+							<div class="nav-list">
+								<div class="nav-item mega-menu"><svg id="Group_380" data-name="Group 380" xmlns="http://www.w3.org/2000/svg" width="15.927" height="21" viewBox="0 0 16.927 15.664"><path id="Path_790" data-name="Path 790" d="M283.944,380.662h-.029a.487.487,0,0,0-.485.5.512.512,0,0,0,.514.5.5.5,0,0,0,0-1Z" transform="translate(-283.43 -380.662)" fill="#fff"/><path id="Path_791" data-name="Path 791" d="M287.776,381.662h11.08a.5.5,0,0,0,0-1h-11.08a.5.5,0,0,0,0,1Z" transform="translate(-283.43 -380.662)" fill="#fff"/><path id="Path_792" data-name="Path 792" d="M283.944,385.994h-.029a.487.487,0,0,0-.485.5.512.512,0,0,0,.514.5.5.5,0,0,0,0-1Z" transform="translate(-283.43 -380.662)" fill="#fff"/><path id="Path_793" data-name="Path 793" d="M298.856,385.994h-11.08a.5.5,0,0,0,0,1h11.08a.5.5,0,0,0,0-1Z" transform="translate(-283.43 -380.662)" fill="#fff"/><path id="Path_794" data-name="Path 794" d="M283.944,391.326h-.029a.488.488,0,0,0-.485.5.512.512,0,0,0,.514.5.5.5,0,0,0,0-1Z" transform="translate(-283.43 -380.662)" fill="#fff"/><path id="Path_795" data-name="Path 795" d="M298.856,391.326h-11.08a.5.5,0,0,0,0,1h11.08a.5.5,0,0,0,0-1Z" transform="translate(-283.43 -380.662)" fill="#fff"/></svg><span>DANH MỤC SẢN PHẨM</span>
+									<div id="header-backdrop"></div>
+									<div class="mega-menu-wrapper">
+										<div class="list">
+											<div class="mega-item" data-mega="mega-1"><a href="sanpham.html">Bộ dàn</a></div>
+											<div class="mega-item" data-mega="mega-2"><a href="sanpham.html">Loa</a></div>
+											<div class="mega-item" data-mega="mega-3"><a href="sanpham.html">Amply</a></div>
+											<div class="mega-item" data-mega="mega-4"><a href="sanpham.html">Cục đẩy</a></div>
+											<div class="mega-item" data-mega="mega-5"><a href="sanpham.html">Mixer</a></div>
+											<div class="mega-item" data-mega="mega-6"><a href="sanpham.html">Đầu phát</a></div>
+											<div class="mega-item" data-mega="mega-7"><a href="sanpham.html">Loa công nghệ & tai nghe</a></div>
+											<div class="mega-item" data-mega="mega-8"><a href="sanpham.html">Phụ kiện</a></div>
+											<div class="mega-item" data-mega="mega-9"><a href="sanpham.html">Tổng hợp</a></div>
+											<div class="mega-item" data-mega="mega-10"><a href="sanpham.html">Các thương hiệu âm thanh</a></div>
+											<div class="mega-item"><a href="sanphamkhuyenmai.html">Khuyến mãi</a></div>
+											<div class="mega-item"><a class="link-news" href="tintuc-pc.html" data-newsMobile="tintuc-chung.html">Tin tức</a></div>
+											<div class="mega-item"><a href="tk-thongtin.html">Quản lý tài khoản</a></div>
+										</div>
+										<div class="content">
+											<div class="mega-child" data-mega-content="mega-1">
+												<div class="mega-img"><a href="#"><img src="./img/mega-menu.jpg" alt=""></a>
+													<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus maxime eius distinctio molestias ex ad laboriosam laborum numquam sunt quam. 1</p>
+												</div>
+												<div class="mega-content">
+													<div class="mega-child-item-list">
+														<nav><a href="sanpham.html">Loa cây nghe nhạc</a><a href="sanpham.html">Loa treo nghe nhạc</a><a href="sanpham.html">Loa bookshelf</a><a href="sanpham.html">Loa center - surround</a><a href="sanpham.html">Loa bộ 2.1 - 5.1</a><a href="sanpham.html">Loa sân vườn</a><a href="sanpham.html">Loa biểu diễn di động</a><a href="sanpham.html">Loa sân khấu</a><a href="sanpham.html">Loa soundbar</a></nav><a class="mega-child-item-list-viewmore" href="#">Xem thêm</a>
+													</div>
+													<div class="mega-child-manufacture">
+														<h3>Thương hiệu</h3>
+														<nav><a href="sanpham.html">B&W</a><a href="sanpham.html">Tanoy</a><a href="sanpham.html">Jamo</a><a href="sanpham.html">JBL</a><a href="sanpham.html">Paradigm</a><a href="sanpham.html">Polkaudio</a><a href="sanpham.html">Sonus faber</a><a href="sanpham.html">Triangle</a><a href="sanpham.html">Mcintosh</a><a href="sanpham.html">Castle</a></nav>
+													</div>
+												</div>
+											</div>
+											<div class="mega-child" data-mega-content="mega-2">
+												<div class="mega-img"><a href="#"><img src="./img/mega-menu.jpg" alt=""></a>
+													<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus maxime eius distinctio molestias ex ad laboriosam laborum numquam sunt quam. 2</p>
+												</div>
+												<div class="mega-content">
+													<div class="mega-child-item-list">
+														<nav><a href="sanpham.html">Loa cây nghe nhạc</a><a href="sanpham.html">Loa treo nghe nhạc</a><a href="sanpham.html">Loa bookshelf</a><a href="sanpham.html">Loa center - surround</a><a href="sanpham.html">Loa bộ 2.1 - 5.1</a><a href="sanpham.html">Loa sân vườn</a><a href="sanpham.html">Loa biểu diễn di động</a><a href="sanpham.html">Loa sân khấu</a><a href="sanpham.html">Loa soundbar</a></nav><a class="mega-child-item-list-viewmore" href="#">Xem thêm</a>
+													</div>
+													<div class="mega-child-manufacture"></div>
+												</div>
+											</div>
+											<div class="mega-child" data-mega-content="mega-3">
+												<div class="mega-img"><a href="#"><img src="./img/mega-menu.jpg" alt=""></a>
+													<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus maxime eius distinctio molestias ex ad laboriosam laborum numquam sunt quam. 3</p>
+												</div>
+												<div class="mega-content">
+													<div class="mega-child-item-list">
+														<nav><a href="sanpham.html">Loa cây nghe nhạc</a><a href="sanpham.html">Loa treo nghe nhạc</a><a href="sanpham.html">Loa bookshelf</a><a href="sanpham.html">Loa center - surround</a><a href="sanpham.html">Loa bộ 2.1 - 5.1</a><a href="sanpham.html">Loa sân vườn</a><a href="sanpham.html">Loa biểu diễn di động</a><a href="sanpham.html">Loa sân khấu</a><a href="sanpham.html">Loa soundbar</a></nav><a class="mega-child-item-list-viewmore" href="#">Xem thêm</a>
+													</div>
+													<div class="mega-child-manufacture"></div>
+												</div>
+											</div>
+											<div class="mega-child" data-mega-content="mega-4">
+												<div class="mega-img"><a href="#"><img src="./img/mega-menu.jpg" alt=""></a>
+													<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus maxime eius distinctio molestias ex ad laboriosam laborum numquam sunt quam. 4</p>
+												</div>
+												<div class="mega-content">
+													<div class="mega-child-item-list">
+														<nav><a href="sanpham.html">Loa cây nghe nhạc</a><a href="sanpham.html">Loa treo nghe nhạc</a><a href="sanpham.html">Loa bookshelf</a><a href="sanpham.html">Loa center - surround</a><a href="sanpham.html">Loa bộ 2.1 - 5.1</a><a href="sanpham.html">Loa sân vườn</a><a href="sanpham.html">Loa biểu diễn di động</a><a href="sanpham.html">Loa sân khấu</a><a href="sanpham.html">Loa soundbar</a></nav><a class="mega-child-item-list-viewmore" href="#">Xem thêm</a>
+													</div>
+													<div class="mega-child-manufacture"></div>
+												</div>
+											</div>
+											<div class="mega-child" data-mega-content="mega-5">
+												<div class="mega-img"><a href="#"><img src="./img/mega-menu.jpg" alt=""></a>
+													<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus maxime eius distinctio molestias ex ad laboriosam laborum numquam sunt quam. 5</p>
+												</div>
+												<div class="mega-content">
+													<div class="mega-child-item-list">
+														<nav><a href="sanpham.html">Loa cây nghe nhạc</a><a href="sanpham.html">Loa treo nghe nhạc</a><a href="sanpham.html">Loa bookshelf</a><a href="sanpham.html">Loa center - surround</a><a href="sanpham.html">Loa bộ 2.1 - 5.1</a><a href="sanpham.html">Loa sân vườn</a><a href="sanpham.html">Loa biểu diễn di động</a><a href="sanpham.html">Loa sân khấu</a><a href="sanpham.html">Loa soundbar</a></nav><a class="mega-child-item-list-viewmore" href="#">Xem thêm</a>
+													</div>
+													<div class="mega-child-manufacture"></div>
+												</div>
+											</div>
+											<div class="mega-child" data-mega-content="mega-6">
+												<div class="mega-img"><a href="#"><img src="./img/mega-menu.jpg" alt=""></a>
+													<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus maxime eius distinctio molestias ex ad laboriosam laborum numquam sunt quam. 6</p>
+												</div>
+												<div class="mega-content">
+													<div class="mega-child-item-list">
+														<nav><a href="sanpham.html">Loa cây nghe nhạc</a><a href="sanpham.html">Loa treo nghe nhạc</a><a href="sanpham.html">Loa bookshelf</a><a href="sanpham.html">Loa center - surround</a><a href="sanpham.html">Loa bộ 2.1 - 5.1</a><a href="sanpham.html">Loa sân vườn</a><a href="sanpham.html">Loa biểu diễn di động</a><a href="sanpham.html">Loa sân khấu</a><a href="sanpham.html">Loa soundbar</a></nav><a class="mega-child-item-list-viewmore" href="#">Xem thêm</a>
+													</div>
+													<div class="mega-child-manufacture"></div>
+												</div>
+											</div>
+											<div class="mega-child" data-mega-content="mega-7">
+												<div class="mega-img"><a href="#"><img src="./img/mega-menu.jpg" alt=""></a>
+													<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus maxime eius distinctio molestias ex ad laboriosam laborum numquam sunt quam. 7</p>
+												</div>
+												<div class="mega-content">
+													<div class="mega-child-item-list">
+														<nav><a href="sanpham.html">Loa cây nghe nhạc</a><a href="sanpham.html">Loa treo nghe nhạc</a><a href="sanpham.html">Loa bookshelf</a><a href="sanpham.html">Loa center - surround</a><a href="sanpham.html">Loa bộ 2.1 - 5.1</a><a href="sanpham.html">Loa sân vườn</a><a href="sanpham.html">Loa biểu diễn di động</a><a href="sanpham.html">Loa sân khấu</a><a href="sanpham.html">Loa soundbar</a></nav><a class="mega-child-item-list-viewmore" href="#">Xem thêm</a>
+													</div>
+													<div class="mega-child-manufacture"></div>
+												</div>
+											</div>
+											<div class="mega-child" data-mega-content="mega-8">
+												<div class="mega-img"><a href="#"><img src="./img/mega-menu.jpg" alt=""></a>
+													<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus maxime eius distinctio molestias ex ad laboriosam laborum numquam sunt quam. 8</p>
+												</div>
+												<div class="mega-content">
+													<div class="mega-child-item-list">
+														<nav><a href="sanpham.html">Loa cây nghe nhạc</a><a href="sanpham.html">Loa treo nghe nhạc</a><a href="sanpham.html">Loa bookshelf</a><a href="sanpham.html">Loa center - surround</a><a href="sanpham.html">Loa bộ 2.1 - 5.1</a><a href="sanpham.html">Loa sân vườn</a><a href="sanpham.html">Loa biểu diễn di động</a><a href="sanpham.html">Loa sân khấu</a><a href="sanpham.html">Loa soundbar</a></nav><a class="mega-child-item-list-viewmore" href="#">Xem thêm</a>
+													</div>
+													<div class="mega-child-manufacture"></div>
+												</div>
+											</div>
+											<div class="mega-child" data-mega-content="mega-9">
+												<div class="mega-img"><a href="#"><img src="./img/mega-menu.jpg" alt=""></a>
+													<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus maxime eius distinctio molestias ex ad laboriosam laborum numquam sunt quam. 9</p>
+												</div>
+												<div class="mega-content">
+													<div class="mega-child-item-list">
+														<nav><a href="sanpham.html">Loa cây nghe nhạc</a><a href="sanpham.html">Loa treo nghe nhạc</a><a href="sanpham.html">Loa bookshelf</a><a href="sanpham.html">Loa center - surround</a><a href="sanpham.html">Loa bộ 2.1 - 5.1</a><a href="sanpham.html">Loa sân vườn</a><a href="sanpham.html">Loa biểu diễn di động</a><a href="sanpham.html">Loa sân khấu</a><a href="sanpham.html">Loa soundbar</a></nav><a class="mega-child-item-list-viewmore" href="#">Xem thêm</a>
+													</div>
+													<div class="mega-child-manufacture">
+														<h3>Thương hiệu</h3>
+														<nav><a href="sanpham.html">B&W</a><a href="sanpham.html">Tanoy</a><a href="sanpham.html">Jamo</a><a href="sanpham.html">JBL</a><a href="sanpham.html">Paradigm</a><a href="sanpham.html">Polkaudio</a><a href="sanpham.html">Sonus faber</a><a href="sanpham.html">Triangle</a><a href="sanpham.html">Mcintosh</a><a href="sanpham.html">Castle</a></nav>
+													</div>
+												</div>
+											</div>
+											<div class="mega-child" data-mega-content="mega-10">
+												<div class="mega-img"><a href="#"><img src="./img/mega-menu.jpg" alt=""></a>
+													<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus maxime eius distinctio molestias ex ad laboriosam laborum numquam sunt quam. 10</p>
+												</div>
+												<div class="mega-content">
+													<div class="mega-child-item-list">
+														<nav><a href="sanpham.html">Loa cây nghe nhạc</a><a href="sanpham.html">Loa treo nghe nhạc</a><a href="sanpham.html">Loa bookshelf</a><a href="sanpham.html">Loa center - surround</a><a href="sanpham.html">Loa bộ 2.1 - 5.1</a><a href="sanpham.html">Loa sân vườn</a><a href="sanpham.html">Loa biểu diễn di động</a><a href="sanpham.html">Loa sân khấu</a><a href="sanpham.html">Loa soundbar</a></nav><a class="mega-child-item-list-viewmore" href="#">Xem thêm</a>
+													</div>
+													<div class="mega-child-manufacture">
+														<h3>Thương hiệu</h3>
+														<nav><a href="sanpham.html">B&W</a><a href="sanpham.html">Tanoy</a><a href="sanpham.html">Jamo</a><a href="sanpham.html">JBL</a><a href="sanpham.html">Paradigm</a><a href="sanpham.html">Polkaudio</a><a href="sanpham.html">Sonus faber</a><a href="sanpham.html">Triangle</a><a href="sanpham.html">Mcintosh</a><a href="sanpham.html">Castle</a></nav>
+													</div>
+												</div>
+											</div>
+										</div>
+										<div class="btn-close"><svg xmlns="http://www.w3.org/2000/svg" width="14.274" height="14.616" viewBox="0 0 14.274 14.616"><g transform="translate(0 13.49) rotate(-45)"><path d="M17.8,1.593H.8A.8.8,0,0,1,.8,0h17a.8.8,0,0,1,0,1.593Z" fill="#fff"/></g><g transform="translate(1.127 0) rotate(45)"><path d="M17.8,1.593H.8A.8.8,0,0,1,.8,0h17a.8.8,0,0,1,0,1.593Z" fill="#fff"/></g></svg></div>
+									</div>
+								</div>
+								<div class="nav-item"><a href="sanpham.html">TRỌN BỘ PHỐI GHÉP</a></div>
+								<div class="nav-item"><a href="sanpham.html">LOA</a></div>
+								<div class="nav-item"><a href="sanpham.html">AMPLY</a></div>
+								<div class="nav-item"><a href="sanpham.html">LOA, TAI NGHE BLUETOOTH</a></div>
+								<div class="nav-item"><a href="lienhe.html">LIÊN HỆ</a></div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="d-none">
+				<div class="account-popup" id="login">
+					<div class="popup-wrapper">
+						<div class="left">
+							<div class="imgbox"><img src="./img/popup.png" alt=""></div>
+							<h2 class="section-title">Đăng nhập</h2>
+							<p>Đăng nhập trở thành thành viên của AnhDuyen Audio, để có thể lưu trữ giỏ hàng và theo dõi đơn hàng của bạn.</p>
+						</div>
+						<div class="right">
+							<div class="right-wrapper">
+								<div class="social"><a class="btn btn-google" href="#"><img src="./img/icons/icon-google-plus.svg" alt=""><span>Đăng nhập với Google</span></a><a class="btn btn-facebook" href="#"><img src="./img/icons/icon-facebook-2.svg" alt=""><span>Đăng nhập với Facebook</span></a></div>
+								<p class="seperate">hoặc</p>
+								<form>
+									<div class="form-group">
+										<input type="text" placeholder="Điện thoại/Email">
+									</div>
+									<div class="form-group">
+										<input type="password" placeholder="Mật khẩu">
+									</div>
+									<div class="form-option">
+										<div class="form-check">
+											<input id="remember" type="checkbox">
+											<label for="remember">Nhớ tài khoản</label>
+										</div><a href="#" data-fancybox="forgot-password" data-src="#forgot-password">Quên mật khẩu</a>
+									</div>
+									<div class="form-button">
+										<button>Đăng nhập</button>
+									</div>
+								</form>
+								<div class="bottom-ask">
+									<p>Chưa có tài khoản? <a href="#" data-fancybox="register2" data-src="#register">Đăng ký</a></p>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="account-popup" id="register">
+					<div class="popup-wrapper">
+						<div class="left">
+							<div class="imgbox"><img src="./img/popup.png" alt=""></div>
+							<h2 class="section-title">Đăng ký</h2>
+							<p>Đăng ký trở thành thành viên của AnhDuyen Audio, để có thể lưu trữ giỏ hàng và theo dõi đơn hàng của bạn. </p>
+						</div>
+						<div class="right">
+							<div class="right-wrapper">
+								<form>
+									<div class="form-group">
+										<input type="text" placeholder="Điện thoại/Email">
+									</div>
+									<div class="form-group">
+										<input type="password" placeholder="Mật khẩu">
+									</div>
+									<div class="form-group">
+										<input type="password" placeholder="Nhập lại mật khẩu">
+									</div>
+									<div class="form-option">
+										<div class="form-check">
+											<input id="agree-policy" type="checkbox">
+											<label for="agree-policy">Tôi đã đọc và đồng ý với <a href="#">điều khoản sử dụng</a></label>
+										</div>
+									</div>
+									<div class="form-button">
+										<button>Đăng ký</button>
+									</div>
+								</form>
+								<p class="seperate">hoặc</p>
+								<div class="social"><a class="btn btn-google" href="#"><img src="./img/icons/icon-google-plus.svg" alt=""><span>Đăng ký với Google</span></a><a class="btn btn-facebook" href="#"><img src="./img/icons/icon-facebook-2.svg" alt=""><span>Đăng ký với Facebook</span></a></div>
+								<div class="bottom-ask">
+									<p>Đã có tài khoản? <a href="#">Đăng nhập</a></p>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="account-popup forgot-password" id="forgot-password">
+					<div class="popup-wrapper">
+						<h2 class="section-title">Quên mật khẩu</h2>
+						<p>Vui lòng nhập email hoặc số điện thoại để lấy mã xác thực và đặt lại mật khẩu.</p>
+						<form>
+							<div class="form-group">
+								<input type="text" placeholder="Điện thoại/Email">
+							</div>
+							<div class="form-button">
+								<button data-fancybox="verify" data-src="#verify">Tiếp theo</button>
+							</div>
+						</form>
+						<div class="bottom-ask">
+							<p>Đã có tài khoản? <a href="#">Đăng nhập</a></p>
+						</div>
+					</div>
+				</div>
+				<div class="account-popup forgot-password" id="verify">
+					<div class="popup-wrapper">
+						<h2 class="section-title">Nhập mã xác thực</h2>
+						<p>Mã xác thực sẽ gởi tới số điện thoại <a href="tel:0932132542">0932 132 542</a>. Vui lòng nhập mã xác thực để đặt lại mật khẩu</p>
+						<form>
+							<div class="form-group">
+								<input type="text" placeholder="Mã xác thực">
+							</div>
+							<div class="form-option">
+								<p>Chưa nhãn được mã xác thực? <a href="#">Gửi lại mã</a></p>
+							</div>
+							<div class="form-button">
+								<button data-fancybox="reset-password" data-src="#reset-password">Xác thực</button>
+							</div>
+						</form>
+					</div>
+				</div>
+				<div class="account-popup forgot-password" id="reset-password">
+					<div class="popup-wrapper">
+						<h2 class="section-title">Đặt lại mật khẩu</h2>
+						<p>Đặt lại mật khẩu mới mà bạn mong muốn</p>
+						<form>
+							<div class="form-group">
+								<input type="password" placeholder="Mật khẩu mới">
+							</div>
+							<div class="form-group">
+								<input type="password" placeholder="Nhập lại mật khẩu">
+							</div>
+							<div class="form-button">
+								<button>Đổi mật khẩu</button>
+							</div>
+						</form>
+					</div>
+				</div>
+			</div>
+		</header>
+		<main>
+			<div class="breadcrumb-wrapper">
+				<div class="container">
+					<ul class="breadcrumb">
+						<li><a href="#">Trang chủ</a></li>
+						<li><a href="#">Text</a></li>
+						<li class="active"><a href="#">Name Page</a></li>
+					</ul>
+				</div>
+			</div>
+			<div class="account account-info">
+				<div class="container">
+					<div class="row">
+						<div class="col-lg-auto">
+														<div class="user-sidemenu-wrapper">
+															<div class="user-info">
+																<div class="img"><img src="./img/icons/icon-user.svg" alt=""></div>
+																<div class="info">
+																	<h4>Phan Gia Nhật Linh</h4>
+																	<p>Tài khoản thành viên</p>
+																</div>
+															</div>
+															<div class="user-nav">
+																<ul>
+																	<li><a href="tk-thongtin.html">
+																			<div class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="15.119" height="16.143" viewBox="0 0 15.119 16.143"><path class="fill" d="M288.217,634.872a4.519,4.519,0,1,0-4.4,0,7.577,7.577,0,0,0-5.361,7.236.453.453,0,1,0,.905,0,6.654,6.654,0,1,1,13.309,0,.453.453,0,1,0,.905,0A7.575,7.575,0,0,0,288.217,634.872Zm-5.815-3.935a3.611,3.611,0,1,1,3.616,3.605A3.62,3.62,0,0,1,282.4,630.937Z" transform="translate(-278.453 -626.417)"/></svg></div><span>Thông tin tài khoản</span></a></li>
+																	<li><a href="tk-doimatkhau.html">
+																			<div class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="12.872" height="16.748" viewBox="0 0 12.872 16.748"><g transform="translate(-192.5 -346.538)"><path class="fill" d="M649.491,488.9h-.279v-.742a4.977,4.977,0,0,0-9.955,0v.742h-.28a1.18,1.18,0,0,0-1.179,1.179v7.788a2.064,2.064,0,0,0,2.062,2.062h8.748a2.064,2.064,0,0,0,2.062-2.062V490.08A1.18,1.18,0,0,0,649.491,488.9Zm-9.234-.742a3.977,3.977,0,0,1,7.955,0v.742h-7.955Zm9.413,9.709a1.063,1.063,0,0,1-1.062,1.062H639.86a1.063,1.063,0,0,1-1.062-1.062V490.08a.179.179,0,0,1,.179-.179h10.514a.179.179,0,0,1,.179.179Z" transform="translate(-445.298 -136.644)"/><path class="fill" d="M644.234,492.384a2.031,2.031,0,1,0,2.032,2.031A2.034,2.034,0,0,0,644.234,492.384Zm0,3.063a1.031,1.031,0,1,1,1.032-1.032A1.033,1.033,0,0,1,644.234,495.447Z" transform="translate(-445.298 -136.644)"/></g></svg></div><span>Đổi mật khẩu</span></a></li>
+																	<li class="active"><a href="tk-quanlydonhang.html">
+																			<div class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="17.119" height="14.979" viewBox="0 0 17.119 14.979"><g transform="translate(-2 24.25)"><path d="M2.5-25.25a.5.5,0,0,0-.5.5.5.5,0,0,0,.5.5H5.109l1.811,8.112a1.5,1.5,0,0,0-.907,1.374,1.5,1.5,0,0,0,1.5,1.5h9.095a.5.5,0,0,0,.5-.5.5.5,0,0,0-.5-.5H7.517a.5.5,0,0,1-.5-.5.5.5,0,0,1,.5-.5h9.1a.5.5,0,0,0,.482-.362l2.006-6.99a.5.5,0,0,0-.082-.438.5.5,0,0,0-.4-.2H6.359L6-24.859a.5.5,0,0,0-.49-.391ZM15.608-13.267a1.5,1.5,0,0,0-1.5,1.5,1.5,1.5,0,0,0,1.5,1.5,1.5,1.5,0,0,0,1.5-1.5A1.5,1.5,0,0,0,15.608-13.267Zm-7.088,0a1.5,1.5,0,0,0-1.5,1.5,1.5,1.5,0,0,0,1.5,1.5,1.5,1.5,0,0,0,1.5-1.5A1.5,1.5,0,0,0,8.52-13.267ZM6.582-22.254H17.953l-1.72,5.992H7.919ZM8.52-12.268a.5.5,0,0,1,.5.5.5.5,0,0,1-.5.5.5.5,0,0,1-.5-.5A.5.5,0,0,1,8.52-12.268Zm7.088,0a.5.5,0,0,1,.5.5.5.5,0,0,1-.5.5.5.5,0,0,1-.5-.5A.5.5,0,0,1,15.608-12.268Z" transform="translate(0 1)" class="fill"/></g></svg></div><span>Quản lý đơn hàng</span></a></li>
+																	<li><a href="tk-quanlydiachi.html">
+																			<div class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="11.509" height="15.601" viewBox="0 0 11.509 15.601"><g transform="translate(0.5 0.5)"><path class="stroke" d="M382.15,273.128a5.255,5.255,0,0,0-5.255,5.255c0,3.1,5.255,9.1,5.255,9.1s5.255-5.762,5.255-9.1A5.255,5.255,0,0,0,382.15,273.128Zm0,6.46a1.421,1.421,0,1,1,1.421-1.421A1.421,1.421,0,0,1,382.15,279.588Z" transform="translate(-376.895 -273.128)" stroke-width="1"/><circle cx="1.422" cy="1.422" r="1.422" transform="translate(4.174 3.621)" class="fill"/></g></svg></div><span>Quản lý địa chỉ</span></a></li>
+																</ul>
+															</div>
+														</div>
+						</div>
+						<div class="col-lg">
+							<div class="account-title">
+								<h2 class="block-title-2"> <a href="tk-quanlydonhang.html"><svg xmlns="http://www.w3.org/2000/svg" width="21.135" height="12.677" viewBox="0 0 21.135 12.677"><path d="M411.792,617.724H393.357l4.191-4.642a.635.635,0,1,0-.943-.851l-5.149,5.7a.591.591,0,0,0-.06.1.628.628,0,0,0-.057.094.652.652,0,0,0-.044.22l0,.014h0a.616.616,0,0,0,.048.238.5.5,0,0,0,.056.089.594.594,0,0,0,.065.1l5.271,5.7a.635.635,0,0,0,.934-.861l-4.288-4.638h18.413a.635.635,0,1,0,0-1.27Z" transform="translate(-391.293 -612.021)"/></svg><span>Chi tiết đơn hàng #218557011</span></a></h2>
+							</div>
+							<div class="account-manage-bill-detail">
+								<div class="bill-detail-info">
+									<div class="block-info row">
+										<div class="col-12">
+											<h3>Địa chỉ người nhận</h3>
+										</div>
+										<div class="col-12">
+											<p>Họ và tên: Phan Gia Nhật Linh</p>
+										</div>
+										<div class="col-md">
+											<p>Địa chỉ: 161/1, hẻm 161, Quang Trung, Quận Gò Vấp, Hồ Chí Minh</p>
+											<p>Điện thoại: 0938889684</p>
+										</div>
+									</div>
+									<div class="block-info row">
+										<div class="col-12">
+											<h3>Địa chỉ người nhận</h3>
+										</div>
+										<div class="col-md">
+											<p>Giao hàng tiêu chuẩn (Dự kiến giao hàng Thứ ba, 05/03/2019)</p>
+											<p>Phí giao hàng: 15.000 ₫</p>
+										</div>
+									</div>
+									<div class="block-info row">
+										<div class="col-12">
+											<h3>Hình thức thanh toán</h3>
+										</div>
+										<div class="col-md">
+											<p>Thanh toán bằng thẻ quốc tế Visa, Master, JCB</p>
+											<p class="status-result"><img src="./img/icons/icon-success-2.svg" alt=""><span>Thành công</span></p>
+											<p>Số thẻ: **********7042</p>
+										</div>
+									</div>
+									<div class="block-info row">
+										<div class="col-12">
+											<h3>Hình thức thanh toán</h3>
+										</div>
+										<div class="col-md">
+											<div class="status">
+												<p class="status-result"><img src="./img/icons/icon-failed-2.svg" alt=""><span>Chưa thanh toán</span></p>
+											</div>
+										</div>
+										<div class="col-md-auto"></div>
+									</div>
+								</div>
+								<div class="bill-detail-products">
+									<div class="bill-detail">
+										<div class="img"><img class="lazyload" data-src="./img/home-product/1.png" alt=""></div>
+										<div class="info">
+											<h4>Tai nghe Heritage HP 3</h4>
+										</div>
+										<div class="quantity">
+											<p>Số lượng: 12</p>
+										</div>
+										<div class="color">
+											<p>Màu: Đỏ</p>
+										</div>
+										<div class="price-wrapper"><span class="price">9,490,000 đ</span>
+											<del class="old">12,390,000 đ</del>
+										</div>
+									</div>
+									<div class="bill-detail">
+										<div class="img"><img class="lazyload" data-src="./img/home-product/1.png" alt=""></div>
+										<div class="info">
+											<h4>Tai nghe Heritage HP 3 ghe Heritage HP 3</h4>
+										</div>
+										<div class="quantity">
+											<p>Số lượng: 12</p>
+										</div>
+										<div class="color">
+											<p>Màu: Trắng</p>
+										</div>
+										<div class="price-wrapper"><span class="price">9,490,000 đ</span>
+											<del class="old">12,390,000 đ</del>
+										</div>
+									</div>
+									<div class="bill-detail">
+										<div class="img"><img class="lazyload" data-src="./img/home-product/1.png" alt=""></div>
+										<div class="info">
+											<h4>Tai nghe Heritage HP 3</h4>
+										</div>
+										<div class="quantity">
+											<p>Số lượng: 12</p>
+										</div>
+										<div class="color">
+											<p>Màu: Đỏ</p>
+										</div>
+										<div class="price-wrapper"><span class="price">9,490,000 đ</span>
+											<del class="old">12,390,000 đ</del>
+										</div>
+									</div>
+									<div class="row">
+										<div class="col-lg button-wrapper"><a class="btn btn-outline-black" href="tk-quanlydonhang-trangthai.html">Theo dõi trạng thái đơn hàng</a></div>
+										<div class="col-lg-auto bill-detail-bottom">
+											<p><span>Tạm tính:</span><b>515,000,000 đ</b></p>
+											<p><span>Phí vận chuyển:</span><b>15,000 đ</b></p>
+											<p class="total-wrapper"><span>Thành tiền:</span><b class="total">515,000,000 đ</b></p><span>(Đã bao gồm VAT)</span>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</main>
+		<footer>
+			<div class="container">
+				<div class="row">
+					<div class="col-lg-4">
+						<div class="logo"><a href="#"><img src="./img/logo.png" alt=""></a></div>
+						<div class="info-company">
+							<ul>
+								<li>
+									<h5>CTY GIẢI PHÁP NGHE NHÌN A.V.S</h5>
+								</li>
+								<li>
+									<h5>Văn phòng CTY:</h5><span>115 Lê Đình Dương, Tp.Đà Nẵng</span>
+								</li>
+								<li>
+									<h5>Showroom:</h5><span>83 Trần Quốc Toản, Tp.Đà Nẵng</span>
+								</li>
+								<li>
+									<h5>Tel:</h5><span>0236.3584 606</span>
+								</li>
+								<li>
+									<h5>FAX:</h5><span>0236.3583 606</span>
+								</li>
+								<li>
+									<h5>Email:</h5><span>avs.vietnam@gmail.com</span>
+								</li>
+							</ul>
+						</div>
+					</div>
+					<div class="col-lg-4 hide-in-pc">
+						<div class="hot-line-mb">
+							<h3>HOTLINE: 0935.605.333</h3>
+						</div>
+					</div>
+					<div class="col-lg-4">
+						<ul class="list-footer">
+							<li><a href="sanphamkhuyenmai.html">KHUYẾN MÃI</a></li>
+							<li><a href="gioithieu.html">GIỚI THIỆU</a></li>
+							<li><a href="tintuc.html">TIN TỨC</a></li>
+							<li><a href="tuyendung.html">TUYỂN DỤNG</a></li>
+							<li><a href="hethongcuahang.html">HỆ THỐNG CỬA HÀNG</a></li>
+							<li><a href="lienhe.html">LIÊN HỆ</a></li>
+						</ul>
+					</div>
+					<div class="col-lg-4">
+						<ul class="list-footer">
+							<li><a href="#">DỊCH VỤ KHÁCH HÀNG</a></li>
+							<li><a href="#">GIAO HÀNG VÀ THANH TOÁN</a></li>
+							<li><a href="#">CHÍNH SÁCH ĐỔI TRẢ</a></li>
+							<li><a href="#">HƯỚNG DẪN MUA HÀNG  </a></li>
+							<li><a href="#">TRẢ GÓP</a></li>
+							<li><a href="cauhoithuonggap.html">CÂU HỎI THƯỜNG GẶP</a></li>
+						</ul>
+					</div>
+					<div class="col-lg-4 coppy-right">
+						<div class="box-img"><img src="./img/icons/dangkyfooter.svg" alt="">
+							<ul class="social-media mb">
+								<li class="item"><a href="#"><img src="./img/icons/facebook.svg" alt=""></a></li>
+								<li class="item"><a href="#"><img src="./img/icons/instagram.svg" alt=""></a></li>
+								<li class="item"><a href="#"><img src="./img/icons/twitter.svg" alt=""></a></li>
+								<li class="item"><a href="#"><img src="./img/icons/printest.svg" alt=""></a></li>
+								<li class="item"><a href="#"><img src="./img/icons/linkedin.svg" alt=""></a></li>
+							</ul>
+						</div><a href="http://web4gsolutions.com/">© 2019 Copyright by Web4G Solutions. All rights reserved.</a>
+					</div>
+					<div class="col-lg-4">
+						<div class="hot-line">
+							<h3>HOTLINE: 0935.605.333</h3>
+						</div>
+					</div>
+					<div class="col-lg-4">
+						<ul class="social-media">
+							<li class="item"><a href="#"><img src="./img/icons/facebook.svg" alt=""></a></li>
+							<li class="item"><a href="#"><img src="./img/icons/instagram.svg" alt=""></a></li>
+							<li class="item"><a href="#"><img src="./img/icons/twitter.svg" alt=""></a></li>
+							<li class="item"><a href="#"><img src="./img/icons/printest.svg" alt=""></a></li>
+							<li class="item"><a href="#"><img src="./img/icons/linkedin.svg" alt=""></a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</footer>
+		<div id="back-to-top"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="50" height="50" viewBox="0 0 50 50"><defs><clipPath id="clip-path"><rect width="50" height="50" fill="none"/></clipPath></defs><g id="To_top" data-name="To top" clip-path="url(#clip-path)"><rect id="Rectangle_287" data-name="Rectangle 287" width="50" height="50" rx="5" fill="#f0f0f0"/><path id="Path_825" data-name="Path 825" d="M7.2,0,0,7.975l7.371,7.975" transform="translate(33.451 20.33) rotate(90)" fill="none" stroke="#1c1c1c" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/></g></svg></div>
+		<script src="./js/core.min.js"></script>
+		<script src="./js/main.min.js"></script>
+		<script src="https://maps.googleapis.com/maps/api/js?v=3.exp&amp;libraries=places&amp;key=AIzaSyCHvmyTralDp2Y0m7zEiN185u1vtArcC5s"></script>
+		<script src="./js/gmap.min.js"></script>
+	</body>
+</html>
