@@ -32,7 +32,6 @@
 			border-bottom: 1px solid #1C1C1C;
 			height: 20px;
 			align-self: flex-end;
-			padding-right: 20px;
 		}
 
 		@media (max-width: 767.98px) {
@@ -169,8 +168,6 @@
 	}
 
 	.table {
-		font-size: 14px;
-
 		thead {
 			tr {
 				border-bottom: 1px solid #F5F5F5;
@@ -252,6 +249,17 @@
 					}
 				}
 
+				.price {
+					color: map-get($mau, main);
+					font-size: 15px;
+				}
+
+				.old-price {
+					@media (max-width: 1024.98px) {
+						font-size: 12px;
+					}
+				}
+
 				&:first-child {
 
 					img {
@@ -281,18 +289,6 @@
 						position: absolute;
 						top: 10px;
 						right: 0;
-					}
-
-					.price {
-						color: map-get($mau, main);
-					}
-
-					.old-price {
-						text-decoration: line-through;
-
-						@media (max-width: 1024.98px) {
-							font-size: 12px;
-						}
 					}
 
 					.quantity-input {
