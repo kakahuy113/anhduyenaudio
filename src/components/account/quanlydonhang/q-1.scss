@@ -22,13 +22,9 @@
 
 			&:first-child {
 				padding: 8px 20px;
-				padding-left: 50px;
+				padding-left: 20px;
 				max-width: 400px;
 				width: 400px;
-
-				@media (max-width: 1199.98px) {
-					padding-left: 20px;
-				}
 			}
 
 			&:nth-child(2),
@@ -48,7 +44,7 @@
 
 			&:last-child {
 				width: 95px;
-				padding-right: 25px;
+				padding-right: 20px;
 				text-align: center;
 			}
 		}

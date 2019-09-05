@@ -1,13 +1,16 @@
 .account-title {
 	.block-title-2 {
-		svg {
-			path {
-				fill: map-get($mau, main)
-			}
-		}
 
 		a {
-			margin-left: 15px;
+			svg {
+				path {
+					fill: map-get($mau, main)
+				}
+			}
+
+			span {
+				margin-left: 15px;
+			}
 		}
 	}
 }
@@ -73,7 +76,7 @@
 	}
 
 	.bill-detail-products {
-		padding: 25px 60px;
+		padding: 25px 20px;
 		background: map-get($mau, trang);
 		border: 1px solid map-get($mau, xam-1);
 		border-top: 0;
