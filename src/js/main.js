@@ -320,7 +320,7 @@ const toggleAddNewsAddressItem = () => {
 	})
 }
 const getInformationToEdit = () => {
-	$(".address-edit").on("click", function() {
+	$(".address-item .js-btn-edit-address").on("click", function() {
 		var name = $(this).parents(".address-item").find("[data-name]").attr("data-name")
 		var address = $(this).parents(".address-item").find("[data-address]").attr("data-address")
 		var phone = $(this).parents(".address-item").find("[data-phone]").attr("data-phone")
@@ -586,7 +586,7 @@ const mobileMenu = () => {
 		if (classListArray.indexOf("active") !== -1) {
 			document.getElementById("header-backdrop").classList.add("active");
 			document.querySelector("body").style.overflow = "hidden"
-			document.querySelector("body").style.height = windowHeight+'px'
+			document.querySelector("body").style.height = windowHeight + 'px'
 		} else {
 			document.getElementById("header-backdrop").classList.remove("active");
 			document.querySelector(".account-box").classList.remove("active");
@@ -658,6 +658,18 @@ function chanceUrlNewsPage() {
 
 
 
+const getPropertyId = () => {
+	let propertyId = $('.product-summary .color-item .list-color span.active').attr("data-propertyId");
+	$('.product-summary .add-cart').attr("data-propertyId", propertyId);
+	$('.product-summary .color-item .list-color span').on("click", function() {
+		$(this).siblings("span").removeClass("active")
+		$(this).addClass("active")
+		let currentPropertyId = $(this).attr("data-propertyId");
+		$('.product-summary .add-cart').attr("data-propertyId", currentPropertyId);
+	})
+}
+
+
 
 $(document).ready(function() {
 	objectFitImages("img.ofc"); // Luôn luôn chậy polyfill cho thuôc tính object-fit: cover trên các phiên bản IE >= 9
@@ -701,6 +713,7 @@ $(document).ready(function() {
 	introduceSliderBanner();
 	megaMenuHover();
 	turnOffPopupWhenClicked();
+	getPropertyId();
 })
 
 
