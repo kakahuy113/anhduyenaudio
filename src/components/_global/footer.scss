@@ -104,6 +104,7 @@ footer {
 		color          : #A3A3A3;
 		background     : #444444;
 		border-radius  : 5px;
+		padding-top    : 4px;
 	}
 
 	.hot-line {
@@ -185,9 +186,10 @@ footer {
 			display: none;
 
 			&.mb {
-				display: -webkit-inline-box;
+				display        : -webkit-inline-box;
 				justify-content: space-between;
 				margin-left    : 30px;
+				margin-bottom  : 8px;
 			}
 		}
 
