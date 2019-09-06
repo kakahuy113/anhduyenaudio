@@ -10,11 +10,16 @@
 		margin: 0 -5px;
 		display: flex;
 		flex-wrap: wrap;
+		margin-top: 5px;
 
 		.img {
 			padding: 0 5px;
 			flex: 0 0 50%;
 			max-width: 100%;
+
+			img {
+				width: 100%;
+			}
 
 			&:nth-child(3) {
 				margin-top: 10px;
