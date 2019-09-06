@@ -91,17 +91,19 @@
 	}
 
 	@media (max-width: 1024.98px) {
-		padding   : 15px;
+		padding   : 15px 5px;
 		background: #FFFFFF;
 
 		.catalog-news {
 			margin-bottom: 10px;
+
+			&.mt-mb-20 {
+				margin-top: 20px;
+			}
 		}
 	}
 
 	@media (max-width: 575.98px) {
-		padding: 10px 0px;
-
 		.block-news {
 			padding      : 10px;
 			margin-bottom: 10px;

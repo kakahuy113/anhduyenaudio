@@ -289,3 +289,9 @@ main {
 		border    : 1px solid #D82F25;
 	}
 }
+
+.ui-slider-horizontal {
+	.ui-slider-handle {
+		top: -0.5rem;
+	}
+}

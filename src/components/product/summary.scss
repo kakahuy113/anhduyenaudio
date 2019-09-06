@@ -28,6 +28,8 @@
 					background-size: 20px;
 					bottom         : 0;
 					top            : unset;
+					width          : 27px;
+					height         : 27px;
 				}
 
 				.swiper-button-next {
@@ -37,9 +39,10 @@
 				.swiper-button-prev {
 					background-image: url(../img/icons/up-slider-item-detail.svg);
 
+
 					&::after {
 						position  : absolute;
-						top       : 10px;
+						top       : 5px;
 						background: #dfdfdf;
 						width     : 2px;
 						height    : 23px;
@@ -49,8 +52,9 @@
 				}
 
 				.gallery-thumbs {
-					height: 450px;
-					width : 100%;
+					height    : 485px;
+					margin-top: 15px;
+					width     : 100%;
 
 					.swiper-slide {
 						figure {
@@ -85,6 +89,8 @@
 	}
 
 	.product-cart {
+		padding-left: 100px;
+
 		.info-summary {
 			h2 {
 				position   : relative;
@@ -125,7 +131,7 @@
 				color        : #1C1C1C;
 				margin-bottom: 10px;
 
-				-webkit-line-clamp: 11;
+				-webkit-line-clamp: 10;
 				-webkit-box-orient: vertical;
 				display           : -webkit-box;
 				overflow          : hidden;
@@ -327,7 +333,7 @@
 						padding-right: 0;
 					}
 				}
-				
+
 				p {
 					margin-top        : 15px;
 					font-size         : 12px;

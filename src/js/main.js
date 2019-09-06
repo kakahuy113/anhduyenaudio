@@ -249,7 +249,7 @@ function submenuCategoryDetail() {
 function imgProductSlider() {
 	var galleryThumbs = new Swiper('.slider-imgProduct .gallery-thumbs', {
 		direction: 'vertical',
-		spaceBetween: 10,
+		spaceBetween:20,
 		slidesPerView: 4,
 		freeMode: true,
 		loopedSlides: 5,
