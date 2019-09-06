@@ -25,14 +25,23 @@ section.cart
 								td
 									a(href="sanpham-ct.html") Loa ABC hiện đại
 								td
-									.quantity-input
-										span.minus -
-										input.quantity(value="7")
-										span.plus +
-								td Trắng
+									.table-content
+										.table-text Số lượng
+										.table-value 
+											.quantity-input
+												span.minus -
+												input.quantity(value="7")
+												span.plus +
+								td 
+									.table-content
+										.table-text Màu sắc
+										.table-value Trắng
 								td
-									p.price 9.490.000 đ
-									del.old-price 12.390.000 đ
+									.table-content
+										.table-text Giá
+										.table-value
+											p.price 9.490.000 đ
+											del.old-price 12.390.000 đ
 								td
 									img(src="./img/icons/icon-close.svg", alt="")
 			.cart-summary

@@ -325,13 +325,13 @@
 					<div class="container">
 						<div class="row no-gutters">
 							<div class="step active">
-								<p>1. Giỏ hàng</p>
+								<p> <a href="giohang.html">1. Giỏ hàng</a></p>
 							</div>
 							<div class="step active">
-								<p>2. Địa chỉ giao hàng</p>
+								<p> <a href="diachigiaohang.html">2. Địa chỉ giao hàng</a></p>
 							</div>
-							<div class="step">
-								<p>3. Thanh toán</p>
+							<div class="step active">
+								<p> <a href="thanhtoan.html">3. Thanh toán</a></p>
 							</div>
 						</div>
 					</div>
@@ -349,11 +349,11 @@
 									<div class="form-wrapper">
 										<div class="form-check">
 											<input id="shipping_1" type="radio" name="shipping_method" checked>
-											<label for="shipping_1">Giao hàng tiêu chuẩn (Dự kiến giao hàng vào Thứ bảy, 11/05/2019): <b>15.000 ₫</b></label>
+											<label for="shipping_1">Giao hàng tiêu chuẩn (Dự kiến giao hàng vào Thứ bảy, 11/05/2019): <span>15.000 ₫</span></label>
 										</div>
 										<div class="form-check">
 											<input id="shipping_2" type="radio" name="shipping_method">
-											<label for="shipping_2">Giao hàng tiêu chuẩn (Dự kiến giao hàng vào Thứ bảy, 11/05/2019): <b>15.000 ₫</b></label>
+											<label for="shipping_2">Giao hàng tiêu chuẩn (Dự kiến giao hàng vào Thứ bảy, 11/05/2019): <span>15.000 ₫</span></label>
 										</div>
 									</div>
 								</div>
@@ -368,7 +368,7 @@
 										</div>
 										<div class="form-check">
 											<input id="payment_2" type="radio" name="payment_method">
-											<label for="payment_2">Thẻ ATM nội địa/Internet Banking (Miễn phí thanh toán)</label>
+											<label for="payment_2">Thẻ ATM nội địa/Internet Banking  <span>(Miễn phí thanh toán)</span></label>
 											<div class="option-list bank-list">
 												<div class="form-check">
 													<input type="radio" name="bank" id="bank1">
@@ -418,9 +418,9 @@
 										</div>
 										<div class="form-check">
 											<input id="payment_3" type="radio" name="payment_method">
-											<label for="payment_3">Thanh toán online bằng thẻ quốc tế (Visa, Master, JCB)</label>
+											<label for="payment_3">Thanh toán online bằng thẻ quốc tế  <span>(Visa, Master, JCB)</span></label>
 											<div class="option-list form-card">
-												<div class="col-md-6">
+												<div class="col-md-6 col-lg-12 col-xl-6">
 													<p>Nhập thông tin thẻ <img class="lazyload" data-src="./img/card.png" alt=""></p>
 													<div class="form-card-wrapper">
 														<div class="form-group">
@@ -439,8 +439,13 @@
 															<label>Mã bảo mật</label>
 															<input type="text" name="" placeholder="123">
 														</div>
+														<div class="form-check">
+															<input id="savecardcode" type="checkbox">
+															<label for="savecardcode">Lưu và bảo mật thẻ cho lần thanh toán sau</label><i>AnhDuyen Audio không trực tiếp lưu thẻ của bạn. Để đảm bảo an toàn, thông tin thẻ của bạn chỉ được lưu bởi CyberSource,công ty quản lý thanh toán lớn nhất thế giới (thuộc tổ chức VISA)</i>
+														</div>
 													</div>
 												</div>
+												<div class="col-md-6"><img class="lazyload" data-src="./img/card-img.png" alt=""></div>
 											</div>
 										</div>
 									</div>

@@ -1,5 +1,9 @@
-.shipping-address {
-	padding: 60px 0;
+.cart-shipping-address {
+	padding: 30px 0;
+}
+
+.cart-step {
+
 
 	.row {
 		justify-content: space-between;
@@ -57,9 +61,16 @@
 	}
 }
 
-
 .cart-address {
-	padding-top: 30px;
+	padding-top: 55px;
+
+	@media (max-width: 1024.98px) {
+		padding-top: 25px;
+
+		.row.no-gutters {
+			margin: 0 -15px;
+		}
+	}
 
 	.section-title {
 		margin-bottom: 12px;
@@ -70,7 +81,7 @@
 	}
 
 	h3 {
-		font-size: 15px;
+		font-size: 16px;
 		font-weight: 400;
 		margin-bottom: 7px;
 		display: flex;
@@ -93,6 +104,10 @@
 		p,
 		h4 {
 			margin-bottom: 7px;
+
+			@media (max-width: 1024.98px) {
+				font-size: 12px;
+			}
 		}
 
 		h4 {
@@ -162,6 +177,7 @@
 		font-size: 18px;
 		margin-bottom: 20px;
 		border-radius: 5px;
+		margin-top: 15px;
 
 		p {
 			display: flex;
@@ -171,7 +187,7 @@
 			font-size: 15px;
 
 			span {
-				margin-left: 20px;
+				margin-left: 15px;
 				border-bottom: 1px solid #1C1C1C;
 			}
 		}
@@ -193,6 +209,18 @@
 
 		h3 {
 			margin-bottom: 8px;
+
+			&:nth-child(4) {
+				margin-top: 25px;
+			}
+		}
+
+		select {
+			background-image: url("../img/icons/icon-select.png");
+			background-position-x: right;
+			background-repeat: no-repeat;
+			background-size: 40px;
+			appearance: none;
 		}
 
 		input[type="text"],
@@ -207,6 +235,10 @@
 			&::placeholder {
 				color: #1c1c1c;
 			}
+
+			@media (max-width: 1024.98px) {
+				font-size: 12px;
+			}
 		}
 
 		textarea {
@@ -219,6 +251,10 @@
 
 			&::placeholder {
 				color: #1c1c1c;
+			}
+
+			@media (max-width: 1024.98px) {
+				font-size: 12px;
 			}
 		}
 

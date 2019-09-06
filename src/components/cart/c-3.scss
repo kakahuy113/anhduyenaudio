@@ -24,6 +24,12 @@
 		}
 	}
 
+	.section-title {
+		@media (max-width: 1024.98px) {
+			display: none;
+		}
+	}
+
 	form {
 		>.form-check {
 			padding: 0 15px;
@@ -91,7 +97,6 @@
 				.option-list {
 					display: none;
 					margin-top: 10px;
-					padding-left: 30px;
 				}
 
 				>input[type="radio"] {
@@ -286,18 +291,26 @@
 		.form-button {
 			margin-top: 20px;
 
+			@media (max-width: 1024.98px) {
+				margin-bottom: 30px;
+			}
+
 			.btn {
 				margin-left: 0;
-				width: 340px;
+				max-width: 340px;
 				height: 35px;
 				font-weight: 700;
 				font-size: 13px;
 				color: white;
+
+				@media (max-width: 1024.98px) {
+					margin: 0 auto;
+				}
 			}
 		}
 	}
 
-	.col-lg-auto {
+	>.col-lg-auto {
 		max-width: 350px;
 
 		.block-title {
@@ -327,6 +340,10 @@
 		border-radius: 5px;
 		background: #ffffff;
 		font-size: 14px;
+
+		@media (max-width: 1024.98px) {
+			display: none;
+		}
 
 		.address-item {
 			width: 100%;
@@ -383,6 +400,10 @@
 		background: white;
 		border-radius: 5px;
 		font-size: 12px;
+
+		@media (max-width: 1024.98px) {
+			display: none;
+		}
 
 		.cart-item-list {
 			padding: 0 15px;
