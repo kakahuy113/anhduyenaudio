@@ -249,7 +249,7 @@ function submenuCategoryDetail() {
 function imgProductSlider() {
 	var galleryThumbs = new Swiper('.slider-imgProduct .gallery-thumbs', {
 		direction: 'vertical',
-		spaceBetween:20,
+		spaceBetween: 20,
 		slidesPerView: 4,
 		freeMode: true,
 		loopedSlides: 5,
@@ -585,12 +585,13 @@ const mobileMenu = () => {
 		const windowHeight = window.innerHeight;
 		if (classListArray.indexOf("active") !== -1) {
 			document.getElementById("header-backdrop").classList.add("active");
-			document.querySelector("body").style.overflow = "hidden"
-			document.querySelector("body").style.height = windowHeight + 'px'
+			document.querySelector("body").style.overflow = "hidden";
+			document.querySelector("body").style.height = windowHeight + 'px';
+			document.querySelector("body").style.position = "fixed";
 		} else {
 			document.getElementById("header-backdrop").classList.remove("active");
 			document.querySelector(".account-box").classList.remove("active");
-			document.querySelector("body").removeAttribute('style')
+			document.querySelector("body").removeAttribute('style');
 		}
 	}
 

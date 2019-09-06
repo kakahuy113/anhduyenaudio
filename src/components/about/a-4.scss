@@ -4,6 +4,16 @@
 
 	.row {
 		justify-content: center;
+
+		>.col-lg-10 {
+			.col-lg:nth-child(1) {
+				order: 2;
+			}
+
+			.col-lg:nth-child(3) {
+				order: 1;
+			}
+		}
 	}
 
 	@media (max-width: 1024.98px) {
@@ -12,6 +22,10 @@
 	}
 
 	.imgbox {
+		@media (max-width: 1024.98px) {
+			margin-bottom: 15px;
+		}
+
 		a {
 			display: block;
 			position: relative;
