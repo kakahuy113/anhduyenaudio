@@ -331,6 +331,14 @@ header {
 						}
 					}
 				}
+
+				&.mega-item-news {
+					display: none;
+
+					@media (max-width: 1024.98px) {
+						display: block
+					}
+				}
 			}
 
 			.mega-child {
@@ -427,6 +435,20 @@ header {
 							&:hover {
 								border: 1px solid map-get($mau, main);
 								color: map-get($mau, main);
+							}
+						}
+					}
+				}
+
+				&.mega-child-news {
+					display: none;
+
+					@media (max-width: 1024.98px) {
+						display: flex;
+
+						nav {
+							a {
+								width: 100%;
 							}
 						}
 					}

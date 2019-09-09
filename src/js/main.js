@@ -522,6 +522,7 @@ function showFilter() {
 const megaMenuHover = () => {
 	let dataMegas = document.querySelectorAll("[data-mega]")
 	let dataMegaContents = document.querySelectorAll("[data-mega-content]")
+	let firstElement;
 	if (window.innerWidth >= 1025) {
 		Array.prototype.forEach.call(dataMegas, (dataMega, dataMegaIndex) => {
 			dataMega.addEventListener("mouseover", () => {
@@ -538,7 +539,7 @@ const megaMenuHover = () => {
 			})
 		})
 	} else {
-		Array.prototype.forEach.call(dataMegas, (dataMega) => {
+		Array.prototype.forEach.call(dataMegas, (dataMega, dataMegaIndex) => {
 			dataMega.addEventListener("click", (e) => {
 				e.preventDefault();
 				let target = dataMega.attributes["data-mega"].value
@@ -550,6 +551,8 @@ const megaMenuHover = () => {
 				document.querySelector(`[data-mega-content='${target}']`).style.display = "flex";
 			})
 		})
+
+		dataMegas[0].click();
 	}
 }
 const turnOffPopupWhenClicked = () => {
