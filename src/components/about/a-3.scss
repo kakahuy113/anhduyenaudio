@@ -7,25 +7,19 @@
 	}
 
 	.img-grid {
-		margin: 0 -5px;
-		display: flex;
-		flex-wrap: wrap;
-		margin-top: 5px;
-
 		.img {
-			padding: 0 5px;
-			flex: 0 0 50%;
-			max-width: 100%;
+			max-width: 500px;
+			margin: 0 auto;
 
 			img {
 				width: 100%;
 			}
+		}
+	}
 
-			&:nth-child(3) {
-				margin-top: 10px;
-				flex: 0 0 100%;
-				max-width: 100%;
-			}
+	@media (max-width: 1199.98px) {
+		.col-lg-1 {
+			display: none;
 		}
 	}
 
@@ -39,10 +33,6 @@
 
 		.col-lg:last-child {
 			order: 1
-		}
-
-		.col-lg-1 {
-			display: none;
 		}
 	}
 }
