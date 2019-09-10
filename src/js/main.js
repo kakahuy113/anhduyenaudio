@@ -723,7 +723,7 @@ $(document).ready(function() {
 
 $(document).ajaxComplete(function() {
 	addClassLazyload();
-	cartQuantity();
+	// cartQuantity();
 })
 
 window.addEventListener("scroll", () => {
