@@ -78,13 +78,15 @@
 		.form-radio {
 			display: flex;
 			flex-wrap: wrap;
+			min-height: 40px;
+			align-items: center;
+		}
 
-			.option {
-				flex: 0 0 auto;
-				padding-right: 20px;
-				width: auto;
-				max-width: 100%;
-			}
+		.option {
+			flex: 0 0 auto;
+			padding-right: 20px;
+			width: auto;
+			max-width: 100%;
 		}
 	}
 }
