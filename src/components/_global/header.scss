@@ -95,15 +95,18 @@ header {
 			max-width: 50px;
 			text-align: center;
 
-			@media (max-width: 1199.98px) {
-				margin-left: 30px;
-			}
-
 			a {
 				display: flex;
 				flex-direction: column;
 				align-items: center;
 				color: white;
+				transition: all .3s cubic-bezier(.2, .5, .5, .8);
+
+				.text {
+					p {
+						color: #ffffff;
+					}
+				}
 			}
 
 			img {
@@ -114,11 +117,17 @@ header {
 				margin-top: 6px;
 				line-height: 1;
 			}
-		}
 
-		@media (min-width: 1025px) {
-			.mobile-toggle {
-				display: none;
+			&:hover {
+				cursor: pointer;
+
+				>a {
+					color: lighten(map-get($mau, main), 8%);
+				}
+			}
+
+			@media (max-width: 1199.98px) {
+				margin-left: 30px;
 			}
 		}
 
@@ -201,6 +210,12 @@ header {
 						padding: 5px;
 					}
 				}
+			}
+		}
+
+		@media (min-width: 1025px) {
+			.mobile-toggle {
+				display: none;
 			}
 		}
 	}
