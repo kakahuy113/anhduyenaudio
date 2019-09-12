@@ -7,6 +7,9 @@
 			h3(data-name="Phan Gia Nhật Linh") Phan Gia Nhật Linh
 			p(data-address="161/1, hẻm 161, Quang Trung, Quận Gò Vấp, TP.Hồ Chí Minh") Địa chỉ: 161/1, hẻm 161, Quang Trung, Quận Gò Vấp, TP.Hồ Chí Minh
 			p(data-phone="0938 889 684") Điện thoại: 0938 889 684
+			.d-none
+				p(data-city="1") Tp.Hồ Chí Minh
+				p(data-district="15") Q.Gò Vấp
 		.col-md-auto
 			a.address-edit.js-btn-edit-address(href="javascript:void(0)") Sửa
 			span.default-address Địa chỉ giao hàng mặc định
@@ -15,6 +18,9 @@
 			h3(data-name="Vũ Văn A") Phan Gia Nhật Linh
 			p(data-address="466/37, Lê Văn Sỹ, Quận 3, TP.Hồ Chí Minh") Địa chỉ: 466/37, Lê Văn Sỹ, Quận 3, TP.Hồ Chí Minh
 			p(data-phone="0938 889 684") Điện thoại: 0938 889 684
+			.d-none
+				p(data-city="2") Hà Nội
+				p(data-district="5") Q.Bình Thạnh
 		.col-md-auto
 			a.address-edit.js-btn-edit-address(href="javascript:void(0)") Sửa
 			a.address-remove(href="javascript:void(0)") Xóa
@@ -31,30 +37,22 @@
 			.form-group
 				.form-input
 					input#phone(type="text", name="" placeholder="Số điện thoại")
+				
 			h3 Thông tin địa chỉ
 			.form-group
 				.form-input
-					select
+					select#ShippingCitySelectedValue
 						option Chọn Tỉnh/Thành phố
-						option option 1
-						option option 1
+						option(value="1") Hồ Chí Minh
+						option(value="2") Hà Nội
 						option option 1
 						option option 1
 			.form-group.form-error
 				.form-input
-					select
+					select#ShippingDistrictSelectedValue
 						option Chọn Quận/Huyện
-						option option 1
-						option option 1
-						option option 1
-						option option 1
-					span.error.mdi.mdi-alert-circle-outline Bắt lỗi
-			.form-group
-				.form-input
-					select
-						option Chọn Phường/Xã
-						option option 1
-						option option 1
+						option(value="5") Gò Vấp
+						option(value="15") Bình Thạnh
 						option option 1
 						option option 1
 					span.error.mdi.mdi-alert-circle-outline Bắt lỗi

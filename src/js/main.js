@@ -324,10 +324,13 @@ const getInformationToEdit = () => {
 		var name = $(this).parents(".address-item").find("[data-name]").attr("data-name")
 		var address = $(this).parents(".address-item").find("[data-address]").attr("data-address")
 		var phone = $(this).parents(".address-item").find("[data-phone]").attr("data-phone")
-
+		var city = $(this).parents(".address-item").find("[data-city]").attr("data-city")
+		var district = $(this).parents(".address-item").find("[data-district]").attr("data-district")
 		$(".add-new-address-form").find("#fullname").val(name)
 		$(".add-new-address-form").find("#phone").val(phone)
 		$(".add-new-address-form").find("#address").val(address)
+		$(".add-new-address-form").find("#ShippingCitySelectedValue").val(city)
+		$(".add-new-address-form").find("#ShippingDistrictSelectedValue").val(district)
 		$(".add-new-address-form").slideDown()
 	})
 }

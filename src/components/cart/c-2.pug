@@ -20,6 +20,9 @@
 						h4(data-name="Lê Khoa") Lê Khoa
 						p(data-address="161/1, hẻm 161, Quang Trung, Quận Gò Vấp, Hồ Chí Minh") Địa chỉ: 161/1, hẻm 161, Quang Trung, Quận Gò Vấp, Hồ Chí Minh
 						p(data-phone="0938889684") Điện thoại: 0938889684
+						.d-none
+							p(data-city="1") Tp.Hồ Chí Minh
+							p(data-district="15") Q.Gò Vấp
 						.button-wrapper
 							a.btn.btn-edit(href="thanhtoan.html") Xác nhận địa chỉ giao hàng
 							a.btn.btn-remove.js-btn-edit-address(href="javascript:void(0)") Sửa
@@ -30,6 +33,9 @@
 						h4(data-name="Lê Khoa") Lê Khoa
 						p(data-address="161/1, hẻm 161, Quang Trung, Quận Gò Vấp, Hồ Chí Minh") Địa chỉ: 161/1, hẻm 161, Quang Trung, Quận Gò Vấp, Hồ Chí Minh
 						p(data-phone="0938889684") Điện thoại: 0938889684
+						.d-none
+							p(data-city="2") Hà Nội
+							p(data-district="5") Q.Bình Thạnh
 						.button-wrapper
 							a.btn.btn-edit(href="thanhtoan.html") Xác nhận địa chỉ giao hàng
 							a.btn.btn-remove.js-btn-edit-address(href="javascript:void(0)") Sửa
@@ -39,6 +45,9 @@
 						h4(data-name="Nguyển Văn A") Nguyển Văn A
 						p(data-address="467, hẻm 192, Lê Văn Sỹ, Quận Tân Bình, Hồ Chí Minh") Địa chỉ: 467, hẻm 192, Lê Văn Sỹ, Quận Tân Bình, Hồ Chí Minh
 						p(data-phone="0938889684") Điện thoại: 0938889684
+						.d-none
+							p(data-city="2") Hà Nội
+							p(data-district="5") Q.Bình Thạnh
 						.button-wrapper
 							a.btn.btn-edit(href="thanhtoan.html") Xác nhận địa chỉ giao hàng
 							a.btn.btn-remove.js-btn-edit-address(href="javascript:void(0)") Sửa
@@ -58,24 +67,17 @@
 							input#phone(type="text", name="" placeholder="Số diện thoại")
 						h3 Thông tin địa chỉ
 						.form-group
-							select
+							select#ShippingCitySelectedValue
 								option Chọn Tỉnh/Thành phố
-								option option 1
-								option option 1
+								option(value="1") Hồ Chí Minh
+								option(value="2") Hà Nội
 								option option 1
 								option option 1
 						.form-group
-							select
+							select#ShippingDistrictSelectedValue
 								option Chọn Quận/Huyện
-								option option 1
-								option option 1
-								option option 1
-								option option 1
-						.form-group
-							select
-								option Chọn Phường/Xã
-								option option 1
-								option option 1
+								option(value="5") Gò Vấp
+								option(value="15") Bình Thạnh
 								option option 1
 								option option 1
 						.form-group

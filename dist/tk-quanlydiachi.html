@@ -374,6 +374,10 @@
 										<h3 data-name="Phan Gia Nhật Linh">Phan Gia Nhật Linh</h3>
 										<p data-address="161/1, hẻm 161, Quang Trung, Quận Gò Vấp, TP.Hồ Chí Minh">Địa chỉ: 161/1, hẻm 161, Quang Trung, Quận Gò Vấp, TP.Hồ Chí Minh</p>
 										<p data-phone="0938 889 684">Điện thoại: 0938 889 684</p>
+										<div class="d-none">
+											<p data-city="1">Tp.Hồ Chí Minh</p>
+											<p data-district="15">Q.Gò Vấp</p>
+										</div>
 									</div>
 									<div class="col-md-auto"><a class="address-edit js-btn-edit-address" href="javascript:void(0)">Sửa</a><span class="default-address">Địa chỉ giao hàng mặc định</span></div>
 								</div>
@@ -382,6 +386,10 @@
 										<h3 data-name="Vũ Văn A">Phan Gia Nhật Linh</h3>
 										<p data-address="466/37, Lê Văn Sỹ, Quận 3, TP.Hồ Chí Minh">Địa chỉ: 466/37, Lê Văn Sỹ, Quận 3, TP.Hồ Chí Minh</p>
 										<p data-phone="0938 889 684">Điện thoại: 0938 889 684</p>
+										<div class="d-none">
+											<p data-city="2">Hà Nội</p>
+											<p data-district="5">Q.Bình Thạnh</p>
+										</div>
 									</div>
 									<div class="col-md-auto"><a class="address-edit js-btn-edit-address" href="javascript:void(0)">Sửa</a><a class="address-remove" href="javascript:void(0)">Xóa</a></div>
 								</div>
@@ -404,10 +412,10 @@
 										<h3>Thông tin địa chỉ</h3>
 										<div class="form-group">
 											<div class="form-input">
-												<select>
+												<select id="ShippingCitySelectedValue">
 													<option>Chọn Tỉnh/Thành phố</option>
-													<option>option 1</option>
-													<option>option 1</option>
+													<option value="1">Hồ Chí Minh</option>
+													<option value="2">Hà Nội</option>
 													<option>option 1</option>
 													<option>option 1</option>
 												</select>
@@ -415,21 +423,10 @@
 										</div>
 										<div class="form-group form-error">
 											<div class="form-input">
-												<select>
+												<select id="ShippingDistrictSelectedValue">
 													<option>Chọn Quận/Huyện</option>
-													<option>option 1</option>
-													<option>option 1</option>
-													<option>option 1</option>
-													<option>option 1</option>
-												</select><span class="error mdi mdi-alert-circle-outline">Bắt lỗi</span>
-											</div>
-										</div>
-										<div class="form-group">
-											<div class="form-input">
-												<select>
-													<option>Chọn Phường/Xã</option>
-													<option>option 1</option>
-													<option>option 1</option>
+													<option value="5">Gò Vấp</option>
+													<option value="15">Bình Thạnh</option>
 													<option>option 1</option>
 													<option>option 1</option>
 												</select><span class="error mdi mdi-alert-circle-outline">Bắt lỗi</span>
