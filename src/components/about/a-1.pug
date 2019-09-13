@@ -1,7 +1,12 @@
-.about-nav
-	.container
+.container
+	.about-nav
 		nav
-			a.item.btn.btn-outline-black(href="#" data-href="section-1") Về chúng tôi
-			a.item.btn.btn-outline-black(href="#" data-href="section-2") Giải pháp
-			a.item.btn.btn-outline-black(href="#" data-href="section-3") Về sao chọn chúng tôi
-			a.item.btn.btn-outline-black(href="#" data-href="section-4") Dự án
+			a.item.btn.btn-outline-black(href='javascript:void(0)' toggle-for="section-1") Về chúng tôi
+			a.item.btn.btn-outline-black(href='javascript:void(0)' toggle-for="section-2") Giải pháp
+			a.item.btn.btn-outline-black(href='javascript:void(0)' toggle-for="section-3") Về sao chọn chúng tôi
+			a.item.btn.btn-outline-black(href='javascript:void(0)' toggle-for="section-4") Dự án
+		select
+			option(value="section-1") Về chúng tôi
+			option(value="section-2") Giải pháp
+			option(value="section-3") Về sao chọn chúng tôi
+			option(value="section-4") Dự án

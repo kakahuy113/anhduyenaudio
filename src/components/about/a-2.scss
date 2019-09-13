@@ -1,10 +1,22 @@
 .about-section {
+	padding: 45px 0;
+	transform: scale(.95);
+	transition: all .5s cubic-bezier(.2,.5,.5,.8);
+
+	&.show {
+		transform: scale(1);
+	}
+
+	.row {
+		justify-content: center;
+	}
+
 	.about-title {
 		margin-bottom: 20px;
 		text-transform: uppercase;
 	}
 
-	.content {
+	.section-content {
 		font-size: 16px;
 
 		p,
@@ -16,20 +28,15 @@
 			}
 		}
 	}
+
+	@media (max-width: 1024.98px) {
+		padding: 30px 0;
+	}
 }
 
 .about-2 {
-	padding-top: 90px;
 
-	@media (max-width: 1024.98px) {
-		padding-top: 20px;
-	}
-
-	.row {
-		justify-content: center;
-		align-items: center;
-	}
-	.imgbox{
+	.imgbox {
 		@media (max-width: 1024.98px) {
 			margin-top: 30px;
 		}

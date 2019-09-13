@@ -1,14 +1,9 @@
 .about-3 {
-	background: #F6F6F6;
-	padding: 60px 0;
-
-	.row {
-		justify-content: center;
-	}
+	// background: #F6F6F6;
 
 	.img-grid {
 		.img {
-			max-width: 500px;
+			max-width: 585px;
 			margin: 0 auto;
 
 			img {
@@ -24,8 +19,6 @@
 	}
 
 	@media (max-width: 1024.98px) {
-		padding-top: 20px;
-		padding-bottom: 10px;
 
 		.col-lg:first-child {
 			order: 3

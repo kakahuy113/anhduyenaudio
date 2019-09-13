@@ -1,29 +1,31 @@
 .about-4 {
 	background: white;
-	padding: 60px 0;
 
 	.row {
 		justify-content: center;
 
 		>.col-lg-10 {
 			.col-lg:nth-child(1) {
-				order: 2;
+				order: 3;
 			}
 
 			.col-lg:nth-child(3) {
 				order: 1;
 			}
-		}
-	}
 
-	@media (max-width: 1024.98px) {
-		padding-top: 20px;
-		padding-bottom: 10px;
+			.col-lg-1 {
+				order: 2;
+			}
+		}
 	}
 
 	.imgbox {
 		@media (max-width: 1024.98px) {
 			margin-bottom: 15px;
+		}
+
+		img {
+			width: 100%;
 		}
 
 		a {

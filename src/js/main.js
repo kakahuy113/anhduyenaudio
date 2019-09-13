@@ -74,7 +74,8 @@ class Tab {
 
 	runTabWhenClicked() {
 		Array.prototype.forEach.call(this.titleList, (element, index) => {
-			element.addEventListener("click", () => {
+			element.addEventListener("click", e => {
+				e.preventDefault();
 				const tabTarget = element.attributes["toggle-for"].value;
 				const targetDOM = this.selector.querySelector(`[tab-id='${tabTarget}']`);
 				element.classList.add("active");
@@ -292,7 +293,6 @@ function dataStartRanking() {
 				let positionClicked = e.pageX - Math.round(offsetLeft, 0)
 				let starRatedWidth = Math.floor(positionClicked / width * 100)
 
-				console.log(e);
 
 				if (starRatedWidth >= 80) {
 					_this.find(".img-star .star-rated").width("100%");
@@ -454,23 +454,23 @@ function countDownSale() {
 	}, 1000);
 
 }
-const clickThenScrollToSection = () => {
-	let aboutNavItemNodeList = document.querySelectorAll(".about-nav .item")
-	if (aboutNavItemNodeList) {
-		Array.prototype.forEach.call(aboutNavItemNodeList, element => {
-			element.addEventListener("click", e => {
-				e.preventDefault();
-				let targetBlock = document.getElementById(element.attributes["data-href"].value);
-				// let scrollPosition = targetBlock.offsetTop - document.querySelector("header").offsetHeight
-				let scrollPosition = targetBlock.offsetTop
-				window.scrollTo({
-					top: scrollPosition,
-					behavior: "smooth",
-				})
-			})
-		})
-	}
-}
+// const clickThenScrollToSection = () => {
+// 	let aboutNavItemNodeList = document.querySelectorAll(".about-nav .item")
+// 	if (aboutNavItemNodeList) {
+// 		Array.prototype.forEach.call(aboutNavItemNodeList, element => {
+// 			element.addEventListener("click", e => {
+// 				e.preventDefault();
+// 				let targetBlock = document.getElementById(element.attributes["data-href"].value);
+// 				// let scrollPosition = targetBlock.offsetTop - document.querySelector("header").offsetHeight
+// 				let scrollPosition = targetBlock.offsetTop
+// 				window.scrollTo({
+// 					top: scrollPosition,
+// 					behavior: "smooth",
+// 				})
+// 			})
+// 		})
+// 	}
+// }
 // SLIDER BANNER
 function introduceSliderBanner() {
 	var swpier = new Swiper('.introduce-slider', {
@@ -676,7 +676,14 @@ const getPropertyId = () => {
 	})
 }
 
-
+const aboutNavSelect = () => {
+	const select = document.querySelector(".about-nav select");
+	if (select) {
+		select.addEventListener("change", (e) => {
+			document.querySelector(`[toggle-for=${e.srcElement.value}]`).click()
+		})
+	}
+}
 
 $(document).ready(function() {
 	objectFitImages("img.ofc"); // Luôn luôn chậy polyfill cho thuôc tính object-fit: cover trên các phiên bản IE >= 9
@@ -684,7 +691,7 @@ $(document).ready(function() {
 	addClassHeaderWhenScroll();
 	moveAccount();
 	mobileMenu();
-
+	aboutNavSelect();
 
 
 	homeSliderBanner();
@@ -700,7 +707,7 @@ $(document).ready(function() {
 	chooesColor();
 	sliderTheSameProduct();
 	toggleFormAddNewAddress();
-	clickThenScrollToSection();
+	// clickThenScrollToSection();
 	getDataBar();
 	likeComment();
 	backToTop();
@@ -713,6 +720,7 @@ $(document).ready(function() {
 	const recruitmentTab = new Tab(".job-position .tab-container");
 	const cauhoithuonggap = new Tab(".FaQ .tab-container");
 	const ProductDetailTab = new Tab(".tabs-info-product .tab-container");
+	const aboutTab = new Tab(".about-tab .tab-container");
 	if ($(window).width() > 1024) {
 		const SaleHotTab = new Tab(".product-sale-hot .tab-container");
 	}
