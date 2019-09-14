@@ -662,8 +662,20 @@ function chanceUrlNewsPage() {
 	})
 }
 
-
-
+function getProductQuantity() {
+	$(".category-list .child").each(function() {
+		var _thisList = $(this)
+		var productOfThis = 0;
+		_thisList.find("[data-product]").each(function() {
+			var _thisItem = $(this)
+			productOfThis += Number(_thisItem.attr("data-product"))
+		})
+		_thisList.siblings("h5").attr("data-product", productOfThis);
+	})
+	$('.category-list [data-product]').each(function() {
+		$(this).find('span').html(`(${$(this).attr('data-product')})`)
+	})
+}
 
 const getPropertyId = () => {
 	let propertyId = $('.product-summary .color-item .list-color span.active').attr("data-propertyId");
@@ -729,6 +741,7 @@ $(document).ready(function() {
 	megaMenuHover();
 	turnOffPopupWhenClicked();
 	getPropertyId();
+	getProductQuantity();
 })
 
 
