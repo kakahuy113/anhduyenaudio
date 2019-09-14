@@ -672,9 +672,16 @@ function getProductQuantity() {
 		})
 		_thisList.siblings("h5").attr("data-product", productOfThis);
 	})
+
 	$('.category-list [data-product]').each(function() {
 		$(this).find('span').html(`(${$(this).attr('data-product')})`)
 	})
+
+	var _thisLink = $('.category-list [data-product].active')
+
+	if (_thisLink.length > 0) {
+		$('.quantity [data-sum-product]').html(_thisLink.attr('data-product'));
+	}
 }
 
 const getPropertyId = () => {
