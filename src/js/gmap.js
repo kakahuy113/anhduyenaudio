@@ -266,7 +266,7 @@ google.maps.event.addDomListener(window, 'load', initialize);
 
 function myClick(id) {
 	google.maps.event.trigger(markers[id], 'click');
-	$("html,body").animate({
-		scrollTop: $("#map").offset().top - 70
-	}, 1200)
+	// $("html,body").animate({
+	// 	scrollTop: $("#map").offset().top - 70
+	// }, 1200)
 }
