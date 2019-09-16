@@ -357,11 +357,11 @@
 									<div class="form-wrapper">
 										<div class="form-check">
 											<input id="shipping_1" type="radio" name="shipping_method" checked>
-											<label for="shipping_1">Giao hàng tiêu chuẩn (Dự kiến giao hàng vào Thứ bảy, 11/05/2019): <span>15.000 ₫</span></label>
+											<label for="shipping_1">Giao hàng tiêu chuẩn (Dự kiến giao hàng vào Thứ bảy, 11/05/2019): <span data-shipping-fee="15000">15.000 ₫</span></label>
 										</div>
 										<div class="form-check">
 											<input id="shipping_2" type="radio" name="shipping_method">
-											<label for="shipping_2">Giao hàng tiêu chuẩn (Dự kiến giao hàng vào Thứ bảy, 11/05/2019): <span>15.000 ₫</span></label>
+											<label for="shipping_2">Giao hàng tiêu chuẩn (Dự kiến giao hàng vào Thứ bảy, 11/05/2019): <span data-shipping-fee="25000">25.000 ₫</span></label>
 										</div>
 									</div>
 								</div>
@@ -500,11 +500,11 @@
 										</div>
 									</div>
 									<div class="cart-bottom">
-										<p><span>Tạm tính</span><span>515,000,000 đ</span></p>
-										<p><span>Phí vận chuyển</span><span>15,000 đ</span></p>
+										<p><span>Tạm tính</span><span data-temp-price="515000000">515,000,000 đ</span></p>
+										<p><span>Phí vận chuyển</span><span data-shipping="15000">15,000 đ</span></p>
 									</div>
 									<div class="cart-bottom">
-										<p><span>Thành tiền</span><span class="total">515,000,000 đ</span></p><span>(Đã bao gồm VAT)</span>
+										<p><span>Thành tiền</span><span class="total" id="totalPrice" total-price="">515,000,000 đ</span></p><span>(Đã bao gồm VAT)</span>
 									</div>
 									<div class="cart-button"><a class="btn btn-edit-cart" href="#">Sửa</a></div>
 								</div>
