@@ -569,9 +569,11 @@ const turnOffPopupWhenClicked = () => {
 	})
 
 	$("[data-fancybox]").fancybox({
-		afterClose: function() {
-			$.fancybox.close(true)
-		}
+		closeExisting: true,
+		hash: false,
+		// afterClose: function() {
+		// 	$.fancybox.close(true)
+		// }
 	})
 }
 const moveAccount = () => {
