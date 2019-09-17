@@ -48,18 +48,18 @@ header {
 
 		.search {
 			position: relative;
-			max-width: 600px;
-			flex: 0 0 600px;
+			max-width: 630px;
+			flex: 0 0 630px;
 			margin-left: auto;
 
 			@media (max-width: 1365.98px) {
-				max-width: 400px;
-				flex: 0 0 400px;
+				max-width: 430px;
+				flex: 0 0 430px;
 			}
 
 			@media (max-width: 1199.98px) {
-				max-width: 435px;
-				flex: 0 0 435px;
+				max-width: 400px;
+				flex: 0 0 400px;
 			}
 
 			input[type="text"] {
@@ -90,9 +90,9 @@ header {
 		.top-header-item {
 			color: #fff;
 			font-size: 10px;
-			margin-left: 50px;
-			flex: 0 0 50px;
-			max-width: 50px;
+			margin-left: 20px;
+			flex: 0 0 80px;
+			max-width: 80px;
 			text-align: center;
 
 			a {
@@ -127,7 +127,7 @@ header {
 			}
 
 			@media (max-width: 1199.98px) {
-				margin-left: 30px;
+				margin-left: 15px;
 			}
 		}
 
@@ -178,7 +178,8 @@ header {
 		.cart {
 			display: flex;
 			position: relative;
-
+			flex: 0 0 50px;
+			max-width: 50px;
 			a {
 				color: #fff;
 				font-size: 10px;
