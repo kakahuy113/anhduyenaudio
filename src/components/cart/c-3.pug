@@ -25,11 +25,11 @@
 							.form-check
 								input#shipping_1(type="radio", name="shipping_method" checked)
 								label(for="shipping_1") Giao hàng tiêu chuẩn (Dự kiến giao hàng vào Thứ bảy, 11/05/2019): 
-									span 15.000 ₫
+									span(data-shipping-fee="15000") 15.000 ₫
 							.form-check
 								input#shipping_2(type="radio", name="shipping_method")
 								label(for="shipping_2") Giao hàng tiêu chuẩn (Dự kiến giao hàng vào Thứ bảy, 11/05/2019): 
-									span 15.000 ₫
+									span(data-shipping-fee="25000") 25.000 ₫
 					.payment-method
 						.block-title
 							h3 Chọn hình thức thanh toán
@@ -125,14 +125,14 @@
 						.cart-bottom
 							p
 								span Tạm tính
-								span 515,000,000 đ
+								span(data-temp-price="515000000") 515,000,000 đ
 							p
 								span Phí vận chuyển
-								span 15,000 đ
+								span(data-shipping="15000") 15,000 đ
 						.cart-bottom
 							p
 								span Thành tiền
-								span.total 515,000,000 đ
+								span.total#totalPrice(total-price="") 515,000,000 đ
 							span (Đã bao gồm VAT)
 						.cart-button
 							a.btn.btn-edit-cart(href="#") Sửa

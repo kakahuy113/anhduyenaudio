@@ -588,9 +588,11 @@ const turnOffPopupWhenClicked = () => {
 	})
 
 	$("[data-fancybox]").fancybox({
-		afterClose: function() {
-			$.fancybox.close(true)
-		}
+		closeExisting: true,
+		hash: false,
+		// afterClose: function() {
+		// 	$.fancybox.close(true)
+		// }
 	})
 }
 
@@ -798,6 +800,18 @@ const aboutNavSelect = () => {
 	}
 }
 
+const calculatePriceWithShippingFee = () => {
+	$('[name="shipping_method"').on("change", function() {
+		const currentShippingFee = Number($(this).siblings('label').find('[data-shipping-fee]').attr('data-shipping-fee'))
+		$('[data-shipping]').attr('data-shipping', currentShippingFee)
+		$('[data-shipping]').html(currentShippingFee.toLocaleString() + ' đ')
+		const tempPrice = Number($('[data-temp-price]').attr('data-temp-price'))
+		console.log(tempPrice)
+		$('[total-price]').attr('total-price', tempPrice - currentShippingFee)
+		$('[total-price]').html((tempPrice - currentShippingFee).toLocaleString() + ' đ')
+	})
+}
+
 $(document).ready(function() {
 	objectFitImages("img.ofc"); // Luôn luôn chậy polyfill cho thuôc tính object-fit: cover trên các phiên bản IE >= 9
 	addClassLazyload(); // Luôn luôn addClass lazyload cho các hình ảnh có thuộc tính [data-src]
@@ -805,6 +819,10 @@ $(document).ready(function() {
 	moveAccount();
 	mobileMenu();
 	aboutNavSelect();
+<<<<<<< HEAD
+=======
+	calculatePriceWithShippingFee();
+>>>>>>> b16267d310bf27782799895a549746b6040828d3
 
 	homeSliderBanner();
 	productSlider();
