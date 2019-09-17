@@ -171,8 +171,7 @@
 				}
 
 				.block-comment {
-					margin-top    : 15px;
-					padding-bottom: 20px;
+					margin-top: 15px;
 
 					.main-comment {
 						display      : flex;
@@ -181,9 +180,14 @@
 						background   : #F5F5F5;
 
 						&.reply {
+							display      : none;
 							margin-left  : 110px;
 							background   : #FFFFFF;
 							border-bottom: 1px solid #F5F5F5;
+
+							&.active {
+								display: flex;
+							}
 						}
 
 						&.new-comment {
@@ -284,6 +288,11 @@
 								margin-left  : 60px;
 								border       : none;
 								border-bottom: 1px solid #F5F5F5;
+							}
+
+							.submit {
+								cursor     : pointer;
+								user-select: none;
 							}
 						}
 					}
@@ -489,9 +498,7 @@
 							background   : #F5F5F5;
 
 							&.reply {
-								margin-left  : 30px;
-								background   : #FFFFFF;
-								border-bottom: 1px solid #F5F5F5;
+								margin-left: 30px;
 							}
 
 							&.new-comment {
