@@ -819,10 +819,7 @@ $(document).ready(function() {
 	moveAccount();
 	mobileMenu();
 	aboutNavSelect();
-<<<<<<< HEAD
-=======
 	calculatePriceWithShippingFee();
->>>>>>> b16267d310bf27782799895a549746b6040828d3
 
 	homeSliderBanner();
 	productSlider();
