@@ -726,7 +726,7 @@ function AjaxComment() {
 
 		$.ajax({
 			type: "post",
-			url: "binh-luan",
+			url: "/binh-luan",
 			data: {
 				Id: product_ID,
 				Content: newCommentContent,
@@ -745,7 +745,7 @@ function AjaxReply() {
 
 		$.ajax({
 			type: "post",
-			url: "phan-hoi",
+			url: "/phan-hoi",
 			data: {
 				iD: comment_ID,
 				Content: replyContent,
@@ -771,7 +771,7 @@ function AjaxLike() {
 
 		$.ajax({
 			type: "post",
-			url: "thich",
+			url: "/thich",
 			data: likeInfo,
 			success: function(res) {}
 		});
