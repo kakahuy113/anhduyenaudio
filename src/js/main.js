@@ -489,6 +489,7 @@ function countDownSale() {
 // 	}
 // }
 // SLIDER BANNER
+
 function introduceSliderBanner() {
 	var swpier = new Swiper('.introduce-slider', {
 		effect: 'fade',
@@ -727,9 +728,9 @@ function AjaxComment() {
 			type: "post",
 			url: "binh-luan",
 			data: {
-				product_ID: product_ID,
-				newCommentContent: newCommentContent,
-				newRating: newRating
+				Id: product_ID,
+				Content: newCommentContent,
+				Vote: newRating
 			},
 			success: function(response) {}
 		});
@@ -746,8 +747,8 @@ function AjaxReply() {
 			type: "post",
 			url: "phan-hoi",
 			data: {
-				comment_ID: comment_ID,
-				replyContent: replyContent,
+				iD: comment_ID,
+				Content: replyContent,
 			},
 			success: function(response) {
 
@@ -760,7 +761,7 @@ function AjaxLike() {
 	$('.button-like-comment').click(function(e) {
 		e.preventDefault();
 		var likeInfo = {}
-		likeInfo.comment_ID = $(this).parents('.main-comment[comment-id]').attr('comment-id');
+		likeInfo.Id = $(this).parents('.main-comment[comment-id]').attr('comment-id');
 		if ($(this).attr("data-like") == "" || $(this).attr("data-like") == "false") {
 			likeInfo.likeComment = true;
 		} else {
@@ -772,12 +773,10 @@ function AjaxLike() {
 			type: "post",
 			url: "thich",
 			data: likeInfo,
-			success: function(res) {
-				console.log(res);
-			}
+			success: function(res) {}
 		});
 	});
-
+ 
 }
 
 const getPropertyId = () => {
