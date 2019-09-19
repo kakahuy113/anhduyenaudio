@@ -724,16 +724,26 @@ function AjaxComment() {
 		var newRating = $('.new-comment .rate').attr('data-rate');
 		var newCommentContent = $(".new-comment .input-comment input[name='content-comment']").val();
 
-		$.ajax({
-			type: "post",
-			url: "/binh-luan",
-			data: {
-				Id: product_ID,
-				Content: newCommentContent,
-				Vote: newRating
-			},
-			success: function(response) {}
-		});
+		if (newRating == "") {
+			alert('Xin hãy vote cho sản phẩm');
+		} else {
+			$.ajax({
+				type: "post",
+				url: "/binh-luan",
+				data: {
+					Id: product_ID,
+					Content: newCommentContent,
+					Vote: newRating
+				},
+				success: function(res) {
+					if (res.code == 200) {
+						window.reload();
+					} else {
+						alert(res.message)
+					}
+				}
+			});
+		}
 	});
 }
 // AJAX REPLY
@@ -776,7 +786,7 @@ function AjaxLike() {
 			success: function(res) {}
 		});
 	});
- 
+
 }
 
 const getPropertyId = () => {
