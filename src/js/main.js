@@ -292,17 +292,17 @@ function imgProductSlider() {
 	});
 }
 
-// START RANKING
-function dataStartRanking() {
-	$('.rate').each(function() {
+// ĐÁNH GIÁ SẢN PHẨM KHI BÌNH LUẬN
+function clickRating() {
+	$('.list-step .rate').each(function() {
 		var _this = $(this);
 		if (_this.find(".img-star").length > 0) {
 			_this.find(".img-star .star").on("click", function(e) {
+
 				let offsetLeft = _this.find(".img-star .star").offset().left
 				let width = _this.find(".img-star .star").width()
 				let positionClicked = e.pageX - Math.round(offsetLeft, 0)
 				let starRatedWidth = Math.floor(positionClicked / width * 100)
-
 
 				if (starRatedWidth >= 80) {
 					_this.find(".img-star .star-rated").width("100%");
@@ -321,6 +321,59 @@ function dataStartRanking() {
 					$('.rate').attr('data-rate', 1)
 				}
 			})
+		}
+	})
+}
+
+function showRating() {
+	$('.block-comment .rate[data-rate]').each(function() {
+
+		var numberStart = $(this).attr('data-rate');
+
+		if (numberStart == 5) {
+			$(this).find(".img-star .star-rated").width("100%");
+		} else if (numberStart == 4) {
+			$(this).find(".img-star .star-rated").width("80%");
+		} else if (numberStart == 3) {
+			$(this).find(".img-star .star-rated").width("60%");
+		} else if (numberStart == 2) {
+			$(this).find(".img-star .star-rated").width("40%");
+		} else if (numberStart == 1) {
+			$(this).find(".img-star .star-rated").width("20%");
+		}
+	})
+
+	$('.info-summary .rate[data-rate]').each(function() {
+
+		var numberStart = $(this).attr('data-rate');
+
+		if (numberStart == 5) {
+			$(this).find(".img-star .star-rated").width("100%");
+		} else if (numberStart == 4) {
+			$(this).find(".img-star .star-rated").width("80%");
+		} else if (numberStart == 3) {
+			$(this).find(".img-star .star-rated").width("60%");
+		} else if (numberStart == 2) {
+			$(this).find(".img-star .star-rated").width("40%");
+		} else if (numberStart == 1) {
+			$(this).find(".img-star .star-rated").width("20%");
+		}
+	})
+
+	$('.block-rating .rate[data-rate]').each(function() {
+
+		var numberStart = $(this).attr('data-rate');
+
+		if (numberStart == 5) {
+			$(this).find(".img-star .star-rated").width("100%");
+		} else if (numberStart == 4) {
+			$(this).find(".img-star .star-rated").width("80%");
+		} else if (numberStart == 3) {
+			$(this).find(".img-star .star-rated").width("60%");
+		} else if (numberStart == 2) {
+			$(this).find(".img-star .star-rated").width("40%");
+		} else if (numberStart == 1) {
+			$(this).find(".img-star .star-rated").width("20%");
 		}
 	})
 }
@@ -839,7 +892,8 @@ $(document).ready(function() {
 	imgProductSlider();
 	toggleAddNewsAddressItem();
 	getInformationToEdit();
-	dataStartRanking();
+	clickRating();
+	showRating();
 	chooesColor();
 	sliderTheSameProduct();
 	toggleFormAddNewAddress();
