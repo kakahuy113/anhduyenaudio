@@ -836,7 +836,11 @@ function AjaxLike() {
 			url: "/thich",
 			data: likeInfo,
 			success: function(res) {
-				$(this).find('span').html(res.message);
+				if (res.code == 200) {
+					$(this).find('span').html(res.message);
+				} else {
+					alert(res.message)
+				}
 			}
 		});
 	});
@@ -852,7 +856,13 @@ function AjaxDeteleComment() {
 			url: "/xoa-binhluan",
 			data: deleteInfo,
 			dataType: "dataType",
-			success: function(res) {}
+			success: function(res) {
+				if (res.code == 200) {
+					$(this).find('span').html('Đã xóa').addClass('deleted');
+				} else {
+					alert(res.message)
+				}
+			}
 		});
 	});
 }
