@@ -842,7 +842,11 @@ function AjaxReply() {
 				Content: replyContent,
 			},
 			success: function(res) {
-				alert(res.Message)
+				if (res.code == 200) {
+					window.reload();
+				} else {
+					alert(res.Message)
+				}
 			}
 		});
 	});
