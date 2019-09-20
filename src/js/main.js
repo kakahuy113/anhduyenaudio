@@ -717,17 +717,22 @@ function backToTop() {
 function rangeSliderPrice() {
 	let min_price = Number($("#slider-range").attr('data-min'));
 	let max_price = Number($("#slider-range").attr('data-max'));
+	let curMinPrice = Number($("#slider-range").attr('data-current-min'))
+	let curMaxPrice = Number($("#slider-range").attr('data-current-max'))
 	$("#slider-range").slider({
 		range: true,
 		min: min_price,
 		max: max_price,
-		values: [min_price, max_price],
+		values: [curMinPrice, curMaxPrice],
 		slide: function(event, ui) {
 			$("#amount").val(ui.values[0] + " - " + ui.values[1]);
 			$("#value-text").html(ui.values[0] + " đ - " + ui.values[1] + " đ");
 		},
 		stop: function(event, ui) {
 			Redirect();
+		},
+		create: function(event, ui) {
+
 		}
 	});
 	$("#amount").val($("#slider-range").slider("values", 0) + " - " + $("#slider-range").slider("values", 1));
@@ -743,10 +748,10 @@ const findManufactures = () => {
 			listCheckbox.forEach(el => {
 				let manufactureName = el.querySelector('label').textContent.toLowerCase()
 				if (!manufactureName.includes(currentValue)) {
-					el.style.display= 'none';
+					el.style.display = 'none';
 				}
-				if(manufactureName.includes(currentValue)){
-					el.style.display= 'block';
+				if (manufactureName.includes(currentValue)) {
+					el.style.display = 'block';
 				}
 			})
 		})
