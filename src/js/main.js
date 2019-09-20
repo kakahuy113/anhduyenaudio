@@ -724,12 +724,35 @@ function rangeSliderPrice() {
 		values: [min_price, max_price],
 		slide: function(event, ui) {
 			$("#amount").val(ui.values[0] + " - " + ui.values[1]);
-			$("#value-text").html(ui.values[0] + "đ - " + ui.values[1] + "đ");
+			$("#value-text").html(ui.values[0] + " đ - " + ui.values[1] + " đ");
+		},
+		stop: function(event, ui) {
+			Redirect();
 		}
 	});
 	$("#amount").val($("#slider-range").slider("values", 0) + " - " + $("#slider-range").slider("values", 1));
 	$("#value-text").html($("#slider-range").slider("values", 0) + "đ - " + $("#slider-range").slider("values", 1) + "đ");
 }
+
+const findManufactures = () => {
+	const input = document.querySelector('.brand .search input')
+	if (input) {
+		input.addEventListener('keyup', (e) => {
+			let currentValue = input.value.toLowerCase();
+			let listCheckbox = document.querySelectorAll('.brand .check-box .form-group')
+			listCheckbox.forEach(el => {
+				let manufactureName = el.querySelector('label').textContent.toLowerCase()
+				if (!manufactureName.includes(currentValue)) {
+					el.style.display= 'none';
+				}
+				if(manufactureName.includes(currentValue)){
+					el.style.display= 'block';
+				}
+			})
+		})
+	}
+}
+
 
 function chanceUrlNewsPage() {
 	$('.link-news').each(function(index) {
@@ -882,7 +905,7 @@ $(document).ready(function() {
 	mobileMenu();
 	aboutNavSelect();
 	calculatePriceWithShippingFee();
-
+	findManufactures();
 	homeSliderBanner();
 	productSlider();
 	brandSlider();

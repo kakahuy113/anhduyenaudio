@@ -164,7 +164,8 @@
 			border-radius: 5px;
 
 			.form-group {
-				margin-bottom: 20px;
+				padding-top: 10px;
+				padding-bottom: 10px;
 
 				&:last-child {
 					margin-bottom: 0;
@@ -184,9 +185,8 @@
 						height       : 13px;
 						background   : #DFDFDF;
 						border-radius: 50%;
-						top          : 50%;
+						top          : 3px;
 						left         : 0;
-						transform    : translateY(-50%);
 					}
 				}
 
