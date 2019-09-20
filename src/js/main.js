@@ -831,12 +831,13 @@ function AjaxLike() {
 			likeInfo.likeComment = false;
 		}
 		$(this).attr("data-like", likeInfo.likeComment)
-
 		$.ajax({
 			type: "post",
 			url: "/thich",
 			data: likeInfo,
-			success: function(res) {}
+			success: function(res) {
+				$(this).find('span').html(res.message);
+			}
 		});
 	});
 
@@ -851,7 +852,7 @@ function AjaxDeteleComment() {
 			url: "/xoa-binhluan",
 			data: deleteInfo,
 			dataType: "dataType",
-			success: function (res) {}
+			success: function(res) {}
 		});
 	});
 }
