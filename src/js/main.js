@@ -799,7 +799,7 @@ function showMainReply() {
 
 // AJAX COMMENT
 function AjaxComment() {
-	$('.submit.comment').click(function(e) {
+	$('body').on('click', '.submit.comment', function(e) {
 		e.preventDefault();
 		var product_ID = $(this).siblings("input[name='content-comment']").attr('product-id');
 		var newRating = $('.new-comment .rate').attr('data-rate');
@@ -829,7 +829,7 @@ function AjaxComment() {
 }
 // AJAX REPLY
 function AjaxReply() {
-	$('.submit.reply').click(function(e) {
+	$('body').on('click', '.submit.reply', function(e) {
 		e.preventDefault();
 		var comment_ID = $(this).parents(".box-reply").siblings('.main-comment[comment-id]').attr('comment-id');
 		var replyContent = $(this).siblings("input[name='content-comment']").val();
@@ -853,7 +853,7 @@ function AjaxReply() {
 }
 // AJAX LIKE
 function AjaxLike() {
-	$('.button-like-comment').click(function(e) {
+	$('body').on('click', '.button-like-comment', function(e) {
 		e.preventDefault();
 		var likeInfo = {}
 		likeInfo.Id = $(this).parents('.main-comment[comment-id]').attr('comment-id');
@@ -880,7 +880,7 @@ function AjaxLike() {
 }
 
 function AjaxDeteleComment() {
-	$('.button-delete-comment').click(function(e) {
+	$('body').on('click', '.button-delete-comment', function(e) {
 		e.preventDefault();
 		var deleteInfo = {};
 		deleteInfo.Id = $(this).parents('.main-comment[comment-id]').attr('comment-id');
