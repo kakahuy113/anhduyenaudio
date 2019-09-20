@@ -810,7 +810,7 @@ function AjaxReply() {
 			type: "post",
 			url: "/phan-hoi",
 			data: {
-				iD: comment_ID,
+				Id: comment_ID,
 				Content: replyContent,
 			},
 			success: function(res) {
@@ -824,11 +824,11 @@ function AjaxLike() {
 	$('.button-like-comment').click(function(e) {
 		e.preventDefault();
 		var likeInfo = {}
-		likeInfo.iD = $(this).parents('.main-comment[comment-id]').attr('comment-id');
+		likeInfo.Id = $(this).parents('.main-comment[comment-id]').attr('comment-id');
 		if ($(this).attr("data-like") == "" || $(this).attr("data-like") == "false") {
-			likeInfo.likeComment = true;
+			likeComment = true;
 		} else {
-			likeInfo.likeComment = false;
+			likeComment = false;
 		}
 		$(this).attr("data-like", likeInfo.likeComment)
 		$.ajax({
@@ -847,7 +847,7 @@ function AjaxDeteleComment() {
 	$('.button-delete-comment').click(function(e) {
 		e.preventDefault();
 		var deleteInfo = {};
-		deleteInfo.iD = $(this).parents('.main-comment[comment-id]').attr('comment-id');
+		deleteInfo.Id = $(this).parents('.main-comment[comment-id]').attr('comment-id');
 		$.ajax({
 			url: "/xoa-binhluan",
 			data: deleteInfo,
