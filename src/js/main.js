@@ -792,7 +792,7 @@ function AjaxComment() {
 					if (res.code == 200) {
 						window.reload();
 					} else {
-						alert(res.message)
+						alert(res.Message)
 					}
 				}
 			});
@@ -813,8 +813,8 @@ function AjaxReply() {
 				iD: comment_ID,
 				Content: replyContent,
 			},
-			success: function(response) {
-
+			success: function(res) {
+				alert(res.Message)
 			}
 		});
 	});
@@ -824,7 +824,7 @@ function AjaxLike() {
 	$('.button-like-comment').click(function(e) {
 		e.preventDefault();
 		var likeInfo = {}
-		likeInfo.Id = $(this).parents('.main-comment[comment-id]').attr('comment-id');
+		likeInfo.iD = $(this).parents('.main-comment[comment-id]').attr('comment-id');
 		if ($(this).attr("data-like") == "" || $(this).attr("data-like") == "false") {
 			likeInfo.likeComment = true;
 		} else {
@@ -840,6 +840,20 @@ function AjaxLike() {
 		});
 	});
 
+}
+
+function AjaxDeteleComment() {
+	$('.button-delete-comment').click(function(e) {
+		e.preventDefault();
+		var deleteInfo = {};
+		deleteInfo.iD = $(this).parents('.main-comment[comment-id]').attr('comment-id');
+		$.ajax({
+			url: "/xoa-binhluan",
+			data: deleteInfo,
+			dataType: "dataType",
+			success: function (res) {}
+		});
+	});
 }
 
 const getPropertyId = () => {
@@ -901,6 +915,7 @@ $(document).ready(function() {
 	AjaxComment();
 	AjaxReply();
 	AjaxLike();
+	AjaxDeteleComment();
 	// clickThenScrollToSection();
 	getDataBar();
 	likeComment();
