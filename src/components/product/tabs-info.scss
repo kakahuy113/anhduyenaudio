@@ -235,6 +235,7 @@
 							}
 
 							.content-cmt {
+								width     : 100%;
 								float     : left;
 								margin-top: 10px;
 
@@ -251,7 +252,8 @@
 							}
 
 							.button-like-comment,
-							.button-comment {
+							.button-comment,
+							.button-delete-comment {
 								float       : left;
 								margin-right: 35px;
 								margin-top  : 25px;

@@ -815,7 +815,7 @@ function AjaxComment() {
 					if (res.code == 200) {
 						window.reload();
 					} else {
-						alert(res.message)
+						alert(res.Message)
 					}
 				}
 			});
@@ -833,11 +833,11 @@ function AjaxReply() {
 			type: "post",
 			url: "/phan-hoi",
 			data: {
-				iD: comment_ID,
+				Id: comment_ID,
 				Content: replyContent,
 			},
-			success: function(response) {
-
+			success: function(res) {
+				alert(res.Message)
 			}
 		});
 	});
@@ -849,20 +849,35 @@ function AjaxLike() {
 		var likeInfo = {}
 		likeInfo.Id = $(this).parents('.main-comment[comment-id]').attr('comment-id');
 		if ($(this).attr("data-like") == "" || $(this).attr("data-like") == "false") {
-			likeInfo.likeComment = true;
+			likeComment = true;
 		} else {
-			likeInfo.likeComment = false;
+			likeComment = false;
 		}
 		$(this).attr("data-like", likeInfo.likeComment)
-
 		$.ajax({
 			type: "post",
 			url: "/thich",
 			data: likeInfo,
-			success: function(res) {}
+			success: function(res) {
+				$(this).find('span').html(res.message);
+			}
 		});
 	});
 
+}
+
+function AjaxDeteleComment() {
+	$('.button-delete-comment').click(function(e) {
+		e.preventDefault();
+		var deleteInfo = {};
+		deleteInfo.Id = $(this).parents('.main-comment[comment-id]').attr('comment-id');
+		$.ajax({
+			url: "/xoa-binhluan",
+			data: deleteInfo,
+			dataType: "dataType",
+			success: function(res) {}
+		});
+	});
 }
 
 const getPropertyId = () => {
@@ -924,6 +939,7 @@ $(document).ready(function() {
 	AjaxComment();
 	AjaxReply();
 	AjaxLike();
+	AjaxDeteleComment();
 	// clickThenScrollToSection();
 	getDataBar();
 	likeComment();
