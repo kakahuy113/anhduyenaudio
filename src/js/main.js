@@ -869,9 +869,9 @@ function AjaxLike() {
 			data: likeInfo,
 			success: function(res) {
 				if (res.code == 200) {
-					$(this).find('span').html(res.message);
+					$(this).find('span').html(res.Message);
 				} else {
-					alert(res.message)
+					alert(res.Message)
 				}
 			}
 		});
