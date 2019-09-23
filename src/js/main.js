@@ -407,9 +407,6 @@ function chooesColor() {
 
 		$(".chooes-quantity-color .color").removeClass('active')
 		$(this).addClass('active');
-
-		var codeColor = $(this).css('background-color');
-		$(this).attr('data-color', codeColor);
 	});
 }
 
