@@ -818,7 +818,7 @@ function AjaxComment() {
 				},
 				success: function(res) {
 					if (res.Code == 200) {
-						window.reload();
+						location.reload();
 					} else {
 						alert(res.Message)
 					}
@@ -843,7 +843,7 @@ function AjaxReply() {
 			},
 			success: function(res) {
 				if (res.Code == 200) {
-					window.reload();
+					location.reload();
 				} else {
 					alert(res.Message)
 				}
