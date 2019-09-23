@@ -890,7 +890,7 @@ function AjaxDeteleComment() {
 			dataType: "dataType",
 			success: function(res) {
 				if (res.Code == 200) {
-					$(this).find('span').html('Đã xóa').addClass('deleted');
+					$(this).find('span').html(res.Message).addClass('deleted');
 				} else {
 					alert(res.Message)
 				}
