@@ -948,9 +948,75 @@ const getUserName = () => {
 	if (userFullName && userFullNameWidth > 75) {
 		userFullName = userFullName.split(' ')
 		setUserName = userFullName[userFullName.length - 2] + ' ' + userFullName[userFullName.length - 1]
-		console.log(setUserName)
 		$('.top-header .account-item a[href] span').html(setUserName)
 	}
+}
+
+const ajaxForgotPassword = () => {
+	// Get information to get verify code 
+	let informationToGetPassword = $('#forgot-password .form-group input').val()
+	let urlGetVerifyCode = $('#forgot-password .form-button button').attr("data-action")
+	let fancyboxSourceVerify = $('#forgot-password .form-button button').attr('data-src')
+	$('body').on("click", '#forgot-password .form-button button', function(e) {
+		e.preventDefault();
+		$.ajax({
+			url: urlGetVerifyCode,
+			type: 'post',
+			data: informationToGetPassword,
+			success: function(res) {
+				if (res.Code === 200) {
+					$.fancybox.open({
+						src: fancyboxSourceVerify,
+						type: 'inline',
+						opts: {
+							closeExisting: true,
+							hash: false,
+							beforeShow: function() {
+								$('#verify .popup-wrapper>p').html(res.Message)
+							}
+						}
+					})
+				} else {
+					alert(res.Message);
+				}
+			},
+			error: function(err) {
+				alert(err.status)
+			}
+		})
+	})
+	// get verify code to reset password
+	let verifyCode = $('#verify .form-group input').val()
+	let urlChangePassword = $('#verify .form-button button').attr("data-action")
+	let fancyboxSourceResetPassword = $('#verify .form-button button').attr('data-src')
+	$('body').on("click", '#verify .form-button button', function(e) {
+		e.preventDefault();
+		$.ajax({
+			url: urlChangePassword,
+			type: 'post',
+			data: verifyCode,
+			success: function(res) {
+				if (res.Code === 200) {
+					$.fancybox.open({
+						src: fancyboxSourceResetPassword,
+						type: 'inline',
+						opts: {
+							closeExisting: true,
+							hash: false,
+							beforeShow: function() {
+								$('#verify .popup-wrapper>p').html(res.Message)
+							}
+						}
+					})
+				} else {
+					alert(res.Message);
+				}
+			},
+			error: function(err) {
+				alert(err.status)
+			}
+		})
+	})
 }
 
 $(document).ready(function() {
@@ -982,6 +1048,7 @@ $(document).ready(function() {
 	AjaxReply();
 	AjaxLike();
 	AjaxDeteleComment();
+	ajaxForgotPassword();
 	// clickThenScrollToSection();
 	getDataBar();
 	likeComment();
