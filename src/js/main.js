@@ -884,13 +884,14 @@ function AjaxDeteleComment() {
 		e.preventDefault();
 		var deleteInfo = {};
 		deleteInfo.Id = $(this).parents('.main-comment[comment-id]').attr('comment-id');
+		var _thisCommentDelete = $(this)
 		$.ajax({
+			type: "get",
 			url: "/xoa-binhluan",
 			data: deleteInfo,
-			dataType: "dataType",
 			success: function(res) {
 				if (res.Code == 200) {
-					$(this).find('span').html(res.Message).addClass('deleted');
+					_thisCommentDelete.find('span').html(res.Message).addClass('deleted');
 				} else {
 					alert(res.Message)
 				}
