@@ -1004,7 +1004,7 @@ const ajaxForgotPassword = () => {
 							closeExisting: true,
 							hash: false,
 							beforeShow: function() {
-								$('#verify .popup-wrapper>p').html(res.Message)
+								$('#reset-password .popup-wrapper>p').html(res.Message)
 							}
 						}
 					})
