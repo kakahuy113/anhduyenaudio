@@ -932,12 +932,12 @@ const calculatePriceWithShippingFee = () => {
 		$('[total-price]').html((tempPrice - currentShippingFee).toLocaleString() + ' đ')
 	}
 
-	$('[name="shipping_method"]').each(function(index) {
+	$('[name="shippingselectedvalue"]').each(function(index) {
 		if ($(this)[0].checked) {
 			shippingMethodHandler($(this));
 		}
 	})
-	$('[name="shipping_method"]').on("change", function() {
+	$('[name="shippingselectedvalue"]').on("change", function() {
 		shippingMethodHandler($(this));
 	})
 }
