@@ -942,6 +942,17 @@ const calculatePriceWithShippingFee = () => {
 	})
 }
 
+const getUserName = () => {
+	let userFullName = $('.top-header .account-item a[href] span').html()
+	let userFullNameWidth = $('.top-header .account-item a[href] span').width()
+	if (userFullName && userFullNameWidth > 75) {
+		userFullName = userFullName.split(' ')
+		setUserName = userFullName[userFullName.length - 2] + ' ' + userFullName[userFullName.length - 1]
+		console.log(setUserName)
+		$('.top-header .account-item a[href] span').html(setUserName)
+	}
+}
+
 $(document).ready(function() {
 	objectFitImages("img.ofc"); // Luôn luôn chậy polyfill cho thuôc tính object-fit: cover trên các phiên bản IE >= 9
 	addClassLazyload(); // Luôn luôn addClass lazyload cho các hình ảnh có thuộc tính [data-src]
@@ -965,6 +976,7 @@ $(document).ready(function() {
 	chooesColor();
 	sliderTheSameProduct();
 	toggleFormAddNewAddress();
+	getUserName();
 	// Ajax
 	AjaxComment();
 	AjaxReply();
