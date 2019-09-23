@@ -906,14 +906,24 @@ const aboutNavSelect = () => {
 }
 
 const calculatePriceWithShippingFee = () => {
-	$('[name="shipping_method"').on("change", function() {
-		const currentShippingFee = Number($(this).siblings('label').find('[data-shipping-fee]').attr('data-shipping-fee'))
+
+	const shippingMethodHandler = element => {
+		const currentShippingFee = Number(element.siblings('label').find('[data-shipping-fee]').attr('data-shipping-fee'))
 		$('[data-shipping]').attr('data-shipping', currentShippingFee)
 		$('[data-shipping]').html(currentShippingFee.toLocaleString() + ' đ')
+
 		const tempPrice = Number($('[data-temp-price]').attr('data-temp-price'))
-		console.log(tempPrice)
 		$('[total-price]').attr('total-price', tempPrice - currentShippingFee)
 		$('[total-price]').html((tempPrice - currentShippingFee).toLocaleString() + ' đ')
+	}
+
+	$('[name="shipping_method"]').each(function(index) {
+		if ($(this)[0].checked) {
+			shippingMethodHandler($(this));
+		}
+	})
+	$('[name="shipping_method"]').on("change", function() {
+		shippingMethodHandler($(this));
 	})
 }
 
