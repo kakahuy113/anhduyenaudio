@@ -817,7 +817,7 @@ function AjaxComment() {
 					Vote: newRating
 				},
 				success: function(res) {
-					if (res.code == 200) {
+					if (res.Code == 200) {
 						window.reload();
 					} else {
 						alert(res.Message)
@@ -842,7 +842,7 @@ function AjaxReply() {
 				Content: replyContent,
 			},
 			success: function(res) {
-				if (res.code == 200) {
+				if (res.Code == 200) {
 					window.reload();
 				} else {
 					alert(res.Message)
@@ -868,7 +868,7 @@ function AjaxLike() {
 			url: "/thich",
 			data: likeInfo,
 			success: function(res) {
-				if (res.code == 200) {
+				if (res.Code == 200) {
 					$(this).find('span').html(res.Message);
 				} else {
 					alert(res.Message)
@@ -889,10 +889,10 @@ function AjaxDeteleComment() {
 			data: deleteInfo,
 			dataType: "dataType",
 			success: function(res) {
-				if (res.code == 200) {
+				if (res.Code == 200) {
 					$(this).find('span').html('Đã xóa').addClass('deleted');
 				} else {
-					alert(res.message)
+					alert(res.Message)
 				}
 			}
 		});
