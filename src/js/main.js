@@ -928,8 +928,8 @@ const calculatePriceWithShippingFee = () => {
 		$('[data-shipping]').html(currentShippingFee.toLocaleString() + ' đ')
 
 		const tempPrice = Number($('[data-temp-price]').attr('data-temp-price'))
-		$('[total-price]').attr('total-price', tempPrice - currentShippingFee)
-		$('[total-price]').html((tempPrice - currentShippingFee).toLocaleString() + ' đ')
+		$('[total-price]').attr('total-price', tempPrice + currentShippingFee)
+		$('[total-price]').html((tempPrice + currentShippingFee).toLocaleString() + ' đ')
 	}
 
 	$('[name="shippingselectedvalue"]').each(function(index) {
