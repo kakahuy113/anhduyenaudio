@@ -954,10 +954,10 @@ const getUserName = () => {
 
 const ajaxForgotPassword = () => {
 	// Get information to get verify code 
-	let informationToGetPassword = $('#forgot-password .form-group input').val()
-	let urlGetVerifyCode = $('#forgot-password .form-button button').attr("data-action")
-	let fancyboxSourceVerify = $('#forgot-password .form-button button').attr('data-src')
 	$('body').on("click", '#forgot-password .form-button button', function(e) {
+		let informationToGetPassword = $('#forgot-password .form-group input').val()
+		let urlGetVerifyCode = $('#forgot-password .form-button button').attr("data-action")
+		let fancyboxSourceVerify = $('#forgot-password .form-button button').attr('data-src')
 		e.preventDefault();
 		$.ajax({
 			url: urlGetVerifyCode,
@@ -988,10 +988,10 @@ const ajaxForgotPassword = () => {
 		})
 	})
 	// get verify code to reset password
-	let verifyCode = $('#verify .form-group input').val()
-	let urlChangePassword = $('#verify .form-button button').attr("data-action")
-	let fancyboxSourceResetPassword = $('#verify .form-button button').attr('data-src')
 	$('body').on("click", '#verify .form-button button', function(e) {
+		let verifyCode = $('#verify .form-group input').val()
+		let urlChangePassword = $('#verify .form-button button').attr("data-action")
+		let fancyboxSourceResetPassword = $('#verify .form-button button').attr('data-src')
 		e.preventDefault();
 		$.ajax({
 			url: urlChangePassword,
