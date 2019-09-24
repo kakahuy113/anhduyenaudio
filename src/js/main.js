@@ -963,7 +963,7 @@ const ajaxForgotPassword = () => {
 			url: urlGetVerifyCode,
 			type: 'post',
 			data: {
-				phonePassword: informationToGetPassword
+				username: informationToGetPassword
 			},
 			success: function(res) {
 				if (res.Code === 200) {
@@ -997,7 +997,7 @@ const ajaxForgotPassword = () => {
 			url: urlChangePassword,
 			type: 'post',
 			data: {
-				verifyCode: verifyCode
+				code: verifyCode
 			},
 			success: function(res) {
 				if (res.Code === 200) {
