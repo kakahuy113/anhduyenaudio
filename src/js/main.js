@@ -962,7 +962,9 @@ const ajaxForgotPassword = () => {
 		$.ajax({
 			url: urlGetVerifyCode,
 			type: 'post',
-			data: informationToGetPassword,
+			data: {
+				phonePassword: informationToGetPassword
+			},
 			success: function(res) {
 				if (res.Code === 200) {
 					$.fancybox.open({
@@ -994,7 +996,9 @@ const ajaxForgotPassword = () => {
 		$.ajax({
 			url: urlChangePassword,
 			type: 'post',
-			data: verifyCode,
+			data: {
+				verifyCode: verifyCode
+			},
 			success: function(res) {
 				if (res.Code === 200) {
 					$.fancybox.open({
