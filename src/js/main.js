@@ -1023,6 +1023,49 @@ const ajaxForgotPassword = () => {
 	})
 }
 
+const verifyAddressInCheckoutStep = () => {
+
+	$(".address-item .js-btn-verify-address").on("click", function(e) {
+		e.preventDefault();
+		var name = $(this).parents(".address-item").find("[data-name]").attr("data-name")
+		var address = $(this).parents(".address-item").find("[data-address]").attr("data-address")
+		var phone = $(this).parents(".address-item").find("[data-phone]").attr("data-phone")
+		var city = $(this).parents(".address-item").find("[data-city]").attr("data-city")
+		var district = $(this).parents(".address-item").find("[data-district]").attr("data-district")
+		$(".add-new-address-form").find("#fullname").val(name)
+		$(".add-new-address-form").find("#phone").val(phone)
+		$(".add-new-address-form").find("#address").val(address)
+		$(".add-new-address-form").find("#ShippingCitySelectedValue").val(city)
+		$(".add-new-address-form").find("#ShippingDistrictSelectedValue").val(district)
+		$(".add-new-address-form").find('form').submit()
+	})
+}
+
+const ajaxDeleteBill = () => {
+	$('#cancel-bill button').on('click', function(e) {
+		e.preventDefault();
+		const deleteBill = new FormData();
+		deleteBill.append('billid', $('#bill-id').val());
+		const urlRequest = $(this).attr('data-href');
+		$.ajax({
+			url: urlRequest,
+			data: deleteBill,
+			method: 'post',
+			processData: false,
+			contentType: false,
+			success: function(res) {
+				if (res.Code === 200) {
+					setTimeout(() => {
+						window.location.reload();
+					}, 3000);
+				} else {
+					alert(res.Message)
+				}
+			}
+		})
+	})
+}
+
 $(document).ready(function() {
 	objectFitImages("img.ofc"); // Luôn luôn chậy polyfill cho thuôc tính object-fit: cover trên các phiên bản IE >= 9
 	addClassLazyload(); // Luôn luôn addClass lazyload cho các hình ảnh có thuộc tính [data-src]
@@ -1077,6 +1120,8 @@ $(document).ready(function() {
 	turnOffPopupWhenClicked();
 	getPropertyId();
 	getProductQuantity();
+	verifyAddressInCheckoutStep();
+	ajaxDeleteBill();
 })
 
 

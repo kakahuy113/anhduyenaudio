@@ -89,3 +89,13 @@
 					span Thành tiền:
 					b.total 515,000,000 đ
 				span (Đã bao gồm VAT)
+				p.cancel-bill
+					a(href="#" data-fancybox="cancel-bill" data-src="#cancel-bill") Hủy đơn hàng
+.d-none
+	#cancel-bill.account-popup.forgot-password
+		.popup-wrapper.account-popup
+			p Bạn có chắc là muốn hủy đơn hàng
+			form
+				.form-button
+					input#bill-id(hidden value="12345")
+					button(data-href="/test") Xác nhận
