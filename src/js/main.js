@@ -947,7 +947,7 @@ const getUserName = () => {
 	let userFullNameWidth = $('.top-header .account-item a[href] span').width()
 	if (userFullName && userFullNameWidth > 75) {
 		userFullName = userFullName.split(' ')
-		setUserName = userFullName[userFullName.length - 2] + ' ' + userFullName[userFullName.length - 1]
+		let setUserName = userFullName[userFullName.length - 2] + ' ' + userFullName[userFullName.length - 1]
 		$('.top-header .account-item a[href] span').html(setUserName)
 	}
 }
