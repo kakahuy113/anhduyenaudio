@@ -1122,6 +1122,9 @@ $(document).ready(function() {
 	getProductQuantity();
 	verifyAddressInCheckoutStep();
 	ajaxDeleteBill();
+
+	console.log(CartController.events.getCity());
+	
 })
 
 
