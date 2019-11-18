@@ -1035,9 +1035,13 @@ const verifyAddressInCheckoutStep = () => {
 		$(".add-new-address-form").find("#fullname").val(name)
 		$(".add-new-address-form").find("#phone").val(phone)
 		$(".add-new-address-form").find("#address").val(address)
-		$(".add-new-address-form").find("#ShippingCitySelectedValue").val(city)
-		$(".add-new-address-form").find("#ShippingDistrictSelectedValue").val(district)
-		$(".add-new-address-form").find('form').submit()
+		// $(".add-new-address-form").find("#ShippingCitySelectedValue").val(city)
+		// $(".add-new-address-form").find("#ShippingDistrictSelectedValue").val(district)
+		$(".add-new-address-form").find("#ShippingCitySelectedValue option").remove();
+		$(".add-new-address-form").find("#ShippingCitySelectedValue").append(`<option value="${city}">city</option>`);
+		$(".add-new-address-form").find("#ShippingDistrictSelectedValue option").remove();
+		$(".add-new-address-form").find("#ShippingDistrictSelectedValue").append(`<option value="${district}">city</option>`);
+		$(".add-new-address-form").find('form').submit();
 	})
 }
 
@@ -1124,7 +1128,7 @@ $(document).ready(function() {
 	ajaxDeleteBill();
 
 	console.log(CartController.events.getCity());
-	
+
 })
 
 
