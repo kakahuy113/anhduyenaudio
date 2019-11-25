@@ -2,23 +2,23 @@
 	margin-top: 30px;
 
 	#tabs {
-		background   : #FFFFFF;
+		background: #FFFFFF;
 		border-radius: 5px;
-		box-shadow   : 0 3px 6px rgba($color: #000000, $alpha: 0.16);
-		padding-top  : 60px;
+		box-shadow: 0 3px 6px rgba($color: #000000, $alpha: 0.16);
+		padding-top: 60px;
 
 		.list-tabs {
 			margin-left: 35px;
 			list-style-type: none;
 
 			.item {
-				font-size    : 18px;
-				color        : #1C1C1C;
+				font-size: 18px;
+				color: #1C1C1C;
 				margin-bottom: 10px;
-				cursor       : pointer;
+				cursor: pointer;
 
 				&.active {
-					color          : #D82F25;
+					color: #D82F25;
 					text-decoration: underline;
 				}
 			}
@@ -30,16 +30,37 @@
 			&[tab-id="description"] {
 				padding-bottom: 30px;
 
+				h1 {
+					font-size: 24px;
+					color: #040404c7;
+				}
+
+				h2 {
+					font-size: 20px;
+					color: #1c1c1cc7;
+				}
+
+				h3 {
+					font-size: 18px;
+					color: #1c1c1ca6;
+				}
+
 				p {
-					color        : #888888;
-					font-size    : 16px;
+					color: #040404c7;
+					font-size: 16px;
+					margin-bottom: 20px;
+				}
+
+				p {
+					color: #888888;
+					font-size: 16px;
 					margin-bottom: 20px;
 				}
 
 				img {
-					width        : 100%;
-					height       : auto;
-					object-fit   : cover;
+					width: 100%;
+					height: auto;
+					object-fit: cover;
 					margin-bottom: 50px;
 				}
 			}
@@ -49,11 +70,11 @@
 
 				table {
 					font-size: 16px;
-					color    : #949494;
+					color: #949494;
 
 					tr {
 						border-top: 1px solid #F5F5F5;
-						height    : 60px;
+						height: 60px;
 
 						&:last-child {
 							border-bottom: 1px solid #F5F5F5;
@@ -63,7 +84,7 @@
 					th {
 						font-weight: 400;
 						margin-left: 245px;
-						width      : 390px;
+						width: 390px;
 					}
 
 					td {
@@ -74,21 +95,21 @@
 
 			&[tab-id="comment"] {
 				.block-rating {
-					display       : flex;
-					flex-wrap     : wrap;
+					display: flex;
+					flex-wrap: wrap;
 					padding-bottom: 15px;
-					border-bottom : 1px solid #F5F5F5;
+					border-bottom: 1px solid #F5F5F5;
 
 					// PHẦN SỐ SAO
 					.rating-number {
-						flex        : 0 0 30%;
-						max-width   : 30%;
+						flex: 0 0 30%;
+						max-width: 30%;
 						border-right: 1px solid #DFDFDF;
 
 						h4 {
-							font-size    : 24px;
-							color        : #1C1C1C;
-							font-weight  : 700;
+							font-size: 24px;
+							color: #1C1C1C;
+							font-weight: 700;
 							margin-bottom: 13px;
 						}
 
@@ -97,7 +118,7 @@
 						}
 
 						.commmet-number {
-							color    : #1C1C1C;
+							color: #1C1C1C;
 							font-size: 12px;
 						}
 					}
@@ -105,31 +126,31 @@
 					// PHẦN PHÂN TÍCH TỈ LỆ %
 					.statistical-rating {
 						display: block;
-						flex   : 0 0 70%;
+						flex: 0 0 70%;
 						padding: 0 70px 0 157px;
 
 						.statistical-detail {
 							.side {
-								margin-top : 10px;
-								font-size  : 12px;
+								margin-top: 10px;
+								font-size: 12px;
 								font-weight: 400;
-								color      : #1C1C1C;
-								float      : left;
-								width      : 7%;
+								color: #1C1C1C;
+								float: left;
+								width: 7%;
 								line-height: 1;
 
 								span {
 									position: relative;
 
 									&:after {
-										content         : '';
-										position        : absolute;
-										top             : 50%;
-										transform       : translateY(-50%);
-										left            : 15px;
-										background-size : 13px;
-										width           : 13px;
-										height          : 13px;
+										content: '';
+										position: absolute;
+										top: 50%;
+										transform: translateY(-50%);
+										left: 15px;
+										background-size: 13px;
+										width: 13px;
+										height: 13px;
 										background-image: url(../img/icons/star-nofull.svg)
 									}
 								}
@@ -140,19 +161,19 @@
 							}
 
 							.middle {
-								float     : left;
-								width     : 86%;
+								float: left;
+								width: 86%;
 								margin-top: 10px;
 
 								.bar-container {
-									width        : 100%;
-									border       : 1px solid #DFDFDF;
+									width: 100%;
+									border: 1px solid #DFDFDF;
 									border-radius: 5px;
-									text-align   : center;
-									color        : white;
+									text-align: center;
+									color: white;
 
 									.bar {
-										height          : 10px;
+										height: 10px;
 										background-color: #DFDFDF;
 									}
 								}
@@ -175,15 +196,15 @@
 					margin-top: 15px;
 
 					.main-comment {
-						display      : flex;
+						display: flex;
 						border-radius: 5px;
-						padding      : 30px;
-						background   : #F5F5F5;
+						padding: 30px;
+						background: #F5F5F5;
 
 						&.reply {
-							display      : none;
-							margin-left  : 110px;
-							background   : #FFFFFF;
+							display: none;
+							margin-left: 110px;
+							background: #FFFFFF;
 							border-bottom: 1px solid #F5F5F5;
 
 							&.active {
@@ -193,60 +214,60 @@
 
 						&.new-comment {
 							margin-left: 25px;
-							background : #FFFFFF;
+							background: #FFFFFF;
 						}
 
 						figure {
 							.avatar {
-								display        : flex;
+								display: flex;
 								justify-content: center;
-								align-items    : center;
-								width          : 90px;
-								height         : 90px;
-								border-radius  : 5px;
-								overflow       : hidden;
-								object-fit     : cover;
-								background     : #888888;
-								color          : #FFFFFF;
+								align-items: center;
+								width: 90px;
+								height: 90px;
+								border-radius: 5px;
+								overflow: hidden;
+								object-fit: cover;
+								background: #888888;
+								color: #FFFFFF;
 							}
 
 							.name {
 								margin-top: 10px;
 								text-align: center;
-								font-size : 14px;
-								color     : #1C1C1C;
+								font-size: 14px;
+								color: #1C1C1C;
 							}
 						}
 
 						.content-comment {
-							width      : 100%;
+							width: 100%;
 							margin-left: 30px;
 
 							.rating {
-								float        : left;
-								margin-right : 20px;
+								float: left;
+								margin-right: 20px;
 								margin-bottom: 0;
 							}
 
 							.day-comment {
-								float     : left;
-								font-size : 12px;
-								color     : #888888;
+								float: left;
+								font-size: 12px;
+								color: #888888;
 								font-style: italic;
 							}
 
 							.content-cmt {
-								width     : 100%;
-								float     : left;
+								width: 100%;
+								float: left;
 								margin-top: 10px;
 
 								p {
-									height            : 65px;
-									font-size         : 16px;
-									color             : #1C1C1C;
-									overflow          : hidden;
-									text-overflow     : ellipsis;
-									display           : -webkit-box;
+									height: 65px;
+									font-size: 16px;
+									color: #1C1C1C;
+									overflow: hidden;
+									text-overflow: ellipsis;
+									display: -webkit-box;
 									-webkit-line-clamp: 3;
 									-webkit-box-orient: vertical;
 								}
@@ -255,10 +276,10 @@
 							.button-like-comment,
 							.button-comment,
 							.button-delete-comment {
-								float       : left;
+								float: left;
 								margin-right: 35px;
-								margin-top  : 25px;
-								cursor      : pointer;
+								margin-top: 25px;
+								cursor: pointer;
 
 								svg {
 									margin-right: 10px;
@@ -271,10 +292,10 @@
 								}
 
 								span {
-									font-size     : 12px;
+									font-size: 12px;
 									letter-spacing: 2px;
-									color         : #888888;
-									user-select   : none;
+									color: #888888;
+									user-select: none;
 
 									&.deleted {
 										color: #D82F25;
@@ -284,52 +305,52 @@
 						}
 
 						.input-comment {
-							display    : flex;
+							display: flex;
 							align-items: center;
-							width      : 100%;
+							width: 100%;
 
 							input[type='text'] {
-								width        : 100%;
-								height       : 25px;
-								line-height  : 40px;
-								margin-left  : 60px;
-								border       : none;
+								width: 100%;
+								height: 25px;
+								line-height: 40px;
+								margin-left: 60px;
+								border: none;
 								border-bottom: 1px solid #F5F5F5;
 							}
 
 							.submit {
-								cursor     : pointer;
+								cursor: pointer;
 								user-select: none;
 							}
 						}
 					}
 
 					.see-more-reply {
-						cursor         : pointer;
-						margin         : 35px 0;
-						text-align     : center;
-						color          : #D82F25;
+						cursor: pointer;
+						margin: 35px 0;
+						text-align: center;
+						color: #D82F25;
 						text-decoration: underline;
 					}
 
 					.btn-outline-black {
-						display    : flex;
+						display: flex;
 						margin-left: 200px;
-						margin-top : 50px;
-						cursor     : pointer;
-						width      : 266px;
-						height     : 33px;
+						margin-top: 50px;
+						cursor: pointer;
+						width: 266px;
+						height: 33px;
 					}
 				}
 
 				.list-step-comment {
-					border-bottom : 1px solid #F5F5F5;
+					border-bottom: 1px solid #F5F5F5;
 					padding-bottom: 10px;
 
 					h5 {
-						font-size    : 16px;
-						color        : #1C1C1C;
-						font-weight  : 700;
+						font-size: 16px;
+						color: #1C1C1C;
+						font-weight: 700;
 						margin-bottom: 25px;
 					}
 
@@ -337,18 +358,18 @@
 						align-self: center;
 
 						.step {
-							font-size    : 16px;
-							color        : #1C1C1C;
+							font-size: 16px;
+							color: #1C1C1C;
 							margin-bottom: 12px;
 
 							.block-rating {
-								display       : inline-flex;
+								display: inline-flex;
 								padding-bottom: 0;
-								border-bottom : 0;
-								margin-left   : 20px;
+								border-bottom: 0;
+								margin-left: 20px;
 
 								.rate {
-									padding-top  : 5px;
+									padding-top: 5px;
 									margin-bottom: 0;
 								}
 							}
@@ -378,21 +399,21 @@
 
 		#tabs {
 			padding-top: 0;
-			background : #F5F5F5;
+			background: #F5F5F5;
 
 			.list-tabs {
 				justify-content: space-between;
-				display        : flex;
-				margin         : 0;
+				display: flex;
+				margin: 0;
 
 				.item {
-					font-size    : 12px;
-					padding      : 10px 15px;
+					font-size: 12px;
+					padding: 10px 15px;
 					border-radius: 5px;
 					margin-bottom: 0;
 
 					&.active {
-						color     : #D82F25;
+						color: #D82F25;
 						background: #FFFF;
 						box-shadow: 0 3px 6px rgba($color:#000000, $alpha: 0.16)
 					}
@@ -401,16 +422,16 @@
 
 			.content-tabs {
 				margin-right: 0;
-				padding     : 0 15px;
-				background  : #FFFFFF;
+				padding: 0 15px;
+				background: #FFFFFF;
 
 				&[tab-id="description"] {
 					padding: 10px 15px 0px;
 
 					p {
-						color         : #888888;
-						font-size     : 12px;
-						margin-bottom : 0;
+						color: #888888;
+						font-size: 12px;
+						margin-bottom: 0;
 						padding-bottom: 20px
 					}
 				}
@@ -420,7 +441,7 @@
 
 					table {
 						font-size: 12px;
-						color    : #949494;
+						color: #949494;
 
 						tr {
 							height: 70px;
@@ -432,7 +453,7 @@
 
 						th {
 							margin-left: 0;
-							width      : 160px;
+							width: 160px;
 						}
 					}
 				}
@@ -447,19 +468,19 @@
 
 						// PHẦN SỐ SAO
 						.rating-number {
-							flex     : 0 0 100%;
+							flex: 0 0 100%;
 							max-width: 100%;
 
-							display        : flex;
-							flex-wrap      : wrap;
+							display: flex;
+							flex-wrap: wrap;
 							justify-content: center;
-							border-right   : 0;
-							padding-top    : 30px;
+							border-right: 0;
+							padding-top: 30px;
 
 							h4 {
-								font-size    : 18px;
+								font-size: 18px;
 								margin-bottom: 0;
-								margin-right : 20px;
+								margin-right: 20px;
 							}
 
 							.rating {
@@ -467,20 +488,20 @@
 							}
 
 							.commmet-number {
-								font-size      : 10px;
-								flex           : 0 0 100%;
+								font-size: 10px;
+								flex: 0 0 100%;
 								justify-content: center;
-								text-align     : center;
+								text-align: center;
 							}
 						}
 
 						// PHẦN PHÂN TÍCH TỈ LỆ %
 						.statistical-rating {
-							display   : block;
+							display: block;
 							margin-top: 20px;
-							flex      : 0 0 100%;
-							max-width : 100%;
-							padding   : 0;
+							flex: 0 0 100%;
+							max-width: 100%;
+							padding: 0;
 
 							.statistical-detail {
 								.side {
@@ -495,14 +516,14 @@
 					}
 
 					.block-comment {
-						margin-top    : 15px;
+						margin-top: 15px;
 						padding-bottom: 20px;
 
 						.main-comment {
-							display      : flex;
+							display: flex;
 							border-radius: 5px;
-							padding      : 35px 15px 15px;
-							background   : #F5F5F5;
+							padding: 35px 15px 15px;
+							background: #F5F5F5;
 
 							&.reply {
 								margin-left: 30px;
@@ -514,10 +535,10 @@
 
 							figure {
 								.avatar {
-									width        : 52px;
-									height       : 52px;
+									width: 52px;
+									height: 52px;
 									border-radius: 15px;
-									font-size    : 12px;
+									font-size: 12px;
 								}
 
 								.name {
@@ -526,37 +547,37 @@
 							}
 
 							.content-comment {
-								width      : 100%;
+								width: 100%;
 								margin-left: 10px;
 
 								.rating {
-									float        : left;
-									margin-right : 20px;
+									float: left;
+									margin-right: 20px;
 									margin-bottom: 0;
 								}
 
 								.day-comment {
-									display  : inline-block;
-									float    : none;
+									display: inline-block;
+									float: none;
 									font-size: 12px;
 								}
 
 								.content-cmt {
-									float     : left;
+									float: left;
 									margin-top: 10px;
 									margin-top: 0;
 
 									p {
-										height   : 52px;
+										height: 52px;
 										font-size: 12px;
 									}
 								}
 
 								.button-like-comment,
 								.button-comment {
-									float       : left;
+									float: left;
 									margin-right: 10px;
-									margin-top  : 10px;
+									margin-top: 10px;
 
 									svg {
 										margin-right: 5px;
@@ -569,16 +590,16 @@
 							}
 
 							.input-comment {
-								display    : flex;
+								display: flex;
 								align-items: center;
-								width      : 100%;
+								width: 100%;
 
 								input[type='text'] {
-									width        : 100%;
-									height       : 25px;
-									line-height  : 40px;
-									margin-left  : 60px;
-									border       : none;
+									width: 100%;
+									height: 25px;
+									line-height: 40px;
+									margin-left: 60px;
+									border: none;
 									border-bottom: 1px solid #F5F5F5;
 								}
 							}
@@ -589,9 +610,9 @@
 						}
 
 						.btn-outline-black {
-							margin    : 0 auto;
+							margin: 0 auto;
 							margin-top: 25px;
-							width     : 235px;
+							width: 235px;
 						}
 					}
 
@@ -599,7 +620,7 @@
 						padding-top: 20px;
 
 						h5 {
-							font-size    : 12px;
+							font-size: 12px;
 							margin-bottom: 10px;
 						}
 
