@@ -378,28 +378,6 @@ function showRating() {
 	})
 }
 
-const toggleAddNewsAddressItem = () => {
-	$(".add-news-address").on("click", function() {
-		$(".add-new-address-form").slideToggle();
-	})
-}
-
-const getInformationToEdit = () => {
-	$(".address-item .js-btn-edit-address").on("click", function() {
-		var name = $(this).parents(".address-item").find("[data-name]").attr("data-name")
-		var address = $(this).parents(".address-item").find("[data-address]").attr("data-address")
-		var phone = $(this).parents(".address-item").find("[data-phone]").attr("data-phone")
-		var city = $(this).parents(".address-item").find("[data-city]").attr("data-city")
-		var district = $(this).parents(".address-item").find("[data-district]").attr("data-district")
-		$(".add-new-address-form").find("#fullname").val(name)
-		$(".add-new-address-form").find("#phone").val(phone)
-		$(".add-new-address-form").find("#address").val(address)
-		$(".add-new-address-form").find("#ShippingCitySelectedValue").val(city)
-		$(".add-new-address-form").find("#ShippingDistrictSelectedValue").val(district)
-		$(".add-new-address-form").slideDown()
-	})
-}
-
 // CHỌN MÀU SẢN PHẨM
 function chooesColor() {
 	$('.chooes-quantity-color .color').click(function(e) {
@@ -921,24 +899,21 @@ const aboutNavSelect = () => {
 }
 
 const calculatePriceWithShippingFee = () => {
-
-	const shippingMethodHandler = element => {
-		const currentShippingFee = Number(element.siblings('label').find('[data-shipping-fee]').attr('data-shipping-fee'))
-		$('[data-shipping]').attr('data-shipping', currentShippingFee)
-		$('[data-shipping]').html(currentShippingFee.toLocaleString() + ' đ')
-
-		const tempPrice = Number($('[data-temp-price]').attr('data-temp-price'))
-		$('[total-price]').attr('total-price', tempPrice + currentShippingFee)
-		$('[total-price]').html((tempPrice + currentShippingFee).toLocaleString() + ' đ')
+	const shippingMethodHandler = input => {
+		const currentShippingFee = Number(input.parentNode.querySelector('label [data-shipping-fee]').getAttribute('data-shipping-fee'));
+		const tempPrice = Number(document.querySelector('[data-temp-price]').getAttribute('data-temp-price'));
+		document.querySelector('[data-shipping]').setAttribute('data-shipping', currentShippingFee);
+		document.querySelector('[data-shipping]').innerHTML = currentShippingFee.toLocaleString() + ' đ';
+		document.querySelector('[total-price]').setAttribute('total-price', tempPrice + currentShippingFee)
+		document.querySelector('[total-price]').innerHTML = (tempPrice + currentShippingFee).toLocaleString() + ' đ';
 	}
-
-	$('[name="shippingselectedvalue"]').each(function(index) {
-		if ($(this)[0].checked) {
-			shippingMethodHandler($(this));
+	Array.from(document.querySelectorAll('[name=shippingselectedvalue]')).forEach(input => {
+		if (input.checked) {
+			shippingMethodHandler(input);
 		}
-	})
-	$('[name="shippingselectedvalue"]').on("change", function() {
-		shippingMethodHandler($(this));
+		input.addEventListener('change', () => {
+			shippingMethodHandler(input);
+		})
 	})
 }
 
@@ -1024,24 +999,50 @@ const ajaxForgotPassword = () => {
 }
 
 const verifyAddressInCheckoutStep = () => {
-
-	$(".address-item .js-btn-verify-address").on("click", function(e) {
+Array.from(document.querySelectorAll('.address-item .js-btn-verify-address')).forEach(btn => {
+	btn.addEventListener('click', (e) => {
 		e.preventDefault();
-		var name = $(this).parents(".address-item").find("[data-name]").attr("data-name")
-		var address = $(this).parents(".address-item").find("[data-address]").attr("data-address")
-		var phone = $(this).parents(".address-item").find("[data-phone]").attr("data-phone")
-		var city = $(this).parents(".address-item").find("[data-city]").attr("data-city")
-		var district = $(this).parents(".address-item").find("[data-district]").attr("data-district")
-		$(".add-new-address-form").find("#fullname").val(name)
-		$(".add-new-address-form").find("#phone").val(phone)
-		$(".add-new-address-form").find("#address").val(address)
-		// $(".add-new-address-form").find("#ShippingCitySelectedValue").val(city)
-		// $(".add-new-address-form").find("#ShippingDistrictSelectedValue").val(district)
-		$(".add-new-address-form").find("#ShippingCitySelectedValue option").remove();
-		$(".add-new-address-form").find("#ShippingCitySelectedValue").append(`<option value="${city}">city</option>`);
-		$(".add-new-address-form").find("#ShippingDistrictSelectedValue option").remove();
-		$(".add-new-address-form").find("#ShippingDistrictSelectedValue").append(`<option value="${district}">city</option>`);
-		$(".add-new-address-form").find('form').submit();
+		const addressItem = btn.closest('.address-item');
+		const name = addressItem.querySelector('[data-name]').getAttribute('data-name');
+		const address = addressItem.querySelector('[data-address]').getAttribute('data-address');
+		const phone = addressItem.querySelector('[data-phone]').getAttribute('data-phone');
+		const city = addressItem.querySelector('[data-city]').getAttribute('data-city');
+		const district = addressItem.querySelector('[data-district]').getAttribute('data-district');
+		const addressForm = document.querySelector('.add-new-address-form');
+		addressForm.querySelector('#fullname').value = name;
+		addressForm.querySelector('#phone').value = phone;
+		addressForm.querySelector('#address').value = address;
+		addressForm.querySelector('#ShippingCitySelectedValue').innerHTML = `<option value=${city}>${addressItem.querySelector('[data-city]').innerHTML}</option>`;
+		addressForm.querySelector('#ShippingDistrictSelectedValue').innerHTML = `<option value=${district}>${addressItem.querySelector('[data-district]').innerHTML}</option>`;
+		addressForm.querySelector('form').submit();
+	})
+})
+}
+
+const editAddressInCheckoutStep = () => {
+	Array.from(document.querySelectorAll('.address-item .js-btn-edit-address')).forEach(btn => {
+		btn.addEventListener('click', (e) => {
+			e.preventDefault();
+			const addressItem = btn.closest('.address-item');
+			const name = addressItem.querySelector('[data-name]').getAttribute('data-name');
+			const address = addressItem.querySelector('[data-address]').getAttribute('data-address');
+			const phone = addressItem.querySelector('[data-phone]').getAttribute('data-phone');
+			const city = addressItem.querySelector('[data-city]').getAttribute('data-city');
+			const district = addressItem.querySelector('[data-district]').getAttribute('data-district');
+			const addressForm = document.querySelector('.add-new-address-form');
+			addressForm.querySelector('#fullname').value = name;
+			addressForm.querySelector('#phone').value = phone;
+			addressForm.querySelector('#address').value = address;
+			addressForm.querySelector('#ShippingCitySelectedValue').value = city;
+			addressForm.querySelector('#ShippingDistrictSelectedValue').value = district;
+			$(".add-new-address-form").slideDown();
+		})
+	})
+}
+
+const toggleAddNewsAddressItem = () => {
+	$(".add-news-address").on("click", function() {
+		$(".add-new-address-form").slideToggle();
 	})
 }
 
@@ -1086,8 +1087,6 @@ $(document).ready(function() {
 	submenuCategory();
 	submenuCategoryDetail();
 	imgProductSlider();
-	toggleAddNewsAddressItem();
-	getInformationToEdit();
 	clickRating();
 	showRating();
 	chooesColor();
@@ -1125,6 +1124,8 @@ $(document).ready(function() {
 	getPropertyId();
 	getProductQuantity();
 	verifyAddressInCheckoutStep();
+	editAddressInCheckoutStep();
+	toggleAddNewsAddressItem();
 	ajaxDeleteBill();
 
 	console.log(CartController.events.getCity());
