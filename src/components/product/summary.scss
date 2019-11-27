@@ -93,7 +93,6 @@
 		padding-left: 100px;
 
 		.info-summary {
-			text-align: justify;
 
 			h2 {
 				position: relative;
@@ -129,6 +128,8 @@
 			}
 
 			p {
+
+				text-align: justify;
 				font-size: 15px;
 				min-height: 200px;
 				color: #1C1C1C;
