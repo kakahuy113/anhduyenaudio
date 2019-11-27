@@ -37,16 +37,17 @@
 		p {
 			color: #040404c7;
 			font-size: 16px;
-			margin-bottom: 20px;
+			margin-bottom: 10px;
 		}
 
 		img {
-			margin-bottom: 20px;
+			margin-bottom: 10px;
 		}
 
 		ul,
 		ol,
 		dl {
+			margin-bottom: 10px;
 			padding-left: 40px;
 		}
 	}
@@ -114,9 +115,6 @@
 		}
 
 		.content-news-detail {
-			p {
-				margin-bottom: 15px;
-			}
 
 			img {
 				margin: 5px 0 15px;

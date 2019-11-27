@@ -48,23 +48,18 @@
 				p {
 					color: #040404c7;
 					font-size: 16px;
-					margin-bottom: 20px;
-				}
-
-				p {
-					color: #333333;
-					font-size: 16px;
-					margin-bottom: 20px;
+					margin-bottom: 10px;
 				}
 
 				img {
 					width: auto;
-					margin-bottom: 20px;
+					margin-bottom: 10px;
 				}
 
 				ul,
 				ol,
 				dl {
+					margin-bottom: 10px;
 					padding-left: 40px;
 				}
 			}
@@ -435,7 +430,6 @@
 					p {
 						color: #888888;
 						font-size: 12px;
-						margin-bottom: 0;
 						padding-bottom: 20px
 					}
 				}
