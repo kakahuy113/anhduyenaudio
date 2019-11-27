@@ -33,6 +33,10 @@
 		ul {
 			margin-bottom: 15px;
 		}
+
+		ul {
+			padding-left: 40px;
+		}
 	}
 
 	@media (max-width: 1024.98px) {
@@ -165,6 +169,7 @@
 .recruitment-contact {
 	padding-bottom: 40px;
 	margin-top: 40px;
+
 	@media (max-width: 1024.98px) {
 		display: none;
 	}
