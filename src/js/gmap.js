@@ -164,7 +164,7 @@ const addMarkers = () => {
 			map: map,
 			title: location.name,
 			position: locationLatLng,
-			icon: './img/circle.png',
+			icon: '/Content/Resources/img/circle.png',
 		});
 		bounds.extend(marker.position);
 		markers.push(marker);
@@ -233,7 +233,7 @@ const initialize = () => {
 		google.maps.event.addListener(map, 'click', function() {
 			infoWindow.close();
 		});
-	}
+	}	
 	google.maps.event.addListener(map, 'bounds_changed', getLocationList);
 };
 
