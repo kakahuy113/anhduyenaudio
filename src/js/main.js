@@ -469,18 +469,24 @@ function likeComment() {
 }
 
 function countDownSale() {
-	// Set the date we're counting down to
-	var countDownDate = new Date("Sep 30, 2019 23:59:59").getTime();
-
 	// Update the count down every 1 second
 	var x = setInterval(function() {
+
+		// Set the date we're counting down to
+		var temp = document.querySelector('.date-over p').textContent;
+		var countDownDate = new Date(temp).getTime();
+
 		// Get today's date and time
 		var now = new Date().getTime();
+		console.log(new Date(temp));
+		console.log(new Date());
 
 		// Find the distance between now and the count down date
 		var distance = countDownDate - now;
 
 		// Time calculations for days, hours, minutes and seconds
+		console.log(countDownDate)
+		console.log(now);
 
 		// var days = Math.floor(distance / (1000 * 60 * 60 * 24));
 		var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
@@ -498,11 +504,8 @@ function countDownSale() {
 				clearInterval(x);
 				document.getElementById("demo").innerHTML = "EXPIRED";
 			}
-		} catch (error) {
-
-		}
+		} catch (error) {}
 	}, 1000);
-
 }
 
 // const clickThenScrollToSection = () => {
