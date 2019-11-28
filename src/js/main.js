@@ -1138,9 +1138,6 @@ $(document).ready(function() {
 	editAddressInCheckoutStep();
 	toggleAddNewsAddressItem();
 	ajaxDeleteBill();
-
-	console.log(CartController.events.getCity());
-
 })
 
 
