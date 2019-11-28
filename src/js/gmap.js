@@ -191,7 +191,6 @@ const showInfoMarkerOnMap = (marker, index) => {
 const getLocationList = () => {
 	if (dealerLocatorList) {
 		dealerLocatorList.innerHTML = '';
-		console.log(markers, locations);
 		markers.forEach((marker, index) => {
 			if (map.getBounds().contains(marker.getPosition())) {
 				const newMarker = document.createElement('div');
