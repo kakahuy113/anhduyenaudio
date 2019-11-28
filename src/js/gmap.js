@@ -1,7 +1,6 @@
-let map, itemClicked, markers = [];
+let map, itemClicked, locations, markers = [];
 const mapSelector = document.getElementById('map');
 const dealerLocatorList = document.querySelector('.map-list #map-list');
-const locations = inputLocations;
 const mapOption = {
 	zoom: 12,
 	styles: [{
@@ -192,10 +191,12 @@ const showInfoMarkerOnMap = (marker, index) => {
 const getLocationList = () => {
 	if (dealerLocatorList) {
 		dealerLocatorList.innerHTML = '';
+		console.log(markers, locations);
 		markers.forEach((marker, index) => {
 			if (map.getBounds().contains(marker.getPosition())) {
 				const newMarker = document.createElement('div');
 				newMarker.classList.add('map-item', 'maker-info');
+
 				newMarker.innerHTML = `
 				<h4>${locations[index].name}</h4>
 				<p><b>Địa chỉ:</b> ${locations[index].address}</p>
@@ -214,6 +215,8 @@ const getLocationList = () => {
 };
 
 const initialize = () => {
+	markers = [];
+	locations = inputLocations;
 	map = new google.maps.Map(mapSelector, mapOption);
 	addMarkers();
 	let listener = google.maps.event.addListener(map, 'idle', () => {
@@ -222,10 +225,10 @@ const initialize = () => {
 		}
 		google.maps.event.removeListener(listener);
 	});
-	myoverlay.draw = function() {
-		myoverlay.getPanes().markerLayer.id = 'markerLayer';
-	};
-	myoverlay.setMap(map);
+	// myoverlay.draw = function() {
+	// 	myoverlay.getPanes().markerLayer.id = 'markerLayer';
+	// };
+	// myoverlay.setMap(map);
 	if (infoWindow) {
 		google.maps.event.addListener(map, 'click', function() {
 			infoWindow.close();
@@ -235,6 +238,5 @@ const initialize = () => {
 };
 
 if (mapSelector) {
-
 	google.maps.event.addDomListener(window, 'load', initialize);
 }
