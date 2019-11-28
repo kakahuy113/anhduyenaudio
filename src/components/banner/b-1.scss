@@ -53,14 +53,17 @@
 					span {
 						transition-delay: .5s;
 						display         : block;
+						opacity: 0;
 					}
 
 					h5 {
 						transition-delay: .8s;
+						opacity: 0;
 					}
 
 					.see-more {
 						transition-delay: 1s;
+						opacity: 0;
 					}
 				}
 			}
@@ -73,6 +76,7 @@
 						span,
 						h5,
 						.see-more {
+							opacity: 1;
 							transform: translateX(0);
 						}
 					}

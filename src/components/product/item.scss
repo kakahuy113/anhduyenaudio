@@ -1,69 +1,69 @@
 .list-item-product {
 	background: #FFFFFF;
-	margin    : 0 -20px;
+	margin: 0 -20px;
 
 	&.sale {
 		margin-top: 67px;
 
 		.item-list-pro {
-			padding   : 0 18px;
+			padding: 0 18px;
 			margin-top: 10px;
 		}
 	}
 
 	.item-list-pro {
-		margin-bottom: 47px;
-		padding      : 0 20px;
+		padding: 20px;
+		border: .5px solid darken(white, 5%);
 
 		figure {
 			position: relative;
 
 			.box-img {
-				display        : flex;
-				align-items    : center;
+				display: flex;
+				align-items: center;
 				justify-content: center;
-				overflow       : hidden;
-				max-width      : 235px;
-				height         : 235px;
-				margin         : 0 auto;
+				overflow: hidden;
+				max-width: 100%;
+				height: 100%;
+				margin: 0 auto;
 
 				img {
-					max-width : 100%;
-					height    : auto;
+					max-width: 100%;
+					height: auto;
 					object-fit: cover;
 				}
 			}
 
 			figcaption {
 				h3 {
-					text-align   : center;
-					font-size    : 15px;
-					color        : #D82F25;
-					font-weight  : 400;
+					text-align: center;
+					font-size: 15px;
+					color: #D82F25;
+					font-weight: 400;
 					margin-bottom: 15px;
 				}
 
 				p {
-					font-size    : 12px;
-					color        : #949494;
+					font-size: 12px;
+					color: #949494;
 					margin-bottom: 10px;
 
-					overflow          : hidden;
-					display           : -webkit-box;
+					overflow: hidden;
+					display: -webkit-box;
 					-webkit-line-clamp: 3;
 					-webkit-box-orient: vertical;
 				}
 
 				span {
-					display        : flex;
-					align-items    : center;
+					display: flex;
+					align-items: center;
 					justify-content: center;
-					font-size      : 15px;
-					color          : #1C1C1C;
-					text-align     : center;
-					padding        : 3px 0;
-					border         : 1px solid #DFDFDF;
-					border-radius  : 30px;
+					font-size: 15px;
+					color: #1C1C1C;
+					text-align: center;
+					padding: 3px 0;
+					border: 1px solid #DFDFDF;
+					border-radius: 30px;
 				}
 			}
 		}
@@ -73,13 +73,13 @@
 		margin: 0;
 
 		&.sale {
-			margin-top : 0px;
+			margin-top: 0px;
 			padding-top: 30px;
 		}
 
 		.item-list-pro {
 			margin-bottom: 30px;
-			padding      : 0 10px;
+			padding: 0 10px;
 
 			figure {
 				position: relative;
@@ -98,10 +98,10 @@
 					}
 
 					span {
-						width    : 122px;
-						height   : 30px;
+						width: 122px;
+						height: 30px;
 						font-size: 12px;
-						margin   : 0 auto;
+						margin: 0 auto;
 					}
 				}
 			}
@@ -112,12 +112,12 @@
 .list-product {
 	.quantity {
 		display: flex;
-		height : 75px;
+		height: 35px;
 
 		p {
 			margin-left: auto;
-			color      : #888888;
-			font-size  : 14px;
+			color: #888888;
+			font-size: 14px;
 		}
 	}
 

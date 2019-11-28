@@ -143,6 +143,9 @@ function productSlider() {
 		observer: true,
 		observeParents: true,
 		breakpoints: {
+			1365: {
+				slidesPerView: 4,
+			},
 			1024: {
 				slidesPerView: 3,
 			},
@@ -218,7 +221,7 @@ function clientSlider() {
 		speed: 1200,
 		autoplay: true,
 		breakpoints: {
-			1024: {
+			768: {
 				slidesPerView: 3,
 			},
 		},
@@ -999,24 +1002,24 @@ const ajaxForgotPassword = () => {
 }
 
 const verifyAddressInCheckoutStep = () => {
-Array.from(document.querySelectorAll('.address-item .js-btn-verify-address')).forEach(btn => {
-	btn.addEventListener('click', (e) => {
-		e.preventDefault();
-		const addressItem = btn.closest('.address-item');
-		const name = addressItem.querySelector('[data-name]').getAttribute('data-name');
-		const address = addressItem.querySelector('[data-address]').getAttribute('data-address');
-		const phone = addressItem.querySelector('[data-phone]').getAttribute('data-phone');
-		const city = addressItem.querySelector('[data-city]').getAttribute('data-city');
-		const district = addressItem.querySelector('[data-district]').getAttribute('data-district');
-		const addressForm = document.querySelector('.add-new-address-form');
-		addressForm.querySelector('#fullname').value = name;
-		addressForm.querySelector('#phone').value = phone;
-		addressForm.querySelector('#address').value = address;
-		addressForm.querySelector('#ShippingCitySelectedValue').innerHTML = `<option value=${city}>${addressItem.querySelector('[data-city]').innerHTML}</option>`;
-		addressForm.querySelector('#ShippingDistrictSelectedValue').innerHTML = `<option value=${district}>${addressItem.querySelector('[data-district]').innerHTML}</option>`;
-		addressForm.querySelector('form').submit();
+	Array.from(document.querySelectorAll('.address-item .js-btn-verify-address')).forEach(btn => {
+		btn.addEventListener('click', (e) => {
+			e.preventDefault();
+			const addressItem = btn.closest('.address-item');
+			const name = addressItem.querySelector('[data-name]').getAttribute('data-name');
+			const address = addressItem.querySelector('[data-address]').getAttribute('data-address');
+			const phone = addressItem.querySelector('[data-phone]').getAttribute('data-phone');
+			const city = addressItem.querySelector('[data-city]').getAttribute('data-city');
+			const district = addressItem.querySelector('[data-district]').getAttribute('data-district');
+			const addressForm = document.querySelector('.add-new-address-form');
+			addressForm.querySelector('#fullname').value = name;
+			addressForm.querySelector('#phone').value = phone;
+			addressForm.querySelector('#address').value = address;
+			addressForm.querySelector('#ShippingCitySelectedValue').innerHTML = `<option value=${city}>${addressItem.querySelector('[data-city]').innerHTML}</option>`;
+			addressForm.querySelector('#ShippingDistrictSelectedValue').innerHTML = `<option value=${district}>${addressItem.querySelector('[data-district]').innerHTML}</option>`;
+			addressForm.querySelector('form').submit();
+		})
 	})
-})
 }
 
 const editAddressInCheckoutStep = () => {
@@ -1071,7 +1074,15 @@ const ajaxDeleteBill = () => {
 	})
 }
 
+const setHeightItemImgBox = () => {
+	$(".item-list-pro").each(function() {
+		$(this).find('.box-img').height($(this).find('.box-img').width());
+	})
+}
+
 $(document).ready(function() {
+
+	setHeightItemImgBox();
 	objectFitImages("img.ofc"); // Luôn luôn chậy polyfill cho thuôc tính object-fit: cover trên các phiên bản IE >= 9
 	addClassLazyload(); // Luôn luôn addClass lazyload cho các hình ảnh có thuộc tính [data-src]
 	addClassHeaderWhenScroll();
@@ -1140,4 +1151,8 @@ $(document).ajaxComplete(function() {
 
 window.addEventListener("scroll", () => {
 	addClassHeaderWhenScroll();
+})
+
+window.addEventListener('resize', () => {
+	setHeightItemImgBox();
 })

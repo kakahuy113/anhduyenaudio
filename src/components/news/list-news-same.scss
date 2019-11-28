@@ -1,6 +1,6 @@
 .list-same-news {
 	background: transparent;
-	padding   : 60px 0 35px;
+	padding: 60px 0 35px;
 	margin-top: 28px;
 
 	.catalog-news {
@@ -8,90 +8,91 @@
 
 		h3 {
 			font-size: 24px;
-			color    : #1C1C1C;
+			color: #1C1C1C;
 		}
 
 		P {
-			display    : flex;
+			display: flex;
 			align-items: center;
 
 			span {
 				font-size: 14px;
-				color    : #888888;
+				color: #888888;
 			}
 		}
 
 	}
 
 	.block-news {
-		border       : #AAAAAA solid 1px;
-		padding      : 20px 35px;
-		display      : flex;
-		flex-wrap    : wrap;
+		border: #AAAAAA solid 1px;
+		padding: 20px 35px;
+		display: flex;
+		flex-wrap: wrap;
 		margin-bottom: 25px;
 
 		.content {
-			display       : flex;
+			display: flex;
 			flex-direction: column;
-			flex          : 0 0 60%;
-			max-width     : 60%;
+			flex-basis: 0;
+			flex-grow: 1;
+			max-width: 100%;
+			padding-left: 40px;
 
 			h5 {
-				font-size    : 18px;
-				font-weight  : 700;
-				color        : #1C1C1C;
+				font-size: 18px;
+				font-weight: 700;
+				color: #1C1C1C;
 				margin-bottom: 15px;
 			}
 
 			p {
-				font-size         : 14px;
-				color             : #888888;
-				overflow          : hidden;
-				text-overflow     : ellipsis;
-				display           : -webkit-box;
+				font-size: 14px;
+				color: #888888;
+				overflow: hidden;
+				text-overflow: ellipsis;
+				display: -webkit-box;
 				-webkit-line-clamp: 2;
 				-webkit-box-orient: vertical;
 			}
 
 			.time {
-				position    : relative;
-				margin-top  : auto;
+				position: relative;
+				margin-top: auto;
 				padding-left: 25px;
 
 				span {
-					color      : #888888;
-					font-size  : 12px;
+					color: #888888;
+					font-size: 12px;
 					line-height: 1;
 				}
 
 				&::before {
-					position        : absolute;
-					content         : '';
+					position: absolute;
+					content: '';
 					background-image: url(../img/icons/thoigiantintuc.svg);
-					background-size : cover;
-					left            : 0;
-					top             : 8px;
-					width           : 13px;
-					height          : 13px;
+					background-size: cover;
+					left: 0;
+					top: 8px;
+					width: 13px;
+					height: 13px;
 				}
 			}
 		}
 
 		.img-news {
-			flex       : 0 0 40%;
-			max-width  : 40%;
-			max-width  : 210px;
-			margin-left: auto;
+			flex: 0 0 40%;
+			max-width: 40%;
+			max-width: 210px;
 
 			img {
-				width     : 100%;
+				width: 100%;
 				object-fit: cover;
 			}
 		}
 	}
 
 	@media (max-width: 1024.98px) {
-		padding   : 15px 5px;
+		padding: 15px 5px;
 		background: #FFFFFF;
 
 		.catalog-news {
@@ -105,12 +106,12 @@
 
 	@media (max-width: 575.98px) {
 		.block-news {
-			padding      : 10px;
+			padding: 10px;
 			margin-bottom: 10px;
 
 			.content {
 				h5 {
-					font-size    : 14px;
+					font-size: 14px;
 					margin-bottom: 0;
 				}
 
@@ -120,13 +121,13 @@
 			}
 
 			.img-news {
-				flex       : 0 0 40%;
-				max-width  : 40%;
-				max-width  : 210px;
+				flex: 0 0 40%;
+				max-width: 40%;
+				max-width: 210px;
 				margin-left: auto;
 
 				img {
-					width     : 100%;
+					width: 100%;
 					object-fit: cover;
 				}
 			}

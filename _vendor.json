@@ -17,7 +17,6 @@
 			"bower_components/jquery-ui/ui/widgets/mouse.js",
 			"bower_components/jquery-ui/ui/widgets/slider.js",
 			"_vendor/ls.unveilhooks.min.js",
-			"_vendor/loading.js",
 			"_vendor/mapping-listener.js",
 			"_vendor/mapping.js"
 		],
@@ -25,7 +24,6 @@
 			"_vendor/font.css",
 			"_vendor/reset.css",
 			"_vendor/grid.css",
-			"_vendor/loading.css",
 			"_vendor/gmap.css",
 			"bower_components/fancybox/dist/jquery.fancybox.css",
 			"bower_components/swiper/dist/css/swiper.css",
