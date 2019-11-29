@@ -168,6 +168,11 @@ function productSlider() {
 
 // SLIDER PRODUCT
 function productSliderHotSale() {
+
+	const badgeHot = '<div class="badge-sale-hot"><span data-hot>HOT</span></div>';
+	$('.product-slider-hot-sale[tab-id="hot"] .swiper-slide figure').each(function() {
+		$(this).append(badgeHot);
+	})
 	var swiper = new Swiper(".product-slider-hot-sale .swiper-container", {
 		slidesPerView: 5,
 		loop: true,
@@ -191,7 +196,7 @@ function productSliderHotSale() {
 		navigation: {
 			nextEl: '.product-slider-hot-sale .swiper-button-next',
 			prevEl: '.product-slider-hot-sale .swiper-button-prev',
-		},
+		}
 	})
 }
 
@@ -711,7 +716,7 @@ function backToTop() {
 function rangeSliderPrice() {
 	let min_price = Number($("#slider-range").attr('data-min'));
 	let max_price = Number($("#slider-range").attr('data-max'));
-	if(min_price !== max_price){
+	if (min_price !== max_price) {
 		let curMinPrice = Number($("#slider-range").attr('data-current-min'))
 		let curMaxPrice = Number($("#slider-range").attr('data-current-max'))
 		$("#slider-range").slider({
@@ -727,7 +732,7 @@ function rangeSliderPrice() {
 				Redirect();
 			},
 			create: function(event, ui) {
-	
+
 			}
 		});
 		$("#amount").val($("#slider-range").slider("values", 0) + " - " + $("#slider-range").slider("values", 1));
