@@ -224,10 +224,6 @@ const initialize = () => {
 		}
 		google.maps.event.removeListener(listener);
 	});
-	// myoverlay.draw = function() {
-	// 	myoverlay.getPanes().markerLayer.id = 'markerLayer';
-	// };
-	// myoverlay.setMap(map);
 	if (infoWindow) {
 		google.maps.event.addListener(map, 'click', function() {
 			infoWindow.close();
