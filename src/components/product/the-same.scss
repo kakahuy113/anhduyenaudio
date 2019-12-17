@@ -5,9 +5,9 @@
 		padding: 55px 0 80px;
 
 		h2 {
-			text-align     : center;
-			font-size      : 24px;
-			color          : #1C1C1C;
+			text-align: center;
+			font-size: 24px;
+			color: #1C1C1C;
 			text-decoration: underline;
 		}
 	}
@@ -20,7 +20,7 @@
 				background: #FFFFFF;
 
 				img {
-					width     : 100%;
+					width: 100%;
 					object-fit: cover;
 				}
 
@@ -28,15 +28,15 @@
 					padding: 0 0 20px 40px;
 
 					h3 {
-						font-size    : 18px;
-						font-weight  : 700;
-						color        : #484848;
+						font-size: 18px;
+						font-weight: 700;
+						color: #484848;
 						margin-bottom: 5px;
 					}
 
 					span {
 						font-size: 16px;
-						color    : #888888;
+						color: #888888;
 					}
 				}
 			}
@@ -44,15 +44,21 @@
 
 		.swiper-button-next {
 			background-image: url(../img/icons/thesame-next.svg);
-			right           : -80px;
+			right: -80px;
 		}
 
 		.swiper-button-prev {
 			background-image: url(../img/icons/thesame-prev.svg);
-			left            : -80px;
+			left: -80px;
 		}
 	}
 
+	@media (max-width: 1439.98px) {
+
+		.title {
+			padding: 30px 0 40px;
+		}
+	}
 
 	@media(max-width: 1024px) {
 		.title {
@@ -65,14 +71,14 @@
 
 		.the-same-product-slider {
 			position: relative;
-			padding : 0 60px;
+			padding: 0 40px;
 
 			.item-same {
 				figure {
 					background: #FFFFFF;
 
 					img {
-						width     : 100%;
+						width: 100%;
 						object-fit: cover;
 					}
 
@@ -80,15 +86,15 @@
 						padding: 0 0 20px 40px;
 
 						h3 {
-							font-size    : 18px;
-							font-weight  : 700;
-							color        : #484848;
+							font-size: 18px;
+							font-weight: 700;
+							color: #484848;
 							margin-bottom: 5px;
 						}
 
 						span {
 							font-size: 16px;
-							color    : #888888;
+							color: #888888;
 						}
 					}
 				}
@@ -96,12 +102,12 @@
 
 			.swiper-button-next {
 				background-image: url(../img/icons/thesame-next.svg);
-				right           : 0px;
+				right: 0px;
 			}
 
 			.swiper-button-prev {
 				background-image: url(../img/icons/thesame-prev.svg);
-				left            : 0px;
+				left: 0px;
 			}
 		}
 	}

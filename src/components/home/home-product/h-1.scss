@@ -1,12 +1,12 @@
 .product-sale-hot {
-	margin-top: 45px;
+	margin-top: 30px;
+
+
+	@media (max-width: 1439.98px) {
+		margin-top: 20px;
+	}
 
 	@media(max-width: 1024px) {
-		margin-top: 10px;
-
-		.container {
-			padding: 0;
-		}
 
 		.tab-container {
 			.tab-content {
@@ -24,22 +24,22 @@
 				}
 			}
 
-			.block-title {
-				display: none;
-			}
+			// .block-title {
+			// 	display: none;
+			// }
 		}
 	}
 }
 
 .home-product {
-	margin-top: 55px;
+	margin-top: 30px;
+
+	@media (max-width: 1439.98px) {
+		margin-top: 20px;
+	}
 
 	@media(max-width:1024px) {
-		margin-top: 15px;
-
-		.container {
-			padding: 0;
-		}
+		margin-top: 10px;
 	}
 }
 
@@ -80,21 +80,25 @@
 					color: #1C1C1C;
 
 					h5 {
-						text-align: center;
+						// text-align: center;
 						font-size: 15px;
 					}
 
 					.price {
 						display: flex;
-						justify-content: center;
+						justify-content: space-between;
 						font-size: 15px;
 						font-weight: 700;
 						margin-bottom: 15px;
 						align-items: center;
 
+						span {
+							color: #D82F25;
+						}
+
 						del {
 							margin-left: 10px;
-							font-size: 13px;
+							font-size: 11px;
 							color: #888888;
 							font-weight: 400;
 						}
@@ -160,7 +164,7 @@
 			padding: 20px 0;
 
 			.swiper-slide {
-				padding: 0 50px;
+				padding: 0 25px;
 			}
 		}
 	}
@@ -181,7 +185,7 @@
 
 						h5 {
 							font-size: 14px;
-							margin-bottom: 12px;
+							margin-bottom: 5px;
 							font-weight: 400;
 							color: #000000;
 						}
@@ -190,8 +194,6 @@
 							font-size: 16px;
 							display: block;
 							margin-bottom: 5px;
-							color: #D82F25;
-							text-align: center;
 
 							span {
 								display: block;
@@ -235,6 +237,10 @@
 			user-select: none;
 			padding: 0 30px;
 
+			@media (max-width: 1439.98px) {
+				padding: 0 20px;
+			}
+
 			+.swiper-slide {
 				border-left: 1px solid darken(white, 12%);
 			}
@@ -259,20 +265,23 @@
 					color: #1C1C1C;
 
 					h5 {
-						text-align: center;
+						text-align: left;
 						font-size: 15px;
 					}
 
 					.price {
 						display: flex;
-						justify-content: center;
+						justify-content: space-between;
 						font-size: 15px;
 						font-weight: 700;
 						margin-bottom: 15px;
 						align-items: center;
 
+						span {
+							color: #D82F25;
+						}
+
 						del {
-							margin-left: 10px;
 							font-size: 13px;
 							color: #888888;
 							font-weight: 400;
@@ -343,7 +352,7 @@
 			padding: 20px 0;
 
 			.swiper-slide {
-				padding: 0 50px;
+				padding: 0 25px;
 			}
 		}
 	}
@@ -374,7 +383,6 @@
 							display: block;
 							margin-bottom: 5px;
 							color: #D82F25;
-							text-align: center;
 
 							span {
 								display: block;

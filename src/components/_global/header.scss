@@ -180,6 +180,7 @@ header {
 			position: relative;
 			flex: 0 0 50px;
 			max-width: 50px;
+
 			a {
 				color: #fff;
 				font-size: 10px;
@@ -304,16 +305,16 @@ header {
 				z-index: 2;
 				overflow: auto;
 
-				@media (min-width: 1025px) {
-					right: 50%;
-				}
+				// @media (min-width: 1025px) {
+				// 	right: 50%;
+				// }
 
-				@media (max-width: 1365.98px) {
-					right: 45%
-				}
+				// @media (max-width: 1365.98px) {
+				// 	right: 45%
+				// }
 
 				@media (max-width: 1199.98px) {
-					right: 40%;
+					// right: 40%;
 					width: 270px;
 				}
 			}
@@ -390,19 +391,22 @@ header {
 				}
 
 				.mega-content {
-					max-width: 50%;
-					flex: 0 0 50%;
-					margin-left: auto;
+					max-width: 100%;
+					flex: 0 0 100%;
+					padding-left: 305px;
 					background: #ffffff;
 
-					@media (max-width: 1365.98px) {
-						max-width: 45%;
-						flex: 0 0 45%;
-					}
+					// @media (max-width: 1365.98px) {
+					// 	max-width: 45%;
+					// 	flex: 0 0 45%;
+					// }
 
-					@media (max-width: 1199.98px) {
-						max-width: 40%;
-						flex: 0 0 40%;
+					// @media (max-width: 1199.98px) {
+					// 	max-width: 40%;
+					// 	flex: 0 0 40%;
+					// }
+					@media (max-width: 1024px) {
+						padding-left: 0;
 					}
 
 					.mega-child-item-list,

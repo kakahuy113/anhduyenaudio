@@ -135,9 +135,10 @@ function homeSliderBanner() {
 
 // SLIDER PRODUCT
 function productSlider() {
-	var swiper = new Swiper(".product-slider .swiper-container", {
+	var swiper1 = new Swiper(".home-product-1 .swiper-container", {
 		slidesPerView: 5,
-		loop: true,
+		slidesPerColumn: 2,
+		// loop: true,
 		speed: 1200,
 		autoplay: true,
 		observer: true,
@@ -149,19 +150,78 @@ function productSlider() {
 			1024: {
 				slidesPerView: 3,
 			},
-			480: {
+			768: {
 				slidesPerView: 2,
-				slidesPerColumn: 2,
+				// slidesPerColumn: 2,
 				speed: 200,
 			}
 		},
 		pagination: {
-			el: '.product-slider .swiper-pagination',
+			el: '.home-product-1 .swiper-pagination',
 			clickable: true,
 		},
 		navigation: {
-			nextEl: '.product-slider .swiper-button-next',
-			prevEl: '.product-slider .swiper-button-prev',
+			nextEl: '.home-product-1 .swiper-button-next',
+			prevEl: '.home-product-1 .swiper-button-prev',
+		},
+	})
+	var swiper2 = new Swiper(".home-product-2 .swiper-container", {
+		slidesPerView: 5,
+		slidesPerColumn: 2,
+		// loop: true,
+		speed: 1200,
+		autoplay: true,
+		observer: true,
+		observeParents: true,
+		breakpoints: {
+			1365: {
+				slidesPerView: 4,
+			},
+			1024: {
+				slidesPerView: 3,
+			},
+			768: {
+				slidesPerView: 2,
+				// slidesPerColumn: 2,
+				speed: 200,
+			}
+		},
+		pagination: {
+			el: '.home-product-2 .swiper-pagination',
+			clickable: true,
+		},
+		navigation: {
+			nextEl: '.home-product-2 .swiper-button-next',
+			prevEl: '.home-product-2 .swiper-button-prev',
+		},
+	})
+	var swiper3 = new Swiper(".home-product-3 .swiper-container", {
+		slidesPerView: 5,
+		slidesPerColumn: 2,
+		// loop: true,
+		speed: 1200,
+		autoplay: true,
+		observer: true,
+		observeParents: true,
+		breakpoints: {
+			1365: {
+				slidesPerView: 4,
+			},
+			1024: {
+				slidesPerView: 3,
+			},
+			768: {
+				slidesPerView: 2,
+				speed: 200,
+			}
+		},
+		pagination: {
+			el: '.home-product-3 .swiper-pagination',
+			clickable: true,
+		},
+		navigation: {
+			nextEl: '.home-product-3 .swiper-button-next',
+			prevEl: '.home-product-3 .swiper-button-prev',
 		},
 	})
 }
@@ -181,10 +241,13 @@ function productSliderHotSale() {
 		observer: true,
 		observeParents: true,
 		breakpoints: {
+			1200: {
+				slidesPerView: 4,
+			},
 			1024: {
 				slidesPerView: 3,
 			},
-			480: {
+			768: {
 				slidesPerView: 2,
 				speed: 200,
 			}
@@ -275,6 +338,9 @@ function imgProductSlider() {
 		watchSlidesProgress: true,
 		slideToClickedSlide: true,
 		breakpoints: {
+			1440: {
+				slidesPerView: 3,
+			},
 			1024: {
 				direction: 'horizontal',
 				spaceBetween: 30,

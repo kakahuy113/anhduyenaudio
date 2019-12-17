@@ -3,14 +3,16 @@
 	padding: 15px 0;
 
 	.row {
-		flex-wrap: nowrap;
 		align-items: center;
 
-		.col-lg {
-			white-space: nowrap;
-			text-transform: uppercase;
-			font-weight: 700;
-			color: #1c1c1c;
+		.col-12 {
+			p {
+				white-space: nowrap;
+				text-align: center;
+				text-transform: uppercase;
+				font-weight: 700;
+				color: #1c1c1c;
+			}
 		}
 
 		@media (max-width: 1024px) {
@@ -26,7 +28,7 @@
 	.clients-slider {
 		padding: 0 45px;
 		position: relative;
-		width: 1160px;
+		width: 100%;
 
 		.swiper-slide {
 			.box-img {
@@ -35,22 +37,6 @@
 					display: block;
 				}
 			}
-		}
-
-		@media (max-width: 1599px) {
-			width: 1050px;
-		}
-
-		@media (max-width: 1365px) {
-			width: 870px;
-		}
-
-		@media (max-width: 1199.98px) {
-			width: 720px;
-		}
-
-		@media (max-width: 1024px) {
-			width: 100%;
 		}
 	}
 

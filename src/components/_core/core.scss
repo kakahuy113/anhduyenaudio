@@ -87,9 +87,40 @@ main {
 	position: relative;
 	text-align: center;
 	background: #ffffff;
-	padding: 20px 15px 15px;
+	padding: 8px 15px;
 	border-radius: 5px 5px 0 0;
 	border-bottom: 1px #70707050 solid;
+
+	.main-title {
+		margin: 0 auto;
+		display: inline-flex;
+		align-items: center;
+		color: #000000;
+		font-weight: 700;
+		font-size: 20px;
+		line-height: 1.5;
+		cursor: pointer;
+	}
+
+	.block-nav {
+		display: flex;
+		align-items: center;
+		height: auto;
+		flex-wrap: wrap;
+
+		a {
+			font-size: 15px;
+			color: #1c1c1c;
+			border-bottom: 1px solid transparent;
+			margin-right: 25px;
+			display: inline-block;
+
+			&:hover {
+				border-bottom: 1px solid #D82F25;
+			}
+		}
+
+	}
 
 	&.sale-hot {
 		@media(max-width: 1024px) {
@@ -108,20 +139,6 @@ main {
 			transform: translateX(-50%);
 		}
 
-	}
-
-	.main-title {
-		margin: 0 auto;
-		display: inline-block;
-		color: #000000;
-		font-weight: 700;
-		font-size: 21px;
-		line-height: 1;
-		cursor: pointer;
-
-		&.active {
-			border-bottom: #D82F25 .5px solid;
-		}
 	}
 
 	&.block-left {
@@ -150,17 +167,53 @@ main {
 		.main-title {
 			color: white;
 		}
+
+		.block-nav {
+			display: flex;
+
+			a {
+				font-size: 15px;
+				color: white;
+
+				&:hover {
+					border-bottom: 1px solid white;
+				}
+			}
+		}
 	}
 
 	@media(max-width: 1024px) {
 		display: block;
-		padding: 15px;
+		// padding: 8px 15px;
 		text-align: left;
 
 		.main-title {
 			display: block;
-			font-size: 14px;
+			font-size: 17px;
 			margin: 0 0 0 25px;
+			margin-right: auto;
+		}
+	}
+
+	@media (max-width: 768px) {
+		flex-wrap: wrap;
+		padding: 15px 0;
+
+		.main-title {
+			flex: 0 0 100%;
+			max-width: 100%;
+			margin-left: 0;
+			padding: 0 15px 15px 15px;
+		}
+
+		.block-nav {
+			flex: 0 0 100%;
+			max-width: 100%;
+			padding: 0 15px;
+
+			a {
+				margin-bottom: 15px;
+			}
 		}
 	}
 }
@@ -204,19 +257,19 @@ main {
 
 		.img-star {
 			cursor: pointer;
-			flex: 0 0 75px;
+			flex: 0 0 90px;
 			position: relative;
-			width: 75px;
-			height: 15px;
+			width: 90px;
+			height: 18px;
 			margin-right: 20px;
 		}
 
 		.star {
-			background-size: 15px;
+			background-size: 18px;
 		}
 
 		.star-rated {
-			background-size: 15px;
+			background-size: 18px;
 		}
 	}
 }
@@ -229,20 +282,15 @@ main {
 	align-items: center;
 	top: 0;
 	right: 0;
-	height: 59px;
-	width: 59px;
+	height: 35px;
+	width: 35px;
 	border-radius: 50%;
+	font-size: 12px;
 
 	span {
 		font-family: "Helvetica-Neue", sans-serif;
 		color: #ffffff;
 		font-weight: 700;
-	}
-
-	@media(max-width: 1024px) {
-		width: 40px;
-		height: 40px;
-		font-size: 12px;
 	}
 }
 

@@ -1,5 +1,5 @@
 .banner-new-product {
-	margin-top: 45px;
+	margin-top: 30px;
 
 	figure {
 		position: relative;
@@ -10,33 +10,37 @@
 
 		figcaption {
 			position: absolute;
-			top     : 35px;
-			left    : 100px;
-			color   : #9B9B9B;
+			top: 35px;
+			left: 100px;
+			color: #9B9B9B;
 
 			span {
 				font-size: 21px;
 			}
 
 			h5 {
-				margin-top : 20px;
-				font-size  : 33px;
+				margin-top: 20px;
+				font-size: 33px;
 				font-weight: 700;
 			}
 
 			.see-more {
-				display      : inline-block;
-				font-size    : 12px;
-				line-height  : 36px;
-				font-weight  : 700;
-				color        : #D82F25;
-				background   : #FFFFFF;
-				border       : 1px solid #D82F25;
-				padding      : 0 40px;
+				display: inline-block;
+				font-size: 12px;
+				line-height: 36px;
+				font-weight: 700;
+				color: #D82F25;
+				background: #FFFFFF;
+				border: 1px solid #D82F25;
+				padding: 0 40px;
 				border-radius: 25px;
-				margin-top   : 0;
+				margin-top: 0;
 			}
 		}
+	}
+
+	@media (max-width: 1439.98px) {
+		margin-top: 20px;
 	}
 
 	@media(max-width: 1024px) {
