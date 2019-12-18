@@ -96,7 +96,7 @@ main {
 		display: inline-flex;
 		align-items: center;
 		color: #000000;
-		font-weight: 700;
+		font-weight: 500;
 		font-size: 20px;
 		line-height: 1.5;
 		cursor: pointer;
@@ -255,7 +255,7 @@ main {
 
 	@media (max-width: 767px) {
 		flex-wrap: wrap;
-		padding: 15px 0;
+		padding: 8px 0;
 
 		.main-title {
 			margin-left: 0;
