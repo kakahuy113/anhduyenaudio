@@ -111,12 +111,15 @@ main {
 			font-size: 15px;
 			color: #1c1c1c;
 			border-bottom: 1px solid transparent;
-			// display: inline-block;
-			// margin: 0 15px;
+			border-radius: 14px;
+			border: 1px solid gray;
+			padding: 2px 8px;
 
 			&:hover,
 			&.active {
-				border-bottom: 1px solid #D82F25;
+				background: #D82F25;
+				border: 1px solid #D82F25;
+				color: white;
 			}
 		}
 
@@ -126,6 +129,7 @@ main {
 
 			.swiper-prev,
 			.swiper-next {
+				z-index: 5;
 				position: absolute;
 				top: 50%;
 				transform: translateY(-50%);
@@ -210,10 +214,13 @@ main {
 			a {
 				font-size: 15px;
 				color: white;
+				border: 1px solid white;
 
 				&:hover,
 				&.active {
-					border-bottom: 1px solid white;
+					background: white;
+					border: 1px white;
+					color: #D82F25;
 				}
 			}
 
@@ -226,6 +233,7 @@ main {
 					}
 				}
 			}
+
 			@media (max-width: 768px) {
 				border-left: 0;
 			}
