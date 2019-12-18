@@ -272,7 +272,7 @@ function productSlider() {
 	})
 
 	var swiper3Nav = new Swiper('.home-product-3 .block-nav .swiper-container', {
-		slidesPerView: 5,
+		slidesPerView: 6,
 		spaceBetween: 10,
 		navigation: {
 			prevEl: '.home-product-3 .block-nav .swiper-prev',
