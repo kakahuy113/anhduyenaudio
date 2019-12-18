@@ -224,6 +224,11 @@ function productSlider() {
 			prevEl: '.home-product-3 .swiper-button-prev',
 		},
 	})
+	return {
+		swiper1,
+		swiper2,
+		swiper3
+	};
 }
 
 // SLIDER PRODUCT
@@ -1168,6 +1173,34 @@ const setHeightItemImgBox = () => {
 	})
 }
 
+const ajaxGetProductHomePage = () => {
+	$('.block-nav a').on('click', function(e) {
+		e.preventDefault();
+		const url = $(this).attr("href");
+		const _this = $(this);
+		$.ajax({
+			url: url,
+			success: function(res) {
+				if (_this.parents('.home-product').hasClass('home-product-1')) {
+					productSlider().swiper1.removeAllSlides();
+					// productSlider().swiper1.appendSlide(res);
+				}
+				if (_this.parents('.home-product').hasClass('home-product-2')) {
+					productSlider().swiper2.removeAllSlides();
+					productSlider().swiper2.appendSlide(res);
+				}
+				if (_this.parents('.home-product').hasClass('home-product-3')) {
+					productSlider().swiper3.removeAllSlides();
+					// productSlider().swiper3.appendSlide(res);
+				}
+			},
+			error: function(err) {
+				alert(err.Message);
+			}
+		})
+	})
+}
+
 $(document).ready(function() {
 
 	setHeightItemImgBox();
@@ -1213,9 +1246,6 @@ $(document).ready(function() {
 	const cauhoithuonggap = new Tab(".FaQ .tab-container");
 	const ProductDetailTab = new Tab(".tabs-info-product .tab-container");
 	const aboutTab = new Tab(".about-tab .tab-container");
-	if ($(window).width() > 1024) {
-		const SaleHotTab = new Tab(".product-sale-hot .tab-container");
-	}
 	countDownSale();
 	introduceSliderBanner();
 	megaMenuHover();
@@ -1226,6 +1256,7 @@ $(document).ready(function() {
 	editAddressInCheckoutStep();
 	toggleAddNewsAddressItem();
 	ajaxDeleteBill();
+	ajaxGetProductHomePage();
 })
 
 
