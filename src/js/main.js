@@ -226,72 +226,72 @@ function productSlider() {
 	})
 
 	var swiper1Nav = new Swiper('.home-product-1 .block-nav .swiper-container', {
-		slidesPerView: 6,
+		slidesPerView: 'auto',
 		spaceBetween: 10,
 		navigation: {
 			prevEl: '.home-product-1 .block-nav .swiper-prev',
 			nextEl: '.home-product-1 .block-nav .swiper-next'
 		},
-		breakpoints: {
-			1200: {
-				slidesPerView: 4
-			},
-			1024: {
-				slidesPerView: 3,
-			},
-			768: {
-				slidesPerView: 4,
-			},
-			576: {
-				slidesPerView: 3,
-			}
-		}
+		// breakpoints: {
+		// 	1200: {
+		// 		slidesPerView: 4
+		// 	},
+		// 	1024: {
+		// 		slidesPerView: 3,
+		// 	},
+		// 	768: {
+		// 		slidesPerView: 4,
+		// 	},
+		// 	576: {
+		// 		slidesPerView: 3,
+		// 	}
+		// }
 	})
 
 	var swiper2Nav = new Swiper('.home-product-2 .block-nav .swiper-container', {
-		slidesPerView: 6,
+		slidesPerView: 'auto',
 		spaceBetween: 10,
 		navigation: {
 			prevEl: '.home-product-2 .block-nav .swiper-prev',
 			nextEl: '.home-product-2 .block-nav .swiper-next'
 		},
-		breakpoints: {
-			1200: {
-				slidesPerView: 4
-			},
-			1024: {
-				slidesPerView: 3,
-			},
-			768: {
-				slidesPerView: 4,
-			},
-			576: {
-				slidesPerView: 3,
-			}
-		}
+		// breakpoints: {
+		// 	1200: {
+		// 		slidesPerView: 4
+		// 	},
+		// 	1024: {
+		// 		slidesPerView: 3,
+		// 	},
+		// 	768: {
+		// 		slidesPerView: 4,
+		// 	},
+		// 	576: {
+		// 		slidesPerView: 3,
+		// 	}
+		// }
 	})
 
 	var swiper3Nav = new Swiper('.home-product-3 .block-nav .swiper-container', {
-		slidesPerView: 6,
+		slidesPerView: 'auto',
 		spaceBetween: 10,
 		navigation: {
 			prevEl: '.home-product-3 .block-nav .swiper-prev',
 			nextEl: '.home-product-3 .block-nav .swiper-next'
 		},
-		breakpoints: {
-			1200: {
-				slidesPerView: 4
-			},
-			1024: {
-				slidesPerView: 3,
-			},
-			768: {
-				slidesPerView: 4,
-			},
-			576: {
-				slidesPerView: 3,
-			}
-		}
+		// breakpoints: {
+		// 	1200: {
+		// 		slidesPerView: 4
+		// 	},
+		// 	1024: {
+		// 		slidesPerView: 3,
+		// 	},
+		// 	768: {
+		// 		slidesPerView: 4,
+		// 	},
+		// 	576: {
+		// 		slidesPerView: 3,
+		// 	}
+		// }
 	})
 
 	$('.block-nav a').on('click', function(e) {
@@ -386,12 +386,18 @@ function brandSlider() {
 // SLIDER LIST CLIENTS
 function clientSlider() {
 	var swiper = new Swiper(".clients-slider .swiper-container", {
-		slidesPerView: 5,
+		slidesPerView: 6,
 		loop: true,
 		speed: 1200,
 		autoplay: true,
 		breakpoints: {
+			1200: {
+				slidesPerView: 5,
+			},
 			768: {
+				slidesPerView: 4,
+			},
+			576: {
 				slidesPerView: 3,
 			},
 		},

@@ -1,5 +1,6 @@
 .the-same-product {
 	padding-bottom: 55px;
+	overflow: hidden;
 
 	.title {
 		padding: 55px 0 80px;
@@ -44,12 +45,12 @@
 
 		.swiper-button-next {
 			background-image: url(../img/icons/thesame-next.svg);
-			right: -80px;
+			right: -40px;
 		}
 
 		.swiper-button-prev {
 			background-image: url(../img/icons/thesame-prev.svg);
-			left: -80px;
+			left: -40px;
 		}
 	}
 

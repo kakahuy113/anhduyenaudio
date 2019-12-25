@@ -21,7 +21,7 @@
 				flex: 0 0 90px;
 				max-height: 100%;
 				max-width: 90px;
-				margin-left: 150px;
+				margin-left: 30px;
 
 				.swiper-button-prev,
 				.swiper-button-next {
@@ -90,18 +90,9 @@
 	}
 
 	.product-cart {
-		padding-left: 100px;
-
-		@media (max-width: 1439.98px) {
-			padding-left: 60px;
-		}
-
-		@media (max-width: 1199.98px) {
-			padding-left: 30px;
-		}
+		padding-left: 30px;
 
 		.info-summary {
-
 			h2 {
 				position: relative;
 				font-size: 30px;
@@ -223,7 +214,6 @@
 
 			.block-price {
 				display: flex;
-				justify-content: space-between;
 				margin-top: 30px;
 				flex-wrap: wrap;
 
@@ -231,23 +221,81 @@
 					.amount {
 						font-size: 24px;
 						color: #D82F25;
-						letter-spacing: 3px;
 					}
 
 					.sale-price {
 						font-size: 15px;
 						color: #949494;
 					}
+
+					@media (max-width: 1199.98px) {
+						.amount {
+							font-size: 18px;
+						}
+
+						.sale-price {
+							font-size: 14px;
+						}
+					}
+
+					@media (max-width: 768px) {
+
+						.amount {
+							font-size: 15px;
+						}
+
+						.sale-price {
+							font-size: 12px;
+						}
+					}
+				}
+
+				.btn-tragop {
+					font-size: 18px;
+					color: #D82F25;
+					border: 1px solid #D82F25;
+					background: white;
+					padding: 0 20px;
+					border-radius: 15px;
+					height: 50px;
+					display: flex;
+					align-items: center;
+					margin-left: auto;
 				}
 
 				.add-cart {
+					margin-left: 20px;
 					font-size: 18px;
 					color: #FFFFFF;
 					border: none;
 					background: #D82F25;
-					padding: 0 30px;
+					padding: 0 20px;
 					border-radius: 15px;
-					line-height: 58px;
+					height: 50px;
+					display: flex;
+					align-items: center;
+				}
+
+				@media (max-width: 1199.98px) {
+
+					.btn-tragop,
+					.add-cart {
+						font-size: 15px;
+						padding: 0 10px;
+						height: 40px;
+					}
+				}
+
+				@media (max-width: 768px) {
+
+					.btn-tragop,
+					.add-cart {
+						font-size: 13px;
+					}
+
+					.add-cart {
+						margin-left: 10px;
+					}
 				}
 			}
 		}
@@ -447,25 +495,7 @@
 				}
 
 				.block-price {
-					margin-top: 35px;
-
-					.price {
-						.amount {
-							font-size: 18px;
-						}
-
-						.sale-price {
-							font-size: 14px;
-						}
-					}
-
-					.add-cart {
-						font-size: 16px;
-						border: none;
-						padding: 0 20px;
-						border-radius: 15px;
-						line-height: 45px;
-					}
+					margin-top: 20px;
 				}
 			}
 		}
