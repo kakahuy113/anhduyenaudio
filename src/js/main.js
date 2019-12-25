@@ -1285,13 +1285,20 @@ const shareSocial = () => {
 		s = s.replace(/:/g, '%3A');
 		return s;
 	}
-	
-	let currentHREF = amperoctoplus(encodeURI(window.location.href));
 
-	document.querySelector('.social-facebook a').setAttribute('href',`https://www.facebook.com/sharer/sharer.php?u=${currentHREF}`);
-	document.querySelector('.social-twitter a').setAttribute('href',`https://twitter.com/intent/tweet?text=${currentHREF}`);
-	document.querySelector('.social-pinterest a').setAttribute('href',`https://pinterest.com/pin/create/button/?url=${currentHREF}&media=&description=`);
-	document.querySelector('.social-linkedin a').setAttribute('href',`https://www.linkedin.com/shareArticle?mini=true&url=${currentHREF}&title=&summary=&source=`);
+	let currentHREF = amperoctoplus(encodeURI(window.location.href));
+	if (document.querySelector('.social-facebook a')) {
+		document.querySelector('.social-facebook a').setAttribute('href', `https://www.facebook.com/sharer/sharer.php?u=${currentHREF}`);
+	}
+	if (document.querySelector('.social-twitter a')) {
+		document.querySelector('.social-twitter a').setAttribute('href', `https://twitter.com/intent/tweet?text=${currentHREF}`);
+	}
+	if (document.querySelector('.social-pinterest a')) {
+		document.querySelector('.social-pinterest a').setAttribute('href', `https://pinterest.com/pin/create/button/?url=${currentHREF}&media=&description=`);
+	}
+	if (document.querySelector('.social-linkedin a')) {
+		document.querySelector('.social-linkedin a').setAttribute('href', `https://www.linkedin.com/shareArticle?mini=true&url=${currentHREF}&title=&summary=&source=`);
+	}
 }
 
 $(document).ready(function() {
