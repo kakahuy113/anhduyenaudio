@@ -745,7 +745,7 @@ function showFilter() {
 		var heightThisPage = $(window).height();
 
 		$(this).toggleClass('active');
-		$('.list-product .block-filter').slideToggle('active');
+		$('.list-product .block-filter').toggleClass('active');
 		$('#backdrop').toggleClass('active');
 
 		if ($(this).hasClass('active')) {
@@ -762,7 +762,7 @@ function showFilter() {
 			$(this).removeClass('active');
 			$('body').removeAttr('style');
 			$('.list-product .block-title-filter').removeClass('active');
-			$('.list-product .block-filter').slideUp();
+			$('.list-product .block-filter').removeClass();
 		});
 	});
 }

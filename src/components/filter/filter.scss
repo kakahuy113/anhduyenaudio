@@ -313,14 +313,18 @@
 
 	@media(max-width: 1024px) {
 		width: 100%;
-		display: none;
 		position: fixed;
+		transform: translateY(100%);
 		left: 0;
+		top: 125px;
 		bottom: 43px;
+		overflow: auto;
+		transition: all .4s ease-in-out;
+		margin-bottom: -45px;
 		z-index: 30;
 
 		.title {
-			font-size: 14PX;
+			font-size: 14px;
 		}
 
 		.brand {
@@ -335,6 +339,9 @@
 
 		&.active {
 			display: block;
+			margin-bottom: 0;
+			transform: translateY(0);
+			
 		}
 	}
 }

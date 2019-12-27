@@ -118,7 +118,7 @@ main {
 			border: 1px solid white;
 			font-size: 13px;
 			border-radius: 14px;
-			border: 1px solid #D82F25;
+			border: 1px solid white;
 			padding: 2px 8px;
 			display: flex;
 			justify-content: center;
@@ -224,8 +224,6 @@ main {
 			margin-left: 0;
 		}
 	}
-
-	&.red {}
 
 	@media(max-width: 1024px) {
 		display: block;
