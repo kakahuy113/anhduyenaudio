@@ -446,12 +446,21 @@ function imgProductSlider() {
 		watchSlidesProgress: true,
 		slideToClickedSlide: true,
 		breakpoints: {
-			1440: {
+			320: {
+				slidesPerView: 2,
+				spaceBetween: 5,
+			},
+			575: {
+				direction: 'vertical',
+				spaceBetween: 15,
 				slidesPerView: 3,
 			},
 			1024: {
 				direction: 'horizontal',
 				spaceBetween: 30,
+			},
+			1440: {
+				slidesPerView: 3,
 			},
 		},
 		navigation: {
