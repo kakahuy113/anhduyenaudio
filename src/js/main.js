@@ -897,6 +897,12 @@ function backToTop() {
 }
 
 function rangeSliderPrice() {
+	const formatCurrency = new Intl.NumberFormat('vi-VN', {
+		style: 'currency',
+		currency: 'VND',
+		minimumFractionDigits: 0,
+	});
+
 	let min_price = Number($("#slider-range").attr('data-min'));
 	let max_price = Number($("#slider-range").attr('data-max'));
 	if (min_price !== max_price) {
@@ -909,7 +915,9 @@ function rangeSliderPrice() {
 			values: [curMinPrice, curMaxPrice],
 			slide: function(event, ui) {
 				$("#amount").val(ui.values[0] + " - " + ui.values[1]);
-				$("#value-text").html(ui.values[0] + " đ - " + ui.values[1] + " đ");
+				const minCurrency = formatCurrency.format(ui.values[0]).replace('.', ',');
+				const maxCurrency = formatCurrency.format(ui.values[1]).replace('.', ',');
+				$("#value-text").html(`${minCurrency} - ${maxCurrency}`);
 			},
 			stop: function(event, ui) {
 				Redirect();
@@ -918,8 +926,9 @@ function rangeSliderPrice() {
 
 			}
 		});
+
 		$("#amount").val($("#slider-range").slider("values", 0) + " - " + $("#slider-range").slider("values", 1));
-		$("#value-text").html($("#slider-range").slider("values", 0) + "đ - " + $("#slider-range").slider("values", 1) + "đ");
+		$("#value-text").html(`${formatCurrency.format(curMinPrice).replace('.', ',')} - ${formatCurrency.format(curMaxPrice).replace('.', ',')}`);
 	} else {
 		$('.block-filter .price').remove();
 	}

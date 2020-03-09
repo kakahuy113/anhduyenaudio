@@ -41,6 +41,12 @@
 					color: #D82F25;
 					font-weight: 400;
 					margin-bottom: 15px;
+					overflow: hidden;
+					text-overflow: ellipsis;
+					display: -webkit-box;
+					-webkit-box-orient: vertical;
+					-webkit-line-clamp: 2;
+					height: 45px;
 				}
 
 				p {
