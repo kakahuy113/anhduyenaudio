@@ -72,7 +72,6 @@
 
 		.the-same-product-slider {
 			position: relative;
-			padding: 0 40px;
 
 			.item-same {
 				figure {
@@ -84,7 +83,7 @@
 					}
 
 					figcaption {
-						padding: 0 0 20px 40px;
+						padding: 5px;
 
 						h3 {
 							font-size: 18px;
@@ -101,13 +100,31 @@
 				}
 			}
 
+			.swiper-button-prev,
 			.swiper-button-next {
-				background-image: url(../img/icons/thesame-next.svg);
+				width: 35px;
+				height: 35px;
+				background-color: map-get($mau, main);
+				background-size: 12px;
+				display: flex;
+				justify-content: center;
+				background-image: none;
+				align-items: center;
+	
+				img,
+				svg {
+					width: 13px;
+					path{
+						stroke: white;
+					}
+				}
+			}
+
+			.swiper-button-next {
 				right: 0px;
 			}
 
 			.swiper-button-prev {
-				background-image: url(../img/icons/thesame-prev.svg);
 				left: 0px;
 			}
 		}

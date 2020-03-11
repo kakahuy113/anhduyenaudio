@@ -348,10 +348,11 @@ function productSliderHotSale() {
 			},
 			1024: {
 				slidesPerView: 3,
+				slidesPerColumn: 2,
 			},
 			768: {
 				slidesPerView: 2,
-				speed: 200,
+				slidesPerColumn: 2,
 			}
 		},
 		pagination: {
@@ -589,11 +590,12 @@ function sliderTheSameProduct() {
 		observer: true,
 		observeParents: true,
 		breakpoints: {
-			768: {
-				slidesPerView: 2,
+			1024: {
+				slidesPerView: 3,
 			},
 			575: {
-				slidesPerView: 1,
+				spaceBetween: 10,
+				slidesPerView: 2,
 			}
 		},
 		navigation: {
@@ -826,6 +828,7 @@ const turnOffPopupWhenClicked = () => {
 	$("[data-fancybox]").fancybox({
 		closeExisting: true,
 		hash: false,
+		touch: false,
 		// afterClose: function() {
 		// 	$.fancybox.close(true)
 		// }
@@ -896,6 +899,11 @@ function backToTop() {
 	})
 }
 
+const replaceAll = (str, find, replace) => {
+	return str.replace(new RegExp(find, 'g'), replace);
+}
+
+
 function rangeSliderPrice() {
 	const formatCurrency = new Intl.NumberFormat('vi-VN', {
 		style: 'currency',
@@ -915,20 +923,18 @@ function rangeSliderPrice() {
 			values: [curMinPrice, curMaxPrice],
 			slide: function(event, ui) {
 				$("#amount").val(ui.values[0] + " - " + ui.values[1]);
-				const minCurrency = formatCurrency.format(ui.values[0]).replace('.', ',');
-				const maxCurrency = formatCurrency.format(ui.values[1]).replace('.', ',');
+				const minCurrency = formatCurrency.format(ui.values[0]).split('.').join(',');
+				const maxCurrency = formatCurrency.format(ui.values[1]).split('.').join(',');
 				$("#value-text").html(`${minCurrency} - ${maxCurrency}`);
 			},
 			stop: function(event, ui) {
-				Redirect();
-			},
-			create: function(event, ui) {
-
+				if (typeof(Redirect) == 'function') {
+					Redirect();
+				}
 			}
 		});
-
 		$("#amount").val($("#slider-range").slider("values", 0) + " - " + $("#slider-range").slider("values", 1));
-		$("#value-text").html(`${formatCurrency.format(curMinPrice).replace('.', ',')} - ${formatCurrency.format(curMaxPrice).replace('.', ',')}`);
+		$("#value-text").html(`${formatCurrency.format(curMinPrice).split('.').join(',')} - ${formatCurrency.format(curMaxPrice).split('.').join(',')}`);
 	} else {
 		$('.block-filter .price').remove();
 	}
@@ -975,7 +981,10 @@ function getProductQuantity() {
 	})
 
 	$('.category-list [data-product]').each(function() {
-		$(this).find('span').html(`(${$(this).attr('data-product')})`)
+		$(this).find('span').html(`($ {
+				$(this).attr('data-product')
+			})
+			`)
 	})
 
 	var _thisLink = $('.category-list [data-product].active')
@@ -1110,7 +1119,12 @@ const aboutNavSelect = () => {
 	const select = document.querySelector(".about-nav select");
 	if (select) {
 		select.addEventListener("change", (e) => {
-			document.querySelector(`[toggle-for=${e.srcElement.value}]`).click()
+			document.querySelector(`[toggle-
+				for = $ {
+					e.srcElement.value
+				}
+			]
+			`).click()
 		})
 	}
 }
@@ -1229,7 +1243,11 @@ const verifyAddressInCheckoutStep = () => {
 			addressForm.querySelector('#fullname').value = name;
 			addressForm.querySelector('#phone').value = phone;
 			addressForm.querySelector('#address').value = address;
-			addressForm.querySelector('#ShippingCitySelectedValue').innerHTML = `<option value=${city}>${addressItem.querySelector('[data-city]').innerHTML}</option>`;
+			addressForm.querySelector('#ShippingCitySelectedValue').innerHTML = ` < option value = $ {
+				city
+			} > $ {
+				addressItem.querySelector('[data-city]').innerHTML
+			} < /option>`;
 			addressForm.querySelector('#ShippingDistrictSelectedValue').innerHTML = `<option value=${district}>${addressItem.querySelector('[data-district]').innerHTML}</option>`;
 			addressForm.querySelector('form').submit();
 		})
@@ -1327,7 +1345,7 @@ $(document).ready(function() {
 	addClassHeaderWhenScroll();
 	moveAccount();
 	mobileMenu();
-	aboutNavSelect();
+	// aboutNavSelect();
 	calculatePriceWithShippingFee();
 	findManufactures();
 	homeSliderBanner();
