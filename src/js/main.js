@@ -981,10 +981,7 @@ function getProductQuantity() {
 	})
 
 	$('.category-list [data-product]').each(function() {
-		$(this).find('span').html(`($ {
-				$(this).attr('data-product')
-			})
-			`)
+		$(this).find('span').html(`(${$(this).attr('data-product')})`)
 	})
 
 	var _thisLink = $('.category-list [data-product].active')
