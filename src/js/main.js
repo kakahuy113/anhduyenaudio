@@ -1350,7 +1350,6 @@ $(document).ready(function() {
 	brandSlider();
 	clientSlider();
 	submenuCategory();
-	submenuCategoryDetail();
 	imgProductSlider();
 	clickRating();
 	showRating();
