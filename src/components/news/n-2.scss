@@ -4,6 +4,24 @@
 	}
 }
 
+.list-tab-news-catalog {
+	display        : flex;
+	list-style-type: none;
+
+	.item-tab {
+		padding: 10px 0;
+
+		+.item-tab {
+			border-left: 1px solid #dedede;
+		}
+
+		>a {
+			padding  : 10px;
+			font-size: 10px;
+		}
+	}
+}
+
 .news-by-catalog {
 	.list-news-by-cata {
 		background: #FFFFFF;
