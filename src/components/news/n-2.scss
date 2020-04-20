@@ -19,6 +19,11 @@
 			padding  : 10px;
 			font-size: 10px;
 		}
+
+		&.active {
+			background: #fff;
+			box-shadow: 0 3px 6px rgba($color: #000000, $alpha: .16);
+		}
 	}
 }
 
