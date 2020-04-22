@@ -524,15 +524,25 @@ header {
 
 			.mobile-toggle {
 				position   : absolute;
-				top        : 20px;
-				left       : 15px;
+				top        : 15px;
+				left       : 25px;
 				height     : 40px;
 				align-items: center;
 				z-index    : 2;
 				margin-left: 0;
 
+				svg {
+					position : absolute;
+					bottom   : 0;
+					left     : 50%;
+					transform: translateX(-50%);
+				}
+
 				span {
-					margin-left: 10px;
+					position : absolute;
+					top      : 0;
+					left     : 50%;
+					transform: translateX(-50%);
 				}
 			}
 
@@ -1191,8 +1201,6 @@ header {
 			.top-header-item {
 				display: none;
 			}
-
-
 		}
 	}
 
@@ -1218,11 +1226,7 @@ header {
 					z-index : 2;
 				}
 
-				.mobile-toggle {
-					span {
-						display: none;
-					}
-				}
+				.mobile-toggle {}
 			}
 		}
 
