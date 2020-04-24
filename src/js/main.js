@@ -1334,6 +1334,12 @@ const shareSocial = () => {
 	}
 }
 
+const setPhoneNumberFixed = () => {
+	const numberPhoneFooter = Array.from(document.querySelectorAll('.info-company ul li'));
+	const phoneNumber = numberPhoneFooter[3].querySelector('a').getAttribute('href')
+	document.querySelector('#phone-call a').setAttribute('href', phoneNumber);
+}
+
 $(document).ready(function() {
 
 	setHeightItemImgBox();
@@ -1389,6 +1395,7 @@ $(document).ready(function() {
 	toggleAddNewsAddressItem();
 	ajaxDeleteBill();
 	shareSocial();
+	setPhoneNumberFixed();
 })
 
 
