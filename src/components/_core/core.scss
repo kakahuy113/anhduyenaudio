@@ -52,22 +52,20 @@ main {
 	cursor  : pointer;
 	position: fixed;
 	left    : 25px;
-	bottom  : 10%;
+	bottom  : 18pt;
 	z-index : 200;
 
 	.phone-fixed {
-		position        : relative;
 		display         : block;
+		position        : relative;
+		transform       : translateZ(0) scale(1);
 		margin          : 0;
-		width           : 1em;
-		height          : 1em;
+		box-shadow      : 0 0 0 0 rgba(216, 47, 37, 0), 0 0.05em 0.1em rgba(0, 0, 0, .2);
+		border-radius   : .5em;
+		background-color: #ffffff;
+		width           : 50px;
+		height          : 50px;
 		font-size       : 7vmin;
-		background-color: map-get($mau, main);
-		border-radius   : 0.5em;
-		box-shadow      :
-			0 0 0 0em rgba(map-get($mau, main), 0),
-			0em 0.05em 0.1em rgba(#000000, 0.2);
-		transform: translate3d(0, 0, 0) scale(1);
 
 		@media (max-width: 767.98px) {
 			font-size: 12vmin;
@@ -83,24 +81,25 @@ main {
 	.phone-fixed::before {
 		top             : 0;
 		left            : 0;
-		width           : 1em;
-		height          : 1em;
-		background-color: rgba(#fff, 0.1);
-		border-radius   : 100%;
+		transform       : translateZ(0) scale(0);
+		transform-origin: 50% 50%;
 		opacity         : 1;
-		transform       : translate3d(0, 0, 0) scale(0);
+		border-radius   : 100%;
+		background-color: hsla(0, 0%, 100%, .1);
+		width           : 100%;
+		height          : 100%;
 	}
 
 	.phone-fixed::after {
-		top                : 0.3em;
-		left               : 0.3em;
-		width              : 0.4em;
-		height             : 0.4em;
+		top                : 0;
+		left               : 0;
+		transform          : translateZ(0);
 		background         : url(../img/phone-fixed.svg);
 		background-position: 50% 50%;
 		background-repeat  : no-repeat;
-		background-size    : cover;
-		transform          : translate3d(0, 0, 0);
+		background-size    : 22px;
+		width              : 100%;
+		height             : 100%;
 	}
 
 	.phone-fixed.is-animating {
@@ -263,6 +262,14 @@ main {
 		46% {
 			transform: translate3d(0em, 0, 0);
 		}
+	}
+
+	@media (max-width: 1024.98px) {
+		bottom   : unset;
+		left     : unset;
+		top      : 50%;
+		right    : 18pt;
+		transform: translateY(-50%);
 	}
 }
 
