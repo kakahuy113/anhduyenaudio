@@ -265,11 +265,9 @@ main {
 	}
 
 	@media (max-width: 1024.98px) {
-		bottom   : unset;
-		left     : unset;
-		top      : 50%;
-		right    : 18pt;
-		transform: translateY(-50%);
+		left  : unset;
+		right : 18pt;
+		border: 120pt;
 	}
 }
 
