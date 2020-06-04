@@ -1587,8 +1587,6 @@ const aboutNavAjax = () => {
     const navPathname = $(this).attr("href");
 
     if (currentPathnameAfterReload.indexOf(navPathname) >= 0) {
-      console.log($(this));
-
       $(this).addClass("active");
       $(".about-nav nav a").not(this).removeClass("active");
     }
@@ -1618,6 +1616,12 @@ const aboutNavAjax = () => {
                 .find(".project-list .container")
                 .html()}</div></div></div>`
             );
+            $(".about-project .description").removeClass("d-none");
+            $(".about-project .row").eq(0).addClass("row-custom");
+            $(".about-project .col-lg-4").each(function () {
+              $(this).addClass("col-6 col-md-4 about-4--item--col");
+              $(this).removeClass("col-lg-4");
+            });
             const fullUrl = `${window.location.origin}${url}`;
             window.history.pushState({}, "", fullUrl);
           } else {
@@ -1650,6 +1654,12 @@ const aboutProjectPaginationAjax = () => {
               .find(".project-list .container")
               .html()}</div></div></div>`
           );
+          $(".about-project .description").removeClass("d-none");
+          $(".about-project .row").eq(0).addClass("row-custom");
+          $(".about-project .col-lg-4").each(function () {
+            $(this).addClass("col-6 col-md-4 about-4--item--col");
+            $(this).removeClass("col-lg-4");
+          });
           const fullUrl = `${window.location.origin}${url}`;
           window.history.pushState({}, "", fullUrl);
         } else {
@@ -1663,6 +1673,13 @@ const aboutProjectPaginationAjax = () => {
       },
     });
   });
+};
+
+const breadcrumbDelete = () => {
+	if ($(".about-5--2").length > 0) {
+		$('.about-ajax .breadcrumb-wrapper li').eq(0).remove()
+		$('.about-ajax .breadcrumb-wrapper li').eq(0).remove()
+	  }
 };
 
 $(document).ready(function () {
@@ -1695,6 +1712,8 @@ $(document).ready(function () {
   ajaxForgotPassword();
   aboutNavAjax();
   aboutProjectPaginationAjax();
+  //
+  breadcrumbDelete();
   // clickThenScrollToSection();
   getDataBar();
   likeComment();
