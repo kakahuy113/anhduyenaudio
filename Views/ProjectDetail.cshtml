@@ -1,0 +1,42 @@
+﻿@model MainProject.Service.Model.News.NewsDetailViewModel
+
+<section class="news-detail">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8">
+                <div class="title-news-detail">
+                    <h3>@Model.Article.Title</h3>
+                    <span class="time">@CalendarHelper.Convert(Model.Article.Order)</span><div class="fb-share-button" data-href="https://developers.facebook.com/docs/plugins/" data-layout="button" data-size="small"><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fdevelopers.facebook.com%2Fdocs%2Fplugins%2F&amp;src=sdkpreparse" class="fb-xfbml-parse-ignore">Chia sẻ</a></div>
+                </div>
+                <div class="content-news-detail">
+                    @Html.Raw(Model.Article.Body)
+                </div>
+                <ul class="social-media">
+                    <li class="item"><a href="#"><img src="/Content/resources/img/icons/fb-sp-ct.svg" alt="icon facebook share"></a></li>
+                    <li class="item"><a href="#"><img src="/Content/resources/img/icons/instagram-sp-ct.svg" alt="icon instagram share"></a></li>
+                    <li class="item"><a href="#"><img src="/Content/resources/img/icons/twitter-sp-ct.svg" alt="icon twitter share"></a></li>
+                    <li class="item"><a href="#"><img src="/Content/resources/img/icons/printest-sp-ct.svg" alt="icon pinterest share"></a></li>
+                    <li class="item"><a href="#"><img src="/Content/resources/img/icons/linkedin-sp-ct.svg" alt="icon linkedin share"></a></li>
+                </ul>
+            </div>
+            <div class="col-lg-4">
+                <div class="title-same-news">
+                    <h3>Dự án khác</h3>
+                </div>
+                <div class="the-same-news">
+                    @foreach (var item in Model.RelatedArticles)
+                    {
+                        <a href="@item.GetUrl()">
+                            <div class="item-same-news">
+                                <figure><img class="ofc" src="@item.ImageDefault" alt="@Html.GetAlt(item.ImageDefault, item.Alt)"></figure>
+                                <div class="content">
+                                    <p>@item.Title</p><span class="time">@CalendarHelper.Convert(item.CreateDate)</span>
+                                </div>
+                            </div>
+                        </a>
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

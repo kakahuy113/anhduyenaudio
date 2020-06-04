@@ -129,3 +129,33 @@
     }
   }
 }
+
+.about-duan-wrapper {
+  > .row {
+    justify-content: center;
+  }
+}
+
+.project-list {
+  .row-custom {
+    justify-content: center;
+  }
+  .pagination {
+    margin-top: 25px;
+    justify-content: center;
+  }
+}
+
+.about-project {
+  justify-content: center;
+}
+
+.about-ajax {
+  .pagination {
+    margin-top: 25px;
+    justify-content: center;
+  }
+}
+.project-page {
+  background-color: white;
+}

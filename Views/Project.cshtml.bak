@@ -1,0 +1,21 @@
+﻿@model MainProject.Service.Model.News.NewsViewModel
+
+<div class="project-list">
+    <div class="container">
+        <div class="row">
+            @foreach (var item in Model.Articles)
+            {
+                <div class="col-lg-4">
+                    <a href="@item.GetUrl()">
+                        <figure class="about-project-item">
+                            <div class="imgbox"><img src="@item.ImageDefault" alt="@Html.GetAlt(item.ImageDefault, item.Alt)"></div>
+                            <figcaption>
+                                <h4>@item.Title</h4>
+                            </figcaption>
+                        </figure>
+                    </a>
+                </div>
+            }
+        </div>
+    </div>
+</div>

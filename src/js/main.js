@@ -1582,7 +1582,25 @@ const sliderAboutGiaiPhapChiTiet = () => {
 };
 
 const aboutNavAjax = () => {
+  const currentPathnameAfterReload = window.location.pathname;
   $(".about-nav nav a").each(function () {
+    const navPathname = $(this).attr("href");
+
+    if (currentPathnameAfterReload.indexOf(navPathname) >= 0) {
+      console.log($(this));
+
+      $(this).addClass("active");
+      $(".about-nav nav a").not(this).removeClass("active");
+    }
+
+    if ($(".about-5--2").length > 0) {
+      $(".about-nav nav a").each(function () {
+        if ($(this).attr("href").indexOf("/giai-phap") >= 0) {
+          $(this).addClass("active");
+          $(".about-nav nav a").not(this).removeClass("active");
+        }
+      });
+    }
     $(this).on("click", (e) => {
       e.preventDefault();
       const url = $(this).attr("href");
@@ -1592,11 +1610,57 @@ const aboutNavAjax = () => {
         url: url,
         type: "get",
         success: function (res) {
-          $(".about-ajax").html($(res).find(".about-ajax").html());
-          const fullUrl = `${window.location.origin}/${url}`;
-          window.history.pushState({}, "", fullUrl);
+          if (url.indexOf("du-an") >= 0) {
+            $(".about-ajax").html(
+              `<div class="container"><div class="row row-custom about-project"><div class="col-lg-11 col-xl-10">${$(
+                res
+              )
+                .find(".project-list .container")
+                .html()}</div></div></div>`
+            );
+            const fullUrl = `${window.location.origin}${url}`;
+            window.history.pushState({}, "", fullUrl);
+          } else {
+            $(".about-ajax").html($(res).find(".about-ajax").html());
+            const fullUrl = `${window.location.origin}${url}`;
+            if ($(".about-ajax").find(".about-1--4 .clients-slider")) {
+              clientSlider();
+            }
+            window.history.pushState({}, "", fullUrl);
+          }
         },
       });
+    });
+  });
+};
+
+const aboutProjectPaginationAjax = () => {
+  $("body").on("click", ".about-ajax .pagination li a", function (e) {
+    e.preventDefault();
+    const url = $(this).attr("href");
+    $.ajax({
+      url: url,
+      type: "get",
+      success: function (res) {
+        if (url.indexOf("du-an") >= 0) {
+          $(".about-ajax").html(
+            `<div class="container"><div class="row about-project"><div class="col-lg-11 col-xl-10">${$(
+              res
+            )
+              .find(".project-list .container")
+              .html()}</div></div></div>`
+          );
+          const fullUrl = `${window.location.origin}${url}`;
+          window.history.pushState({}, "", fullUrl);
+        } else {
+          $(".about-ajax").html($(res).find(".about-ajax").html());
+          const fullUrl = `${window.location.origin}${url}`;
+          if ($(".about-ajax").find(".about-1--4 .clients-slider")) {
+            clientSlider();
+          }
+          window.history.pushState({}, "", fullUrl);
+        }
+      },
     });
   });
 };
@@ -1630,6 +1694,7 @@ $(document).ready(function () {
   AjaxDeteleComment();
   ajaxForgotPassword();
   aboutNavAjax();
+  aboutProjectPaginationAjax();
   // clickThenScrollToSection();
   getDataBar();
   likeComment();
