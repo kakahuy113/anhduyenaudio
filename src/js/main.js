@@ -1593,6 +1593,8 @@ const aboutNavAjax = () => {
         type: "get",
         success: function (res) {
           $(".about-ajax").html($(res).find(".about-ajax").html());
+          const fullUrl = `${window.location.origin}/${url}`;
+          window.history.pushState({}, "", fullUrl);
         },
       });
     });
