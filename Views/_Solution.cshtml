@@ -1,0 +1,33 @@
+﻿@model MainProject.Service.Model.Introduction.IntroductionViewModel
+
+<div class="about-section about-2--1">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-11 col-xl-10">
+                <div class="row">
+                    <div class="col-lg-3 col-xl-4 col-title">
+                        <div class="block-title">
+                            <h2 class="about-title desktop">@Model.Solution.Title</h2>
+                            @Html.Raw(Model.Solution.Description)
+                        </div>
+                    </div>
+                    <div class="col-lg">
+                        <div class="row row-custom">
+                            @foreach (var item in Model.Articles)
+                            {
+                                <div class="col-sm-6 about-2--1--item">
+                                    <a href="@item.GetUrl()">
+                                        <div class="imgbox"><img src="@item.ImageDefault" alt="@item.Alt"></div>
+                                        <div class="content">
+                                            <h3>@item.Title</h3>
+                                        </div>
+                                    </a>
+                                </div>
+                            }
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

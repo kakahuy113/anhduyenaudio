@@ -1677,11 +1677,13 @@ const aboutProjectPaginationAjax = () => {
 
 const breadcrumbDelete = () => {
 	if ($(".about-5--2").length > 0) {
+		$('.about-ajax .breadcrumb-wrapper .container').html(`<div class="row row-breadcrumb"><div class="col-lg-11 col-xl-10">${$('.about-ajax .breadcrumb-wrapper .container').html()}</div></div>`)
 		$('.about-ajax .breadcrumb-wrapper li').eq(0).remove()
 		$('.about-ajax .breadcrumb-wrapper li').eq(0).remove()
 	  }
 };
 
+breadcrumbDelete();
 $(document).ready(function () {
   setHeightItemImgBox();
   objectFitImages("img.ofc"); // Luôn luôn chậy polyfill cho thuôc tính object-fit: cover trên các phiên bản IE >= 9
@@ -1713,7 +1715,6 @@ $(document).ready(function () {
   aboutNavAjax();
   aboutProjectPaginationAjax();
   //
-  breadcrumbDelete();
   // clickThenScrollToSection();
   getDataBar();
   likeComment();

@@ -1,0 +1,95 @@
+﻿@using MainProject.Core.Enums
+@model MainProject.Service.Model.Introduction.IntroductionViewModel
+
+<section class="introduceBanner">
+    <div class="container">
+        <div class="swiper-container introduce-slider">
+            <div class="swiper-wrapper">
+                @foreach (var item in Model.Banners)
+                {
+                    <div class="swiper-slide">
+                        <figure>
+                            <img src="@item.ResourcePath" alt="@item.Name">
+                            <figcaption>
+                                <span>@item.Name</span>
+                                @Html.Raw(item.Description)
+                            </figcaption>
+                        </figure>
+                    </div>
+                }
+            </div>
+            <div class="swiper-pagination"></div>
+        </div>
+    </div>
+</section>
+<div class="container">
+	<div class="row row-about-nav">
+		<div class="col-lg-11 col-xl-10">
+			<div class="about-nav">
+				<nav>
+					@{
+						if (Model.Solution != null)
+						{
+							<a class="item btn btn-outline-black" href="@Model.Solution.GetPrefixUrl()">
+								@Model.Solution.Title
+							</a>
+						}
+						if (Model.Project != null)
+						{
+							<a class="item btn btn-outline-black" href="@Model.Project.GetPrefixUrl()">
+								@Model.Project.Title
+							</a>
+						}
+						foreach (var item in Model.Menus)
+						{
+							<a class="item btn btn-outline-black" href="@item.GetUrl()">
+								@item.Title
+							</a>
+						}
+					}
+				</nav>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="about-ajax">
+    @if (Model.Article == null)
+    {
+        if (Model.Category.DisplayTemplate == DisplayTemplateCollection.SolutionTemplate)
+        {
+            @Html.Partial("_Solution", Model)
+        }
+    }
+    else
+    {
+        if (Model.Article.Category.DisplayTemplate == DisplayTemplateCollection.SolutionTemplate)
+        {
+            ViewBag.ShowBreadCrumb = true;
+            @Html.Partial("~/Views/Shared/_BreadCrumb.cshtml", Request.RawUrl)
+        }
+
+        @Html.Raw(Model.Article.Body)
+
+        if (Model.Article.Category.DisplayTemplate == DisplayTemplateCollection.SolutionTemplate)
+        {
+            <div class="about-section about-5--2">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-11 col-xl-10">
+                            <h2 class="about-title">Những giải pháp đã thực hiện</h2>
+                            <div class="about-5--2-slider">
+                                <div class="swiper-button-prev"></div>
+                                <div class="swiper-button-next"></div>
+                                <div class="swiper-container">
+                                    <div class="swiper-wrapper">
+                                        @Html.Action("RelatedSolution", "News", new { id = Model.Article.Id })
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        }
+    }
+</div>
