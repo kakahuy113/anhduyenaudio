@@ -1,5 +1,14 @@
 .about-3--1 {
   text-align: center;
+  p {
+    font-size: 14px;
+    @media (min-width: 768px) {
+      font-size: 15px;
+    }
+    @media (min-width: 1200px) {
+      font-size: 16px;
+    }
+  }
 
   .about-title {
     color: map-get($mau, main);
@@ -19,6 +28,10 @@
   }
 
   @media (max-width: 1024.98px) {
+    text-align: justify;
+    .about-title {
+      text-align: center;
+    }
     .col-lg:first-child {
       order: 3;
     }
@@ -97,6 +110,30 @@
       justify-content: center;
       align-items: center;
       flex-direction: column;
+    }
+  }
+}
+
+.about-ajax {
+  .pagination {
+    margin-top: 10px;
+    margin-bottom: 35px;
+    li {
+      a {
+        font-size: 16px;
+        color: #868686;
+        font-weight: 700;
+        width: 35px;
+        height: 35px;
+        border: 0;
+      }
+    }
+    li.active {
+      a {
+        background-color: map-get($mau, main);
+        color: white;
+        text-decoration: none;
+      }
     }
   }
 }

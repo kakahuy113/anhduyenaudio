@@ -1,9 +1,8 @@
 .about-section.about-2--1 {
   .block-title {
     background-color: transparent;
-    text-align: left;
+    text-align: justify;
     border-bottom: 0;
-    padding: 0 45px 0 0;
     justify-content: center;
     .about-title {
       color: map-get($mau, main);
@@ -24,6 +23,8 @@
   @media (min-width: 1025px) {
     .block-title {
       justify-content: flex-start;
+	  padding: 0 45px 0 0;
+	  text-align: left;
     }
     .col-title {
       display: flex;

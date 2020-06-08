@@ -13,6 +13,9 @@
   .about-title {
     margin-bottom: 20px;
     text-transform: uppercase;
+    @media (max-width: 1024.98px) {
+      margin-bottom: 10px;
+    }
   }
 
   .section-content {
@@ -193,6 +196,15 @@
     text-align: center;
     margin-top: 20px;
   }
+  p {
+    font-size: 14px;
+    @media (min-width: 768px) {
+      font-size: 15px;
+    }
+    @media (min-width: 1200px) {
+      font-size: 16px;
+    }
+  }
 }
 
 .about-1--4 {
@@ -210,10 +222,19 @@
     }
   }
   @media (max-width: 1024.98px) {
-    padding: 30px 30px 0 30px;
+    padding: 30px 0 0 0;
     .swiper-button-prev,
     .swiper-button-next {
       display: block;
+    }
+    .swiper-button-prev {
+      left: 0;
+    }
+    .swiper-button-next {
+      right: 0;
+    }
+    .clients-slider {
+      padding: 0 30px;
     }
   }
 }

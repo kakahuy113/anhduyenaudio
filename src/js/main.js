@@ -442,7 +442,7 @@ function brandSlider() {
 
 // SLIDER LIST CLIENTS
 function clientSlider() {
-  var swiper = new Swiper(".clients-slider .swiper-container", {
+  var swiper = new Swiper(".home-page .clients-slider .swiper-container", {
     slidesPerView: 6,
     loop: true,
     speed: 1200,
@@ -459,12 +459,12 @@ function clientSlider() {
       },
     },
     pagination: {
-      el: ".clients-slider .swiper-pagination",
+      el: ".home-page .clients-slider .swiper-pagination",
       clickable: true,
     },
     navigation: {
-      nextEl: ".clients-slider .swiper-button-next",
-      prevEl: ".clients-slider .swiper-button-prev",
+      nextEl: ".home-page .clients-slider .swiper-button-next",
+      prevEl: ".home-page .clients-slider .swiper-button-prev",
     },
   });
 }
@@ -1581,6 +1581,31 @@ const sliderAboutGiaiPhapChiTiet = () => {
   });
 };
 
+const about2slider = () => {
+  return new Swiper(".about-1--4 .clients-slider .swiper-container", {
+    slidesPerView: 4,
+    loop: true,
+    speed: 1200,
+    autoplay: true,
+    breakpoints: {
+      768: {
+        slidesPerView: 4,
+      },
+      576: {
+        slidesPerView: 3,
+      },
+    },
+    pagination: {
+      el: ".about-1--4 .clients-slider .swiper-pagination",
+      clickable: true,
+    },
+    navigation: {
+      nextEl: ".about-1--4 .clients-slider .swiper-button-next",
+      prevEl: ".about-1--4 .clients-slider .swiper-button-prev",
+    },
+  });
+};
+
 const aboutNavAjax = () => {
   const currentPathnameAfterReload = window.location.pathname;
   $(".about-nav nav a").each(function () {
@@ -1628,7 +1653,7 @@ const aboutNavAjax = () => {
             $(".about-ajax").html($(res).find(".about-ajax").html());
             const fullUrl = `${window.location.origin}${url}`;
             if ($(".about-ajax").find(".about-1--4 .clients-slider")) {
-              clientSlider();
+              about2slider();
             }
             window.history.pushState({}, "", fullUrl);
           }
@@ -1666,7 +1691,7 @@ const aboutProjectPaginationAjax = () => {
           $(".about-ajax").html($(res).find(".about-ajax").html());
           const fullUrl = `${window.location.origin}${url}`;
           if ($(".about-ajax").find(".about-1--4 .clients-slider")) {
-            clientSlider();
+            about2slider();
           }
           window.history.pushState({}, "", fullUrl);
         }
@@ -1676,11 +1701,15 @@ const aboutProjectPaginationAjax = () => {
 };
 
 const breadcrumbDelete = () => {
-	if ($(".about-5--2").length > 0) {
-		$('.about-ajax .breadcrumb-wrapper .container').html(`<div class="row row-breadcrumb"><div class="col-lg-11 col-xl-10">${$('.about-ajax .breadcrumb-wrapper .container').html()}</div></div>`)
-		$('.about-ajax .breadcrumb-wrapper li').eq(0).remove()
-		$('.about-ajax .breadcrumb-wrapper li').eq(0).remove()
-	  }
+  if ($(".about-5--2").length > 0) {
+    $(".about-ajax .breadcrumb-wrapper .container").html(
+      `<div class="row row-breadcrumb"><div class="col-lg-11 col-xl-10">${$(
+        ".about-ajax .breadcrumb-wrapper .container"
+      ).html()}</div></div>`
+    );
+    $(".about-ajax .breadcrumb-wrapper li").eq(0).remove();
+    $(".about-ajax .breadcrumb-wrapper li").eq(0).remove();
+  }
 };
 
 breadcrumbDelete();
@@ -1700,6 +1729,7 @@ $(document).ready(function () {
   clientSlider();
   submenuCategory();
   imgProductSlider();
+  about2slider();
   clickRating();
   showRating();
   chooesColor();
