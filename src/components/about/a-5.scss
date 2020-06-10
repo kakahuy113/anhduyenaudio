@@ -52,6 +52,14 @@
   .about-title {
     color: map-get($mau, main);
     margin-bottom: 10px;
+    @media (max-width: 1024.98px) {
+      padding-top: 20px;
+	  padding-bottom: 20px;
+	  font-size: 20px;
+    }
+    @media (max-width: 767.98px) {
+      font-size: 17px;
+    }
   }
 }
 .about-5--2-slider {
@@ -66,10 +74,10 @@
     margin-top: unset;
     right: -40px;
   }
-  .swiper-slide{
-	.about-2--1--item .content{
-		top: auto;
-	}
+  .swiper-slide {
+    .about-2--1--item .content {
+      top: auto;
+    }
   }
 
   .swiper-button-prev {
