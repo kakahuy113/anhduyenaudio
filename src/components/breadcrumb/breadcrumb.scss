@@ -1,4 +1,28 @@
 .breadcrumb-wrapper {
+	&[data-theme="dark-mode"] {
+		background: #1c1c1c;
+
+		.breadcrumb {
+			li {
+				a {
+					color: #ffffff;
+				}
+
+				&.active {
+					a {
+						color: map-get($mau, main);
+					}
+				}
+
+				&+li {
+					&:before {
+						color: #ffffff;
+					}
+				}
+			}
+		}
+	}
+
 	.breadcrumb {
 		list-style: none;
 		display: flex;
@@ -9,7 +33,7 @@
 				color: #888888;
 				font-size: 12px;
 				display: inline-block;
-				padding: 15px 0 20px;
+				padding: 22px 0 20px;
 			}
 
 			&.active {
@@ -34,7 +58,6 @@
 		display: none;
 	}
 }
-
 
 .list-product {
 	padding: 30px 0;

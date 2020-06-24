@@ -1,0 +1,12 @@
+extends _layout/_layout.pug
+
+block var
+	- var title = 'Anh Duyên | Sản phẩm chi tiết'
+	- var bodyClass = 'list-product-page'
+
+block main
+	include ../components/breadcrumb/breadcrumb.pug
+	section.product-detail
+		include ../components/product/summary-ver-2.pug
+		include ../components/product/tabs-info-ver-2.pug
+		include ../components/product/the-same-ver-2.pug

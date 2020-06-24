@@ -1,6 +1,41 @@
 .tabs-info-product {
 	margin-top: 30px;
 
+	&[data-theme="ver-2"] {
+		#tabs {
+			.content-tabs {
+				&[tab-id="description"] {
+					p {
+						color: #111111;
+						font-size: 14px;
+					}
+				}
+
+				&[tab-id="thongsokythuat"] {
+					table {
+						color: #111111;
+						font-size: 14px;
+					}
+				}
+
+				&[tab-id="comment"] {
+					.block-comment {
+						.main-comment {
+							.content-comment {
+								.content-cmt {
+									p {
+										color: #111111;
+										font-size: 14px;
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+
 	#tabs {
 		background: #FFFFFF;
 		border-radius: 5px;

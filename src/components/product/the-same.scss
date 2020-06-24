@@ -2,6 +2,32 @@
 	padding-bottom: 55px;
 	overflow: hidden;
 
+	&[data-theme="ver-2"] {
+		.title {
+			h2 {
+				color: #111111;
+			}
+		}
+
+		.the-same-product-slider {
+			.item-same {
+				figure {
+					figcaption {
+						h3 {
+							font-size: 14px;
+							color: #111111;
+						}
+
+						span {
+							font-size: 14px;
+							color: #111111;
+						}
+					}
+				}
+			}
+		}
+	}
+
 	.title {
 		padding: 55px 0 80px;
 
@@ -110,11 +136,12 @@
 				justify-content: center;
 				background-image: none;
 				align-items: center;
-	
+
 				img,
 				svg {
 					width: 13px;
-					path{
+
+					path {
 						stroke: white;
 					}
 				}
