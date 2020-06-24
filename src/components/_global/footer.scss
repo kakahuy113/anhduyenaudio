@@ -101,6 +101,7 @@ footer {
 
 	.coppy-right {
 		padding-top: 15px;
+		display: flex;
 
 		.box-img>a>img {
 			max-width: 120px;
@@ -109,13 +110,13 @@ footer {
 		a {
 			display: block;
 			margin-top: 5px;
-			font-size: 12px;
+			font-size: 10px;
 			font-weight: 700;
 			color: #707070;
+		}
 
-			+a {
-				font-size: 14px;
-			}
+		.text-copy {
+			padding-left: 40px;
 		}
 	}
 
@@ -220,10 +221,17 @@ footer {
 		}
 
 		.coppy-right {
+			flex-direction: column;
+
 			.box-img {
 				overflow: hidden;
 				display: flex;
 				align-items: center;
+			}
+
+			.text-copy {
+				padding-left: 0;
+				margin-top: 15px;
 			}
 		}
 	}
