@@ -28,6 +28,28 @@
 		}
 	}
 
+	&[data-theme="ver-3"] {
+		.block-news {
+			.content {
+				h5 {
+					color: #888;
+				}
+
+				p {
+					color: #888;
+				}
+
+				.time {
+					color: #888;
+
+					span {
+						color: #888;
+					}
+				}
+			}
+		}
+	}
+
 	.catalog-news {
 		margin-bottom: 15px;
 

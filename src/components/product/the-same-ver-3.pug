@@ -1,0 +1,17 @@
+section.the-same-product(data-theme="ver-3")
+	.container
+		.title
+			h2 SẢN PHẨM CÙNG LOẠI
+		.the-same-product-slider
+			.swiper-container
+				.swiper-wrapper
+					-for(i=1;i<5;i++)
+						.swiper-slide.item-same
+							a(href="sanpham-ct.html")
+								figure
+									img(src="./img/home-product/same-"+i+".png",alt="")
+									figcaption
+										h3 Loa Jamo 426 ABCDEF
+										span 19.490.000 ₫
+			.swiper-button-prev
+			.swiper-button-next

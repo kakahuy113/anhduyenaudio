@@ -36,6 +36,41 @@
 		}
 	}
 
+	&[data-theme="ver-3"] {
+		#tabs {
+			.content-tabs {
+				&[tab-id="description"] {
+					p {
+						color: #888;
+						font-size: 14px;
+					}
+				}
+
+				&[tab-id="thongsokythuat"] {
+					table {
+						color: #888;
+						font-size: 14px;
+					}
+				}
+
+				&[tab-id="comment"] {
+					.block-comment {
+						.main-comment {
+							.content-comment {
+								.content-cmt {
+									p {
+										color: #888;
+										font-size: 14px;
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+
 	#tabs {
 		background: #FFFFFF;
 		border-radius: 5px;

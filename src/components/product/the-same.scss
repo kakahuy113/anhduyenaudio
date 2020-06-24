@@ -28,6 +28,32 @@
 		}
 	}
 
+	&[data-theme="ver-3"] {
+		.title {
+			h2 {
+				color: #888;
+			}
+		}
+
+		.the-same-product-slider {
+			.item-same {
+				figure {
+					figcaption {
+						h3 {
+							font-size: 14px;
+							color: #888;
+						}
+
+						span {
+							font-size: 14px;
+							color: #888;
+						}
+					}
+				}
+			}
+		}
+	}
+
 	.title {
 		padding: 55px 0 80px;
 

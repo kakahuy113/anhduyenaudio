@@ -73,6 +73,39 @@
 		}
 	}
 
+	&[data-theme="ver-3"] {
+		.title-news-detail {
+			h3 {
+				color: #888;
+			}
+
+			.time {
+				color: #888;
+			}
+		}
+
+		.content-news-detail {
+			p {
+				font-size: 14px;
+				color: #888;
+			}
+		}
+
+		.the-same-news {
+			.item-same-news {
+				.content {
+					p {
+						color: #888;
+					}
+
+					.time {
+						color: #888;
+					}
+				}
+			}
+		}
+	}
+
 	.fb-share-button {
 		margin-left: 20px;
 	}

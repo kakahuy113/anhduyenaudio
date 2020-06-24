@@ -1,0 +1,11 @@
+extends _layout/_layout
+
+block var
+	- var title = 'Anh Duyên | Tin tức chi tiết'
+	- var bodyClass = 'newsDetail-page'
+
+block main
+	include ../components/breadcrumb/breadcrumb.pug
+	include ../components/news/n-3-ver-3.pug
+	//- CÁC TIN TỨC LIÊN QUAN
+	include ../components/news/list-news-same-ver-3.pug
