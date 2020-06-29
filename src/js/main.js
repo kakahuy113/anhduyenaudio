@@ -1743,46 +1743,45 @@ const ajaxSearch = () => {
 	}
 
 	input__search.addEventListener('keyup', (e) => {
-		setTimeout(() => {
-			innerHTML.innerHTML = '';
-			$.ajax({
-				type: "POST",
-				data: {
-					keyword: input__search.value
-				},
-				url: urlPost,
-				error: function() {
-					$.ajax({
-						type: "GET",
-						url: urlGet,
-						success: function(res) {
-							if (res.Code == 200) {
-								for (let i = 0; i < res.Result.length; i++) {
-									Url = res.Result[i].Url;
-									Price = res.Result[i].Price;
-									Image = res.Result[i].Image;
-									Alt = res.Result[i].Alt;
-									Title = res.Result[i].Title;
-									IsPromotion = res.Result[i].IsPromotion;
-									PromotionPrice = res.Result[i].PromotionPrice;
-									IsPriceUpdating = res.Result[i].IsPriceUpdating;
-									IsPriceContact = res.Result[i].IsPriceContact;
-									// MỘT SỐ TRƯỜNG HỢP VỀ GIÁ
-									if (IsPromotion == true) {
-										Price = PromotionPrice;
-										PromotionPrice = Price;
-									} else if (IsPriceUpdating == true) {
-										Price = PriceUpdatingDesc;
-										PromotionPrice = '';
-									} else if (IsPriceContact == true) {
-										Price = PriceContactDesc;
-										PromotionPrice = '';
-									} else {
-										Price = Price;
-										PromotionPrice = '';
-									}
-									const template__result =
-										`<li class="item-result">
+		innerHTML.innerHTML = '';
+		$.ajax({
+			type: "POST",
+			data: {
+				keyword: input__search.value
+			},
+			url: urlPost,
+			error: function() {
+				$.ajax({
+					type: "GET",
+					url: urlGet,
+					success: function(res) {
+						if (res.Code == 200) {
+							for (let i = 0; i < res.Result.length; i++) {
+								Url = res.Result[i].Url;
+								Price = res.Result[i].Price;
+								Image = res.Result[i].Image;
+								Alt = res.Result[i].Alt;
+								Title = res.Result[i].Title;
+								IsPromotion = res.Result[i].IsPromotion;
+								PromotionPrice = res.Result[i].PromotionPrice;
+								IsPriceUpdating = res.Result[i].IsPriceUpdating;
+								IsPriceContact = res.Result[i].IsPriceContact;
+								// MỘT SỐ TRƯỜNG HỢP VỀ GIÁ
+								if (IsPromotion == true) {
+									Price = PromotionPrice;
+									PromotionPrice = Price;
+								} else if (IsPriceUpdating == true) {
+									Price = PriceUpdatingDesc;
+									PromotionPrice = '';
+								} else if (IsPriceContact == true) {
+									Price = PriceContactDesc;
+									PromotionPrice = '';
+								} else {
+									Price = Price;
+									PromotionPrice = '';
+								}
+								const template__result =
+									`<li class="item-result">
 										<a href="${Url}">
 											<div class="img ov-h">
 												<img class="ofcv" src="${Image}" alt="${Alt}">
@@ -1796,47 +1795,47 @@ const ajaxSearch = () => {
 											</div>
 										</a>
 									</li>`;
-									// XUẤT RA MÀN HÌNH KẾT QUẢ 
-									$(innerHTML).append(template__result);
-								}
-							} else {
-								console.log('Đã có lỗi xảy ra => Res.Code = 400');
+								// XUẤT RA MÀN HÌNH KẾT QUẢ 
+								$(innerHTML).append(template__result);
 							}
+						} else {
+							console.log('Đã có lỗi xảy ra => Res.Code = 400');
 						}
-					});
-				},
-				success: function() {
-					$.ajax({
-						type: "GET",
-						url: urlGet,
-						success: function(res) {
-							if (res.Code == 200) {
-								for (let i = 0; i < res.Result.length; i++) {
-									Url = res.Result[i].Url;
-									Price = res.Result[i].Price;
-									Image = res.Result[i].Image;
-									Alt = res.Result[i].Alt;
-									Title = res.Result[i].Title;
-									IsPromotion = res.Result[i].IsPromotion;
-									PromotionPrice = res.Result[i].PromotionPrice;
-									IsPriceUpdating = res.Result[i].IsPriceUpdating;
-									IsPriceContact = res.Result[i].IsPriceContact;
-									// MỘT SỐ TRƯỜNG HỢP VỀ GIÁ
-									if (IsPromotion == true) {
-										Price = PromotionPrice;
-										PromotionPrice = Price;
-									} else if (IsPriceUpdating == true) {
-										Price = PriceUpdatingDesc;
-										PromotionPrice = '';
-									} else if (IsPriceContact == true) {
-										Price = PriceContactDesc;
-										PromotionPrice = '';
-									} else {
-										Price = Price;
-										PromotionPrice = '';
-									}
-									const template__result =
-										`<li class="item-result">
+					}
+				});
+			},
+			success: function() {
+				$.ajax({
+					type: "GET",
+					url: urlGet,
+					success: function(res) {
+						if (res.Code == 200) {
+							for (let i = 0; i < res.Result.length; i++) {
+								Url = res.Result[i].Url;
+								Price = res.Result[i].Price;
+								Image = res.Result[i].Image;
+								Alt = res.Result[i].Alt;
+								Title = res.Result[i].Title;
+								IsPromotion = res.Result[i].IsPromotion;
+								PromotionPrice = res.Result[i].PromotionPrice;
+								IsPriceUpdating = res.Result[i].IsPriceUpdating;
+								IsPriceContact = res.Result[i].IsPriceContact;
+								// MỘT SỐ TRƯỜNG HỢP VỀ GIÁ
+								if (IsPromotion == true) {
+									Price = PromotionPrice;
+									PromotionPrice = Price;
+								} else if (IsPriceUpdating == true) {
+									Price = PriceUpdatingDesc;
+									PromotionPrice = '';
+								} else if (IsPriceContact == true) {
+									Price = PriceContactDesc;
+									PromotionPrice = '';
+								} else {
+									Price = Price;
+									PromotionPrice = '';
+								}
+								const template__result =
+									`<li class="item-result">
 										<a href="${Url}">
 											<div class="img ov-h">
 												<img class="ofcv" src="${Image}" alt="${Alt}">
@@ -1850,17 +1849,16 @@ const ajaxSearch = () => {
 											</div>
 										</a>
 									</li>`;
-									// XUẤT RA MÀN HÌNH KẾT QUẢ 
-									$(innerHTML).append(template__result);
-								}
-							} else {
-								console.log('Đã có lỗi xảy ra => Res.Code = 400');
+								// XUẤT RA MÀN HÌNH KẾT QUẢ 
+								$(innerHTML).append(template__result);
 							}
+						} else {
+							console.log('Đã có lỗi xảy ra => Res.Code = 400');
 						}
-					});
-				}
-			});
-		}, 2000);
+					}
+				});
+			}
+		});
 	})
 }
 
