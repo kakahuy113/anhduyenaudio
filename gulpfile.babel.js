@@ -22,7 +22,8 @@ import {
 import {
 	copyFonts,
 	copyImage,
-	copyFavicon
+	copyFavicon,
+	copyApis
 } from "./_gulptasks/copy";
 
 
@@ -45,6 +46,7 @@ exports.default = series(
 		copyFavicon,
 		copyImage,
 		copyFonts,
+		copyApis
 	),
 	parallel(
 		jsCore,

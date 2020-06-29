@@ -1,0 +1,57 @@
+{
+	"Code": 200,
+	"Result": [
+		{
+			"Id": 0,
+			"Title": "Sony WH-1000XM3",
+			"Image": "/img/home-product/1.png",
+			"Alt": null,
+			"ImageFolder": null,
+			"Url": "https://anhduyenaudio.vn/sony-wh-1000xm3",
+			"Price": 8490000,
+			"IsPromotion": true,
+			"PromotionPrice": 7490000,
+			"IsPriceUpdating": false,
+			"IsPriceContact": false
+		},
+		{
+			"Id": 1,
+			"Title": "Loa JBL Charge 4",
+			"Image": "/img/home-product/2.png",
+			"Alt": null,
+			"ImageFolder": null,
+			"Url": "https://anhduyenaudio.vn/sony-wh-1000xm3",
+			"Price": 100000,
+			"IsPromotion": false,
+			"PromotionPrice": 0,
+			"IsPriceUpdating": false,
+			"IsPriceContact": false
+		},
+		{
+			"Id": 2,
+			"Title": "Loa Harman Kardon Go + Play Mini",
+			"Image": "/img/home-product/3.png",
+			"Alt": null,
+			"ImageFolder": null,
+			"Url": "https://anhduyenaudio.vn/sony-wh-1000xm3",
+			"Price": 7370000,
+			"IsPromotion": false,
+			"PromotionPrice": 0,
+			"IsPriceUpdating": true,
+			"IsPriceContact": false
+		},
+		{
+			"Id": 3,
+			"Title": "Sennheiser HD 450BT",
+			"Image": "/img/home-product/4.png",
+			"Alt": null,
+			"ImageFolder": null,
+			"Url": "https://anhduyenaudio.vn/sony-wh-1000xm3",
+			"Price": 7370000,
+			"IsPromotion": false,
+			"PromotionPrice": 0,
+			"IsPriceUpdating": false,
+			"IsPriceContact": true
+		}
+	]
+}

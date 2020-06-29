@@ -11,6 +11,11 @@ export const copyImage = () => {
 		.pipe(dest("dist/img"))
 }
 
+export const copyApis = () => {
+	return src("./src/apis/**.json")
+		.pipe(dest("dist/apis"))
+}
+
 export const copyFonts = () => {
 	let glob = JSON.parse(readFileSync("_vendor.json"));
 	let fontList = glob.vendor.font;
@@ -28,6 +33,7 @@ export const copyFavicon = () => {
 }
 
 module.exports = {
+	copyApis,
 	copyFonts,
 	copyImage,
 	copyFavicon
