@@ -1708,6 +1708,50 @@ const breadcrumbDelete = () => {
 	}
 };
 
+// Credit từ David Walsh: https://davidwalsh.name/javascript-debounce-function
+
+// debounce sẽ return fn và fn sẽ không chạy cho đến khi debounce không được thực thi
+// trong khoản thời gian delay. Nếu immediate là true, thì fn sẽ được thực thi ngay lặp tức
+// rồi mới được debounced cho những lần tiếp theo.
+function debounce(fn, delay, immediate) {
+	let timeout;
+
+	// Đây là function sẽ được thực thi khi debouncedKeyUp được thực thi ở ví dụ trên
+	return function executedFn() {
+		// Mình save lại this vào biến context
+		let context = this; // "this" context của executedFn
+
+		// Save lại arguments vào args. Trong JS, arguments giữ giá trị của tất cả tham số được truyền vào cho một function.
+		// Cho dù bạn không khai báo tham số cho một hàm, thì khi truyền tham số vào cho hàm đó, các bạn vẫn có thể truy xuất
+		// đến các tham số bằng biến arguments này. Theo ví dụ trên, thì arguments ở đây sẽ chứa "event" 
+		let args = arguments; // "arguments" của fn
+
+		// Function later này sẽ được gọi sau khi delay được chạy xong. 
+		// Nghĩa là mình return executedFn, khi executedFn được thực thi thì sau khoản delay, later sẽ được thực thi.
+		let later = function() {
+			// Gán null cho timeout => cho thấy delay đã chạy xong
+			timeout = null;
+
+			// Gọi hàm fn với apply
+			if (!immediate) fn.apply(context, args);
+		};
+
+		// Xác định xem nên gọi fn dựa vào tham số immediate
+		let callNow = immediate && !timeout;
+
+		// Dòng clearTimeout sẽ reset timeout đang hiện hữu (**existed**). Đây là điều cần thiết, 
+		// vì mình cần hủy timeout và tạo 1 timeout mới nếu như debounce được thực thi khi 
+		// delay chưa chạy xong.
+		clearTimeout(timeout);
+
+		// Khởi tạo (lại) timeout mới và gán vào biến timeout để có thể clear/check.
+		timeout = setTimeout(later, delay);
+
+		// Nếu như immediate là true, thì mình sẽ gọi fn lần đầu tiên ở đây.
+		if (callNow) fn.apply(context, args);
+	}
+}
+
 const ajaxSearch = () => {
 	let Url;
 	let Image;
@@ -1725,63 +1769,45 @@ const ajaxSearch = () => {
 	let PriceContactDesc = 'Giá bán: liên hệ';
 	// funtion get data Ajax on KeyUp
 	const input__search = document.querySelector('.top-header .search input');
-	const urlGet = document.querySelector('.top-header .search .fs-sresult').getAttribute('data-url-get');
-	const urlPost = document.querySelector('.top-header .search .fs-sresult').getAttribute('data-url-post');
-	const innerHTML = document.querySelector('.fs-sresult .fs-sremain ul');
-
-	const debounced = (delay, fn) => {
-		let timerId;
-		return function(...args) {
-			if (timerId) {
-				clearTimeout(timerId);
-			}
-			timerId = setTimeout(() => {
-				fn(...args);
-				timerId = null;
-			}, delay);
-		}
-	}
-
-	input__search.addEventListener('keyup', (e) => {
-		innerHTML.innerHTML = '';
+	const url = document.querySelector('.top-header .search .fs-sresult').getAttribute('data-url');
+	const list__itemResult = document.querySelector('.fs-sresult .fs-sremain ul');
+	const keyUpHandler = e => {
+		// do something with event
+		list__itemResult.innerHTML = '';
 		$.ajax({
-			type: "POST",
+			type: "GET",
 			data: {
-				keyword: input__search.value
+				text: input__search.value
 			},
-			url: urlPost,
-			error: function() {
-				$.ajax({
-					type: "GET",
-					url: urlGet,
-					success: function(res) {
-						if (res.Code == 200) {
-							for (let i = 0; i < res.Result.length; i++) {
-								Url = res.Result[i].Url;
-								Price = res.Result[i].Price;
-								Image = res.Result[i].Image;
-								Alt = res.Result[i].Alt;
-								Title = res.Result[i].Title;
-								IsPromotion = res.Result[i].IsPromotion;
-								PromotionPrice = res.Result[i].PromotionPrice;
-								IsPriceUpdating = res.Result[i].IsPriceUpdating;
-								IsPriceContact = res.Result[i].IsPriceContact;
-								// MỘT SỐ TRƯỜNG HỢP VỀ GIÁ
-								if (IsPromotion == true) {
-									Price = PromotionPrice;
-									PromotionPrice = Price;
-								} else if (IsPriceUpdating == true) {
-									Price = PriceUpdatingDesc;
-									PromotionPrice = '';
-								} else if (IsPriceContact == true) {
-									Price = PriceContactDesc;
-									PromotionPrice = '';
-								} else {
-									Price = Price;
-									PromotionPrice = '';
-								}
-								const template__result =
-									`<li class="item-result">
+			url: url,
+			success: function(res) {
+				if (res.Code == 200) {
+					for (let i = 0; i < res.Result.length; i++) {
+						Url = res.Result[i].Url;
+						Price = res.Result[i].Price;
+						Image = res.Result[i].Image;
+						Alt = res.Result[i].Alt;
+						Title = res.Result[i].Title;
+						IsPromotion = res.Result[i].IsPromotion;
+						PromotionPrice = res.Result[i].PromotionPrice;
+						IsPriceUpdating = res.Result[i].IsPriceUpdating;
+						IsPriceContact = res.Result[i].IsPriceContact;
+						// MỘT SỐ TRƯỜNG HỢP VỀ GIÁ
+						if (IsPromotion == true) {
+							Price = PromotionPrice;
+							PromotionPrice = Price;
+						} else if (IsPriceUpdating == true) {
+							Price = PriceUpdatingDesc;
+							PromotionPrice = '';
+						} else if (IsPriceContact == true) {
+							Price = PriceContactDesc;
+							PromotionPrice = '';
+						} else {
+							Price = Price;
+							PromotionPrice = '';
+						}
+						const template__result =
+							`<li class="item-result">
 										<a href="${Url}">
 											<div class="img ov-h">
 												<img class="ofcv" src="${Image}" alt="${Alt}">
@@ -1795,71 +1821,17 @@ const ajaxSearch = () => {
 											</div>
 										</a>
 									</li>`;
-								// XUẤT RA MÀN HÌNH KẾT QUẢ 
-								$(innerHTML).append(template__result);
-							}
-						} else {
-							console.log('Đã có lỗi xảy ra => Res.Code = 400');
-						}
+						// XUẤT RA MÀN HÌNH KẾT QUẢ 
+						$(list__itemResult).append(template__result);
 					}
-				});
-			},
-			success: function() {
-				$.ajax({
-					type: "GET",
-					url: urlGet,
-					success: function(res) {
-						if (res.Code == 200) {
-							for (let i = 0; i < res.Result.length; i++) {
-								Url = res.Result[i].Url;
-								Price = res.Result[i].Price;
-								Image = res.Result[i].Image;
-								Alt = res.Result[i].Alt;
-								Title = res.Result[i].Title;
-								IsPromotion = res.Result[i].IsPromotion;
-								PromotionPrice = res.Result[i].PromotionPrice;
-								IsPriceUpdating = res.Result[i].IsPriceUpdating;
-								IsPriceContact = res.Result[i].IsPriceContact;
-								// MỘT SỐ TRƯỜNG HỢP VỀ GIÁ
-								if (IsPromotion == true) {
-									Price = PromotionPrice;
-									PromotionPrice = Price;
-								} else if (IsPriceUpdating == true) {
-									Price = PriceUpdatingDesc;
-									PromotionPrice = '';
-								} else if (IsPriceContact == true) {
-									Price = PriceContactDesc;
-									PromotionPrice = '';
-								} else {
-									Price = Price;
-									PromotionPrice = '';
-								}
-								const template__result =
-									`<li class="item-result">
-										<a href="${Url}">
-											<div class="img ov-h">
-												<img class="ofcv" src="${Image}" alt="${Alt}">
-											</div>
-											<div class="info-item">
-												<h3>${Title}</h3>
-												<p class="anhduyen-search-prodprice">${Price}</p>
-												<p class="anhduyen-search-prodprice price-sub">
-													<del>${PromotionPrice}<del>
-												</p>
-											</div>
-										</a>
-									</li>`;
-								// XUẤT RA MÀN HÌNH KẾT QUẢ 
-								$(innerHTML).append(template__result);
-							}
-						} else {
-							console.log('Đã có lỗi xảy ra => Res.Code = 400');
-						}
-					}
-				});
+				} else {
+					console.log('Đã có lỗi xảy ra => Res.Code = 400');
+				}
 			}
 		});
-	})
+	};
+	const debouncedKeyUp = debounce(keyUpHandler, 2000);
+	input__search.addEventListener('keyup', debouncedKeyUp)
 }
 
 breadcrumbDelete();

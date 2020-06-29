@@ -1347,6 +1347,8 @@ header {
 	background-color: #fff;
 	border-radius: 2px;
 	box-shadow: 0 2px 4px 0 rgba(0, 0, 0, .5);
+	max-height: 500px;
+	overflow-y: auto;
 
 	ul {
 		padding-left: 0;
@@ -1393,6 +1395,16 @@ header {
 			color: #d0021b;
 			display: inline-block;
 			margin-right: 15px;
+		}
+
+		@media (max-width: 575.98px) {
+			h3 {
+				font-size: 12px;
+			}
+
+			p {
+				font-size: 10px;
+			}
 		}
 	}
 }

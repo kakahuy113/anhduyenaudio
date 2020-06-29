@@ -8,11 +8,11 @@ header
 							img(src="./img/logo.png", alt="logo Anhduyen Audio header")
 			.col-no-rel
 				.top-header
-					.search
-						input(type="text" placeholder="Tìm sản phẩm, thương hiệu ...")
+					form.search
+						input(type="text" name="text" placeholder="Tìm sản phẩm, thương hiệu ...")
 						button
 							img(src="./img/icons/timkiem.svg", alt="tim kiem header")
-						.fs-sresult(data-url-get="./apis/search.json" data-url-post="./apis/search.json")
+						.fs-sresult(data-url="./apis/search.json")
 							.fs-sremain
 								ul
 					.top-header-item
