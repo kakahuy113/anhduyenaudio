@@ -1761,6 +1761,7 @@ const ajaxSearch = () => {
 	// GIÁ GIẢM
 	let IsPromotion;
 	let PromotionPrice;
+	let PromotionPrice__ToChangePrice;
 	// GIÁ ĐANG CẬP NHẬT
 	let IsPriceUpdating;
 	let PriceUpdatingDesc = 'Giá đang cập nhật';
@@ -1771,6 +1772,11 @@ const ajaxSearch = () => {
 	const input__search = document.querySelector('.top-header .search input');
 	const url = document.querySelector('.top-header .search .fs-sresult').getAttribute('data-url');
 	const list__itemResult = document.querySelector('.fs-sresult .fs-sremain ul');
+	const formatCurrency = new Intl.NumberFormat("vi-VN", {
+		style: "currency",
+		currency: "VND",
+		minimumFractionDigits: 0,
+	});
 	const keyUpHandler = e => {
 		// do something with event
 		list__itemResult.innerHTML = '';
@@ -1784,45 +1790,54 @@ const ajaxSearch = () => {
 				if (res.Code == 200) {
 					for (let i = 0; i < res.Result.length; i++) {
 						Url = res.Result[i].Url;
-						Price = res.Result[i].Price;
+						Price = formatCurrency.format(res.Result[i].Price);
 						Image = res.Result[i].Image;
 						Alt = res.Result[i].Alt;
 						Title = res.Result[i].Title;
 						IsPromotion = res.Result[i].IsPromotion;
-						PromotionPrice = res.Result[i].PromotionPrice;
+						PromotionPrice = formatCurrency.format(res.Result[i].PromotionPrice);
 						IsPriceUpdating = res.Result[i].IsPriceUpdating;
 						IsPriceContact = res.Result[i].IsPriceContact;
 						// MỘT SỐ TRƯỜNG HỢP VỀ GIÁ
-						if (IsPromotion == true) {
-							Price = PromotionPrice;
-							PromotionPrice = Price;
-						} else if (IsPriceUpdating == true) {
+						if (IsPriceUpdating == true) {
 							Price = PriceUpdatingDesc;
-							PromotionPrice = '';
 						} else if (IsPriceContact == true) {
 							Price = PriceContactDesc;
-							PromotionPrice = '';
-						} else {
-							Price = Price;
-							PromotionPrice = '';
 						}
 						const template__result =
 							`<li class="item-result">
-										<a href="${Url}">
-											<div class="img ov-h">
-												<img class="ofcv" src="${Image}" alt="${Alt}">
-											</div>
-											<div class="info-item">
-												<h3>${Title}</h3>
-												<p class="anhduyen-search-prodprice">${Price}</p>
-												<p class="anhduyen-search-prodprice price-sub">
-													<del>${PromotionPrice}<del>
-												</p>
-											</div>
-										</a>
-									</li>`;
-						// XUẤT RA MÀN HÌNH KẾT QUẢ 
-						$(list__itemResult).append(template__result);
+								<a href="${Url}">
+									<div class="img ov-h">
+										<img class="ofcv" src="${Image}" alt="${Alt}">
+									</div>
+									<div class="info-item">
+										<h3>${Title}</h3>
+										<p class="anhduyen-search-prodprice">${Price}</p>
+									</div>
+								</a>
+							</li>`;
+						const template__result_IsPromotion =
+							`<li class="item-result">
+								<a href="${Url}">
+									<div class="img ov-h">
+										<img class="ofcv" src="${Image}" alt="${Alt}">
+									</div>
+									<div class="info-item">
+										<h3>${Title}</h3>
+										<p class="anhduyen-search-prodprice">${PromotionPrice}</p>
+										<p class="anhduyen-search-prodprice price-sub">
+											<del>${Price}</del>
+										</p>
+									</div>
+								</a>
+							</li>`;
+
+						if (IsPromotion == true) {
+							$(list__itemResult).append(template__result_IsPromotion);
+						} else {
+							// XUẤT RA MÀN HÌNH KẾT QUẢ 
+							$(list__itemResult).append(template__result);
+						}
 					}
 				} else {
 					console.log('Đã có lỗi xảy ra => Res.Code = 400');
