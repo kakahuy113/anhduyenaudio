@@ -1845,7 +1845,7 @@ const ajaxSearch = () => {
 			}
 		});
 	};
-	const debouncedKeyUp = debounce(keyUpHandler, 2000);
+	const debouncedKeyUp = debounce(keyUpHandler, 1000);
 	input__search.addEventListener('keyup', debouncedKeyUp)
 }
 
