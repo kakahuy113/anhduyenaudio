@@ -1728,69 +1728,83 @@ const ajaxSearch = () => {
 	const urlGet = document.querySelector('.top-header .search .fs-sresult').getAttribute('data-url-get');
 	const urlPost = document.querySelector('.top-header .search .fs-sresult').getAttribute('data-url-post');
 	const innerHTML = document.querySelector('.fs-sresult .fs-sremain ul');
+
+	const debounced = (delay, fn) => {
+		let timerId;
+		return function(...args) {
+			if (timerId) {
+				clearTimeout(timerId);
+			}
+			timerId = setTimeout(() => {
+				fn(...args);
+				timerId = null;
+			}, delay);
+		}
+	}
+
 	input__search.addEventListener('keyup', (e) => {
-		innerHTML.innerHTML = '';
 		setTimeout(() => {
+			innerHTML.innerHTML = '';
 			$.ajax({
 				type: "POST",
 				data: {
 					keyword: input__search.value
 				},
 				url: urlPost,
-				// error: function() {
-				// 	$.ajax({
-				// 		type: "GET",
-				// 		url: urlGet,
-				// 		success: function(res) {
-				// 			if (res.Code == 200) {
-				// 				for (let i = 0; i < res.Result.length; i++) {
-				// 					Url = res.Result[i].Url;
-				// 					Price = res.Result[i].Price;
-				// 					Image = res.Result[i].Image;
-				// 					Alt = res.Result[i].Alt;
-				// 					Title = res.Result[i].Title;
-				// 					IsPromotion = res.Result[i].IsPromotion;
-				// 					PromotionPrice = res.Result[i].PromotionPrice;
-				// 					IsPriceUpdating = res.Result[i].IsPriceUpdating;
-				// 					IsPriceContact = res.Result[i].IsPriceContact;
-				// 					// MỘT SỐ TRƯỜNG HỢP VỀ GIÁ
-				// 					if (IsPromotion == true) {
-				// 						Price = PromotionPrice;
-				// 						PromotionPrice = Price;
-				// 					} else if (IsPriceUpdating == true) {
-				// 						Price = PriceUpdatingDesc;
-				// 						PromotionPrice = '';
-				// 					} else if (IsPriceContact == true) {
-				// 						Price = PriceContactDesc;
-				// 						PromotionPrice = '';
-				// 					} else {
-				// 						Price = Price;
-				// 						PromotionPrice = '';
-				// 					}
-				// 					const template__result =
-				// 						`<li class="item-result">
-				// 						<a href="${Url}">
-				// 							<div class="img ov-h">
-				// 								<img class="ofcv" src="${Image}" alt="${Alt}">
-				// 							</div>
-				// 							<div class="info-item">
-				// 								<h3>${Title}</h3>
-				// 								<p class="anhduyen-search-prodprice">${Price}</p>
-				// 								<p class="anhduyen-search-prodprice price-sub">
-				// 									<del>${PromotionPrice}<del>
-				// 								</p>
-				// 							</div>
-				// 						</a>
-				// 					</li>`;
-				// 					// XUẤT RA MÀN HÌNH KẾT QUẢ 
-				// 					$(innerHTML).append(template__result);
-				// 				}
-				// 			} else {
-				// 				console.log('Đã có lỗi xảy ra => Res.Code = 400');
-				// 			}
-				// 		}
-				// 	});
-				// },
+				error: function() {
+					$.ajax({
+						type: "GET",
+						url: urlGet,
+						success: function(res) {
+							if (res.Code == 200) {
+								for (let i = 0; i < res.Result.length; i++) {
+									Url = res.Result[i].Url;
+									Price = res.Result[i].Price;
+									Image = res.Result[i].Image;
+									Alt = res.Result[i].Alt;
+									Title = res.Result[i].Title;
+									IsPromotion = res.Result[i].IsPromotion;
+									PromotionPrice = res.Result[i].PromotionPrice;
+									IsPriceUpdating = res.Result[i].IsPriceUpdating;
+									IsPriceContact = res.Result[i].IsPriceContact;
+									// MỘT SỐ TRƯỜNG HỢP VỀ GIÁ
+									if (IsPromotion == true) {
+										Price = PromotionPrice;
+										PromotionPrice = Price;
+									} else if (IsPriceUpdating == true) {
+										Price = PriceUpdatingDesc;
+										PromotionPrice = '';
+									} else if (IsPriceContact == true) {
+										Price = PriceContactDesc;
+										PromotionPrice = '';
+									} else {
+										Price = Price;
+										PromotionPrice = '';
+									}
+									const template__result =
+										`<li class="item-result">
+										<a href="${Url}">
+											<div class="img ov-h">
+												<img class="ofcv" src="${Image}" alt="${Alt}">
+											</div>
+											<div class="info-item">
+												<h3>${Title}</h3>
+												<p class="anhduyen-search-prodprice">${Price}</p>
+												<p class="anhduyen-search-prodprice price-sub">
+													<del>${PromotionPrice}<del>
+												</p>
+											</div>
+										</a>
+									</li>`;
+									// XUẤT RA MÀN HÌNH KẾT QUẢ 
+									$(innerHTML).append(template__result);
+								}
+							} else {
+								console.log('Đã có lỗi xảy ra => Res.Code = 400');
+							}
+						}
+					});
+				},
 				success: function() {
 					$.ajax({
 						type: "GET",
