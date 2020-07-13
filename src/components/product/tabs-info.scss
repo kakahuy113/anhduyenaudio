@@ -105,16 +105,19 @@
 				}
 
 				h1 {
+					line-height: 1.2;
 					font-size: 24px;
 					color: #040404c7;
 				}
 
 				h2 {
+					line-height: 1.2;
 					font-size: 20px;
 					color: #1c1c1cc7;
 				}
 
 				h3 {
+					line-height: 1.2;
 					font-size: 18px;
 					color: #1c1c1ca6;
 				}
@@ -507,6 +510,15 @@
 
 				&[tab-id="description"] {
 					padding: 10px 15px 0px;
+
+					h1 {
+						text-align: left;
+						font-size: 18px;
+					}
+
+					h2 {
+						text-align: left;
+					}
 
 					p {
 						color: #888888;
