@@ -8,10 +8,13 @@
       <feComposite in="SourceGraphic"/>
     </filter>
   </defs>
-  <g id="Group_3621" data-name="Group 3621" transform="translate(-1300.129)">
-    <g transform="matrix(1, 0, 0, 1, 1300.13, 0)" filter="url(#Ellipse_9)">
-      <circle id="Ellipse_9-2" data-name="Ellipse 9" cx="31" cy="31" r="31" transform="translate(9 9)" fill="#fff"/>
+  <g id="Group_4069" data-name="Group 4069" transform="translate(172.936 1607.879) rotate(180)">
+    <g transform="matrix(-1, 0, 0, -1, 172.94, 1607.88)" filter="url(#Ellipse_9)">
+      <g id="Ellipse_9-2" data-name="Ellipse 9" transform="translate(9 9)" fill="#fff" stroke="#d82f25" stroke-width="1">
+        <circle cx="31" cy="31" r="31" stroke="none"/>
+        <circle cx="31" cy="31" r="30.5" fill="none"/>
+      </g>
     </g>
-    <path id="Path_786" data-name="Path 786" d="M7.2,0,0,7.975l7.371,7.975" transform="translate(1345.417 47.991) rotate(180)" fill="none" stroke="#1c1c1c" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+    <path id="Path_786" data-name="Path 786" d="M7.2,0,0,7.975l7.371,7.975" transform="translate(127.647 1559.888)" fill="none" stroke="#1c1c1c" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
   </g>
 </svg>
