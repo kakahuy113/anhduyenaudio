@@ -249,6 +249,7 @@
 				.quantity-input {
 					display: flex;
 					margin-right: 115px;
+					user-select: none;
 
 					span,
 					input {
@@ -262,6 +263,7 @@
 						cursor: pointer;
 						border: none;
 						color: #888888;
+						user-select: none;
 					}
 
 					input {

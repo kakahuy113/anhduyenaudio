@@ -681,30 +681,49 @@ function getDataBar() {
 	});
 }
 
-// const cartQuantity = () => {
-// 	$('.quantity-input .minus').each(function () {
-// 		$(this).on("click", function () {
-// 			let curVal = Number($(this).siblings("input").val())
-// 			if (curVal <= 0) {
-// 				curVal = 0;
-// 			} else {
-// 				curVal -= 1;
-// 			}
-// 			$(this).siblings("input").val(curVal)
-// 		})
-// 	})
-// 	$('.quantity-input .plus').each(function () {
-// 		$(this).on("click", function () {
-// 			let curVal = Number($(this).siblings("input").val())
-// 			if (curVal >= 99) {
-// 				curVal = 99;
-// 			} else {
-// 				curVal += 1;
-// 			}
-// 			$(this).siblings("input").val(curVal)
-// 		})
-// 	})
-// }
+const cartQuantity = () => {
+	$('.quantity-input .minus').each(function() {
+		$(this).on("click", function() {
+			let alertContent = $(this).attr('data-alert');
+			let curVal = Number($(this).siblings("input").val())
+			if (curVal <= 0) {
+				curVal = 0;
+				alert(alertContent);
+			} else {
+				curVal -= 1;
+			}
+			$(this).siblings("input").val(curVal)
+		})
+	})
+
+	$('.quantity-input .plus').each(function() {
+		$(this).on("click", function() {
+			let alertContent = $(this).attr('data-alert');
+			let curVal = Number($(this).siblings("input").val())
+			if (curVal >= 5) {
+				curVal = 5;
+				alert(alertContent)
+			} else {
+				curVal += 1;
+			}
+			$(this).siblings("input").val(curVal)
+		})
+	})
+
+	$('.quantity-input .quantity').each(function() {
+		const alertContentMax = $('.quantity-input .plus').attr('data-alert');
+		const alertContentMin = $('.quantity-input .minus').attr('data-alert');
+		$(this).on("keyup", function() {
+			if ($(this).val() >= 5) {
+				// alert(alertContentMax)
+				$(this).val(5);
+			} else if ($(this).val() <= 0) {
+				// alert(alertContentMin)
+				$(this).val(0);
+			}
+		})
+	})
+}
 
 const toggleFormAddNewAddress = () => {
 	$(".add-new-address").on("click", function() {
@@ -1117,24 +1136,57 @@ function showMainReply() {
 function AjaxComment() {
 	$("body").on("click", ".submit.comment", function(e) {
 		e.preventDefault();
-		var product_ID = $(this)
-			.siblings("input[name='content-comment']")
-			.attr("product-id");
-		var newRating = $(".new-comment .rate").attr("data-rate");
-		var newCommentContent = $(
-			".new-comment .input-comment input[name='content-comment']"
-		).val();
-
-		if (newRating == "") {
-			alert("Xin hãy vote cho sản phẩm");
+		const isLogin = $('#input-check-login input').attr('data-islogin');
+		console.log(isLogin);
+		if (isLogin == "True") {
+			var product_ID = $(this).siblings("input[name='content-comment']").attr("product-id");
+			var newRating = $(".new-comment .rate").attr("data-rate");
+			var newCommentContent = $(".new-comment .input-comment input[name='content-comment']").val();
+			if (newRating == "") {
+				alert("Xin hãy vote cho sản phẩm");
+			} else {
+				$.ajax({
+					type: "post",
+					url: "/binh-luan",
+					data: {
+						Id: product_ID,
+						Content: newCommentContent,
+						Vote: newRating,
+					},
+					success: function(res) {
+						if (res.Code == 200) {
+							location.reload();
+						} else {
+							alert(res.Message);
+						}
+					},
+				});
+			}
 		} else {
+			$.fancybox.open({
+				src: '#login',
+				opts: {
+					afterShow: function(instance, current) {}
+				}
+			});
+		}
+	});
+}
+
+// AJAX REPLY
+function AjaxReply() {
+	$("body").on("click", ".submit.reply", function(e) {
+		e.preventDefault();
+		const isLogin = $('#input-check-login input').attr('data-islogin');
+		if (isLogin == "True") {
+			var comment_ID = $(this).parents(".box-reply").siblings(".main-comment[comment-id]").attr("comment-id");
+			var replyContent = $(this).siblings("input[name='content-comment']").val();
 			$.ajax({
 				type: "post",
-				url: "/binh-luan",
+				url: "/phan-hoi",
 				data: {
-					Id: product_ID,
-					Content: newCommentContent,
-					Vote: newRating,
+					Id: comment_ID,
+					Content: replyContent,
 				},
 				success: function(res) {
 					if (res.Code == 200) {
@@ -1144,88 +1196,89 @@ function AjaxComment() {
 					}
 				},
 			});
+		} else {
+			$.fancybox.open({
+				src: '#login',
+				opts: {
+					afterShow: function(instance, current) {}
+				}
+			});
 		}
 	});
 }
-// AJAX REPLY
-function AjaxReply() {
-	$("body").on("click", ".submit.reply", function(e) {
-		e.preventDefault();
-		var comment_ID = $(this)
-			.parents(".box-reply")
-			.siblings(".main-comment[comment-id]")
-			.attr("comment-id");
-		var replyContent = $(this).siblings("input[name='content-comment']").val();
 
-		$.ajax({
-			type: "post",
-			url: "/phan-hoi",
-			data: {
-				Id: comment_ID,
-				Content: replyContent,
-			},
-			success: function(res) {
-				if (res.Code == 200) {
-					location.reload();
-				} else {
-					alert(res.Message);
-				}
-			},
-		});
-	});
-}
 // AJAX LIKE
 function AjaxLike() {
 	$("body").on("click", ".button-like-comment", function(e) {
 		e.preventDefault();
-		var likeInfo = {};
-		likeInfo.Id = $(this)
-			.parents(".main-comment[comment-id]")
-			.attr("comment-id");
-		if (
-			$(this).attr("data-like") == "" ||
-			$(this).attr("data-like") == "false"
-		) {
-			likeComment = true;
+		const isLogin = $('#input-check-login input').attr('data-islogin');
+		if (isLogin == "True") {
+			var likeInfo = {};
+			likeInfo.Id = $(this)
+				.parents(".main-comment[comment-id]")
+				.attr("comment-id");
+			if (
+				$(this).attr("data-like") == "" ||
+				$(this).attr("data-like") == "false"
+			) {
+				likeComment = true;
+			} else {
+				likeComment = false;
+			}
+			$(this).attr("data-like", likeInfo.likeComment);
+			$.ajax({
+				type: "post",
+				url: "/thich",
+				data: likeInfo,
+				success: function(res) {
+					if (res.Code == 200) {
+						$(this).find("span").html(res.Message);
+					} else {
+						alert(res.Message);
+					}
+				},
+			});
 		} else {
-			likeComment = false;
-		}
-		$(this).attr("data-like", likeInfo.likeComment);
-		$.ajax({
-			type: "post",
-			url: "/thich",
-			data: likeInfo,
-			success: function(res) {
-				if (res.Code == 200) {
-					$(this).find("span").html(res.Message);
-				} else {
-					alert(res.Message);
+			$.fancybox.open({
+				src: '#login',
+				opts: {
+					afterShow: function(instance, current) {}
 				}
-			},
-		});
+			});
+		}
 	});
 }
 
 function AjaxDeteleComment() {
 	$("body").on("click", ".button-delete-comment", function(e) {
 		e.preventDefault();
-		var deleteInfo = {};
-		deleteInfo.Id = $(this)
-			.parents(".main-comment[comment-id]")
-			.attr("comment-id");
-		var _thisCommentDelete = $(this);
-		$.ajax({
-			type: "get",
-			url: "/xoa-binhluan",
-			data: deleteInfo,
-			success: function(res) {
-				if (res.Code == 200) {
-					_thisCommentDelete.find("span").html(res.Message).addClass("deleted");
-				} else {
-					alert(res.Message);
+		const isLogin = $('#input-check-login input').attr('data-islogin');
+		if (isLogin == "True") {
+			var deleteInfo = {};
+			deleteInfo.Id = $(this)
+				.parents(".main-comment[comment-id]")
+				.attr("comment-id");
+			var _thisCommentDelete = $(this);
+			$.ajax({
+				type: "get",
+				url: "/xoa-binhluan",
+				data: deleteInfo,
+				success: function(res) {
+					if (res.Code == 200) {
+						_thisCommentDelete.find("span").html(res.Message).addClass("deleted");
+					} else {
+						alert(res.Message);
+					}
+				},
+			});
+		} else {
+			$.fancybox.open({
+				src: '#login',
+				opts: {
+					afterShow: function(instance, current) {}
 				}
-			},
-		});
+			});
+		}
 	});
 }
 
@@ -1850,6 +1903,7 @@ const ajaxSearch = () => {
 }
 
 breadcrumbDelete();
+
 $(document).ready(function() {
 	setHeightItemImgBox();
 	objectFitImages("img.ofc"); // Luôn luôn chậy polyfill cho thuôc tính object-fit: cover trên các phiên bản IE >= 9
@@ -1911,11 +1965,11 @@ $(document).ready(function() {
 	shareSocial();
 	setPhoneNumberFixed();
 	sliderAboutGiaiPhapChiTiet();
+	cartQuantity();
 });
 
 $(document).ajaxComplete(function() {
 	addClassLazyload();
-	// cartQuantity();
 });
 
 window.addEventListener("scroll", () => {
