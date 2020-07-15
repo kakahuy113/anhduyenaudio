@@ -2,6 +2,10 @@
 	background: transparent;
 	padding: 30px 0 0 0;
 
+	.btn-outline-seemore {
+		margin-bottom: 20px;
+	}
+
 	&[data-theme="dark-mode"] {
 		background: #1c1c1c;
 	}
@@ -146,6 +150,10 @@
 	@media (max-width: 1024.98px) {
 		background: #ffffff;
 		padding: 15px 0;
+
+		.btn-outline-seemore {
+			margin-bottom: 15px;
+		}
 
 		.block-title {
 			.main-title {

@@ -132,4 +132,8 @@
 	border: 1px solid map-get($mau, main);
 	max-width: 200px;
 	color: map-get($mau, main);
+
+	@media (max-width: 767.98px) {
+		height: 30px;
+	}
 }
