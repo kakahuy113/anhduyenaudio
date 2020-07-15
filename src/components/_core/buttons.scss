@@ -122,3 +122,14 @@
 	max-width: 122px;
 	color: map-get($mau, main);
 }
+
+.btn-outline-seemore {
+	font-weight: 700;
+	font-size: 12px;
+	border-radius: 15px;
+	height: 40px;
+	background: transparent;
+	border: 1px solid map-get($mau, main);
+	max-width: 200px;
+	color: map-get($mau, main);
+}
