@@ -1,7 +1,6 @@
 .product-sale-hot {
 	margin-top: 30px;
 
-
 	@media (max-width: 1439.98px) {
 		margin-top: 20px;
 	}
@@ -55,7 +54,7 @@
 	border-radius: 0 0 5px 5px;
 	padding-bottom: 20px;
 
-	.btn-outline-red {
+	.btn-outline-seemore {
 		margin-top: 20px;
 	}
 
@@ -193,8 +192,12 @@
 	}
 
 	@media (max-width: 1024px) {
+		.swiper-container {
+			border-bottom: 1px solid #dedede;
+		}
+
 		.swiper-wrapper {
-			padding: 20px 0;
+			padding-bottom: 0;
 
 			.swiper-slide {
 				padding: 0 25px;
@@ -252,6 +255,14 @@
 		.swiper-button-next,
 		.swiper-button-prev {
 			display: none;
+		}
+	}
+
+	@media (max-width: 575.98px) {
+		padding-bottom: 10px;
+
+		.btn-outline-seemore {
+			margin-top: 10px;
 		}
 	}
 }
@@ -381,13 +392,17 @@
 		margin: 0 auto;
 	}
 
-	.btn-outline-red {
+	.btn-outline-seemore {
 		margin-top: 20px;
 	}
 
 	@media (max-width: 1024px) {
+		.swiper-container {
+			border-bottom: 1px solid #dedede;
+		}
+
 		.swiper-wrapper {
-			padding: 20px 0;
+			padding-bottom: 0;
 
 			.swiper-slide {
 				padding: 0 25px;
@@ -447,6 +462,14 @@
 		.swiper-button-next,
 		.swiper-button-prev {
 			display: none;
+		}
+	}
+
+	@media (max-width: 575.98px) {
+		padding-bottom: 10px;
+
+		.btn-outline-seemore {
+			margin-top: 10px;
 		}
 	}
 }
