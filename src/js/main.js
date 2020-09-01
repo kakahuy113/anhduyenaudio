@@ -1379,6 +1379,8 @@ const ajaxForgotPassword = () => {
 				url: urlGetVerifyCode,
 				type: "post",
 				data: informationToGetPassword,
+				processData: false,
+				contentType: false,
 				success: function(res) {
 					$("#forgot-password .form-button button").prop('disabled', false);
 					if (res.Code === 200) {
@@ -1414,7 +1416,13 @@ const ajaxForgotPassword = () => {
 				beforeSend: () => {
 					$("#forgot-password .form-button button").prop('disabled', true);
 				},
+				complete: () => {
+					$("#verify .form-button button").prop('disabled', false);
+
+				},
 				error: function(err) {
+					$("#forgot-password .form-button button").prop('disabled', false);
+
 					alert(err.status);
 				},
 			});
@@ -1438,6 +1446,8 @@ const ajaxForgotPassword = () => {
 				url: urlChangePassword,
 				type: "post",
 				data: verifyCode,
+				processData: false,
+				contentType: false,
 				success: function(res) {
 					$("#verify .form-button button").prop('disabled', false);
 					if (res.Code === 200) {
@@ -1473,7 +1483,11 @@ const ajaxForgotPassword = () => {
 				beforeSend: () => {
 					$("#verify .form-button button").prop('disabled', true);
 				},
+				complete: () => {
+					$("#verify .form-button button").prop('disabled', false);
+				},
 				error: function(err) {
+					$("#verify .form-button button").prop('disabled', false);
 					alert(err.status);
 				},
 			});
