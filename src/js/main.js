@@ -1373,17 +1373,6 @@ const ajaxForgotPassword = () => {
 		let fancyboxSourceVerify = $("#forgot-password .form-button button").attr(
 			"data-src"
 		);
-		$.fancybox.open({
-			src: fancyboxSourceVerify,
-			type: "inline",
-			opts: {
-				closeExisting: true,
-				hash: false,
-				beforeShow: function() {
-					// $("#verify .popup-wrapper>p").html(res.Message);
-				},
-			},
-		});
 		if($("#forgot-password form").valid() == true) {
 			$.ajax({
 				url: urlGetVerifyCode,
@@ -1451,17 +1440,6 @@ const ajaxForgotPassword = () => {
 		let fancyboxSourceResetPassword = $("#verify .form-button button").attr(
 			"data-src"
 		);
-		$.fancybox.open({
-			src: fancyboxSourceResetPassword,
-			type: "inline",
-			opts: {
-				closeExisting: true,
-				hash: false,
-				beforeShow: function() {
-					// $("#reset-password .popup-wrapper>p").html(res.Message);
-				},
-			},
-		});
 		if($("#verify form").valid() == true) {
 			$.ajax({
 				url: urlChangePassword,
@@ -1527,9 +1505,7 @@ const ajaxForgotPassword = () => {
 		let urlGetVerifyCode = $("#reset-password .form-button button").attr(
 			"data-action"
 		);
-		let fancyboxSourceVerify = $("#reset-password .form-button button").attr(
-			"data-src"
-		);
+	
 		if($("#reset-password form").valid() == true) {
 			$.ajax({
 				url: urlGetVerifyCode,
@@ -1540,6 +1516,7 @@ const ajaxForgotPassword = () => {
 				success: function(res) {
 					$("#reset-password .form-button button").prop('disabled', false);
 					if (res.Code === 200) {
+						document.querySelector('#noti-login .text_noti').innerHTML = res.Message;
 						$.fancybox.open({
 							src: '#noti-login',
 							type: 'inline',
@@ -1561,9 +1538,6 @@ const ajaxForgotPassword = () => {
 									afterShow: function (instance, current) {
 										setTimeout(() => {
 											$.fancybox.close();
-											if (res.Code == 200) {
-												window.location.reload();
-											}
 										}, 1500);
 									}
 								}
@@ -1578,7 +1552,6 @@ const ajaxForgotPassword = () => {
 				},
 				error: function(err) {
 					$("#reset-password .form-button button").prop('disabled', false);
-
 					alert(err.status);
 				},
 			});
