@@ -1373,7 +1373,17 @@ const ajaxForgotPassword = () => {
 		let fancyboxSourceVerify = $("#forgot-password .form-button button").attr(
 			"data-src"
 		);
-		
+		$.fancybox.open({
+			src: fancyboxSourceVerify,
+			type: "inline",
+			opts: {
+				closeExisting: true,
+				hash: false,
+				beforeShow: function() {
+					// $("#verify .popup-wrapper>p").html(res.Message);
+				},
+			},
+		});
 		if($("#forgot-password form").valid() == true) {
 			$.ajax({
 				url: urlGetVerifyCode,
@@ -1441,6 +1451,17 @@ const ajaxForgotPassword = () => {
 		let fancyboxSourceResetPassword = $("#verify .form-button button").attr(
 			"data-src"
 		);
+		$.fancybox.open({
+			src: fancyboxSourceResetPassword,
+			type: "inline",
+			opts: {
+				closeExisting: true,
+				hash: false,
+				beforeShow: function() {
+					// $("#reset-password .popup-wrapper>p").html(res.Message);
+				},
+			},
+		});
 		if($("#verify form").valid() == true) {
 			$.ajax({
 				url: urlChangePassword,
@@ -1488,6 +1509,76 @@ const ajaxForgotPassword = () => {
 				},
 				error: function(err) {
 					$("#verify .form-button button").prop('disabled', false);
+					alert(err.status);
+				},
+			});
+		}
+	});
+	// change pasword
+	// Get information to get verify code
+	$("#reset-password .form-button button").on("click", function(e) {
+		e.preventDefault();
+		const passwordChange = new FormData();
+		$("#reset-password .form-group input").each(function () {
+			const name = $(this).attr("name");
+			const value = $(this).val();
+			passwordChange.append(name, value);
+		});
+		let urlGetVerifyCode = $("#reset-password .form-button button").attr(
+			"data-action"
+		);
+		let fancyboxSourceVerify = $("#reset-password .form-button button").attr(
+			"data-src"
+		);
+		if($("#reset-password form").valid() == true) {
+			$.ajax({
+				url: urlGetVerifyCode,
+				type: "post",
+				data: passwordChange,
+				processData: false,
+				contentType: false,
+				success: function(res) {
+					$("#reset-password .form-button button").prop('disabled', false);
+					if (res.Code === 200) {
+						$.fancybox.open({
+							src: '#noti-login',
+							type: 'inline',
+							opts: {
+								afterShow: function (instance, current) {
+									setTimeout(() => {
+										$.fancybox.close();
+									}, 1500);
+								}
+							}
+						});
+						$.fancybox.close();
+					} else {
+						document.querySelector('#noti-login .text_noti').innerHTML = res.Message;
+							$.fancybox.open({
+								src: '#noti-login',
+								type: 'inline',
+								opts: {
+									afterShow: function (instance, current) {
+										setTimeout(() => {
+											$.fancybox.close();
+											if (res.Code == 200) {
+												window.location.reload();
+											}
+										}, 1500);
+									}
+								}
+							});
+					}
+				},
+				beforeSend: () => {
+					$("#reset-password .form-button button").prop('disabled', true);
+				},
+				complete: () => {
+					$("#verify .form-button button").prop('disabled', false);
+				},
+				error: function(err) {
+					$("#reset-password .form-button button").prop('disabled', false);
+
 					alert(err.status);
 				},
 			});
