@@ -757,18 +757,15 @@ function countDownSale() {
 
 	if (temp) {
 		var dateEND = new Date(temp.textContent).getTime();
-		console.log(new Date(temp.textContent));
-		console.log(dateEND);
 
 		// Update the count down every 1 second
 		var x = setInterval(function() {
 			// Get today's date and time
 			var now = new Date().getTime();
-			console.log(new Date());
 
 			// Find the distance between now and the count down date
 			var distance = dateEND - now;
-			console.log(distance);
+			
 
 			// Time calculations for days, hours, minutes and seconds
 
@@ -788,7 +785,8 @@ function countDownSale() {
 				// If the count down is finished, write some text
 				if (distance < 0) {
 					clearInterval(x);
-					document.getElementById("demo").innerHTML = "EXPIRED";
+					$(".box-countdown").remove();
+					$(".box-expire").css("display" , "flex");
 				}
 			} catch (error) {}
 		}, 1000);
@@ -1364,47 +1362,83 @@ const getUserName = () => {
 const ajaxForgotPassword = () => {
 	// Get information to get verify code
 	$("body").on("click", "#forgot-password .form-button button", function(e) {
-		let informationToGetPassword = $(
-			"#forgot-password .form-group input"
-		).val();
+		// let informationToGetPassword = $(
+		// 	"#forgot-password .form-group input"
+		// ).val();
+		const informationToGetPassword = new FormData();
+		const name = $("#forgot-password .form-group input").attr("name");
+		const value = $("#forgot-password .form-group input").val();
+		informationToGetPassword.append(name, value)
 		let urlGetVerifyCode = $("#forgot-password .form-button button").attr(
 			"data-action"
 		);
 		let fancyboxSourceVerify = $("#forgot-password .form-button button").attr(
 			"data-src"
 		);
-		e.preventDefault();
-		$.ajax({
-			url: urlGetVerifyCode,
-			type: "post",
-			data: {
-				username: informationToGetPassword,
-			},
-			success: function(res) {
-				if (res.Code === 200) {
-					$.fancybox.open({
-						src: fancyboxSourceVerify,
-						type: "inline",
-						opts: {
-							closeExisting: true,
-							hash: false,
-							beforeShow: function() {
-								$("#verify .popup-wrapper>p").html(res.Message);
-							},
-						},
-					});
-				} else {
-					alert(res.Message);
-				}
-			},
-			error: function(err) {
-				alert(err.status);
+		$.fancybox.open({
+			src: fancyboxSourceVerify,
+			type: "inline",
+			opts: {
+				closeExisting: true,
+				hash: false,
+				beforeShow: function() {
+					$("#verify .popup-wrapper>p").html("heyman");
+				},
 			},
 		});
+		e.preventDefault();
+		if($("#forgot-password form").valid() == true) {
+			$.ajax({
+				url: urlGetVerifyCode,
+				type: "post",
+				data: informationToGetPassword,
+				success: function(res) {
+					$("#forgot-password .form-button button").prop('disabled', false);
+					if (res.Code === 200) {
+						$.fancybox.open({
+							src: fancyboxSourceVerify,
+							type: "inline",
+							opts: {
+								closeExisting: true,
+								hash: false,
+								beforeShow: function() {
+									$("#verify .popup-wrapper>p").html(res.Message);
+								},
+							},
+						});
+					} else {
+						document.querySelector('#noti-login .text_noti').innerHTML = res.Message;
+							$.fancybox.open({
+								src: '#noti-login',
+								type: 'inline',
+								opts: {
+									afterShow: function (instance, current) {
+										setTimeout(() => {
+											$.fancybox.close();
+											if (res.Code == 200) {
+												window.location.reload();
+											}
+										}, 1500);
+									}
+								}
+							});
+					}
+				},
+				beforeSend: () => {
+					$("#forgot-password .form-button button").prop('disabled', true);
+				},
+				error: function(err) {
+					alert(err.status);
+				},
+			});
+		}
 	});
 	// get verify code to reset password
 	$("body").on("click", "#verify .form-button button", function(e) {
-		let verifyCode = $("#verify .form-group input").val();
+		let verifyCode = new FormData();
+		const name =  $("#verify .form-group input").attr("name");
+		const value =  $("#verify .form-group input").val();
+		verifyCode.append(name , value)
 		let urlChangePassword = $("#verify .form-button button").attr(
 			"data-action"
 		);
@@ -1412,33 +1446,51 @@ const ajaxForgotPassword = () => {
 			"data-src"
 		);
 		e.preventDefault();
-		$.ajax({
-			url: urlChangePassword,
-			type: "post",
-			data: {
-				code: verifyCode,
-			},
-			success: function(res) {
-				if (res.Code === 200) {
-					$.fancybox.open({
-						src: fancyboxSourceResetPassword,
-						type: "inline",
-						opts: {
-							closeExisting: true,
-							hash: false,
-							beforeShow: function() {
-								$("#reset-password .popup-wrapper>p").html(res.Message);
+		if($("#verify form").valid() == true) {
+			$.ajax({
+				url: urlChangePassword,
+				type: "post",
+				data: verifyCode,
+				success: function(res) {
+					$("#verify .form-button button").prop('disabled', false);
+					if (res.Code === 200) {
+						$.fancybox.open({
+							src: fancyboxSourceResetPassword,
+							type: "inline",
+							opts: {
+								closeExisting: true,
+								hash: false,
+								beforeShow: function() {
+									$("#reset-password .popup-wrapper>p").html(res.Message);
+								},
 							},
-						},
-					});
-				} else {
-					alert(res.Message);
-				}
-			},
-			error: function(err) {
-				alert(err.status);
-			},
-		});
+						});
+					} else {
+						document.querySelector('#noti-login .text_noti').innerHTML = res.Message;
+							$.fancybox.open({
+								src: '#noti-login',
+								type: 'inline',
+								opts: {
+									afterShow: function (instance, current) {
+										setTimeout(() => {
+											$.fancybox.close();
+											if (res.Code == 200) {
+												window.location.reload();
+											}
+										}, 1500);
+									}
+								}
+							});
+					}
+				},
+				beforeSend: () => {
+					$("#verify .form-button button").prop('disabled', true);
+				},
+				error: function(err) {
+					alert(err.status);
+				},
+			});
+		}
 	});
 };
 
