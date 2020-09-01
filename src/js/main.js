@@ -1361,10 +1361,8 @@ const getUserName = () => {
 
 const ajaxForgotPassword = () => {
 	// Get information to get verify code
-	$("body").on("click", "#forgot-password .form-button button", function(e) {
-		// let informationToGetPassword = $(
-		// 	"#forgot-password .form-group input"
-		// ).val();
+	$("#forgot-password .form-button button").on("click", function(e) {
+		e.preventDefault();
 		const informationToGetPassword = new FormData();
 		const name = $("#forgot-password .form-group input").attr("name");
 		const value = $("#forgot-password .form-group input").val();
@@ -1375,18 +1373,7 @@ const ajaxForgotPassword = () => {
 		let fancyboxSourceVerify = $("#forgot-password .form-button button").attr(
 			"data-src"
 		);
-		$.fancybox.open({
-			src: fancyboxSourceVerify,
-			type: "inline",
-			opts: {
-				closeExisting: true,
-				hash: false,
-				beforeShow: function() {
-					$("#verify .popup-wrapper>p").html("heyman");
-				},
-			},
-		});
-		e.preventDefault();
+		
 		if($("#forgot-password form").valid() == true) {
 			$.ajax({
 				url: urlGetVerifyCode,
@@ -1434,7 +1421,8 @@ const ajaxForgotPassword = () => {
 		}
 	});
 	// get verify code to reset password
-	$("body").on("click", "#verify .form-button button", function(e) {
+	$("#verify .form-button button").on("click", function(e) {
+		e.preventDefault();
 		let verifyCode = new FormData();
 		const name =  $("#verify .form-group input").attr("name");
 		const value =  $("#verify .form-group input").val();
@@ -1445,7 +1433,6 @@ const ajaxForgotPassword = () => {
 		let fancyboxSourceResetPassword = $("#verify .form-button button").attr(
 			"data-src"
 		);
-		e.preventDefault();
 		if($("#verify form").valid() == true) {
 			$.ajax({
 				url: urlChangePassword,
