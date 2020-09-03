@@ -1514,35 +1514,22 @@ const ajaxForgotPassword = () => {
 				processData: false,
 				contentType: false,
 				success: function(res) {
-					$("#reset-password .form-button button").prop('disabled', false);
-					if (res.Code === 200) {
-						document.querySelector('#noti-login .text_noti').innerHTML = res.Message;
-						$.fancybox.open({
-							src: '#noti-login',
-							type: 'inline',
-							opts: {
-								afterShow: function (instance, current) {
-									setTimeout(() => {
-										$.fancybox.close();
-									}, 1500);
-								}
-							}
-						});
-						$.fancybox.close();
-					} else {
-						document.querySelector('#noti-login .text_noti').innerHTML = res.Message;
-							$.fancybox.open({
-								src: '#noti-login',
-								type: 'inline',
-								opts: {
-									afterShow: function (instance, current) {
-										setTimeout(() => {
-											$.fancybox.close();
-										}, 1500);
+					$("#verify .form-button button").prop('disabled', false);
+					document.querySelector('#noti-login .text_noti').innerHTML = res.Message;
+					$.fancybox.open({
+						src: '#noti-login',
+						type: 'inline',
+						opts: {
+							afterShow: function (instance, current) {
+								setTimeout(() => {
+									$.fancybox.close();
+									if (res.Code == 200) {
+										window.location.reload();
 									}
-								}
-							});
-					}
+								}, 1500);
+							}
+						}
+					});
 				},
 				beforeSend: () => {
 					$("#reset-password .form-button button").prop('disabled', true);
