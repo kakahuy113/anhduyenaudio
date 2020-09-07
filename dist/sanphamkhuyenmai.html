@@ -258,10 +258,10 @@
 						<p>Vui lòng nhập email để lấy mã xác thực và đặt lại mật khẩu.</p>
 						<form>
 							<div class="form-group">
-								<input type="text" placeholder="Email">
+								<input type="text" name="username" placeholder="Email">
 							</div>
 							<div class="form-button">
-								<button type="button" data-src="#verify" data-action="/">Tiếp theo</button>
+								<button type="submit" data-src="#verify" data-action="/">Tiếp theo</button>
 							</div>
 						</form>
 						<div class="bottom-ask">
@@ -292,13 +292,13 @@
 						<p>Đặt lại mật khẩu mới mà bạn mong muốn</p>
 						<form>
 							<div class="form-group">
-								<input type="password" placeholder="Mật khẩu mới">
+								<input type="password" name="password1" placeholder="Mật khẩu mới">
 							</div>
 							<div class="form-group">
-								<input type="password" placeholder="Nhập lại mật khẩu">
+								<input type="password" name="password2" placeholder="Nhập lại mật khẩu">
 							</div>
 							<div class="form-button">
-								<button>Đổi mật khẩu</button>
+								<button data-action="/">Đổi mật khẩu</button>
 							</div>
 						</form>
 					</div>
@@ -324,6 +324,9 @@
 								<div class="block">
 									<div id="seconds">0</div><span>sec</span>
 								</div>
+							</div>
+							<div class="box-expire"> 
+								<div class="block"><span>Expire</span></div>
 							</div>
 						</figure>
 					</div>

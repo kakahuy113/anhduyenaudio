@@ -401,9 +401,9 @@ header
 				p Vui lòng nhập email để lấy mã xác thực và đặt lại mật khẩu.
 				form
 					.form-group
-						input(type="text" placeholder="Email")
+						input(type="text" name="username" placeholder="Email")
 					.form-button
-						button(type="button" data-src="#verify" data-action="/") Tiếp theo
+						button(type="submit" data-src="#verify" data-action="/") Tiếp theo
 				.bottom-ask
 					p Đã có tài khoản? 
 						a(href="#") Đăng nhập
@@ -425,8 +425,8 @@ header
 				p Đặt lại mật khẩu mới mà bạn mong muốn
 				form
 					.form-group
-						input(type="password" placeholder="Mật khẩu mới")
+						input(type="password" name="password1" placeholder="Mật khẩu mới")
 					.form-group
-						input(type="password" placeholder="Nhập lại mật khẩu")
+						input(type="password" name="password2" placeholder="Nhập lại mật khẩu")
 					.form-button
-						button Đổi mật khẩu
+						button(data-action="/") Đổi mật khẩu
