@@ -8,29 +8,29 @@
  *  jquery.ui.widget.js
  *  jquery.ui.mouse.js
  */
-!(function(a) {
+!(function (a) {
 	function f(a, b) {
 		if (!(a.originalEvent.touches.length > 1)) {
 			a.preventDefault();
 			var c = a.originalEvent.changedTouches[0],
 				d = document.createEvent("MouseEvents");
 			d.initMouseEvent(
-					b,
-					!0,
-					!0,
-					window,
-					1,
-					c.screenX,
-					c.screenY,
-					c.clientX,
-					c.clientY,
-					!1,
-					!1,
-					!1,
-					!1,
-					0,
-					null
-				),
+				b,
+				!0,
+				!0,
+				window,
+				1,
+				c.screenX,
+				c.screenY,
+				c.clientX,
+				c.clientY,
+				!1,
+				!1,
+				!1,
+				!1,
+				0,
+				null
+			),
 				a.target.dispatchEvent(d);
 		}
 	}
@@ -39,7 +39,7 @@
 			b = a.ui.mouse.prototype,
 			c = b._mouseInit,
 			d = b._mouseDestroy;
-		(b._touchStart = function(a) {
+		(b._touchStart = function (a) {
 			var b = this;
 			!e &&
 				b._mouseCapture(a.originalEvent.changedTouches[0]) &&
@@ -49,41 +49,41 @@
 					f(a, "mousemove"),
 					f(a, "mousedown"));
 		}),
-		(b._touchMove = function(a) {
-			e && ((this._touchMoved = !0), f(a, "mousemove"));
-		}),
-		(b._touchEnd = function(a) {
-			e &&
-				(f(a, "mouseup"),
-					f(a, "mouseout"),
-					this._touchMoved || f(a, "click"),
-					(e = !1));
-		}),
-		(b._mouseInit = function() {
-			var b = this;
-			b.element.bind({
+			(b._touchMove = function (a) {
+				e && ((this._touchMoved = !0), f(a, "mousemove"));
+			}),
+			(b._touchEnd = function (a) {
+				e &&
+					(f(a, "mouseup"),
+						f(a, "mouseout"),
+						this._touchMoved || f(a, "click"),
+						(e = !1));
+			}),
+			(b._mouseInit = function () {
+				var b = this;
+				b.element.bind({
 					touchstart: a.proxy(b, "_touchStart"),
 					touchmove: a.proxy(b, "_touchMove"),
 					touchend: a.proxy(b, "_touchEnd"),
 				}),
-				c.call(b);
-		}),
-		(b._mouseDestroy = function() {
-			var b = this;
-			b.element.unbind({
+					c.call(b);
+			}),
+			(b._mouseDestroy = function () {
+				var b = this;
+				b.element.unbind({
 					touchstart: a.proxy(b, "_touchStart"),
 					touchmove: a.proxy(b, "_touchMove"),
 					touchend: a.proxy(b, "_touchEnd"),
 				}),
-				d.call(b);
-		});
+					d.call(b);
+			});
 	}
 })(jQuery);
 
 // Function thêm class lazyload vào các thẻ <img> có thuộc tính [data-src]
 const addClassLazyload = () => {
 	let imgList = document.querySelectorAll("img[data-src]");
-	Array.prototype.forEach.call(imgList, function(el) {
+	Array.prototype.forEach.call(imgList, function (el) {
 		if (el.className.length > 0) {
 			el.className = el.className + " lazyload";
 		} else {
@@ -176,98 +176,98 @@ function homeSliderBanner() {
 function productSlider() {
 	var swiper1 = new Swiper(
 		".home-product-1 .product-slider .swiper-container", {
-			slidesPerView: 5,
-			slidesPerColumn: 2,
-			// loop: true,
-			speed: 1200,
-			autoplay: true,
-			observer: true,
-			observeParents: true,
-			breakpoints: {
-				1365: {
-					slidesPerView: 4,
-				},
-				1024: {
-					slidesPerView: 3,
-				},
-				768: {
-					slidesPerView: 2,
-					// slidesPerColumn: 2,
-					speed: 200,
-				},
+		slidesPerView: 5,
+		slidesPerColumn: 2,
+		// loop: true,
+		speed: 1200,
+		autoplay: true,
+		observer: true,
+		observeParents: true,
+		breakpoints: {
+			1365: {
+				slidesPerView: 4,
 			},
-			pagination: {
-				el: ".home-product-1 .product-slider .swiper-pagination",
-				clickable: true,
+			1024: {
+				slidesPerView: 3,
 			},
-			navigation: {
-				nextEl: ".home-product-1 .product-slider .swiper-button-next",
-				prevEl: ".home-product-1 .product-slider .swiper-button-prev",
+			768: {
+				slidesPerView: 2,
+				// slidesPerColumn: 2,
+				speed: 200,
 			},
-		}
+		},
+		pagination: {
+			el: ".home-product-1 .product-slider .swiper-pagination",
+			clickable: true,
+		},
+		navigation: {
+			nextEl: ".home-product-1 .product-slider .swiper-button-next",
+			prevEl: ".home-product-1 .product-slider .swiper-button-prev",
+		},
+	}
 	);
 	var swiper2 = new Swiper(
 		".home-product-2 .product-slider .swiper-container", {
-			slidesPerView: 5,
-			slidesPerColumn: 2,
-			// loop: true,
-			speed: 1200,
-			autoplay: true,
-			observer: true,
-			observeParents: true,
-			breakpoints: {
-				1365: {
-					slidesPerView: 4,
-				},
-				1024: {
-					slidesPerView: 3,
-				},
-				768: {
-					slidesPerView: 2,
-					// slidesPerColumn: 2,
-					speed: 200,
-				},
+		slidesPerView: 5,
+		slidesPerColumn: 2,
+		// loop: true,
+		speed: 1200,
+		autoplay: true,
+		observer: true,
+		observeParents: true,
+		breakpoints: {
+			1365: {
+				slidesPerView: 4,
 			},
-			pagination: {
-				el: ".home-product-2 .product-slider .swiper-pagination",
-				clickable: true,
+			1024: {
+				slidesPerView: 3,
 			},
-			navigation: {
-				nextEl: ".home-product-2 .product-slider .swiper-button-next",
-				prevEl: ".home-product-2 .product-slider .swiper-button-prev",
+			768: {
+				slidesPerView: 2,
+				// slidesPerColumn: 2,
+				speed: 200,
 			},
-		}
+		},
+		pagination: {
+			el: ".home-product-2 .product-slider .swiper-pagination",
+			clickable: true,
+		},
+		navigation: {
+			nextEl: ".home-product-2 .product-slider .swiper-button-next",
+			prevEl: ".home-product-2 .product-slider .swiper-button-prev",
+		},
+	}
 	);
 	var swiper3 = new Swiper(
 		".home-product-3 .product-slider .swiper-container", {
-			slidesPerView: 5,
-			slidesPerColumn: 2,
-			// loop: true,
-			speed: 1200,
-			autoplay: true,
-			observer: true,
-			observeParents: true,
-			breakpoints: {
-				1365: {
-					slidesPerView: 4,
-				},
-				1024: {
-					slidesPerView: 3,
-				},
-				768: {
-					slidesPerView: 2,
-					speed: 200,
-				},
+		slidesPerView: 5,
+		slidesPerColumn: 2,
+		// loop: true,
+		speed: 1200,
+		autoplay: true,
+		observer: true,
+		observeParents: true,
+		breakpoints: {
+			1365: {
+				slidesPerView: 4,
 			},
-			pagination: {
-				el: ".home-product-3 .product-slider .swiper-pagination",
-				clickable: true,
+			1024: {
+				slidesPerView: 3,
 			},
-			navigation: {
-				nextEl: ".home-product-3 .product-slider .swiper-button-next",
-				prevEl: ".home-product-3 .product-slider .swiper-button-prev",
+			768: {
+				slidesPerView: 2,
+				speed: 200,
 			},
-		}
+		},
+		pagination: {
+			el: ".home-product-3 .product-slider .swiper-pagination",
+			clickable: true,
+		},
+		navigation: {
+			nextEl: ".home-product-3 .product-slider .swiper-button-next",
+			prevEl: ".home-product-3 .product-slider .swiper-button-prev",
+		},
+	}
 	);
 
 	var swiper1Nav = new Swiper(".home-product-1 .block-nav .swiper-container", {
@@ -339,7 +339,7 @@ function productSlider() {
 		// }
 	});
 
-	$(".block-nav a").on("click", function(e) {
+	$(".block-nav a").on("click", function (e) {
 		e.preventDefault();
 		const _this = $(this);
 		const url = _this.attr("href");
@@ -348,13 +348,13 @@ function productSlider() {
 
 		$.ajax({
 			url: url,
-			beforeSend: function() {
+			beforeSend: function () {
 				_this
 					.parents(".home-product")
 					.find(".product-slider")
 					.addClass("loading");
 			},
-			success: function(res) {
+			success: function (res) {
 				if (_this.parents(".home-product").hasClass("home-product-1")) {
 					swiper1.removeAllSlides();
 					swiper1.appendSlide(res);
@@ -372,7 +372,7 @@ function productSlider() {
 					.find(".product-slider")
 					.removeClass("loading");
 			},
-			error: function(err) {
+			error: function (err) {
 				alert(err.Message);
 			},
 		});
@@ -384,7 +384,7 @@ function productSliderHotSale() {
 	const badgeHot =
 		'<div class="badge-sale-hot"><span data-hot>HOT</span></div>';
 	$('.product-slider-hot-sale[tab-id="hot"] .swiper-slide figure').each(
-		function() {
+		function () {
 			$(this).append(badgeHot);
 		}
 	);
@@ -472,7 +472,7 @@ function submenuCategory() {
 		.siblings(".list-item")
 		.addClass("child");
 
-	$(".category-list .item-category h3").on("click", function() {
+	$(".category-list .item-category h3").on("click", function () {
 		$(this).toggleClass("active");
 		$(".category-list .item-category h3").not(this).removeClass("active");
 		$(".category-list .item-category h3")
@@ -490,7 +490,7 @@ function submenuCategory() {
 		$(this).siblings(".list-item").slideToggle();
 	});
 
-	$(".category-list .item-category h5").on("click", function() {
+	$(".category-list .item-category h5").on("click", function () {
 		$(".category-list .item-category h5")
 			.not(this)
 			.siblings(".list-item")
@@ -556,10 +556,10 @@ function imgProductSlider() {
 
 // ĐÁNH GIÁ SẢN PHẨM KHI BÌNH LUẬN
 function clickRating() {
-	$(".list-step .rate").each(function() {
+	$(".list-step .rate").each(function () {
 		var _this = $(this);
 		if (_this.find(".img-star").length > 0) {
-			_this.find(".img-star .star").on("click", function(e) {
+			_this.find(".img-star .star").on("click", function (e) {
 				let offsetLeft = _this.find(".img-star .star").offset().left;
 				let width = _this.find(".img-star .star").width();
 				let positionClicked = e.pageX - Math.round(offsetLeft, 0);
@@ -587,7 +587,7 @@ function clickRating() {
 }
 
 function showRating() {
-	$(".block-comment .rate[data-rate]").each(function() {
+	$(".block-comment .rate[data-rate]").each(function () {
 		var numberStart = $(this).attr("data-rate");
 
 		if (numberStart == 5) {
@@ -603,7 +603,7 @@ function showRating() {
 		}
 	});
 
-	$(".info-summary .rate[data-rate]").each(function() {
+	$(".info-summary .rate[data-rate]").each(function () {
 		var numberStart = $(this).attr("data-rate");
 
 		if (numberStart == 5) {
@@ -619,7 +619,7 @@ function showRating() {
 		}
 	});
 
-	$(".block-rating .rate[data-rate]").each(function() {
+	$(".block-rating .rate[data-rate]").each(function () {
 		var numberStart = $(this).attr("data-rate");
 
 		if (numberStart == 5) {
@@ -638,7 +638,7 @@ function showRating() {
 
 // CHỌN MÀU SẢN PHẨM
 function chooesColor() {
-	$(".chooes-quantity-color .color").click(function(e) {
+	$(".chooes-quantity-color .color").click(function (e) {
 		e.preventDefault();
 
 		$(".chooes-quantity-color .color").removeClass("active");
@@ -675,15 +675,15 @@ function getDataBar() {
 	let dataBarNodeList = document.querySelectorAll(
 		".statistical-rating .middle .bar"
 	);
-	Array.prototype.forEach.call(dataBarNodeList, function(e, index) {
+	Array.prototype.forEach.call(dataBarNodeList, function (e, index) {
 		const data = e.getAttribute("data-bar");
 		e.style.width = data + "%";
 	});
 }
 
 const cartQuantity = () => {
-	$('.quantity-input .minus').each(function() {
-		$(this).on("click", function() {
+	$('.quantity-input .minus').each(function () {
+		$(this).on("click", function () {
 			let alertContent = $(this).attr('data-alert');
 			let curVal = Number($(this).siblings("input").val())
 			if (curVal <= 0) {
@@ -696,8 +696,8 @@ const cartQuantity = () => {
 		})
 	})
 
-	$('.quantity-input .plus').each(function() {
-		$(this).on("click", function() {
+	$('.quantity-input .plus').each(function () {
+		$(this).on("click", function () {
 			let alertContent = $(this).attr('data-alert');
 			let curVal = Number($(this).siblings("input").val())
 			if (curVal >= 5) {
@@ -710,10 +710,10 @@ const cartQuantity = () => {
 		})
 	})
 
-	$('.quantity-input .quantity').each(function() {
+	$('.quantity-input .quantity').each(function () {
 		const alertContentMax = $('.quantity-input .plus').attr('data-alert');
 		const alertContentMin = $('.quantity-input .minus').attr('data-alert');
-		$(this).on("keyup", function() {
+		$(this).on("keyup", function () {
 			if ($(this).val() >= 5) {
 				// alert(alertContentMax)
 				$(this).val(5);
@@ -726,13 +726,13 @@ const cartQuantity = () => {
 }
 
 const toggleFormAddNewAddress = () => {
-	$(".add-new-address").on("click", function() {
+	$(".add-new-address").on("click", function () {
 		$(".add-new-address-form").slideToggle();
 	});
 };
 
 function likeComment() {
-	$(".button-like-comment").click(function(e) {
+	$(".button-like-comment").click(function (e) {
 		e.preventDefault();
 
 		$(this).find(".like-comment").toggleClass("active");
@@ -748,7 +748,7 @@ function likeComment() {
 function countDownSale() {
 	$(".box-countdown").hide();
 
-	setTimeout(function() {
+	setTimeout(function () {
 		$(".box-countdown").fadeIn(2000);
 	}, 1000);
 
@@ -761,7 +761,7 @@ function countDownSale() {
 		console.log(dateEND);
 
 		// Update the count down every 1 second
-		var x = setInterval(function() {
+		var x = setInterval(function () {
 			// Get today's date and time
 			var now = new Date().getTime();
 			console.log(new Date());
@@ -790,7 +790,7 @@ function countDownSale() {
 					clearInterval(x);
 					document.getElementById("demo").innerHTML = "EXPIRED";
 				}
-			} catch (error) {}
+			} catch (error) { }
 		}, 1000);
 	}
 }
@@ -838,7 +838,7 @@ function introduceSliderBanner() {
 }
 
 function showFilter() {
-	$(".list-product .block-title-filter").click(function(e) {
+	$(".list-product .block-title-filter").click(function (e) {
 		e.preventDefault();
 		var heightThisPage = $(window).height();
 
@@ -853,7 +853,7 @@ function showFilter() {
 			$("body").removeAttr("style");
 		}
 
-		$("#backdrop").click(function(e) {
+		$("#backdrop").click(function (e) {
 			e.preventDefault();
 			$(this).removeClass("active");
 			$("body").removeAttr("style");
@@ -911,7 +911,7 @@ const megaMenuHover = () => {
 };
 
 const turnOffPopupWhenClicked = () => {
-	$("[data-fancybox]").on("click", function() {
+	$("[data-fancybox]").on("click", function () {
 		$(".bottom-header").removeClass("active");
 		$("header .opacity").removeClass("active");
 		$(".login-popup").removeClass("open");
@@ -990,7 +990,7 @@ const addClassHeaderWhenScroll = () => {
 };
 
 function backToTop() {
-	$(window).scroll(function() {
+	$(window).scroll(function () {
 		if ($(this).scrollTop() > 500) {
 			$("#back-to-top").addClass("show");
 		} else {
@@ -998,11 +998,11 @@ function backToTop() {
 		}
 	});
 
-	$("#back-to-top").on("click", function(e) {
+	$("#back-to-top").on("click", function (e) {
 		e.preventDefault();
 		$("html,body").animate({
-				scrollTop: 0,
-			},
+			scrollTop: 0,
+		},
 			1200
 		);
 	});
@@ -1029,7 +1029,7 @@ function rangeSliderPrice() {
 			min: min_price,
 			max: max_price,
 			values: [curMinPrice, curMaxPrice],
-			slide: function(event, ui) {
+			slide: function (event, ui) {
 				$("#amount").val(ui.values[0] + " - " + ui.values[1]);
 				const minCurrency = formatCurrency
 					.format(ui.values[0])
@@ -1041,7 +1041,7 @@ function rangeSliderPrice() {
 					.join(",");
 				$("#value-text").html(`${minCurrency} - ${maxCurrency}`);
 			},
-			stop: function(event, ui) {
+			stop: function (event, ui) {
 				if (typeof Redirect == "function") {
 					Redirect();
 				}
@@ -1054,12 +1054,12 @@ function rangeSliderPrice() {
 		);
 		$("#value-text").html(
 			`${formatCurrency
-        .format(curMinPrice)
-        .split(".")
-        .join(",")} - ${formatCurrency
-        .format(curMaxPrice)
-        .split(".")
-        .join(",")}`
+				.format(curMinPrice)
+				.split(".")
+				.join(",")} - ${formatCurrency
+					.format(curMaxPrice)
+					.split(".")
+					.join(",")}`
 		);
 	} else {
 		$(".block-filter .price").remove();
@@ -1090,7 +1090,7 @@ const findManufactures = () => {
 };
 
 function chanceUrlNewsPage() {
-	$(".link-news").each(function(index) {
+	$(".link-news").each(function (index) {
 		var newsUrlMobile = $(this).attr("data-newsMobile");
 		if ($(window).width() < 1024) {
 			$(this).attr("href", newsUrlMobile);
@@ -1099,17 +1099,17 @@ function chanceUrlNewsPage() {
 }
 
 function getProductQuantity() {
-	$(".category-list .child").each(function() {
+	$(".category-list .child").each(function () {
 		var _thisList = $(this);
 		var productOfThis = 0;
-		_thisList.find("[data-product]").each(function() {
+		_thisList.find("[data-product]").each(function () {
 			var _thisItem = $(this);
 			productOfThis += Number(_thisItem.attr("data-product"));
 		});
 		_thisList.siblings("h5").attr("data-product", productOfThis);
 	});
 
-	$(".category-list [data-product]").each(function() {
+	$(".category-list [data-product]").each(function () {
 		$(this)
 			.find("span")
 			.html(`(${$(this).attr("data-product")})`);
@@ -1123,7 +1123,7 @@ function getProductQuantity() {
 }
 
 function showMainReply() {
-	$(".main-comment .button-comment").click(function(e) {
+	$(".main-comment .button-comment").click(function (e) {
 		e.preventDefault();
 		$(this)
 			.parents(".block-comment")
@@ -1134,10 +1134,9 @@ function showMainReply() {
 
 // AJAX COMMENT
 function AjaxComment() {
-	$("body").on("click", ".submit.comment", function(e) {
+	$("body").on("click", ".submit.comment", function (e) {
 		e.preventDefault();
 		const isLogin = $('#input-check-login input').attr('data-islogin');
-		console.log(isLogin);
 		if (isLogin == "True") {
 			var product_ID = $(this).siblings("input[name='content-comment']").attr("product-id");
 			var newRating = $(".new-comment .rate").attr("data-rate");
@@ -1153,7 +1152,7 @@ function AjaxComment() {
 						Content: newCommentContent,
 						Vote: newRating,
 					},
-					success: function(res) {
+					success: function (res) {
 						if (res.Code == 200) {
 							location.reload();
 						} else {
@@ -1166,7 +1165,7 @@ function AjaxComment() {
 			$.fancybox.open({
 				src: '#login',
 				opts: {
-					afterShow: function(instance, current) {}
+					afterShow: function (instance, current) { }
 				}
 			});
 		}
@@ -1175,7 +1174,7 @@ function AjaxComment() {
 
 // AJAX REPLY
 function AjaxReply() {
-	$("body").on("click", ".submit.reply", function(e) {
+	$("body").on("click", ".submit.reply", function (e) {
 		e.preventDefault();
 		const isLogin = $('#input-check-login input').attr('data-islogin');
 		if (isLogin == "True") {
@@ -1188,7 +1187,7 @@ function AjaxReply() {
 					Id: comment_ID,
 					Content: replyContent,
 				},
-				success: function(res) {
+				success: function (res) {
 					if (res.Code == 200) {
 						location.reload();
 					} else {
@@ -1200,7 +1199,7 @@ function AjaxReply() {
 			$.fancybox.open({
 				src: '#login',
 				opts: {
-					afterShow: function(instance, current) {}
+					afterShow: function (instance, current) { }
 				}
 			});
 		}
@@ -1209,7 +1208,7 @@ function AjaxReply() {
 
 // AJAX LIKE
 function AjaxLike() {
-	$("body").on("click", ".button-like-comment", function(e) {
+	$("body").on("click", ".button-like-comment", function (e) {
 		e.preventDefault();
 		const isLogin = $('#input-check-login input').attr('data-islogin');
 		if (isLogin == "True") {
@@ -1230,7 +1229,7 @@ function AjaxLike() {
 				type: "post",
 				url: "/thich",
 				data: likeInfo,
-				success: function(res) {
+				success: function (res) {
 					if (res.Code == 200) {
 						$(this).find("span").html(res.Message);
 					} else {
@@ -1242,7 +1241,7 @@ function AjaxLike() {
 			$.fancybox.open({
 				src: '#login',
 				opts: {
-					afterShow: function(instance, current) {}
+					afterShow: function (instance, current) { }
 				}
 			});
 		}
@@ -1250,7 +1249,7 @@ function AjaxLike() {
 }
 
 function AjaxDeteleComment() {
-	$("body").on("click", ".button-delete-comment", function(e) {
+	$("body").on("click", ".button-delete-comment", function (e) {
 		e.preventDefault();
 		const isLogin = $('#input-check-login input').attr('data-islogin');
 		if (isLogin == "True") {
@@ -1263,7 +1262,7 @@ function AjaxDeteleComment() {
 				type: "get",
 				url: "/xoa-binhluan",
 				data: deleteInfo,
-				success: function(res) {
+				success: function (res) {
 					if (res.Code == 200) {
 						_thisCommentDelete.find("span").html(res.Message).addClass("deleted");
 					} else {
@@ -1275,7 +1274,7 @@ function AjaxDeteleComment() {
 			$.fancybox.open({
 				src: '#login',
 				opts: {
-					afterShow: function(instance, current) {}
+					afterShow: function (instance, current) { }
 				}
 			});
 		}
@@ -1287,7 +1286,7 @@ const getPropertyId = () => {
 		".product-summary .color-item .list-color span.active"
 	).attr("data-propertyId");
 	$(".product-summary .add-cart").attr("data-propertyId", propertyId);
-	$(".product-summary .color-item .list-color span").on("click", function() {
+	$(".product-summary .color-item .list-color span").on("click", function () {
 		$(this).siblings("span").removeClass("active");
 		$(this).addClass("active");
 		let currentPropertyId = $(this).attr("data-propertyId");
@@ -1317,13 +1316,13 @@ const calculatePriceWithShippingFee = () => {
 	const shippingMethodHandler = (input) => {
 		const currentShippingFee = Number(
 			input.parentNode
-			.querySelector("label [data-shipping-fee]")
-			.getAttribute("data-shipping-fee")
+				.querySelector("label [data-shipping-fee]")
+				.getAttribute("data-shipping-fee")
 		);
 		const tempPrice = Number(
 			document
-			.querySelector("[data-temp-price]")
-			.getAttribute("data-temp-price")
+				.querySelector("[data-temp-price]")
+				.getAttribute("data-temp-price")
 		);
 		document
 			.querySelector("[data-shipping]")
@@ -1363,7 +1362,7 @@ const getUserName = () => {
 
 const ajaxForgotPassword = () => {
 	// Get information to get verify code
-	$("body").on("click", "#forgot-password .form-button button", function(e) {
+	$("body").on("click", "#forgot-password .form-button button", function (e) {
 		let informationToGetPassword = $(
 			"#forgot-password .form-group input"
 		).val();
@@ -1380,7 +1379,7 @@ const ajaxForgotPassword = () => {
 			data: {
 				username: informationToGetPassword,
 			},
-			success: function(res) {
+			success: function (res) {
 				if (res.Code === 200) {
 					$.fancybox.open({
 						src: fancyboxSourceVerify,
@@ -1388,7 +1387,7 @@ const ajaxForgotPassword = () => {
 						opts: {
 							closeExisting: true,
 							hash: false,
-							beforeShow: function() {
+							beforeShow: function () {
 								$("#verify .popup-wrapper>p").html(res.Message);
 							},
 						},
@@ -1397,13 +1396,13 @@ const ajaxForgotPassword = () => {
 					alert(res.Message);
 				}
 			},
-			error: function(err) {
+			error: function (err) {
 				alert(err.status);
 			},
 		});
 	});
 	// get verify code to reset password
-	$("body").on("click", "#verify .form-button button", function(e) {
+	$("body").on("click", "#verify .form-button button", function (e) {
 		let verifyCode = $("#verify .form-group input").val();
 		let urlChangePassword = $("#verify .form-button button").attr(
 			"data-action"
@@ -1418,7 +1417,7 @@ const ajaxForgotPassword = () => {
 			data: {
 				code: verifyCode,
 			},
-			success: function(res) {
+			success: function (res) {
 				if (res.Code === 200) {
 					$.fancybox.open({
 						src: fancyboxSourceResetPassword,
@@ -1426,7 +1425,7 @@ const ajaxForgotPassword = () => {
 						opts: {
 							closeExisting: true,
 							hash: false,
-							beforeShow: function() {
+							beforeShow: function () {
 								$("#reset-password .popup-wrapper>p").html(res.Message);
 							},
 						},
@@ -1435,7 +1434,7 @@ const ajaxForgotPassword = () => {
 					alert(res.Message);
 				}
 			},
-			error: function(err) {
+			error: function (err) {
 				alert(err.status);
 			},
 		});
@@ -1478,8 +1477,8 @@ const verifyAddressInCheckoutStep = () => {
 			addressForm.querySelector(
 				"#ShippingDistrictSelectedValue"
 			).innerHTML = `<option value=${district}>${
-        addressItem.querySelector("[data-district]").innerHTML
-      }</option>`;
+				addressItem.querySelector("[data-district]").innerHTML
+				}</option>`;
 			addressForm.querySelector("form").submit();
 		});
 	});
@@ -1521,13 +1520,13 @@ const editAddressInCheckoutStep = () => {
 };
 
 const toggleAddNewsAddressItem = () => {
-	$(".add-news-address").on("click", function() {
+	$(".add-news-address").on("click", function () {
 		$(".add-new-address-form").slideToggle();
 	});
 };
 
 const ajaxDeleteBill = () => {
-	$("#cancel-bill button").on("click", function(e) {
+	$("#cancel-bill button").on("click", function (e) {
 		e.preventDefault();
 		const deleteBill = new FormData();
 		deleteBill.append("billid", $("#bill-id").val());
@@ -1538,7 +1537,7 @@ const ajaxDeleteBill = () => {
 			method: "post",
 			processData: false,
 			contentType: false,
-			success: function(res) {
+			success: function (res) {
 				if (res.Code === 200) {
 					setTimeout(() => {
 						window.location.reload();
@@ -1552,7 +1551,7 @@ const ajaxDeleteBill = () => {
 };
 
 const setHeightItemImgBox = () => {
-	$(".item-list-pro").each(function() {
+	$(".item-list-pro").each(function () {
 		$(this).find(".box-img").height($(this).find(".box-img").width());
 	});
 };
@@ -1657,7 +1656,7 @@ const about2slider = () => {
 
 const aboutNavAjax = () => {
 	const currentPathnameAfterReload = window.location.pathname;
-	$(".about-nav nav a").each(function() {
+	$(".about-nav nav a").each(function () {
 		const navPathname = $(this).attr("href");
 
 		if (currentPathnameAfterReload.indexOf(navPathname) >= 0) {
@@ -1666,7 +1665,7 @@ const aboutNavAjax = () => {
 		}
 
 		if ($(".about-5--2").length > 0) {
-			$(".about-nav nav a").each(function() {
+			$(".about-nav nav a").each(function () {
 				if ($(this).attr("href").indexOf("/giai-phap") >= 0) {
 					$(this).addClass("active");
 					$(".about-nav nav a").not(this).removeClass("active");
@@ -1681,18 +1680,18 @@ const aboutNavAjax = () => {
 			$.ajax({
 				url: url,
 				type: "get",
-				success: function(res) {
+				success: function (res) {
 					if (url.indexOf("du-an") >= 0) {
 						$(".about-ajax").html(
 							`<div class="container"><div class="row row-custom about-project"><div class="col-lg-11 col-xl-10">${$(
-                res
-              )
-                .find(".project-list .container")
-                .html()}</div></div></div>`
+								res
+							)
+								.find(".project-list .container")
+								.html()}</div></div></div>`
 						);
 						$(".about-project .description").removeClass("d-none");
 						$(".about-project .row").eq(0).addClass("row-custom");
-						$(".about-project .col-lg-4").each(function() {
+						$(".about-project .col-lg-4").each(function () {
 							$(this).addClass("col-6 col-md-4 about-4--item--col");
 							$(this).removeClass("col-lg-4");
 						});
@@ -1713,24 +1712,24 @@ const aboutNavAjax = () => {
 };
 
 const aboutProjectPaginationAjax = () => {
-	$("body").on("click", ".about-ajax .pagination li a", function(e) {
+	$("body").on("click", ".about-ajax .pagination li a", function (e) {
 		e.preventDefault();
 		const url = $(this).attr("href");
 		$.ajax({
 			url: url,
 			type: "get",
-			success: function(res) {
+			success: function (res) {
 				if (url.indexOf("du-an") >= 0) {
 					$(".about-ajax").html(
 						`<div class="container"><div class="row about-project"><div class="col-lg-11 col-xl-10">${$(
-              res
-            )
-              .find(".project-list .container")
-              .html()}</div></div></div>`
+							res
+						)
+							.find(".project-list .container")
+							.html()}</div></div></div>`
 					);
 					$(".about-project .description").removeClass("d-none");
 					$(".about-project .row").eq(0).addClass("row-custom");
-					$(".about-project .col-lg-4").each(function() {
+					$(".about-project .col-lg-4").each(function () {
 						$(this).addClass("col-6 col-md-4 about-4--item--col");
 						$(this).removeClass("col-lg-4");
 					});
@@ -1753,8 +1752,8 @@ const breadcrumbDelete = () => {
 	if ($(".about-5--2").length > 0) {
 		$(".about-ajax .breadcrumb-wrapper .container").html(
 			`<div class="row row-breadcrumb"><div class="col-lg-11 col-xl-10">${$(
-        ".about-ajax .breadcrumb-wrapper .container"
-      ).html()}</div></div>`
+				".about-ajax .breadcrumb-wrapper .container"
+			).html()}</div></div>`
 		);
 		$(".about-ajax .breadcrumb-wrapper li").eq(0).remove();
 		$(".about-ajax .breadcrumb-wrapper li").eq(0).remove();
@@ -1781,7 +1780,7 @@ function debounce(fn, delay, immediate) {
 
 		// Function later này sẽ được gọi sau khi delay được chạy xong. 
 		// Nghĩa là mình return executedFn, khi executedFn được thực thi thì sau khoản delay, later sẽ được thực thi.
-		let later = function() {
+		let later = function () {
 			// Gán null cho timeout => cho thấy delay đã chạy xong
 			timeout = null;
 
@@ -1839,7 +1838,7 @@ const ajaxSearch = () => {
 				text: input__search.value
 			},
 			url: url,
-			success: function(res) {
+			success: function (res) {
 				if (res.Code == 200) {
 					for (let i = 0; i < res.Result.length; i++) {
 						Url = res.Result[i].Url;
@@ -1904,7 +1903,7 @@ const ajaxSearch = () => {
 
 breadcrumbDelete();
 
-$(document).ready(function() {
+$(document).ready(function () {
 	setHeightItemImgBox();
 	objectFitImages("img.ofc"); // Luôn luôn chậy polyfill cho thuôc tính object-fit: cover trên các phiên bản IE >= 9
 	addClassLazyload(); // Luôn luôn addClass lazyload cho các hình ảnh có thuộc tính [data-src]
@@ -1968,7 +1967,7 @@ $(document).ready(function() {
 	cartQuantity();
 });
 
-$(document).ajaxComplete(function() {
+$(document).ajaxComplete(function () {
 	addClassLazyload();
 });
 
