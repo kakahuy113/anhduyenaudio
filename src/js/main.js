@@ -725,16 +725,7 @@ const cartQuantity = () => {
 	})
 }
 
-const toggleFormAddNewAddress = () => {
-	$(".add-new-address").on("click", function () {
-		$(".add-new-address-form").slideToggle();
-	});
-	if(document.querySelector(".shipping-address")) {
-		if($("#fullname").val() != "") {
-			$(".add-new-address").trigger("click")
-		}
-	}
-};
+
 
 function likeComment() {
 	$(".button-like-comment").click(function (e) {
@@ -2033,7 +2024,6 @@ $(document).ready(function () {
 	showRating();
 	chooesColor();
 	sliderTheSameProduct();
-	toggleFormAddNewAddress();
 	getUserName();
 	// Ajax
 	ajaxSearch();
