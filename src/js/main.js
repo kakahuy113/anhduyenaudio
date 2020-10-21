@@ -729,11 +729,11 @@ const toggleFormAddNewAddress = () => {
 	$(".add-new-address").on("click", function () {
 		$(".add-new-address-form").slideToggle();
 	});
-	const isProcess = $(".add-new-address").attr("isProcess").toLowerCase();
-	if(isProcess == "true") {
-		$(".add-new-address").trigger("click")
+	if(document.querySelector(".shipping-address")) {
+		if($("#fullname").val() != "") {
+			$(".add-new-address").trigger("click")
+		}
 	}
-
 };
 
 function likeComment() {
