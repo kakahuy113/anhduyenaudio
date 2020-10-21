@@ -729,6 +729,11 @@ const toggleFormAddNewAddress = () => {
 	$(".add-new-address").on("click", function () {
 		$(".add-new-address-form").slideToggle();
 	});
+	const isProcess = $(".add-new-address").attr("isProcess").toLowerCase();
+	if(isProcess == "true") {
+		$(".add-new-address").trigger("click")
+	}
+
 };
 
 function likeComment() {
@@ -1360,59 +1365,18 @@ const getUserName = () => {
 
 const ajaxForgotPassword = () => {
 	// Get information to get verify code
-<<<<<<< HEAD
-	$("body").on("click", "#forgot-password .form-button button", function (e) {
-		let informationToGetPassword = $(
-			"#forgot-password .form-group input"
-		).val();
-=======
 	$("#forgot-password .form-button button").on("click", function(e) {
 		e.preventDefault();
 		const informationToGetPassword = new FormData();
 		const name = $("#forgot-password .form-group input").attr("name");
 		const value = $("#forgot-password .form-group input").val();
 		informationToGetPassword.append(name, value)
->>>>>>> a015f8e345e462e2fb8b7d2a320d867098b3479a
 		let urlGetVerifyCode = $("#forgot-password .form-button button").attr(
 			"data-action"
 		);
 		let fancyboxSourceVerify = $("#forgot-password .form-button button").attr(
 			"data-src"
 		);
-<<<<<<< HEAD
-		e.preventDefault();
-		$.ajax({
-			url: urlGetVerifyCode,
-			type: "post",
-			data: {
-				username: informationToGetPassword,
-			},
-			success: function (res) {
-				if (res.Code === 200) {
-					$.fancybox.open({
-						src: fancyboxSourceVerify,
-						type: "inline",
-						opts: {
-							closeExisting: true,
-							hash: false,
-							beforeShow: function () {
-								$("#verify .popup-wrapper>p").html(res.Message);
-							},
-						},
-					});
-				} else {
-					alert(res.Message);
-				}
-			},
-			error: function (err) {
-				alert(err.status);
-			},
-		});
-	});
-	// get verify code to reset password
-	$("body").on("click", "#verify .form-button button", function (e) {
-		let verifyCode = $("#verify .form-group input").val();
-=======
 		if($("#forgot-password form").valid() == true) {
 			$.ajax({
 				url: urlGetVerifyCode,
@@ -1474,7 +1438,6 @@ const ajaxForgotPassword = () => {
 		const name =  $("#verify .form-group input").attr("name");
 		const value =  $("#verify .form-group input").val();
 		verifyCode.append(name , value)
->>>>>>> a015f8e345e462e2fb8b7d2a320d867098b3479a
 		let urlChangePassword = $("#verify .form-button button").attr(
 			"data-action"
 		);
@@ -1537,16 +1500,6 @@ const ajaxForgotPassword = () => {
 	// Get information to get verify code
 	$("#reset-password .form-button button").on("click", function(e) {
 		e.preventDefault();
-<<<<<<< HEAD
-		$.ajax({
-			url: urlChangePassword,
-			type: "post",
-			data: {
-				code: verifyCode,
-			},
-			success: function (res) {
-				if (res.Code === 200) {
-=======
 		const passwordChange = new FormData();
 		$("#reset-password .form-group input").each(function () {
 			const name = $(this).attr("name");
@@ -1567,28 +1520,10 @@ const ajaxForgotPassword = () => {
 				success: function(res) {
 					$("#verify .form-button button").prop('disabled', false);
 					document.querySelector('#noti-login .text_noti').innerHTML = res.Message;
->>>>>>> a015f8e345e462e2fb8b7d2a320d867098b3479a
 					$.fancybox.open({
 						src: '#noti-login',
 						type: 'inline',
 						opts: {
-<<<<<<< HEAD
-							closeExisting: true,
-							hash: false,
-							beforeShow: function () {
-								$("#reset-password .popup-wrapper>p").html(res.Message);
-							},
-						},
-					});
-				} else {
-					alert(res.Message);
-				}
-			},
-			error: function (err) {
-				alert(err.status);
-			},
-		});
-=======
 							afterShow: function (instance, current) {
 								setTimeout(() => {
 									$.fancybox.close();
@@ -1612,7 +1547,6 @@ const ajaxForgotPassword = () => {
 				},
 			});
 		}
->>>>>>> a015f8e345e462e2fb8b7d2a320d867098b3479a
 	});
 };
 
