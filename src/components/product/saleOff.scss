@@ -10,7 +10,32 @@
 			color: #1c1c1c;
 		}
 	}
+	.price {
+		display: flex;
+		justify-content: space-between;
+		font-size: 13px;
+		font-weight: 400;
+		margin-bottom: 15px;
+		align-items: center;
 
+		span {
+			display: unset !important;
+			color: #D82F25 !important;
+			align-items: unset !important;
+			border: unset !important;
+			padding: unset !important;
+			font-size: 13px !important;
+			border-radius: unset !important;
+			text-align: unset !important;
+		}
+
+		del {
+			margin-left: 10px;
+			font-size: 11px;
+			color: #888888;
+			font-weight: 400;
+		}
+	}
 	@media(max-width: 1024px) {
 		.container {
 			padding: 0;
