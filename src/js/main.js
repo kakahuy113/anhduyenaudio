@@ -1569,11 +1569,9 @@ const verifyAddressInCheckoutStep = () => {
 			addressForm.querySelector("#address").value = address;
 			addressForm.querySelector(
 				"#ShippingCitySelectedValue"
-			).innerHTML = ` < option value = $ {
-				city
-			} > $ {
+			).innerHTML = ` <option value=${city}>${
 				addressItem.querySelector('[data-city]').innerHTML
-			} < /option>`;
+			} </option>`;
 			addressForm.querySelector(
 				"#ShippingDistrictSelectedValue"
 			).innerHTML = `<option value=${district}>${
